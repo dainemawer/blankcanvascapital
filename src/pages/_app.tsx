@@ -20,6 +20,7 @@ import { GoogleAnalytics, sendToAnalytics } from '@lib/gtag/analytics';
 import { SiteContext, store } from '@context/SiteContext';
 
 import SEO from '../next-seo.config';
+import '../styles/global.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter()
