@@ -1,17 +1,17 @@
 import { DefaultSeoProps } from 'next-seo';
 
-const SITE_TITLE = 'My Site';
+const SITE_TITLE = 'Blank Canvas Capital';
 const SITE_DESCRIPTION = 'My site description';
-const SITE_URL = 'https://mysite.com';
+const SITE_URL = 'https://blankcanvascapital.co.za';
 const SITE_IMAGE = '/opengraph.png';
 
 
 const config: DefaultSeoProps = {
 	title: SITE_TITLE,
-	defaultTitle: 'My Awesome Website',
+	defaultTitle: 'Blank Canvas Capital',
 	description: SITE_DESCRIPTION,
 	themeColor: '#000000',
-	titleTemplate: '%s | Site Name',
+	titleTemplate: '%s | Blank Canvas Capital',
 	additionalLinkTags: [
 		{
 			rel: 'icon',

@@ -7,6 +7,7 @@
 */
 
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 
 export default function Home(): JSX.Element {
 	return (
@@ -14,7 +15,14 @@ export default function Home(): JSX.Element {
 			<NextSeo
 				title="Home"
 			/>
-			<h1>Home</h1>
+			<section>
+				<Image
+					src="/blank-canvas-capital-logo.png"
+					width={192}
+					height={192}
+					alt="Picture of the author"
+				/>
+			</section>
 		</>
 	)
 }

@@ -15,7 +15,7 @@ export default function Document(): JSX.Element {
 	return (
 		<Html lang="en">
 			<Head />
-			<body className="site-name">
+			<body className="site-name" style={{ backgroundColor: '#000', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw', padding: '0px', margin: '0px' }}>
 				<Main />
 				<NextScript />
 
