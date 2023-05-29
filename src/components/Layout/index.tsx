@@ -7,16 +7,21 @@
  * @returns {JSX.Element}
 */
 
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-import SkipLink from '@components/SkipLink'
+import { FC } from 'react'
+import { Header } from '@components/Header'
+import { Footer } from '@components/Footer'
+import { SkipLink } from '@components/SkipLink'
 
-export default function Layout({ children }): JSX.Element {
+interface LayoutProps {
+	children: React.ReactElement,
+}
+
+export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
 	return (
 		<>
 			<SkipLink />
 			<Header />
-			<main id="site-content" className="site-content">{children}</main>
+			<main id="main-content">{children}</main>
 			<Footer />
 		</>
 

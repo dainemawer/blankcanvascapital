@@ -48,6 +48,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/**/*",
+    "emotion.d.ts"
   ],
   "exclude": [
     "node_modules"

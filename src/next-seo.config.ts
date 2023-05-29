@@ -1,7 +1,7 @@
 import { DefaultSeoProps } from 'next-seo';
 
 const SITE_TITLE = 'Blank Canvas Capital';
-const SITE_DESCRIPTION = 'My site description';
+const SITE_DESCRIPTION = 'The Home of Blank Canvas Capital';
 const SITE_URL = 'https://blankcanvascapital.co.za';
 const SITE_IMAGE = '/opengraph.png';
 
