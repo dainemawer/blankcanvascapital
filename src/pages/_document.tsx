@@ -15,7 +15,7 @@ export default function Document(): JSX.Element {
 	return (
 		<Html lang="en">
 			<Head />
-			<body className="w-full h-screen">
+			<body>
 				<Main />
 				<NextScript />
 
