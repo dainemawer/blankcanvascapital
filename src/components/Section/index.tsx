@@ -6,12 +6,9 @@
  * @returns {JSX.Element}
 */
 
-import { FC } from 'react'
+import SectionFullWidth from './SectionFullWidth';
+import SectionScroller from './SectionScroller';
+import SectionLeft from './SectionLeft';
+import SectionRight from './SectionRight';
 
-interface SectionProps { }
-
-export const Section: FC<SectionProps> = (): JSX.Element => {
-	return (
-		<section>Section</section>
-	)
-}
+export { SectionFullWidth, SectionScroller, SectionLeft, SectionRight };

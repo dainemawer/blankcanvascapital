@@ -23,6 +23,9 @@
       "@util/*": [
         "util/*"
       ],
+      "@theme/*": [
+        "theme/*"
+      ],
     },
     "target": "es5",
     "lib": [

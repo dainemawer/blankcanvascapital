@@ -7,10 +7,12 @@
 */
 
 import { FC } from 'react'
+import Link from 'next/link'
+import styled from '@emotion/styled'
 import { Logo } from '@components/Logo';
 import { Navigation } from '@components/Navigation';
-
-interface HeaderProps { }
+import { Container } from '@components/Container';
+import { colors } from '@theme/colors';
 
 const MENU = [
 	{
@@ -40,11 +42,33 @@ const MENU = [
 	}
 ]
 
-export const Header: FC<HeaderProps> = (): JSX.Element => {
+const StyledHeader = styled.header`
+	border-top: 6px solid ${colors.copper};
+	padding: 1.25rem 0;
+
+	& a {
+		line-height: 0;
+	}
+`;
+
+const StyledHeaderWrap = styled.div`
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1.25rem;
+`;
+
+export const Header: FC = (): JSX.Element => {
 	return (
-		<header className="site-header" id="site-header" role="banner" aria-label="Site Header">
-			<Logo />
-			<Navigation id="site-navigation" label="Site Navigation" menu={MENU} />
-		</header>
+		<StyledHeader className="site-header" id="site-header" role="banner" aria-label="Site Header">
+			<Container size="1650px">
+				<StyledHeaderWrap>
+					<Link href="/">
+						<Logo />
+					</Link>
+					<Navigation id="site-navigation" label="Site Navigation" menu={MENU} />
+				</StyledHeaderWrap>
+			</Container>
+		</StyledHeader>
 	)
 }

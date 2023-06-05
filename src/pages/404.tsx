@@ -8,16 +8,20 @@
  * @returns {JSX.Element}
 */
 
+import { Container } from '@components/Container';
 import { NextSeo } from 'next-seo';
+import { ErrorLayout } from '@components/ErrorLayout';
 
 export default function FourZeroFour(): JSX.Element {
 	return (
 		<>
 			<NextSeo
-				title="404 Error"
-				description="A short description goes here."
+				title="404"
+				description="The page you were looking for no longer exists."
 			/>
-			<h1>404 - Page Not Found</h1>
+			<Container size="1120px">
+				<ErrorLayout eyebrow="404" title="Oops. We blanked on that" permalink="Return Home" lead="The page you were looking for no longer exists." />
+			</Container>
 		</>
 	)
 }

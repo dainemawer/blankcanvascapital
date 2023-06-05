@@ -9,6 +9,7 @@
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import { Inter } from 'next/font/google'
+import { Section } from '@components/Section';
 
 const inter = Inter({
 	weight: ['600'],

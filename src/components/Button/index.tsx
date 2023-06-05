@@ -7,11 +7,25 @@
 */
 
 import { FC } from 'react'
+import Link from 'next/link';
+import { StyledButton } from './Button.styled';
 
-interface ButtonProps { }
+interface ButtonProps {
+	id?: string;
+	children: React.ReactNode;
+	href: string;
+	type?: 'button' | 'submit' | 'reset';
+}
 
-export const Button: FC<ButtonProps> = (): JSX.Element => {
+export const Button: FC<ButtonProps> = ({ id = '', href = '', children = null, type = 'button' }): JSX.Element => {
+
+	if (!href) {
+		return (
+			<StyledButton type={type} id={id}>{children}</StyledButton>
+		);
+	}
+
 	return (
-		<button>Button</button>
+		<Link className="button" href={href}>{children}</Link>
 	);
 }
