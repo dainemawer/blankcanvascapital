@@ -10,7 +10,7 @@ import { FC } from 'react'
 import styled from '@emotion/styled'
 
 interface ContainerProps {
-	size: string;
+	size?: string;
 	children: React.ReactNode;
 }
 

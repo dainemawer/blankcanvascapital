@@ -7,11 +7,6 @@ const meta: Meta<typeof Colophon> = {
 	title: 'Components/Colophon',
 	component: Colophon,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
-	},
 };
 
 export default meta;
@@ -19,7 +14,6 @@ type Story = StoryObj<typeof Colophon>;
 
 export const Primary: Story = {
 	args: {
-		primary: true,
-		label: 'Colophon',
+		size: '1280px',
 	},
 };

@@ -6,6 +6,7 @@ export interface TeamProps {
 }
 
 export interface SectionProps {
+	align?: string;
 	label: string;
 	id: string;
 	title: string;

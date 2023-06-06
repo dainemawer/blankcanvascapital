@@ -8,13 +8,6 @@
 
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
-import { Inter } from 'next/font/google'
-import { Section } from '@components/Section';
-
-const inter = Inter({
-	weight: ['600'],
-	subsets: ['latin']
-})
 
 export default function Home(): JSX.Element {
 	return (
@@ -22,7 +15,7 @@ export default function Home(): JSX.Element {
 			<NextSeo
 				title="Home"
 			/>
-			<section className={`w-full flex justify-center items-center h-screen bg-center bg-cover bg-architecture ${inter.className}`}>
+			<section className={`w-full flex justify-center items-center h-screen bg-center bg-cover bg-architecture`}>
 				<div className="relative">
 					<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 285" width="192" height="192">
 						<path d="M3 121.5V3h258v279h-48.127" stroke="#fff" strokeWidth="5" />

@@ -14,6 +14,6 @@ type Story = StoryObj<typeof Container>;
 
 export const Primary: Story = {
 	args: {
-		label: 'Container',
+		size: '1280px',
 	},
 };

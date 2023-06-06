@@ -7,11 +7,6 @@ const meta: Meta<typeof Heading> = {
 	title: 'Components/Heading',
 	component: Heading,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
-	},
 };
 
 export default meta;
@@ -19,7 +14,6 @@ type Story = StoryObj<typeof Heading>;
 
 export const Primary: Story = {
 	args: {
-		primary: true,
-		label: 'Headings',
+		as: 'h1',
 	},
 };
