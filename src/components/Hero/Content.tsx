@@ -11,14 +11,14 @@ import Image from 'next/image';
 
 interface ContentProps {
 	logo: string;
-	title: string;
 	subtitle: string;
+	title: string;
 }
 
-export const Content: FC<ContentProps> = ({ logo, title, subtitle }): JSX.Element => {
+export const Content: FC<ContentProps> = ({ logo, subtitle, title }): JSX.Element => {
 	return (
 		<div>
-			{logo && <Image alt="Blank Canvas CapitalLogo" src={logo} width="307" height="333" />}
+			{logo && <Image alt="Blank Canvas CapitalLogo" height={333} src={logo} width={307} />}
 			<div>
 				{title && <h1></h1>}
 				{subtitle && <p></p>}

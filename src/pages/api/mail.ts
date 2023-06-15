@@ -8,7 +8,7 @@ const mailjet = new Mailjet({
 });
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-	const { to, from, name, message, text_body, html_body } = req.body
+	const { from, html_body, message, name, text_body, to } = req.body
 	const request = mailjet
 		.post("send", { 'version': 'v3.1' })
 		.request({
@@ -25,8 +25,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 						}
 					],
 					"Subject": "New Submission on dainemawer.com",
-					"TextPart": "Hey! You have a new submission on dainemawer.com. Here are the details: Name: " + name + " Email: " + from + " Message: " + message,
-					"HTMLPart": "<h3>Hey! You have a new submission on dainemawer.com.</h3><p>Here are the details:</p><p>Name: " + name + "</p><p>Email: " + from + "</p><p>Message: " + message + "</p>",
+					"TextPart":
+						"You have a new submission on Blank Canvas Capital. " +
+						"Here are the details:" +
+						"Name: " + name + " Email: " + from + " Message: " + message,
+					"HTMLPart":
+						"<h3>Hey! You have a new submission Blank Canvas Capital." +
+						"</h3><p>Here are the details:</p><p>" +
+						"Name: " + name + "</p><p>Email: " +
+						from + "</p><p>Message: " + message + "</p>",
 					"CustomID": "AppGettingStartedTest"
 				}
 			]

@@ -24,32 +24,16 @@ import {
 	StyledSubHeading,
 	StyledSubHeadingSpan
 } from '../shared/content.styled';
-
-const TEAM  = [
-	{
-		id: 1,
-		name: 'Neil Freeman',
-		title: 'Partner',
-		image: '/neil-freeman.jpg',
-		linkedin: 'https://www.linkedin.com/',
-	},
-	{
-		id: 2,
-		name: 'JD De Villiers',
-		title: 'Partner',
-		image: '/jd-de-villiers.jpg',
-		linkedin: 'https://www.linkedin.com/',
-	},
-	{
-		id: 3,
-		name: 'Darren Roy',
-		title: 'Partner',
-		image: '/darren-roy.jpg',
-		linkedin: 'https://www.linkedin.com/',
-	}
-]
+import useSWR from 'swr';
+import fetcher from '@lib/fetcher';
+import { SingleTeamProps } from '@components/TeamGrid/TeamGrid.types';
 
 export default function Team(): JSX.Element {
+	const { data, error } = useSWR('/api/team', fetcher);
+	const team = data as SingleTeamProps[];
+
+	if (error) return <div>Failed to load...</div>
+
 	return (
 		<>
 			<NextSeo
@@ -104,7 +88,7 @@ export default function Team(): JSX.Element {
 							</StyledSubHeading>
 						</div>
 
-						<TeamGrid team={TEAM} />
+						{team && <TeamGrid team={team} />}
 
 					</StyledArticle>
 				</StyledGrid>

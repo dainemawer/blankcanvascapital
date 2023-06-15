@@ -17,21 +17,21 @@ import {
 import { SectionScrollerProps } from './Section.types';
 
 const SectionScroller: FC<SectionScrollerProps> = ({
-	background = false,
 	align = 'left',
-	label = '',
-	id = '',
-	title = '',
-	subtitle = '',
-	lead = '',
-	image = '',
-	eyebrow = '',
-	order = null,
-	ctaLink = '',
+	background = false,
 	ctaLabel = '',
+	ctaLink = '',
+	eyebrow = '',
+	id = '',
+	image = '',
+	label = '',
+	lead = '',
+	order = null,
+	subtitle = '',
+	title = '',
 }): JSX.Element => {
 	return(
-		<StyledSection id={id} aria-label={label}></StyledSection>
+		<StyledSection aria-label={label} id={id}></StyledSection>
 	);
 };
 

@@ -1,7 +1,7 @@
 export interface HeroProps {
+	image: string;
 	label?: string;
 	logo?: string;
-	title?: string;
 	subtitle?: string;
-	image: string;
+	title?: string;
 }

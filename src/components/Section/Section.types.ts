@@ -1,22 +1,22 @@
 export interface TeamProps {
 	id: number;
-	name?: string;
 	image?: string;
+	name?: string;
 	position?: string;
 }
 
 export interface SectionProps {
 	align?: string;
-	label: string;
-	id: string;
-	title: string;
-	subtitle?: string;
-	lead?: string;
-	image: string;
-	eyebrow?: string;
-	order: string;
-	ctaLink: string;
 	ctaLabel: string;
+	ctaLink: string;
+	eyebrow?: string;
+	id: string;
+	image: string;
+	label: string;
+	lead?: string;
+	order: string;
+	subtitle?: string;
+	title: string;
 }
 
 export interface SectionFullWidthProps extends SectionProps {

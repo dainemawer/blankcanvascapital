@@ -23,41 +23,8 @@ import {
 
 import { Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-
-const PORTFOLIO = [
-	{
-		id: 1,
-		title: 'Sneaker Lab',
-		hero: '',
-		logo: '',
-		description: '',
-		region: '',
-		sector: '',
-		date: '',
-		status: ''
-	},
-	{
-		id: 2,
-		title: 'The Invigilator',
-		hero: '',
-		logo: '',
-		description: '',
-		region: '',
-		sector: '',
-		date: '',
-		status: ''
-	},
-	{
-		id: 3,
-		hero: 'Aura',
-		logo: '',
-		description: '',
-		region: '',
-		sector: '',
-		date: '',
-		status: ''
-	},
-]
+import fetcher from '@lib/fetcher';
+import useSWR from 'swr';
 
 export type PortfolioModalProps = {
 	date?: string;
@@ -72,6 +39,9 @@ export type PortfolioModalProps = {
 }
 
 export default function Portfolio(): JSX.Element {
+	const { data, error } = useSWR('/api/portfolio', fetcher);
+	const portfolio = data as PortfolioModalProps[];
+
 	const [opened, { close, open }] = useDisclosure(false);
 	const [modalContent, setModalContent] = useState<PortfolioModalProps>({
 		id: 0,
@@ -84,6 +54,8 @@ export default function Portfolio(): JSX.Element {
 		date: '',
 		status: ''
 	});
+
+	if (error) return <div>Failed to load...</div>
 
 	const handleClick = (item: PortfolioModalProps) => {
 		open();
@@ -119,7 +91,7 @@ export default function Portfolio(): JSX.Element {
 						</StyledLead>
 
 						<div>
-							{PORTFOLIO.map((item) => (
+							{portfolio && portfolio.map((item) => (
 								<article key={item.id}>
 									<button onClick={() => handleClick(item)}>
 										{item.title}

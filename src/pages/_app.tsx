@@ -46,16 +46,16 @@ import "nprogress/nprogress.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter()
-	const [isOpen, { toggle, open, close }] = useDisclosure(false);
+	const [isOpen, { close, open, toggle }] = useDisclosure(false);
 
 	const store = {
-		isOpen,
-		toggle,
-		open,
 		close,
+		isOpen,
+		open,
 		site: {
 			title: 'My Site',
-		}
+		},
+		toggle,
 	}
 
 	useEffect(() => {
@@ -104,10 +104,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 							mode="wait"
 						>
 							<motion.div
-								key={router.asPath}
-								animate="in"
-								initial="out"
-								exit="out"
 								variants={{
 									in: {
 										opacity: 1,
@@ -125,6 +121,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 										}
 									}
 								}}
+								animate="in"
+								exit="out"
+								initial="out"
+								key={router.asPath}
 							>
 								<Component {...pageProps} />
 							</motion.div>
@@ -136,7 +136,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 	)
 }
 
-export function reportWebVitals({ id, name, label, value }: NextWebVitalsMetric) {
+export function reportWebVitals({ id, label, name, value }: NextWebVitalsMetric) {
 	if (typeof window !== 'undefined') {
 		sendToAnalytics(id, name, label, value);
 	}

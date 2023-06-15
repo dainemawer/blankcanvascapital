@@ -18,19 +18,19 @@ import {
 import { SectionProps } from './Section.types';
 
 const SectionRight: FC<SectionProps> = ({
-	label = '',
-	id = '',
-	title = '',
-	subtitle = '',
-	lead = '',
-	image = '',
-	eyebrow = '',
-	order = null,
-	ctaLink = '',
 	ctaLabel = '',
+	ctaLink = '',
+	eyebrow = '',
+	id = '',
+	image = '',
+	label = '',
+	lead = '',
+	order = null,
+	subtitle = '',
+	title = '',
 }): JSX.Element => {
 	return (
-		<StyledSection id={id} aria-label={label}>
+		<StyledSection aria-label={label} id={id}>
 			<StyledArticle>
 				<StyledDivider>
 					<StyledOrder>{order}</StyledOrder>
@@ -49,7 +49,15 @@ const SectionRight: FC<SectionProps> = ({
 					</StyledContent>
 					{image && (
 						<StyledFigure>
-							<Image className="radius" loading="lazy" decoding="async" alt={title} src={image} width={450} height={500} />
+							<Image
+								alt={title}
+								className="radius"
+								decoding="async"
+								height={500}
+								loading="lazy"
+								src={image}
+								width={450}
+							/>
 						</StyledFigure>
 					)}
 				</StyledWrap>
