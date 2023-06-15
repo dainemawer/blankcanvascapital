@@ -41,8 +41,8 @@ class ErrorBoundary extends Component<Props, State> {
 				<div>
 					<h2>Oops, there is an error!</h2>
 					<button
-						type="button"
 						onClick={() => this.setState({ hasError: false })}
+						type="button"
 					>
 						Try again?
 					</button>

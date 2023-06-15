@@ -24,8 +24,6 @@ import {
 import { Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
-
-
 const PORTFOLIO = [
 	{
 		id: 1,
@@ -62,19 +60,19 @@ const PORTFOLIO = [
 ]
 
 export type PortfolioModalProps = {
-	id: number;
-	title?: string;
-	hero?: string;
-	logo?: string;
+	date?: string;
 	description?: string;
+	hero?: string;
+	id: number;
+	logo?: string;
 	region?: string;
 	sector?: string;
-	date?: string;
 	status?: string;
+	title?: string;
 }
 
 export default function Portfolio(): JSX.Element {
-	const [opened, { open, close }] = useDisclosure(false);
+	const [opened, { close, open }] = useDisclosure(false);
 	const [modalContent, setModalContent] = useState<PortfolioModalProps>({
 		id: 0,
 		title: '',
@@ -97,7 +95,7 @@ export default function Portfolio(): JSX.Element {
 			<NextSeo
 				title="Investment Portfolio"
 			/>
-			<Hero label="Three Men Walking Up Stairs" image="/hero-portfolio.jpg" />
+			<Hero image="/hero-portfolio.jpg" label="Three Men Walking Up Stairs" />
 			<Container size="1620px">
 				<StyledGrid>
 
@@ -112,7 +110,13 @@ export default function Portfolio(): JSX.Element {
 							<StyledHeading>Investment Portfolio</StyledHeading>
 						</StyledHeader>
 
-						<StyledLead>Welcome to Blank Canvas Capital, where we fuel innovation and empower entrepreneurs to turn their visions into reality. As a leading venture capitalist firm, we specialize in identifying promising startups with exceptional potential and providing them with the necessary resources to flourish.</StyledLead>
+						<StyledLead>
+							Welcome to Blank Canvas Capital, where we fuel innovation and empower
+							entrepreneurs to turn their visions into reality. As a leading venture
+							capitalist firm, we specialize in identifying promising startups with
+							exceptional potential and providing them
+							with the necessary resources to flourish.
+						</StyledLead>
 
 						<div>
 							{PORTFOLIO.map((item) => (
@@ -123,7 +127,7 @@ export default function Portfolio(): JSX.Element {
 								</article>
 							))}
 						</div>
-						<Modal opened={opened} onClose={close} title={modalContent.title}>
+						<Modal onClose={close} opened={opened} title={modalContent.title}>
 							{modalContent.title && <h1>{modalContent.title}</h1>}
 						</Modal>
 					</StyledArticle>

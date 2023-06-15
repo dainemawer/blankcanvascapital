@@ -16,11 +16,16 @@ export default function FiveZeroZero(): JSX.Element {
 	return (
 		<>
 			<NextSeo
-				title="500"
 				description="Our server encountered an unexpected error."
+				title="500"
 			/>
 			<Container size="1120px">
-				<ErrorLayout eyebrow="500" title="Uh oh. Thats not right" permalink="Go Back" lead="Our server encountered an unexpected error." />
+				<ErrorLayout
+					eyebrow="500"
+					lead="Our server encountered an unexpected error."
+					permalink="Go Back"
+					title="Uh oh. Thats not right"
+				/>
 			</Container>
 		</>
 	)

@@ -19,10 +19,7 @@ import {
 	StyledHeader,
 	StyledEyebrow,
 	StyledHeading,
-	StyledLead,
-	StyledParagraph,
-	StyledSubHeading,
-	StyledSubHeadingSpan
+	StyledLead
 } from '../shared/content.styled';
 
 export default function InvestmentApproach(): JSX.Element {
@@ -31,7 +28,7 @@ export default function InvestmentApproach(): JSX.Element {
 			<NextSeo
 				title="Investment Approach"
 			/>
-			<Hero label="Three Men Walking Up Stairs" image="/hero-investment-portfolio.jpg" />
+			<Hero image="/hero-investment-portfolio.jpg" label="Three Men Walking Up Stairs" />
 			<Container size="1650px">
 				<StyledGrid>
 
@@ -46,7 +43,13 @@ export default function InvestmentApproach(): JSX.Element {
 							<StyledHeading>Investment Portfolio</StyledHeading>
 						</StyledHeader>
 
-						<StyledLead>Welcome to Blank Canvas Capital, where we fuel innovation and empower entrepreneurs to turn their visions into reality. As a leading venture capitalist firm, we specialize in identifying promising startups with exceptional potential and providing them with the necessary resources to flourish.</StyledLead>
+						<StyledLead>
+							Welcome to Blank Canvas Capital, where we fuel innovation and
+							empower entrepreneurs to turn their visions into reality.
+							As a leading venture capitalist firm, we specialize in identifying
+							promising startups with exceptional potential and providing
+							them with the necessary resources to flourish.
+						</StyledLead>
 
 					</StyledArticle>
 				</StyledGrid>

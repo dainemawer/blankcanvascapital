@@ -42,9 +42,11 @@ export default function Home(): JSX.Element {
 				title="Home"
 			/>
 			<Hero
+				subtitle="Blank Canvas Capital is an experienced group of talented
+				entrepreneurs pioneering the way
+				forward across the South African financial landscape."
 				image="/hero-home.jpg"
 				title="Every investment starts with an idea."
-				subtitle="Blank Canvas Capital is an experienced group of talented entrepreneurs pioneering the way forward across the South African financial landscape."
 			/>
 			<SectionLeft
 				id="about-us"

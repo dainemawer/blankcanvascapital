@@ -16,11 +16,16 @@ export default function FourZeroFour(): JSX.Element {
 	return (
 		<>
 			<NextSeo
-				title="404"
 				description="The page you were looking for no longer exists."
+				title="404"
 			/>
 			<Container size="1120px">
-				<ErrorLayout eyebrow="404" title="Oops. We blanked on that" permalink="Return Home" lead="The page you were looking for no longer exists." />
+				<ErrorLayout
+					eyebrow="404"
+					lead="The page you were looking for no longer exists."
+					permalink="Return Home"
+					title="Oops. We blanked on that"
+				/>
 			</Container>
 		</>
 	)

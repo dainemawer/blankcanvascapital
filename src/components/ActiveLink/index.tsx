@@ -3,13 +3,13 @@ import Link, { LinkProps } from 'next/link'
 import React, { PropsWithChildren, useState, useEffect } from 'react'
 
 type ActiveLinkProps = LinkProps & {
-	className?: string
 	activeClassName: string
+	className?: string
 }
 
 const ActiveLink = ({
-	children,
 	activeClassName,
+	children,
 	className,
 	...props
 }: PropsWithChildren<ActiveLinkProps>) => {
