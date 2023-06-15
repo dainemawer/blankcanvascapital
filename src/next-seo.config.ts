@@ -10,7 +10,7 @@ const config: DefaultSeoProps = {
 	title: SITE_TITLE,
 	defaultTitle: 'Blank Canvas Capital',
 	description: SITE_DESCRIPTION,
-	themeColor: '#000000',
+	themeColor: '${colors.black}',
 	titleTemplate: '%s | Blank Canvas Capital',
 	additionalLinkTags: [
 		{

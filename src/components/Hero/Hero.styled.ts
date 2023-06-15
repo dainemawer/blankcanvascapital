@@ -1,34 +1,44 @@
 import styled from '@emotion/styled';
 import { colors } from '@theme/colors';
+import { breakpoints } from '@theme/breakpoints';
 
 const StyledHero = styled.section`
-	max-height: 668px;
-	margin-top: 3.75rem;
+	margin-top: 2rem;
+
+	${breakpoints.md} {
+		max-height: 668px;
+	}
 `;
 
 const StyledImage = styled.figure`
 	margin: 0;
 	position: relative;
 
-	@media (min-width: 1500px) {
-		padding: 0 1.25rem;
-	}
-
 	& img {
-		height: 668px;
-		border-radius: 20px 0px;
+		border-radius: 20px 0;
+		height: 334px;
 		max-width: 100%;
 		object-fit: cover;
+
+		${breakpoints.md} {
+			height: 480px;
+		}
+
+		@media (min-width: 1440px) {
+			height: 668px;
+		}
 	}
 
 	&::after {
-		background-color: ${colors.copper};
-		content: "";
-		height: 140px;
-		position: absolute;
-		right: -0.5rem;
-		top: 0;
-		width: 2px;
+		@media (min-width: 1440px) {
+			background-color: ${colors.copper};
+			content: "";
+			height: 140px;
+			position: absolute;
+			right: -10px;
+			top: 0;
+			width: 2px;
+		}
 	}
 `;
 

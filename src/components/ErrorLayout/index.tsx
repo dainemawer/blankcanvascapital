@@ -7,18 +7,22 @@
 */
 
 import { FC } from 'react'
-import Link from 'next/link'
 import { Button } from '@components/Button';
-import { StyledWrap, StyledTextWrap, StyledH1, StyledEyebrow, StyledSpan, StyledParagraph } from './ErrorLayout.styled'
+import {
+	StyledWrap,
+	StyledTextWrap,
+	StyledH1,
+	StyledEyebrow,
+	StyledParagraph
+} from './ErrorLayout.styled'
+import { ErrorProps } from './ErrorLayout.types'
 
-interface ErrorProps {
-	eyebrow: string;
-	title: string;
-	lead: string;
-	permalink: string;
-}
-
-export const ErrorLayout: FC<ErrorProps> = ({ eyebrow = '', title = '', lead = '', permalink = '' }): JSX.Element => {
+export const ErrorLayout: FC<ErrorProps> = ({
+	eyebrow = '',
+	lead = '',
+	permalink = '',
+	title = '',
+}): JSX.Element => {
 	return (
 		<StyledWrap>
 			<StyledTextWrap>

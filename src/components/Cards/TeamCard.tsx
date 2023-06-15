@@ -8,22 +8,28 @@
 
 import { FC } from 'react'
 import Image from 'next/image';
+import { TeamCardProps } from './TeamCard.types';
 
-interface CardProps {
-	id?: string;
-	className?: string;
-	image?: string;
-	name?: string;
-	position?: string;
-	linkedin?: string;
-}
-
-export const TeamCard: FC<CardProps> = ({ id, className, image, name, position, linkedin }): JSX.Element => {
+export const TeamCard: FC<TeamCardProps> = ({
+	className,
+	id,
+	image,
+	linkedin,
+	name,
+	position,
+}): JSX.Element => {
 	return (
-		<article id={id} className={className}>
+		<article className={className} id={id} >
 			{image && (
 				<figure>
-					<Image loading="lazy" decoding="async" alt={name} src={image} width={450} height={500} />
+					<Image
+						alt={name}
+						decoding="async"
+						height={500}
+						loading="lazy"
+						src={image}
+						width={450}
+					/>
 				</figure>
 			)}
 			<figcaption>

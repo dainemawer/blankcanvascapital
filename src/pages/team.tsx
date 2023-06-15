@@ -30,21 +30,21 @@ const TEAM  = [
 		id: 1,
 		name: 'Neil Freeman',
 		title: 'Partner',
-		image: '/team-member-1.jpg',
+		image: '/neil-freeman.jpg',
 		linkedin: 'https://www.linkedin.com/',
 	},
 	{
 		id: 2,
 		name: 'JD De Villiers',
 		title: 'Partner',
-		image: '/team-member-2.jpg',
+		image: '/jd-de-villiers.jpg',
 		linkedin: 'https://www.linkedin.com/',
 	},
 	{
 		id: 3,
 		name: 'Darren Roy',
 		title: 'Partner',
-		image: '/team-member-3.jpg',
+		image: '/darren-roy.jpg',
 		linkedin: 'https://www.linkedin.com/',
 	}
 ]
@@ -55,8 +55,8 @@ export default function Team(): JSX.Element {
 			<NextSeo
 				title="Team"
 			/>
-			<Container size="1650px">
-				<Hero label="Three Men Walking Up Stairs" image="/hero-team.jpg" />
+			<Hero label="Three Men Walking Up Stairs" image="/hero-team-formatted-optimised.jpg" />
+			<Container size="1620px">
 				<StyledGrid>
 
 					<StyledAside>

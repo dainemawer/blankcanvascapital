@@ -4,15 +4,15 @@ import { fonts } from '@theme/fonts';
 
 const StyledWrap = styled.div`
 	display: flex;
-	min-height: calc(100vh - 343.8px);
 	justify-content: center;
+	min-height: calc(100vh - 343.8px);
 `;
 
 const StyledH1 = styled.h1`
 	color: ${colors.grey};
 	font-family: ${fonts.primary};
-	line-height: 1;
 	font-size: 96px;
+	line-height: 1;
 	margin: 0;
 	position: relative;
 `;
@@ -22,7 +22,7 @@ const StyledSpan = styled.span`
 `;
 
 const StyledParagraph = styled.p`
-	color: #777777;
+	color: ${colors.dove};
 	font-family: ${fonts.secondary};
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -38,16 +38,16 @@ const StyledTextWrap = styled.div`
 `;
 
 const StyledEyebrow = styled.span`
+	border-bottom: 3px solid ${colors.gold};
 	color: ${colors.gold};
 	font-family: ${fonts.primary};
-	border-bottom: 3px solid ${colors.gold};
-	font-weight: 700;
 	font-size: 80px;
-	position: absolute;
-	padding-bottom: 1.25rem;
-	transform: rotate(-90deg);
+	font-weight: 700;
 	left: -112px;
-    top: 0;
+	padding-bottom: 1.25rem;
+	position: absolute;
+	top: 0;
+	transform: rotate(-90deg);
     transform-origin: bottom;
 `;
 

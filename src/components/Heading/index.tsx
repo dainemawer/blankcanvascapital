@@ -7,27 +7,15 @@
 */
 
 import { FC } from 'react'
-import styled from '@emotion/styled';
-
-interface HeadingProps {
-	as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-	children: React.ReactElement | string;
-}
-
-const StyledHeadingOne = styled.h1``;
-const StyledHeadingTwo = styled.h2`
-	font-size: 96px;
-`;
-const StyledHeadingThree = styled.h3`
-	font-size: 48px;
-`;
-const StyledHeadingFour = styled.h4`
-	font-size: 20px;
-`;
-const StyledHeadingFive = styled.h5`
-	
-`;
-const StyledHeadingSix = styled.h6``;
+import {
+	StyledHeadingOne,
+	StyledHeadingTwo,
+	StyledHeadingThree,
+	StyledHeadingFour,
+	StyledHeadingFive,
+	StyledHeadingSix
+} from './Heading.styled';
+import { HeadingProps } from './Heading.types';
 
 export const Heading: FC<HeadingProps> = ({ as, children }): JSX.Element => {
 	switch (as) {

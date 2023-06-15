@@ -1,36 +1,50 @@
 import styled from '@emotion/styled';
 import { fonts } from '@theme/fonts';
 import { colors } from '@theme/colors';
+import { breakpoints } from '@theme/breakpoints';
 
 const StyledFigure = styled.figure`
 	margin: 0;
 
 	& img {
 		border-radius: 30px;
-		height: 296px;
+		height: auto;
 		object-fit: cover;
-		width: 296px;
+		width: 100%;
+
+		${breakpoints.md} {
+			height: 296px;
+			width: 296px;
+		}
 	}
 `;
 
-const StyledTeamMember = styled.h4`
-	color: #000000;
+const StyledTeamMember = styled.h3`
+	color: ${colors.black};
 	font-family: ${fonts.primary};
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	font-weight: 600;
 	line-height: 1;
-	margin: 1rem 0 0 0;
+	margin: 1rem 0 0;
 	text-transform: uppercase;
+
+	${breakpoints.lg} {
+		font-size: 1.25rem;
+	}
 `;
 
-const StyledTitle = styled.h5`
+const StyledTitle = styled.h4`
 	color: ${colors.gold};
 	font-family: ${fonts.primary};
-	font-size: 1.125rem;
+	font-size: 0.875rem;
 	font-weight: 600;
 	line-height: 1.7;
 	margin: 0;
 	text-transform: uppercase;
+
+	${breakpoints.lg} {
+		font-size: 1.125rem;
+	}
 `;
 
 const StyledHeader = styled.header`
@@ -41,9 +55,18 @@ const StyledHeader = styled.header`
 
 const StyledSection = styled.section`
 	display: grid;
-	grid-gap: 4rem;
-	grid-template-columns: repeat(3, 1fr);
-	margin: 4.5rem 0 0 0;
+	grid-gap: 2rem;
+	grid-template-columns: 1fr;
+	margin: 2.5rem 0 0;
+
+	@media (min-width: 660px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	${breakpoints.lg} {
+		grid-gap: 4rem;
+		margin: 4.5rem 0 0;
+	}
 `;
 
 export { StyledFigure, StyledHeader, StyledTeamMember, StyledTitle, StyledSection }

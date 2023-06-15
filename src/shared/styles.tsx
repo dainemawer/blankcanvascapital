@@ -47,6 +47,13 @@ export const globalStyles = (
 			.radius {
 				border-radius: 0 20px;
 			}
+
+			.mantine-Modal-body {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				height: calc(100% - 70px);
+			}
 		`} />
 	</>
 

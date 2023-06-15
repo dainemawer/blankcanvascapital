@@ -2,8 +2,6 @@
  * Google Analytics
  *
  * Initialiszes Google Analytics
- *
- * @see https://github.com/vercel/next.js/tree/canary/examples/with-google-analytics
  * @returns {JSX.Element}
 */
 
@@ -14,12 +12,11 @@ export const GoogleAnalytics = (): JSX.Element => {
 	return (
 		<>
 			<Script
+				src={
+				`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
 				strategy="afterInteractive"
-				src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
 			/>
 			<Script
-				id="gtag-init"
-				strategy="afterInteractive"
 				dangerouslySetInnerHTML={{
 					__html: `
 						window.dataLayer = window.dataLayer || [];
@@ -30,6 +27,8 @@ export const GoogleAnalytics = (): JSX.Element => {
 						});
 					`,
 				}}
+				id="gtag-init"
+				strategy="afterInteractive"
 			/>
 		</>
 	)

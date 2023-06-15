@@ -6,13 +6,15 @@
  * @returns {JSX.Element}
 */
 
-import { FC } from 'react'
+import { useContext, FC } from 'react'
 import Link from 'next/link'
-import styled from '@emotion/styled'
 import { Logo } from '@components/Logo';
 import { Navigation } from '@components/Navigation';
 import { Container } from '@components/Container';
-import { colors } from '@theme/colors';
+import { SiteContext } from '@context/SiteContext';
+import { Burger } from '@mantine/core';
+import { SiteContextProps } from '@context/SiteContext';
+import { StyledHeader, StyledHeaderWrap } from './Header.styled';
 
 const MENU = [
 	{
@@ -40,33 +42,44 @@ const MENU = [
 		label: 'Contact Us',
 		href: '/contact'
 	}
-]
-
-const StyledHeader = styled.header`
-	border-top: 6px solid ${colors.copper};
-	padding: 1.25rem 0;
-
-	& a {
-		line-height: 0;
-	}
-`;
-
-const StyledHeaderWrap = styled.div`
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-	padding: 0 1.25rem;
-`;
+];
 
 export const Header: FC = (): JSX.Element => {
+	const {
+		close,
+		isOpen,
+		open,
+		toggle,
+	} = useContext<SiteContextProps>(SiteContext);
+	const ariaLabel = isOpen ? 'Close navigation' : 'Open navigation';
+
 	return (
-		<StyledHeader className="site-header" id="site-header" role="banner" aria-label="Site Header">
-			<Container size="1650px">
+		<StyledHeader
+			aria-label="Site Header"
+			className="site-header"
+			id="site-header"
+			role="banner"
+		>
+			<Container size="1620px">
 				<StyledHeaderWrap>
+					<Burger
+						aria-label={ariaLabel}
+						onClick={toggle}
+						opened={isOpen}
+						size={18}
+					/>
 					<Link href="/">
 						<Logo />
 					</Link>
-					<Navigation id="site-navigation" label="Site Navigation" menu={MENU} />
+					<Navigation
+						handleClose={close}
+						handleOpen={open}
+						handleToggle={toggle}
+						id="site-navigation"
+						isOpen={isOpen}
+						label="Site Navigation"
+						menu={MENU}
+					/>
 				</StyledHeaderWrap>
 			</Container>
 		</StyledHeader>

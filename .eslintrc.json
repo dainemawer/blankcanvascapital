@@ -1,6 +1,22 @@
 {
+  "plugins": [
+    "sort-destructure-keys",
+    "typescript-sort-keys"
+  ],
   "extends": [
     "next/core-web-vitals",
-    "plugin:storybook/recommended"
-  ]
+    "plugin:storybook/recommended",
+    "plugin:typescript-sort-keys/recommended"
+  ],
+  "rules": {
+    "max-len": ["error", {"code": 100}],
+    "sort-destructure-keys/sort-destructure-keys": 2,
+    "react/jsx-sort-props": [
+      2,
+      {
+        "shorthandLast": true,
+        "multiline": "first"
+      }
+    ]
+  }
 }

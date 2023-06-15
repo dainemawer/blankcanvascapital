@@ -13,7 +13,12 @@ export const sendPageView = (url: string) => {
 	})
 }
 
-export const sendEvent = ({ action, category, label, value }: sendEventProps) => {
+export const sendEvent = ({
+	action,
+	category,
+	label,
+	value
+}: sendEventProps) => {
 	window.gtag('event', action, {
 		event_category: category,
 		event_label: label,

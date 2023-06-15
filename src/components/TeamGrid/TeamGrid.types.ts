@@ -1,9 +1,9 @@
 export interface SingleTeamProps {
 	id: number;
+	image: string;
+	linkedin: string;
 	name: string;
 	title: string;
-	linkedin: string;
-	image: string;
 }
 
 export interface TeamProps {

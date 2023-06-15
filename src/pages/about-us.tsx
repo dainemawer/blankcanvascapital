@@ -20,8 +20,8 @@ export default function AboutUs(): JSX.Element {
 			<NextSeo
 				title="About Us"
 			/>
-			<Container size="1650px">
-				<Hero label="Elevator in Department Store" image="/hero-about.jpg" />
+			<Hero label="Elevator in Department Store" image="/hero-about-formatted-optimized.jpg" />
+			<Container size="1620px">
 				<StyledGrid>
 
 					<StyledAside>

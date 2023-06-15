@@ -16,13 +16,15 @@ import { Layout } from '@components/Layout'
 import ErrorBoundary from '@components/ErrorBoundary'
 import { sendPageView } from '@lib/gtag'
 import { GoogleAnalytics, sendToAnalytics } from '@lib/gtag/analytics';
-import { SiteContext, store } from '@context/SiteContext';
+import { SiteContext } from '@context/SiteContext';
 import NProgress from "nprogress";
 import SEO from '../next-seo.config';
 import createCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { globalStyles } from '../shared/styles'
 import { Work_Sans, Merriweather } from 'next/font/google';
+import { motion, AnimatePresence } from 'framer-motion'
+import { useDisclosure } from '@mantine/hooks';
 
 const workSans = Work_Sans({
 	weight: ['500', '600', '700', '800'],
@@ -44,9 +46,24 @@ import "nprogress/nprogress.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter()
+	const [isOpen, { toggle, open, close }] = useDisclosure(false);
+
+	const store = {
+		isOpen,
+		toggle,
+		open,
+		close,
+		site: {
+			title: 'My Site',
+		}
+	}
 
 	useEffect(() => {
-		const handleRouteStart = () => NProgress.start();
+		const handleRouteStart = () => {
+			NProgress.start()
+			close();
+		};
+
 		const handleRouteDone = () => NProgress.done();
 		const handleRouteChange = (url: string) => {
 			sendPageView(url)
@@ -72,7 +89,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			document.body.classList.remove(workSans.variable)
 			document.body.classList.remove(merriweather.variable)
 		}
-	}, [router.events])
+	}, [router.events, close])
 
 	return (
 		<SiteContext.Provider value={store}>
@@ -82,7 +99,36 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 					<GoogleAnalytics />
 					<CacheProvider value={cache}>
 						{globalStyles}
-						<Component {...pageProps} />
+						<AnimatePresence
+							initial={false}
+							mode="wait"
+						>
+							<motion.div
+								key={router.asPath}
+								animate="in"
+								initial="out"
+								exit="out"
+								variants={{
+									in: {
+										opacity: 1,
+										y: 0,
+										transition: {
+											duration: 0.55,
+											delay: 0.2
+										}
+									},
+									out: {
+										opacity: 0,
+										y: 40,
+										transition: {
+											duration: 0.5
+										}
+									}
+								}}
+							>
+								<Component {...pageProps} />
+							</motion.div>
+						</AnimatePresence>
 					</CacheProvider>
 				</ErrorBoundary>
 			</Layout>

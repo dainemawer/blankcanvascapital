@@ -9,19 +9,18 @@
 import { FC } from 'react'
 import Link from 'next/link';
 import { StyledButton } from './Button.styled';
+import { ButtonProps } from './Button.types';
 
-interface ButtonProps {
-	id?: string;
-	children: React.ReactNode;
-	href: string;
-	type?: 'button' | 'submit' | 'reset';
-}
-
-export const Button: FC<ButtonProps> = ({ id = '', href = '', children = null, type = 'button' }): JSX.Element => {
+export const Button: FC<ButtonProps> = ({
+	children = null,
+	href = '',
+	id = '',
+	type = 'button'
+}): JSX.Element => {
 
 	if (!href) {
 		return (
-			<StyledButton type={type} id={id}>{children}</StyledButton>
+			<StyledButton id={id} type={type}>{children}</StyledButton>
 		);
 	}
 
