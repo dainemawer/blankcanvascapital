@@ -8,19 +8,12 @@ const meta: Meta<typeof Icon> = {
 	title: 'Components/Icon',
 	component: Icon,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
-	},
+	argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof Icon>;
 
 export const Primary: Story = {
-	args: {
-		primary: true,
-		label: 'Icon',
-	},
+	args: {},
 };

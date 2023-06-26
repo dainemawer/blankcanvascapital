@@ -5,3 +5,7 @@ export type StyledLabelProps = {
 export type StyledGridProps = {
 	maxWidth?: string;
 }
+
+export type StyledBox = {
+	align?: string;
+}

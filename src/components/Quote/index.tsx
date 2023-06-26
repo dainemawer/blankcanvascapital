@@ -7,11 +7,16 @@
 */
 
 import { FC } from 'react'
+import { StyledBlockQuote, StyledBlockQuoteText, StyledCite } from './Quote.styled';
+import { QuoteProps } from './Quote.types';
 
-interface QuoteProps { }
-
-export const Quote: FC<QuoteProps> = (): JSX.Element => {
+export const Quote: FC<QuoteProps> = ({ cite, quote }): JSX.Element => {
 	return (
-		<blockquote>Quote</blockquote>
+		<StyledBlockQuote cite={cite}>
+			<StyledBlockQuoteText>
+				{quote}
+			</StyledBlockQuoteText>
+			<StyledCite>~ {cite}</StyledCite>
+		</StyledBlockQuote>
 	)
 }

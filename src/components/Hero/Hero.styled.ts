@@ -3,10 +3,10 @@ import { colors } from '@theme/colors';
 import { breakpoints } from '@theme/breakpoints';
 
 const StyledHero = styled.section`
-	margin-top: 2rem;
+	margin-top: 1rem;
 
 	${breakpoints.md} {
-		max-height: 668px;
+		max-height: 600px;
 	}
 `;
 
@@ -25,7 +25,7 @@ const StyledImage = styled.figure`
 		}
 
 		@media (min-width: 1440px) {
-			height: 668px;
+			height: 600px;
 		}
 	}
 

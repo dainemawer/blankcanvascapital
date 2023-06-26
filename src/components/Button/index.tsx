@@ -15,7 +15,7 @@ export const Button: FC<ButtonProps> = ({
 	children = null,
 	href = '',
 	id = '',
-	type = 'button'
+	type = 'button',
 }): JSX.Element => {
 
 	if (!href) {

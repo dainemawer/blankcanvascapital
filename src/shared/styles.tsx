@@ -19,12 +19,11 @@ export const globalStyles = (
 			}
 
 			a.button {
-				align-self: flex-start;
 				background-color: ${colors.white};
 				border: 1px solid ${colors.gold};
 				border-radius: 5px;
 				color: ${colors.gold};
-				display: inline-block;
+				display: block;
 				font-family: ${fonts.primary};
 				font-size: 1rem;
 				font-weight: 600;
@@ -53,6 +52,17 @@ export const globalStyles = (
 				display: flex;
 				justify-content: center;
 				height: calc(100% - 70px);
+			}
+
+			.portfolio-modal .mantine-Modal-inner {
+				padding-left: 5vw;
+				padding-right: 5vw;
+				max-width: 90%;
+			}
+
+			.portfolio-modal .mantine-Modal-body {
+				height: unset;
+				padding: 0;
 			}
 		`} />
 	</>

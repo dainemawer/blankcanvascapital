@@ -22,7 +22,7 @@ export const Hero: FC<HeroProps> = ({
 }): JSX.Element => {
 	return (
 		<StyledHero>
-			<Container size="1620px">
+			<Container size="1440px">
 				{image && (
 					<StyledImage>
 						<Image

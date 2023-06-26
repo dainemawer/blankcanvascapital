@@ -1,0 +1,9 @@
+export { ReactComponent as Briefcase } from './briefcase.svg';
+export { ReactComponent as Database } from './database.svg';
+export { ReactComponent as Key } from './key.svg';
+export { ReactComponent as Lightning } from './lightning.svg';
+export { ReactComponent as Bookmark } from './bookmark.svg';
+export { ReactComponent as Study } from './study.svg';
+export { ReactComponent as PaperPlane } from './paper-plane.svg';
+export { ReactComponent as LightBulb } from './lightbulb.svg';
+export { ReactComponent as Dollar } from './dollar.svg';

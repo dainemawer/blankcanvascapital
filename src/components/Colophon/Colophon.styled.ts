@@ -7,7 +7,7 @@ import { breakpoints } from '@theme/breakpoints';
 const StyledColophon = styled.div`
 	background-color: ${colors.grey};
 	border-bottom: 4px solid  ${colors.gold};
-	color: #fff;
+	color: ${colors.white};
 	font-family: ${fonts.primary};
 	padding: 1.25rem 0;
 `;
@@ -15,7 +15,11 @@ const StyledColophon = styled.div`
 const StyledCopyright = styled.p`
 	font-size: 0.875rem;
 	line-height: 1.5;
-	margin: 0;
+	margin: 0 0 1.25rem 0;
+
+	${breakpoints.md} {
+		margin: 0;
+	}
 `;
 
 const StyledWrapper = styled.div`

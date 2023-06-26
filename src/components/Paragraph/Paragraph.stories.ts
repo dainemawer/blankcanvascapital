@@ -8,19 +8,12 @@ const meta: Meta<typeof Paragraph> = {
 	title: 'Components/Paragraph',
 	component: Paragraph,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
-	},
+	argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof Paragraph>;
 
 export const Primary: Story = {
-	args: {
-		primary: true,
-		label: 'Paragraph',
-	},
+	args: {},
 };

@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
-import { colors } from '@theme/colors';
 import { breakpoints } from '@theme/breakpoints';
 
 const StyledHeader = styled.header`
-	border-top: 6px solid ${colors.copper};
 	padding: 1rem 0;
 
 	${breakpoints.md} {

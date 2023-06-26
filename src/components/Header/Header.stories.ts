@@ -8,19 +8,12 @@ const meta: Meta<typeof Header> = {
 	title: 'Components/Header',
 	component: Header,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
-	},
+	argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const Primary: Story = {
-	args: {
-		primary: true,
-		label: 'Header',
-	},
+	args: {},
 };

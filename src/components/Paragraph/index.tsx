@@ -7,11 +7,18 @@
 */
 
 import { FC } from 'react'
+import { StyledParagraph, StyledLead } from './Paragraph.styled';
+import { ParagraphProps } from './Paragraph.types';
 
-interface ParagraphProps { }
+export const Paragraph: FC<ParagraphProps> = ({ children, lead }): JSX.Element => {
 
-export const Paragraph: FC<ParagraphProps> = (): JSX.Element => {
+	if(lead) {
+		return (
+			<StyledLead>{children}</StyledLead>
+		)
+	}
+
 	return (
-		<p>Paragraph</p>
+		<StyledParagraph>{children}</StyledParagraph>
 	)
 }

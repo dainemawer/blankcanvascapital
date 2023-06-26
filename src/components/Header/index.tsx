@@ -15,36 +15,9 @@ import { SiteContext } from '@context/SiteContext';
 import { Burger } from '@mantine/core';
 import { SiteContextProps } from '@context/SiteContext';
 import { StyledHeader, StyledHeaderWrap } from './Header.styled';
+import { HeaderProps } from './Header.types';
 
-const MENU = [
-	{
-		id: 'about-us',
-		label: 'About Us',
-		href: '/about-us'
-	},
-	{
-		id: 'investment-approach',
-		label: 'Investment Approach',
-		href: '/investment-approach'
-	},
-	{
-		id: 'team',
-		label: 'Team',
-		href: '/team'
-	},
-	{
-		id: 'portfolio',
-		label: 'Portfolio',
-		href: '/portfolio'
-	},
-	{
-		id: 'contact-us',
-		label: 'Contact Us',
-		href: '/contact'
-	}
-];
-
-export const Header: FC = (): JSX.Element => {
+export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 	const {
 		close,
 		isOpen,
@@ -60,7 +33,7 @@ export const Header: FC = (): JSX.Element => {
 			id="site-header"
 			role="banner"
 		>
-			<Container size="1620px">
+			<Container size="1440px">
 				<StyledHeaderWrap>
 					<Burger
 						aria-label={ariaLabel}
@@ -78,7 +51,7 @@ export const Header: FC = (): JSX.Element => {
 						id="site-navigation"
 						isOpen={isOpen}
 						label="Site Navigation"
-						menu={MENU}
+						menu={menu}
 					/>
 				</StyledHeaderWrap>
 			</Container>

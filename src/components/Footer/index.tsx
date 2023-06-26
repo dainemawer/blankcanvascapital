@@ -13,7 +13,7 @@ import { Colophon } from '@components/Colophon'
 import { Container } from '@components/Container'
 import { StyledFooter, StyledFooterCard, StyledAddress } from './Footer.styled';
 
-export const Footer: FC = (): JSX.Element => {
+const Footer: FC = (): JSX.Element => {
 	return (
 		<footer
 			aria-label="Site Footer"
@@ -47,3 +47,5 @@ export const Footer: FC = (): JSX.Element => {
 		</footer>
 	)
 }
+
+export default Footer;

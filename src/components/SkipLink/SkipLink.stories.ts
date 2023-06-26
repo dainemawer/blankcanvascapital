@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SkipLink } from './index';
+import SkipLink from './index';
 
 // More on how to set up stories at:
 // https://storybook.js.org/docs/react/writing-stories/introduction

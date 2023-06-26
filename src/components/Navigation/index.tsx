@@ -53,7 +53,7 @@ export const Navigation: FC<NavigationProps> = ({
 }): JSX.Element => (
 	<nav aria-label={label} className="site-navigation" id={id} role="navigation">
 		<StyledList>
-			{menu.map((item: NavigationItemProps) => {
+			{menu && menu.map((item: NavigationItemProps) => {
 				return (
 					<StyledListItemDesktop key={item.id}>
 						<ActiveLink activeClassName="active" href={item.href}>
@@ -80,7 +80,7 @@ export const Navigation: FC<NavigationProps> = ({
 						<Logo />
 					</Link>
 				</StyledListItem>
-				{menu.map((item: NavigationItemProps) => {
+				{menu && menu.map((item: NavigationItemProps) => {
 					return (
 						<StyledListItem key={item.id} variants={listVariant}>
 							<ActiveLink activeClassName="active" href={item.href}>

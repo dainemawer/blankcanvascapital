@@ -13,10 +13,14 @@ const StyledFigure = styled.figure`
 		width: 100%;
 
 		${breakpoints.md} {
-			height: 296px;
-			width: 296px;
+			height: 300px;
+			width: 300px;
 		}
 	}
+`;
+
+const StyledArticle = styled.article`
+	box-sizing: border-box;
 `;
 
 const StyledTeamMember = styled.h3`
@@ -69,4 +73,4 @@ const StyledSection = styled.section`
 	}
 `;
 
-export { StyledFigure, StyledHeader, StyledTeamMember, StyledTitle, StyledSection }
+export { StyledArticle, StyledFigure, StyledHeader, StyledTeamMember, StyledTitle, StyledSection }

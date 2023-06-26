@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
 import { colors } from '@theme/colors'
 import { fonts } from '@theme/fonts'
+import { breakpoints } from '@theme/breakpoints';
 
 const StyledFooter = styled.div`
 	background-color: ${colors.aluminum};
-	padding: 3.75rem 0;
+	padding: 2.5rem 0;
+
+	${breakpoints.md} {
+		padding: 3.75rem 0;
+	}
 `;
 
 const StyledAddress = styled.address`

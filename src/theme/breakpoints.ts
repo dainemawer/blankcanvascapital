@@ -1,7 +1,7 @@
 export const breakpoints = {
-	xs: '0px',
-	sm: '600px',
+	xs: '@media (min-width: 490px)',
+	sm: '@media (min-width: 768px)',
 	md: '@media (min-width: 1024px)',
-	lg: '1240px',
-	xl: '1920px',
+	lg: '@media (min-width: 1290px)',
+	xl: '@media (min-width: 1440px)',
 }

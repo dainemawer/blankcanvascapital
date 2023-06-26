@@ -10,6 +10,7 @@ import { FC } from 'react'
 import Image from 'next/image';
 import { TeamProps } from './TeamGrid.types';
 import {
+	StyledArticle,
 	StyledFigure,
 	StyledTeamMember,
 	StyledTitle,
@@ -17,18 +18,17 @@ import {
 	StyledSection
 } from './TeamGrid.styled';
 
-export const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
+const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
 	<StyledSection>
 		{team.map((member) => (
-			<article aria-label={`${member.name} | ${member.title}`} key={member.id}>
+			<StyledArticle aria-label={`${member.name} | ${member.title}`} key={member.id}>
 				<StyledFigure>
 					<Image
 						alt={member.name}
-						height={296}
+						height={300}
 						loading="lazy"
 						src={member.image}
-						style={{ width: 'auto', height: 'auto' }}
-						width={269}
+						width={300}
 					/>
 				</StyledFigure>
 				<StyledHeader>
@@ -73,7 +73,9 @@ export const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
 						</a>
 					)}
 				</StyledHeader>
-			</article>
+			</StyledArticle>
 		))}
 	</StyledSection>
 );
+
+export default TeamGrid;

@@ -8,19 +8,12 @@ const meta: Meta<typeof Quote> = {
 	title: 'Components/Quote',
 	component: Quote,
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: {
-			control: 'color',
-		},
-	},
+	argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof Quote>;
 
 export const Primary: Story = {
-	args: {
-		primary: true,
-		label: 'Quote',
-	},
+	args: {},
 };
