@@ -532,6 +532,7 @@ export default function Home(): JSX.Element {
 				entrepreneurs pioneering the way
 				forward across the South African financial landscape."
 				image="/hero-home.jpg"
+				label="Aeroplane flying over buildings"
 				logo="/bcc-logo.png"
 				title="Every investment starts with an idea."
 			/>

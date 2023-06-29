@@ -85,7 +85,7 @@ const StyledHeroTitle = styled.h1`
 	}
 `;
 
-const StyledHeroSubtitle = styled.h2`
+const StyledHeroSubtitle = styled.p`
 	font-size: 1.125rem;
 	font-family: ${fonts.secondary};
 	font-weight: 400;
