@@ -68,7 +68,6 @@ export const Navigation: FC<NavigationProps> = ({
 			closeButtonProps={{ 'aria-label': 'Close modal' }}
 			onClose={handleClose}
 			opened={isOpen}
-			title="Mobile Navigation"
 			transitionProps={{ transition: 'fade', duration: 400 }}
 			closeOnClickOutside
 			closeOnEscape

@@ -16,6 +16,7 @@ import { Burger } from '@mantine/core';
 import { SiteContextProps } from '@context/SiteContext';
 import { StyledHeader, StyledHeaderWrap } from './Header.styled';
 import { HeaderProps } from './Header.types';
+import { useScrollPosition } from '@hooks/useScrollPosition';
 
 export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 	const {
@@ -25,6 +26,7 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 		toggle,
 	} = useContext<SiteContextProps>(SiteContext);
 	const ariaLabel = isOpen ? 'Close navigation' : 'Open navigation';
+	const scrollPosition = useScrollPosition();
 
 	return (
 		<StyledHeader
@@ -32,6 +34,7 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 			className="site-header"
 			id="site-header"
 			role="banner"
+			sticky={scrollPosition > 0}
 		>
 			<Container size="1440px">
 				<StyledHeaderWrap>

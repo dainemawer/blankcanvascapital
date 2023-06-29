@@ -50,5 +50,17 @@ export default function handler(
 				date: '',
 				status: 'realised'
 			},
+			{
+				category: 'Real Estate',
+				id: '3',
+				title: 'Aura',
+				hero: '/aura-hero.png',
+				logo: '/aura-logo.png',
+				description: '',
+				region: '',
+				sector: '',
+				date: '',
+				status: 'realised'
+			},
 		])
 }

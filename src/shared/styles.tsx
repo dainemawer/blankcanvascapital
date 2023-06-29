@@ -64,6 +64,15 @@ export const globalStyles = (
 				height: unset;
 				padding: 0;
 			}
+
+			#nprogress .bar {
+				background: ${colors.gold};
+			}
+
+			#nprogress .spinner-icon {
+				border-top-color: ${colors.gold};
+				border-left-color: ${colors.gold};
+			}
 		`} />
 	</>
 

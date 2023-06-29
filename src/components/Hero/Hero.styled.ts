@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 import { colors } from '@theme/colors';
 import { breakpoints } from '@theme/breakpoints';
 
+type StyledHeroProps = {
+	natural: boolean;
+}
+
 const StyledHero = styled.section`
 	margin-top: 1rem;
 
@@ -10,22 +14,22 @@ const StyledHero = styled.section`
 	}
 `;
 
-const StyledImage = styled.figure`
+const StyledImage = styled.figure<StyledHeroProps>`
 	margin: 0;
 	position: relative;
 
 	& img {
 		border-radius: 20px 0;
-		height: 334px;
+		height: ${props => props.natural ? '470px' : '334px'};
 		max-width: 100%;
 		object-fit: cover;
 
 		${breakpoints.md} {
-			height: 480px;
+			height: ${props => props.natural ? 'auto' : '480px'};
 		}
 
 		@media (min-width: 1440px) {
-			height: 600px;
+			height: ${props => props.natural ? 'auto' : '600px'};
 		}
 	}
 

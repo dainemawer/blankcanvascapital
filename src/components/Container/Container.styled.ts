@@ -5,6 +5,7 @@ const StyledContainer = styled.div`
 	margin: 0 auto;
 	max-width: ${(props: ContainerProps) => props.size};
 	padding: 0 1.25rem;
+	${(props: ContainerProps) => props.relative && 'position: relative;'};
 `;
 
 export { StyledContainer };

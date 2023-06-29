@@ -12,10 +12,11 @@ import { ContainerProps } from './Container.types'
 
 export const Container: FC<ContainerProps> = ({
 	children,
+	relative = false,
 	size = '1280px',
 }): JSX.Element => {
 	return (
-		<StyledContainer size={size}>
+		<StyledContainer relative={relative} size={size}>
 			{children}
 		</StyledContainer>
 	)
