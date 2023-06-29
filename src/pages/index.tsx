@@ -300,7 +300,7 @@ const StyledTeamGrid = styled.div`
 
 const StyledTeamMember = styled.div``;
 
-const StyledTeamMemberName = styled.h4`
+const StyledTeamMemberName = styled.h3`
 	color: ${colors.black};
 	font-size: 1.125rem;
 	font-family: ${fonts.primary};
