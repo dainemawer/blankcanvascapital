@@ -29,7 +29,10 @@ export const Hero: FC<HeroProps> = ({
 							sizes="(max-width: 768px) 100vw,
 							(max-width: 1200px) 50vw, 100vw"
 							alt={label}
+							decoding="auto"
 							height={668}
+							loading="eager"
+							quality={90}
 							src={image}
 							width={1657}
 							priority

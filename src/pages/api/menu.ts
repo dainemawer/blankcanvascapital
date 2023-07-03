@@ -9,6 +9,11 @@ export default function handler(
 		.status(200)
 		.json([
 			{
+				href: '/',
+				id: 'home',
+				label: 'Home',
+			},
+			{
 				href: '/about-us',
 				id: 'about-us',
 				label: 'About Us',

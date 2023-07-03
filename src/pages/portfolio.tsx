@@ -45,11 +45,12 @@ export default function Portfolio(): JSX.Element {
 	const { data, error } = useSWR('/api/portfolio', fetcher);
 	const portfolio = data as PortfolioProps[];
 	const [items, setItems] = useState<PortfolioProps[]>([]);
-	const [active, setActive] = useState('');
+	const [active, setActive] = useState('Private Equity');
 
 	useEffect(() => {
-		setItems(portfolio);
+		portfolio && filterPrivateEquity();
 	}, [portfolio])
+
 
 	const [opened, { close, open }] = useDisclosure(false);
 	const [modalContent, setModalContent] = useState<PortfolioProps>({

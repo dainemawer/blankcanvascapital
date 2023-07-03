@@ -44,7 +44,7 @@ export default function Home(): JSX.Element {
 				entrepreneurs pioneering the way forward across the South African financial."
 				align="left"
 				ctaLabel="Our Business"
-				ctaLink="/about"
+				ctaLink="/about-us"
 				eyebrow="Our investments, Your business"
 				id="about-us"
 				image="/about-us.jpg"
@@ -56,7 +56,7 @@ export default function Home(): JSX.Element {
 				excerpt="Blank Canvas Capital is an experienced group of talented
 				entrepreneurs pioneering the way forward across the South African financial."
 				ctaLabel="View Investments"
-				ctaLink="/investment-portfolio"
+				ctaLink="/portfolio"
 				eyebrow="02 Our latest investments"
 				id="investment-portfolio"
 				subTitle="Discover more of our investments..."
@@ -73,7 +73,7 @@ export default function Home(): JSX.Element {
 				excerpt="Blank Canvas Capital is an experienced group of talented
 				entrepreneurs pioneering the way forward across the South African financial."
 				ctaLabel="Get To Know Us"
-				ctaLink="/our-team"
+				ctaLink="/team"
 				eyebrow="Our investments, Your business"
 				id="our-team"
 				index="03"
