@@ -2,7 +2,7 @@ export type ComplexSectionProps = {
 	children: JSX.Element;
 	ctaLabel: string,
 	ctaLink: string,
-	excerpt: string,
+	excerpt?: string,
 	eyebrow?: string;
 	id: string;
 	image?: string;
@@ -16,7 +16,7 @@ export type SimpleSectionProps = {
 	align: 'left' | 'right' | 'center';
 	ctaLabel: string;
 	ctaLink: string;
-	excerpt: string;
+	excerpt?: string;
 	eyebrow: string;
 	id: string;
 	image: string;

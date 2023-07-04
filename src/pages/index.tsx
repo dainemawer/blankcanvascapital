@@ -40,26 +40,28 @@ export default function Home(): JSX.Element {
 				title="Every investment starts with an idea."
 			/>
 			<SimpleSection
-				excerpt="Blank Canvas Capital is an experienced group of talented
-				entrepreneurs pioneering the way forward across the South African financial."
+				excerpt="Blank Canvas Capital is a value-adding investment firm dedicated
+				to supporting outstanding entrepreneurs and business owners in growing successful
+				businesses. We provide capital, expertise, deep strategic insights, and a
+				vast network of industry connections, coupled with a different way of
+				thinking, to help our investee businesses achieve their full
+				potential and achieve exceptional returns for our investors."
 				align="left"
 				ctaLabel="Our Business"
 				ctaLink="/about-us"
-				eyebrow="Our investments, Your business"
+				eyebrow="Our Investments, Your Business"
 				id="about-us"
 				image="/about-us.jpg"
 				index="01"
-				subTitle="Remarkable businesses through great management."
+				subTitle="Unleashing Potential | Creating Value | Partnering for Exceptional Returns"
 				title="About Us"
 			/>
 			<ComplexSection
-				excerpt="Blank Canvas Capital is an experienced group of talented
-				entrepreneurs pioneering the way forward across the South African financial."
 				ctaLabel="View Investments"
 				ctaLink="/portfolio"
-				eyebrow="02 Our latest investments"
+				eyebrow="02 Our Latest Investments"
 				id="investment-portfolio"
-				subTitle="Discover more of our investments..."
+				subTitle="Discover more of our investments"
 				title="Investment Portfolio"
 				variant="investment-portfolio"
 			>
@@ -70,11 +72,11 @@ export default function Home(): JSX.Element {
 				)}
 			</ComplexSection>
 			<ComplexSection
-				excerpt="Blank Canvas Capital is an experienced group of talented
-				entrepreneurs pioneering the way forward across the South African financial."
+				excerpt="A dynamic and collaborative team with a track record of delivering
+				exceptional returns through extensive investment expertise and a partnership-oriented culture"
 				ctaLabel="Get To Know Us"
 				ctaLink="/team"
-				eyebrow="Our investments, Your business"
+				eyebrow="The People Behind The Investments"
 				id="our-team"
 				index="03"
 				title="Our Team"
@@ -87,25 +89,27 @@ export default function Home(): JSX.Element {
 				)}
 			</ComplexSection>
 			<SimpleSection
-				excerpt="Blank Canvas Capital is an experienced group of talented
-				entrepreneurs pioneering the way forward across the South African financial."
+				excerpt="With a flexible investment approach across investment size, industry type and capital structure,
+				we seek scalable businesses that can deliver superior returns on capital.
+				Partner selection is key, and we prioritise backing strong entrepreneurs
+				and business owners who share our vision and commitment to success.
+				We engage fully in each opportunity, from initial investment to exit, and
+				prioritize long-term partnerships with our investee businesses."
 				align="right"
 				ctaLabel="Our Business"
 				ctaLink="/investment-approach"
-				eyebrow="Our investment approach"
+				eyebrow="Our Investment Approach"
 				id="our-approach"
 				image="/approach.jpg"
 				index="04"
-				subTitle="Our take on business is as unique as your investment"
+				subTitle="Incredible Investments | Incredible People"
 				title="Our Approach"
 			/>
 			<SimpleSection
-				excerpt="Blank Canvas Capital is an experienced group of talented
-				entrepreneurs pioneering the way forward across the South African financial."
 				align="left"
 				ctaLabel="Contact Us"
 				ctaLink="/contact"
-				eyebrow="Our investments, Your business"
+				eyebrow="Our Investments, Your Business"
 				id="get-in-touch"
 				image="/contact.jpg"
 				index="05"

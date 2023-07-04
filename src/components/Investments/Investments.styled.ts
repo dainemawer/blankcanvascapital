@@ -308,13 +308,21 @@ const Paragraph = styled.p<StyledParagraphProps>`
 	}
 `
 
-const UnorderedList = styled.ul`
+const UnorderedList = styled.ul<StyledContentProps>`
 	font-family: ${fonts.primary};
 	font-size: 1.rem;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 2;
 	margin: 0;
 	padding-left: 1rem;
+
+	${breakpoints.md} {
+		${props => props.align === 'right' && `
+			direction: rtl;
+			padding-right: 1rem;
+			text-align: right;
+		`}
+	}
 
 	& li {
 		margin-bottom: 0.5rem;

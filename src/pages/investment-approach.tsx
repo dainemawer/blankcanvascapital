@@ -12,8 +12,6 @@ import { Hero } from '@components/Hero';
 import { Button } from '@components/Button';
 import { Icon } from '@components/Icon';
 import {
-	SubGrid,
-	SubGridItem,
 	Paragraph,
 	Wrap,
 	UnorderedList
@@ -31,14 +29,10 @@ export default function InvestmentApproach(): JSX.Element {
 			<Hero image="/hero-investment-portfolio.jpg" label="Three Men Walking Up Stairs" />
 			<SimpleSection name="intro">
 				<Paragraph className="intro" color="#C5A880">
-					At <strong>Blank Canvas Capital</strong>,
-					our mission is to drive positive change by
-					investing in groundbreaking ideas and visionary entrepreneurs.
-					We believe in the power of innovation to transform
-					industries and create a better future.We strive to
-					support and guide entrepreneurs through their journey,
-					offering not only financial backing but also strategic
-					guidance and a vast network of industry connections.
+					Blank Canvas Capital is committed to supporting outstanding entrepreneurs and business
+					owners to grow successful businesses. As a value-adding firm,
+					we provide capital, expertise and deep strategic insights coupled with
+					a different way of thinking to help our investee businesses achieve their full potential.
 				</Paragraph>
 			</SimpleSection>
 			<InvestmentSection
@@ -51,26 +45,18 @@ export default function InvestmentApproach(): JSX.Element {
 			>
 				<Wrap>
 					<Paragraph align="left" color="#2b2b2b" maxWidth="460px">
-						At <strong>Blank Canvas Capital</strong>,
-						our mission is to drive positive
-						change by investing in groundbreaking ideas and
-						visionary entrepreneurs. We believe in the power of
-						innovation to transform
-						industries and create a better future.We strive to
-						support and guide entrepreneurs through their journey,
-						offering not only financial backing but also strategic
-						guidance and a vast network of industry connections.
+						Blank Canvas Capital is free from the restrictions of a traditional fund therefore our
+						investment approach is flexible in terms of investment size, industry type and capital
+						structure. We look for scalable companies or opportunities that can deliver superior returns on capital
+						for our investors. We are quick to act, have a multi-deal track record in mobilising
+						large amounts of capital required in a process and will fully engage in
+						an opportunity&apos;s fulfilment - from initial investment to its ultimate exit.
 					</Paragraph>
 					<Paragraph align="right" color="#2b2b2b" maxWidth="460px">
-						At <strong>Blank Canvas Capital</strong>,
-						our mission is to drive positive
-						change by investing in groundbreaking ideas and
-						visionary entrepreneurs. We believe in the power of
-						innovation to transform
-						industries and create a better future.We strive to
-						support and guide entrepreneurs through their journey,
-						offering not only financial backing but also strategic
-						guidance and a vast network of industry connections.
+						We are in our deals for the long term. We buy in alongside our partners and we realise
+						value with our partners as a general rule. Our investment strategy focuses on private
+						equity as our main area of focus, but we also pursue real estate investments
+						which are of an opportunistic nature or where our portfolio company is a tenant.
 					</Paragraph>
 				</Wrap>
 			</InvestmentSection>
@@ -85,14 +71,9 @@ export default function InvestmentApproach(): JSX.Element {
 				grid
 			>
 				<Paragraph align="center" color="#2B2B2B" maxWidth="776px">
-					At <strong>Blank Canvas Capital</strong>, our mission is to
-					drive positive change by
-					investing in groundbreaking ideas and visionary entrepreneurs.
-					We believe in the power of innovation to transform
-					industries and create a better future.We strive to
-					support and guide entrepreneurs through their journey,
-					offering not only financial backing but also strategic
-					guidance and a vast network of industry connections.
+					We partner with proven entrepreneurs and strong management teams who share our vision and commitment to success.
+					We conduct thorough due diligence to ensure that we select the best partners within our investment portfolio,
+					and our partners are comfortable and energised in selecting us.
 				</Paragraph>
 			</InvestmentSection>
 			<InvestmentSection
@@ -104,38 +85,11 @@ export default function InvestmentApproach(): JSX.Element {
 				title="Investment Size"
 				grid
 			>
-				<Paragraph color="#2B2B2B">
-					At <strong>Blank Canvas Capital</strong>, our mission is to
-					drive positive change by
-					investing in groundbreaking ideas and visionary entrepreneurs.
-					We believe in the power of innovation to transform
-					industries and create a better future.We strive to
-					support and guide entrepreneurs through their journey,
-					offering not only financial backing but also strategic
-					guidance and a vast network of industry connections.
+				<Paragraph color="#2B2B2B" maxWidth='776px'>
+					Blank Canvas Capital has a flexible approach to investment size, typically investing
+					from R25m into a single opportunity with no upper limit. We specialize in acquiring significant,
+					non-controlling stakes in our portfolio companies.
 				</Paragraph>
-				<Paragraph
-					className="figure"
-					color="#C5A880"
-					font="Work Sans"
-					size="4.5rem"
-					style={{ marginBottom: 0 }}
-					weight="700"
-				>
-					$30m
-				</Paragraph>
-				<UnorderedList>
-					<li>
-						Closely held or family enterprises
-						transitioning to new ownership
-					</li>
-					<li>
-						Businesses requiring growth capital
-						or undergoing recapitalisations
-					</li>
-					<li>Buy-outs of non-core corporate divisions</li>
-					<li>Platform or roll-up strategies</li>
-				</UnorderedList>
 			</InvestmentSection>
 			<InvestmentSection
 				align='right'
@@ -147,44 +101,26 @@ export default function InvestmentApproach(): JSX.Element {
 				title="Value Add"
 				grid
 			>
-				<SubGrid>
-					<SubGridItem aria-label="" id="">
-						<span><Icon icon="study" /></span>
-						<h5>Expert guidance</h5>
-						<p>
-							At Blank Canvas Capital, our mission is to drive positive
-							change by investing in groundbreaking ideas
-							and visionary entrepreneurs.
-						</p>
-					</SubGridItem>
-					<SubGridItem aria-label="" id="">
-						<span><Icon icon="paper-plane" /></span>
-						<h5>Years of Experience</h5>
-						<p>
-							At Blank Canvas Capital, our mission is to drive positive
-							change by investing in groundbreaking ideas
-							and visionary entrepreneurs.
-						</p>
-					</SubGridItem>
-					<SubGridItem aria-label="" id="">
-						<span><Icon icon="light-bulb" /></span>
-						<h5>Diversified Council</h5>
-						<p>
-							At Blank Canvas Capital, our mission is to drive positive
-							change by investing in groundbreaking ideas
-							and visionary entrepreneurs.
-						</p>
-					</SubGridItem>
-					<SubGridItem aria-label="" id="">
-						<span><Icon icon="dollar" /></span>
-						<h5>Unlimited value</h5>
-						<p>
-							At Blank Canvas Capital, our mission is to drive positive
-							change by investing in groundbreaking ideas
-							and visionary entrepreneurs.
-						</p>
-					</SubGridItem>
-				</SubGrid>
+				<div>
+					<Paragraph align='right' color="#fff" maxWidth="776px">
+						Our strength lies in our ability to develop and maintain strong
+						relationships with our portfolio companies’ management teams and
+						provide guidance and support. We back management to run the daily
+						operations but play a key role in the strategy of the business, including:
+					</Paragraph>
+					<UnorderedList align="right">
+						<li>Director representation on the board</li>
+						<li>Fundraising (debt and equity)</li>
+						<li>Introductions to potential business partners and customers</li>
+						<li>Changes to the business model</li>
+						<li>Introducing well aligned incentive structures</li>
+						<li>Assistance with BEE requirements</li>
+						<li>Optimisation of the capital structure</li>
+						<li>Access to key management hires</li>
+						<li>Preparing the business for sale, identifying potential suitors,</li>
+						<li>and assisting in the disposal process</li>
+					</UnorderedList>
+				</div>
 			</InvestmentSection>
 			<InvestmentSection
 				align='left'
@@ -197,36 +133,18 @@ export default function InvestmentApproach(): JSX.Element {
 				grid
 			>
 				<Paragraph color="#2B2B2B">
-					At <strong>Blank Canvas Capital</strong>, our mission is
-					to drive positive change by
-					investing in groundbreaking ideas and visionary entrepreneurs.
-					We believe in the power of innovation to transform
-					industries and create a better future.We strive to
-					support and guide entrepreneurs through their journey,
-					offering not only financial backing but also strategic
-					guidance and a vast network of industry connections.
-				</Paragraph>
-				<Paragraph color="#2B2B2B" maxWidth="600px">
-					At <strong>Blank Canvas Capital</strong>, our mission is
-					to drive positive change by
-					investing in groundbreaking ideas and visionary entrepreneurs.
-					We believe in the power of innovation to transform
-					industries and create a better future.We strive to
-					support and guide entrepreneurs through their journey,
-					offering not only financial backing but also strategic
-					guidance and a vast network of industry connections.
+					Ideally, we realise value when our partner feels the time is right to do so.
+					We have no time pressure for exits and focus on the long-term success of
+					our portfolio companies. We work closely with our partners to develop
+					growth and exit strategies that align with their goals, and then assist with the execution of these plans.
 				</Paragraph>
 			</InvestmentSection>
 			<SimpleSection>
 				<Paragraph align="center" color="#424242">
-					At <strong>Blank Canvas Capital</strong>,
-					our mission is to drive positive change by
-					investing in groundbreaking ideas and visionary entrepreneurs.
-					We believe in the power of innovation to transform
-					industries and create a better future.We strive to
-					support and guide entrepreneurs through their journey,
-					offering not only financial backing but also strategic
-					guidance and a vast network of industry connections.
+					At Blank Canvas Capital, we are driven by a shared passion for creating exceptional value.
+					We seek out outstanding businesses run by exceptional individuals who are willing to partner
+					with us to deliver outstanding returns for all stakeholders.
+					Along the way, we strive to build organizations that all parties can be proud to be associated with.
 				</Paragraph>
 				<Paragraph align="center" color="#424242">
 					<Button href="/contact">Get In Touch</Button>

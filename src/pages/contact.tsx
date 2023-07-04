@@ -46,17 +46,10 @@ export default function Contact(): JSX.Element {
 				<StyledGrid maxWidth="1240px">
 					<Aside />
 					<StyledArticle>
-						<ArticleHeader eyebrow="Lets talk about investments" title="Get in Touch" />
-						<Paragraph lead>
-							Welcome to Blank Canvas Capital,
-							where we fuel innovation and empower
-							entrepreneurs to turn their visions into reality.
-							As a leading venture capitalist firm,
-							we specialize in identifying promising
-							startups with exceptional potential
-							and providing them with the necessary
-							resources to flourish.
-						</Paragraph>
+						<ArticleHeader
+							eyebrow="Let's Talk About Investments"
+							title="Get in Touch"
+						/>
 						<StyledContactGrid>
 							<Form />
 							<Sidebar />

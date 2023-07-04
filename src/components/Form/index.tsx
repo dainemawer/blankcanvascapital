@@ -96,7 +96,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 					<span>Message</span>
 					<StyledTextarea
 						id="message"
-						placeholder="What would you like to discuss?"
+						placeholder="What would you like to discuss with us?"
 						rows={10}
 						{...register("message", { required: true })}
 					>

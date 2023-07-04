@@ -13,7 +13,7 @@ import type { PortfolioGridProps } from './Portfolio.types';
 
 const Grid: FC<PortfolioGridProps> = ({ handleClick, items, label }): JSX.Element => {
 
-	if(!items && items.length === 0) {
+	if (items.length === 0) {
 		return null;
 	}
 

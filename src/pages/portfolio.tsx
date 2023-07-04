@@ -85,7 +85,8 @@ export default function Portfolio(): JSX.Element {
 	};
 
 	const currentItems = items && items.filter((item) => item.status === 'current');
-	const realisedItems = items && items.filter((item) => item.status === 'realised');
+	const realisedItems =
+		items && items.length > 0 && items.filter((item) => item.status === 'realised');
 
 	return (
 		<>
@@ -98,16 +99,9 @@ export default function Portfolio(): JSX.Element {
 					<Aside />
 					<StyledArticle>
 						<ArticleHeader
-							eyebrow="Our investments, our passions"
+							eyebrow="Our Investments | Our Passion"
 							title="Investment Portfolio"
 						/>
-						<Paragraph lead>
-							Welcome to Blank Canvas Capital, where we fuel innovation and empower
-							entrepreneurs to turn their visions into reality. As a leading venture
-							capitalist firm, we specialize in identifying promising startups with
-							exceptional potential and providing them
-							with the necessary resources to flourish.
-						</Paragraph>
 						<Filters
 							active={active}
 							filterPrivateEquity={filterPrivateEquity}

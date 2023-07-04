@@ -8,7 +8,6 @@
 
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { Container } from '@components/Container';
 import { Hero } from '@components/Hero';
 import { Paragraph } from '@components/Paragraph';
@@ -16,6 +15,7 @@ import {
 	StyledGrid,
 	StyledArticle,
 } from '../shared/content.styled';
+import { UnorderedList } from '@components/Investments/Investments.styled';
 import useSWR from 'swr';
 import fetcher from '@lib/fetcher';
 import { SingleTeamProps } from '@components/TeamGrid/TeamGrid.types';
@@ -34,7 +34,7 @@ export default function Team(): JSX.Element {
 	return (
 		<>
 			<NextSeo
-				title="Team"
+				title="Our Team"
 			/>
 			<Hero image="/hero-team-formatted-optimised.jpg" label="Three Men Walking Up Stairs" />
 			<Container size="1440px">
@@ -42,34 +42,32 @@ export default function Team(): JSX.Element {
 					<Aside />
 					<StyledArticle>
 						<ArticleHeader
-							eyebrow="The people behind the investments"
+							eyebrow="The People Behind The Investments"
 							title="Our Team"
 						/>
 						<Paragraph lead>
-							Welcome to Blank Canvas Capital, where we fuel innovation and empower
-							entrepreneurs to turn their visions into reality. As a leading venture
-							capitalist firm, we specialize in identifying promising startups with
-							exceptional potential and providing them with the
-							necessary resources to flourish.
+							Dynamic, collaborative, and results-driven team with a history of delivering exceptional returns.
 						</Paragraph>
 						<Paragraph>
-							At <strong>Blank Canvas Capital</strong>, our mission is to drive
-							positive change by investing in groundbreaking ideas and visionary
-							entrepreneurs. We believe in the power of innovation to transform
-							industries and create a better future. We strive to support and
-							guide entrepreneurs through their journey, offering not only
-							financial backing but also strategic guidance and a
-							vast network of industry connections.
+							Our team is comprised of a well networked group of individuals who bring a
+							range of investment expertise and experience to the table.
+							We pride ourselves on our collaborative and partnership-oriented culture,
+							which is reflected in the way we work with each other and with our portfolio companies.
+							With our extensive deal-making and deal running experience across various sectors,
+							we are confident that we have the knowledge and expertise to identify and execute
+							on high-value investment opportunities.
 						</Paragraph>
-						<Paragraph>
-							Our portfolio comprises a diverse range of companies,&nbsp;
-							<Link href="/portfolio">each with a unique vision</Link> and
-							disruptive potential.
-							From early-stage startups to established enterprises,
-							we invest in companies at various growth stages.
-							We take pride in the success stories of our portfolio
-							companies and the value they create in their respective industries.
-						</Paragraph>
+						<SubHeading heading="What We Do" />
+						<UnorderedList>
+							<li>Origination of new investment opportunities</li>
+							<li>Conducting financial, taxation and commercial due diligence</li>
+							<li>Structuring of transactions</li>
+							<li>Financial analysis of portfolio companies</li>
+							<li>Investor relations with debt and equity funders</li>
+							<li>Fund raising activities</li>
+							<li>Serving as directors on portfolio companies’ boards</li>
+							<li>and assisting with strategic opportunities and corporate finance activity</li>
+						</UnorderedList>
 						<SubHeading heading="Investment Team" />
 						{team && <TeamGrid team={team} />}
 					</StyledArticle>

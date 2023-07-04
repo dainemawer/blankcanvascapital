@@ -37,60 +37,43 @@ export default function AboutUs(): JSX.Element {
 					<Aside />
 					<StyledArticle>
 						<ArticleHeader
-							eyebrow="Incredible investments, incredible people"
+							eyebrow="Unleashing Potential | Creating Value | Partnering for Exceptional Returns"
 							title="Our Investment Mission"
 						/>
 						<Paragraph lead>
-							Welcome to Blank Canvas Capital, where we fuel innovation
-							and empower entrepreneurs to turn their visions into reality.
-							As a leading venture capitalist firm, we specialize in identifying
-							promising startups with exceptional
-							potential and providing them with the necessary resources to flourish.
+							Welcome to Blank Canvas Capital, a value-adding investment firm dedicated to supporting
+							outstanding entrepreneurs and business owners in growing successful businesses.
+							We provide capital, expertise, deep strategic insights, and a vast network of
+							industry connections, coupled with a different way of thinking, to help our
+							investee businesses achieve their full potential and achieve exceptional returns for our investors.
 						</Paragraph>
 						<Paragraph>
-							At <strong>Blank Canvas Capital</strong>, our mission is to
-							drive positive change by investing in groundbreaking ideas
-							and visionary entrepreneurs. We believe in the power of
-							innovation to transform industries and create a better future.
-							We strive to support and guide entrepreneurs through their journey,
-							offering not only financial backing but also strategic
-							guidance and a vast network of industry connections.
+							Blank Canvas Capital is a forward-thinking investment firm with a difference.
+							We believe in taking a flexible and adaptive approach to investments,
+							free from the restrictions of traditional funds. Our experienced team combines years of
+							expertise, established business networks, lateral thinking abilities, and an unwavering
+							dedication to our ultimate goal: rapid business growth and value creation for our partners and investors.
 						</Paragraph>
 						<Paragraph>
-							Our portfolio comprises a diverse range of companies,
-							<Link href="/portfolio">each with a unique vision</Link> and
-							disruptive potential.From early-stage startups to established
-							enterprises, we invest in companies at various growth stages.
-							We take pride in the success stories of our portfolio companies
-							and the value they create in their respective industries.
-						</Paragraph>
-						<Paragraph>
-							Whether you&apos;re an entrepreneur seeking investment or an
-							industry expert interested in collaboration, we welcome
-							the opportunity to connect. Feel free to reach out to our
-							team to explore how we can work together to
-							unlock opportunities and drive innovation.
+							Our investors represent some of the most respected pools of capital on the continent.
+							This not only demonstrates their confidence in our investment strategies but also enables us to
+							leverage their resources and networks to the benefit of our portfolio companies.
 						</Paragraph>
 						<SubHeading heading="What Sets Us Apart" />
 						<Paragraph>
-							Our portfolio comprises a diverse range of companies, each with a unique
-							vision and disruptive potential. From early-stage startups
-							to established enterprises, we invest in companies at
-							various growth stages. We take pride in the success stories of
-							<Link href="/portfolio">our portfolio</Link> companies and the
-							value they create in their respective industries.
-							Whether you&apos;re an entrepreneur seeking investment or
-							an industry expert interested in collaboration,
-							we welcome the opportunity to connect.
+							Values-Driven Partnerships We prioritize backing entrepreneurs
+							who share our core values of integrity, ambition, and innovation.
+							We believe that people are the key to long-term success, and we focus on partnering with individuals
+							who embody these qualities. Flexible Investment Approach We offer a flexible investment approach
+							that allows us to consider opportunities of various sizes, industries, and capital structures.
+							We are quick to act, mobilizing significant amounts of capital efficiently,
+							and engaging fully in each investment opportunity.
 						</Paragraph>
-						<Quote
-							quote="I don&apos;t look to jump over seven-foot bars;
-							I look around for one-foot bars that I can step over."
-							cite="Warren Buffet, The Warren Buffet Way"
-						/>
 						<Paragraph>
-							Feel free to reach out to our team to explore
-							how we can work together to unlock opportunities and drive innovation.
+							Value-Adding Support Our partnership extends beyond providing capital.
+							We actively collaborate with the management teams of our portfolio companies, offering guidance,
+							support, and strategic insights. We leverage our expertise and network
+							to add significant value at every stage of the business journey.
 						</Paragraph>
 						<StyledBox align="flex-start">
 							<Button href="/investment-approach">Our Investment Approach</Button>
