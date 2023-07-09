@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { colors } from '@theme/colors';
 import { breakpoints } from '@theme/breakpoints';
 import { fonts } from '@theme/fonts';
+import { motion } from 'framer-motion';
 
 const StyledPortfolioFilters = styled.div`
 	align-items: center;
@@ -70,10 +71,22 @@ const StyledPortfolioGridHeading = styled.h4`
 	}
 `;
 
-const StyledPortfolioGrid = styled.section`
+const StyledPortfolioGridWrap = styled(motion.div)`
 	display: grid;
 	grid-gap: 1.625rem;
 	grid-template-columns: 1fr;
+
+	${breakpoints.xs} {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	${breakpoints.lg} {
+		grid-gap: 2.25rem;
+		grid-template-columns: repeat(3, 270px);
+	}
+`;
+
+const StyledPortfolioGrid = styled.section`
 	margin-top: 4.875rem;
 	padding-bottom: 2rem;
 	position: relative;
@@ -83,8 +96,6 @@ const StyledPortfolioGrid = styled.section`
 	}
 
 	${breakpoints.lg} {
-		grid-gap: 2.25rem;
-		grid-template-columns: repeat(3, 270px);
 		margin-top: 4.875rem;
 		padding-bottom: 4rem;
 	}
@@ -245,5 +256,6 @@ export {
 	StyledModalDescription,
 	StyledModalList,
 	StyledModalSection,
-	StyledModalFigure
+	StyledModalFigure,
+	StyledPortfolioGridWrap
 };

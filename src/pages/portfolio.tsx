@@ -1,3 +1,5 @@
+"use client"
+
 /*
  * Home
  *
@@ -6,12 +8,11 @@
  * @returns {JSX.Element}
 */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
 import { Container } from '@components/Container';
 import { Hero } from '@components/Hero';
-import { Paragraph } from '@components/Paragraph';
 import { CallToAction } from '@components/CallToAction';
 import {
 	StyledGrid,
@@ -21,18 +22,20 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import fetcher from '@lib/fetcher';
 import useSWR from 'swr';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export type PortfolioProps = {
 	category?: string;
 	date?: string;
 	description?: string;
 	hero?: string;
-	id: string;
+	id: number;
 	logo?: string;
 	region?: string;
 	sector?: string;
 	status?: string;
 	title?: string;
+	url?: string;
 }
 
 const ArticleHeader = dynamic(() => import('@components/ArticleHeader'), { ssr: false });
@@ -41,20 +44,33 @@ const Filters = dynamic(() => import('@components/Portfolio/Filters'), { ssr: fa
 const Grid = dynamic(() => import('@components/Portfolio/Grid'), { ssr: false });
 const PortfolioModal = dynamic(() => import('@components/Portfolio/Modal'), { ssr: false });
 
+const ContentVariants = {
+	expanded: () => ({
+		width: "150px",
+		transition: {
+			when: "afterChildren",
+			duration: 2
+		}
+	}),
+	collapsed: () => ({
+		width: "50px",
+		transition: {
+			when: "afterChildren",
+			duration: 2
+		}
+	})
+};
+
 export default function Portfolio(): JSX.Element {
 	const { data, error } = useSWR('/api/portfolio', fetcher);
 	const portfolio = data as PortfolioProps[];
 	const [items, setItems] = useState<PortfolioProps[]>([]);
 	const [active, setActive] = useState('Private Equity');
-
-	useEffect(() => {
-		portfolio && filterPrivateEquity();
-	}, [portfolio])
-
+	const [mounted, setMounted] = useState(false);
 
 	const [opened, { close, open }] = useDisclosure(false);
 	const [modalContent, setModalContent] = useState<PortfolioProps>({
-		id: '0',
+		id: 0,
 		title: '',
 		hero: '',
 		logo: '',
@@ -65,28 +81,27 @@ export default function Portfolio(): JSX.Element {
 		status: ''
 	});
 
-	if (error) return <div>Failed to load...</div>
+	useEffect(() => {
+		setMounted(true);
+		portfolio && setItems(portfolio.filter(item => item.category === 'Private Equity'));
+	}, [portfolio]);
+
+	const filterPrivateEquity = () => {
+		setItems(portfolio.filter(item => item.category === 'Private Equity'));
+		setActive('Private Equity');
+	};
+
+	const filterRealEstate = () => {
+		setItems(portfolio.filter(item => item.category === 'Real Estate'));
+		setActive('Real Estate');
+	};
 
 	const handleClick = (item: PortfolioProps) => {
 		open();
 		setModalContent(item);
-	}
-
-	const filterPrivateEquity = () => {
-		const filtered = portfolio.filter((item) => item.category === 'Private Equity');
-		setActive('Private Equity')
-		setItems(filtered);
 	};
 
-	const filterRealEstate = () => {
-		const filtered = portfolio.filter((item) => item.category === 'Real Estate');
-		setActive('Real Estate')
-		setItems(filtered);
-	};
-
-	const currentItems = items && items.filter((item) => item.status === 'current');
-	const realisedItems =
-		items && items.length > 0 && items.filter((item) => item.status === 'realised');
+	if (error) return <div>Failed to load...</div>
 
 	return (
 		<>
@@ -107,16 +122,17 @@ export default function Portfolio(): JSX.Element {
 							filterPrivateEquity={filterPrivateEquity}
 							filterRealEstate={filterRealEstate}
 						/>
-						{currentItems && (
-							<Grid handleClick={handleClick} items={currentItems} label="Current" />
-						)}
-						{realisedItems  && (
-							<Grid
-								handleClick={handleClick}
-								items={realisedItems}
-								label="Realised"
-							/>
-						)}
+						{items && <Grid
+							handleClick={handleClick}
+							items={items.filter(item => item.status === 'current')}
+							label="Current"
+						/>}
+
+						{items && <Grid
+							handleClick={handleClick}
+							items={items.filter(item => item.status === 'realised')}
+							label="Realised"
+						/>}
 					</StyledArticle>
 				</StyledGrid>
 			</Container>
