@@ -9,7 +9,6 @@
     "plugin:typescript-sort-keys/recommended"
   ],
   "rules": {
-    "max-len": ["error", {"code": 140}],
     "sort-destructure-keys/sort-destructure-keys": 2,
     "react/jsx-sort-props": [
       2,

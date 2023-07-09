@@ -29,7 +29,7 @@ export type PortfolioProps = {
 	date?: string;
 	description?: string;
 	hero?: string;
-	id: number;
+	id: string;
 	logo?: string;
 	region?: string;
 	sector?: string;
@@ -70,7 +70,7 @@ export default function Portfolio(): JSX.Element {
 
 	const [opened, { close, open }] = useDisclosure(false);
 	const [modalContent, setModalContent] = useState<PortfolioProps>({
-		id: 0,
+		id: '0',
 		title: '',
 		hero: '',
 		logo: '',

@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { PortfolioProps } from '../../pages/portfolio';
 
 import styled from '@emotion/styled';
+import { fonts } from '@theme/fonts'
 import { colors } from '@theme/colors'
 import { breakpoints } from '@theme/breakpoints'
 
@@ -31,6 +32,14 @@ const StyledArticle = styled.article`
 	padding: 2rem;
 	position: relative;
 	z-index: 10;
+
+	&.is-real-estate {
+		height: 240px;
+
+		${breakpoints.md} {
+			height: 310px;
+		}
+	}
 
 	${breakpoints.md} {
 		height: 270px;
@@ -57,12 +66,21 @@ const StyledFigure = styled.figure`
 	margin: 0;
 `
 
+const StyledTitle = styled.h4`
+	color: ${colors.gold};
+	font-family: ${fonts.primary};
+	font-weight: 600;
+	margin-bottom: 0;
+`;
+
 export const PortfolioCard: FC<PortfolioCard> = ({
 	handleClick,
 	item,
 }): JSX.Element => {
+	const isRealEstate = item.category === 'Real Estate';
+
 	return (
-		<StyledArticle id={item.id} >
+		<StyledArticle className={isRealEstate && 'is-real-estate'} id={item.id} >
 			{item.title && (
 				<StyledFigure>
 					<StyledButton onClick={() => handleClick(item)}>
@@ -74,6 +92,9 @@ export const PortfolioCard: FC<PortfolioCard> = ({
 							src={item.logo}
 							width={214}
 						/>
+						{item.category === 'Real Estate' && (
+							<StyledTitle>{item.title}</StyledTitle>
+						)}
 					</StyledButton>
 				</StyledFigure>
 			)}

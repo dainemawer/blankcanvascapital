@@ -69,18 +69,20 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 							</StyledModalContentHeader>
 						</div>
 						<StyledContent>
-							<StyledModalFigure>
-								{modalContent.logo && (
-									<Image
-										alt={modalContent.title}
-										decoding="async"
-										height={137}
-										loading="lazy"
-										src={modalContent.logo}
-										width={214}
-									/>
-								)}
-							</StyledModalFigure>
+							{modalContent.category !== 'Real Estate' && (
+								<StyledModalFigure>
+									{modalContent.logo && (
+										<Image
+											alt={modalContent.title}
+											decoding="async"
+											height={137}
+											loading="lazy"
+											src={modalContent.logo}
+											width={214}
+										/>
+									)}
+								</StyledModalFigure>
+							)}
 							<StyledModalSection>
 								{modalContent.description && (
 									<StyledModalDescription>
@@ -88,10 +90,14 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 									</StyledModalDescription>
 								)}
 								<StyledModalList>
-									<li><strong>Region: </strong>{modalContent.region}</li>
-									<li><strong>Sector: </strong>{modalContent.sector}</li>
-									<li><strong>Date: </strong>{modalContent.date}</li>
-									<li><strong>Status: </strong>{modalContent.status}</li>
+									{modalContent.region && <li><strong>Region: </strong>{modalContent.region}</li>}
+									{modalContent.sector && <li><strong>Sector: </strong>{modalContent.sector}</li>}
+									{modalContent.date && <li><strong>Date: </strong>{modalContent.date}</li>}
+									{modalContent.status && (
+										<li style={{ textTransform: 'capitalize' }}>
+											<strong>Status: </strong>{modalContent.status}
+										</li>
+									)}
 								</StyledModalList>
 								<StyledButton>Visit Website</StyledButton>
 							</StyledModalSection>
