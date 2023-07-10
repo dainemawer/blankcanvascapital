@@ -8,6 +8,11 @@ export const globalStyles = (
 		<Global styles={css`${emotionNormalize}`} />
 		<Global styles={css`
 
+			:root {
+				--font-work-sans: 'Work Sans', sans-serif;
+				--font-merriweather: 'Merriweather', serif;
+			}
+
 			* {
 				-webkit-font-smoothing: antialiased;
 				-moz-osx-font-smoothing: grayscale;

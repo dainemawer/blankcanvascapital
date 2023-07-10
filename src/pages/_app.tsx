@@ -22,23 +22,8 @@ import SEO from '../next-seo.config';
 import createCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { globalStyles } from '../shared/styles'
-import { Work_Sans, Merriweather } from 'next/font/google';
 import { motion, AnimatePresence } from 'framer-motion'
 import { useDisclosure } from '@mantine/hooks';
-
-const workSans = Work_Sans({
-	weight: ['500', '600', '700', '800'],
-	subsets: ['latin'],
-	display: 'swap',
-	variable: '--font-work-sans',
-});
-
-const merriweather = Merriweather({
-	weight: ['400'],
-	subsets: ['latin'],
-	display: 'swap',
-	variable: '--font-merriweather',
-});
 
 const cache = createCache({ key: 'next' })
 
@@ -76,18 +61,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 		router.events.on("routeChangeComplete", handleRouteDone)
 		router.events.on("routeChangeError", handleRouteDone)
 
-		document.body.classList.add(workSans.variable);
-		document.body.classList.add(merriweather.variable);
-
 		return () => {
 			router.events.off('routeChangeComplete', handleRouteChange)
 			router.events.off('hashChangeComplete', handleRouteChange)
 			router.events.off("routeChangeStart", handleRouteStart)
 			router.events.off("routeChangeComplete", handleRouteDone)
 			router.events.off("routeChangeError", handleRouteDone)
-
-			document.body.classList.remove(workSans.variable)
-			document.body.classList.remove(merriweather.variable)
 		}
 	}, [router.events, close])
 
