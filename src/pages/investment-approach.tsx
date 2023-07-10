@@ -10,11 +10,10 @@ import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
 import { Hero } from '@components/Hero';
 import { Button } from '@components/Button';
-import { Icon } from '@components/Icon';
 import {
 	Paragraph,
 	Wrap,
-	UnorderedList
+	UnorderedListBlock
 } from '@components/Investments/Investments.styled';
 
 const InvestmentSection = dynamic(() => import('@components/Investments/InvestmentSection'));
@@ -108,7 +107,7 @@ export default function InvestmentApproach(): JSX.Element {
 						provide guidance and support. We back management to run the daily
 						operations but play a key role in the strategy of the business, including:
 					</Paragraph>
-					<UnorderedList align="right">
+					<UnorderedListBlock>
 						<li>Director representation on the board</li>
 						<li>Fundraising (debt and equity)</li>
 						<li>Introductions to potential business partners and customers</li>
@@ -117,9 +116,10 @@ export default function InvestmentApproach(): JSX.Element {
 						<li>Assistance with BEE requirements</li>
 						<li>Optimisation of the capital structure</li>
 						<li>Access to key management hires</li>
-						<li>Preparing the business for sale, identifying potential suitors,</li>
+						<li>Preparing the business for sale</li>
+						<li>identifying potential suitors</li>
 						<li>and assisting in the disposal process</li>
-					</UnorderedList>
+					</UnorderedListBlock>
 				</div>
 			</InvestmentSection>
 			<InvestmentSection

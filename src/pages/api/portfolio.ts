@@ -214,7 +214,7 @@ export default function handler(
 				category: 'Private Equity',
 				id: '16',
 				url: 'http://www.sneakerlab.com',
-				title: 'Sneaker Lab',
+				title: 'Sneaker LAB',
 			},
 			{
 				logo: '/logos/teneo.png',

@@ -177,7 +177,7 @@ const StyledModalList = styled.ul`
 	font-size: 0.875rem;
 	line-height: 2;
 	list-style-type: none;
-	margin: 0 0 2rem 0;
+	margin: 0;
 	padding: 0;
 `;
 

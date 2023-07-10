@@ -25,6 +25,8 @@ export default function Home(): JSX.Element {
 	const team = teamData as SingleTeamProps[];
 	const portfolio = portfolioData as PortfolioProps[];
 
+	const filteredPortfolio = portfolio && portfolio.filter((item) => item.title === 'Sneaker LAB' || item.title === 'The Courier Guy' || item.title === 'The Invigilator');
+
 	return (
 		<>
 			<NextSeo
@@ -65,8 +67,8 @@ export default function Home(): JSX.Element {
 				title="Investment Portfolio"
 				variant="investment-portfolio"
 			>
-				{portfolio && portfolio.length > 0 ? (
-					<PortfolioSection portfolio={portfolio} />
+				{filteredPortfolio && filteredPortfolio.length > 0 ? (
+					<PortfolioSection portfolio={filteredPortfolio} />
 				) : (
 					<p>There are no investments to display.</p>
 				)}

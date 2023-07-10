@@ -56,7 +56,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
 const StyledInput = styled.input`
 	border: 0;
 	display: inline-block;
-	font-family: ${fonts.primary};
+	font-family: ${fonts.secondary};
 	font-size: 0.875rem;
 	font-weight: 500;
 	line-height: 1.7;
@@ -82,7 +82,7 @@ const StyledInput = styled.input`
 
 const StyledTextarea = styled.textarea`
 	border: 0;
-	font-family: ${fonts.primary};
+	font-family: ${fonts.secondary};
 	font-size: 0.875rem;
 	font-weight: 500;
 	line-height: 1.7;

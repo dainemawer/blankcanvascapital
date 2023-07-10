@@ -309,7 +309,7 @@ const Paragraph = styled.p<StyledParagraphProps>`
 `
 
 const UnorderedList = styled.ul<StyledContentProps>`
-	font-family: ${fonts.primary};
+	font-family: ${fonts.secondary};
 	font-size: 1.rem;
 	font-weight: 400;
 	line-height: 2;
@@ -337,6 +337,26 @@ const UnorderedList = styled.ul<StyledContentProps>`
 	}
 `;
 
+const UnorderedListBlock = styled.ul`
+	direction: rtl;
+	font-family: ${fonts.secondary};
+	padding-right: 0;
+	max-width: 776px;
+
+	& li {
+		color: ${colors.gold};
+		display: inline-block;
+		font-size: 0.875rem;
+		line-height: 1.7;
+		text-align: right;
+	}
+
+	& li::after {
+		content: "•";
+		margin: 0 0.6rem;
+	}
+`;
+
 export {
 	Header,
 	Container,
@@ -350,5 +370,6 @@ export {
 	SubGridItem,
 	Paragraph,
 	UnorderedList,
+	UnorderedListBlock,
 	Wrap,
 };

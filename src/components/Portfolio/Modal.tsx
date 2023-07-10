@@ -76,7 +76,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 											alt={modalContent.title}
 											decoding="async"
 											height={137}
-											loading="lazy"
+											loading="eager"
 											src={modalContent.logo}
 											width={214}
 										/>
@@ -99,7 +99,14 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 										</li>
 									)}
 								</StyledModalList>
-								<StyledButton>Visit Website</StyledButton>
+								{modalContent.url && (
+									<p style={{ marginTop: '2rem' }}>
+										<a href={modalContent.url} rel="noreferrer" target="_blank">
+											<StyledButton>Visit Website</StyledButton>
+										</a>
+									</p>
+
+								)}
 							</StyledModalSection>
 						</StyledContent>
 					</StyledModalContent>

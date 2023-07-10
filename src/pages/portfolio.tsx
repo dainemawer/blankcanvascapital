@@ -22,7 +22,6 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import fetcher from '@lib/fetcher';
 import useSWR from 'swr';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export type PortfolioProps = {
 	category?: string;
@@ -43,23 +42,6 @@ const Aside = dynamic(() => import('@components/Aside'), { ssr: false });
 const Filters = dynamic(() => import('@components/Portfolio/Filters'), { ssr: false });
 const Grid = dynamic(() => import('@components/Portfolio/Grid'), { ssr: false });
 const PortfolioModal = dynamic(() => import('@components/Portfolio/Modal'), { ssr: false });
-
-const ContentVariants = {
-	expanded: () => ({
-		width: "150px",
-		transition: {
-			when: "afterChildren",
-			duration: 2
-		}
-	}),
-	collapsed: () => ({
-		width: "50px",
-		transition: {
-			when: "afterChildren",
-			duration: 2
-		}
-	})
-};
 
 export default function Portfolio(): JSX.Element {
 	const { data, error } = useSWR('/api/portfolio', fetcher);

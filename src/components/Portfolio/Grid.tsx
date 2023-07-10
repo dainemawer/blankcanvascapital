@@ -6,7 +6,7 @@
  * @returns {JSX.Element}
 */
 
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { StyledPortfolioGrid, StyledPortfolioGridHeading, StyledPortfolioGridWrap } from './Portfolio.styled';
 import { PortfolioCard } from '@components/Cards/PortfolioCard';
 import type { PortfolioGridProps } from './Portfolio.types';
@@ -23,7 +23,7 @@ const Grid: FC<PortfolioGridProps> = ({ handleClick, items, label }): JSX.Elemen
 						<motion.div
 							initial={{ opacity: 0 }}
 							key={item.id}
-							transition={{ duration: 0.25, delay: i * 0.25 }}
+							transition={{ duration: 0.15, delay: i * 0.15 }}
 							viewport={{ once: true }}
 							whileInView={{ opacity: 1 }}
 						>
