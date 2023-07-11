@@ -7,17 +7,29 @@ import { motion } from 'framer-motion';
 const StyledPortfolioFilters = styled.div`
 	align-items: center;
 	display: flex;
-	margin-top: 3.125rem;
+	flex-wrap: wrap;
+
+	${breakpoints.lg} {
+		margin-top: 3.125rem;
+	}
 `;
 
 const StyledPortfolioLabel = styled.span`
+	display: block;
 	font-family: ${fonts.primary};
 	font-size: 1.125rem;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 1.7;
-	margin-right: 1rem;
+	margin: 0 1rem 0.5rem 0;
 	text-transform: uppercase;
+	width: 100%;
+
+	${breakpoints.lg} {
+		display: inline-block;
+		margin-bottom: 0;
+		width: auto;
+	}
 `;
 
 const StyledButton = styled.button`

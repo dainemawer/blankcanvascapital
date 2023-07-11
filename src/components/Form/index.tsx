@@ -44,7 +44,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<StyledInputGroup>
+			<StyledInputGroup className={errors.name && 'input-error'}>
 				<StyledLabel htmlFor="name">
 					<span>Name</span>
 					<StyledInput
@@ -58,7 +58,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 					{errors.name && <>This field is required</>}
 				</StyledErrorMessage>
 			</StyledInputGroup>
-			<StyledInputGroup>
+			<StyledInputGroup className={errors.email && 'input-error'}>
 				<StyledLabel htmlFor="email">
 					<span>Email</span>
 					<StyledInput
@@ -87,11 +87,8 @@ const Form: FC<FormProps> = (): JSX.Element => {
 						{...register("subject", { required: true })}
 					/>
 				</StyledLabel>
-				<StyledErrorMessage>
-					{errors.email && <>This field is required</>}
-				</StyledErrorMessage>
 			</StyledInputGroup>
-			<StyledInputGroup>
+			<StyledInputGroup className={errors.message && 'input-error'}>
 				<StyledLabel htmlFor="message" vertical>
 					<span>Message</span>
 					<StyledTextarea

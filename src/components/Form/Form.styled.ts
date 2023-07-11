@@ -4,23 +4,6 @@ import { fonts } from '@theme/fonts';
 import { breakpoints } from '@theme/breakpoints';
 import { StyledLabelProps } from '../../shared/styles.types';
 
-const StyledInputGroup = styled.div`
-	align-items: center;
-	border: 2px solid ${colors.copper};
-	border-radius: 8px;
-	display: flex;
-	justify-content: flex-start;
-	padding: 0.875rem 1.25rem;
-
-	${breakpoints.md} {
-		padding: 1rem 1.5rem;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: 2rem;
-	}
-`;
-
 const StyledLabel = styled.label<StyledLabelProps>`
 	align-items: ${props => props.vertical ? 'column' : 'center'};
 	display: flex;
@@ -28,6 +11,10 @@ const StyledLabel = styled.label<StyledLabelProps>`
 	font-family: ${fonts.primary};
 	font-style: normal;
 	width: 100%;
+
+	${breakpoints.md} {
+		width: 80%;
+	}
 
 	& > span {
 		${props => props.vertical ?
@@ -44,7 +31,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
 		text-transform: uppercase;
 
 		${breakpoints.md} {
-			font-size: 1.125rem;
+			font-size: 1rem;
 			min-width: 80px;
 			${props => props.vertical ? `margin: 0` : `margin-right: 1.5rem;`};
 			${props => props.vertical ?
@@ -57,14 +44,10 @@ const StyledInput = styled.input`
 	border: 0;
 	display: inline-block;
 	font-family: ${fonts.secondary};
-	font-size: 0.875rem;
+	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.7;
 	width: 100%;
-
-	${breakpoints.md} {
-		font-size: 1.125rem;
-	}
 
 	&:focus {
 		outline: 0;
@@ -83,7 +66,7 @@ const StyledInput = styled.input`
 const StyledTextarea = styled.textarea`
 	border: 0;
 	font-family: ${fonts.secondary};
-	font-size: 0.875rem;
+	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.7;
 	margin-top: 1rem;
@@ -91,7 +74,6 @@ const StyledTextarea = styled.textarea`
 	resize: none;
 
 	${breakpoints.md} {
-		font-size: 1.125rem;
 		margin-top: 1.5rem;
 	}
 
@@ -112,6 +94,33 @@ const StyledErrorMessage = styled.small`
 	color: red;
 	font-family: ${fonts.primary};
 	font-size: 0.75rem;
+`;
+
+const StyledInputGroup = styled.div`
+	align-items: center;
+	border: 2px solid ${colors.copper};
+	border-radius: 8px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.875rem 1.25rem;
+
+	&.input-error {
+		position: relative;
+
+		${StyledErrorMessage} {
+			bottom: -2rem;
+			left: 0;
+			position: absolute;
+		}
+	}
+
+	${breakpoints.md} {
+		padding: 1rem 1.5rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
 `;
 
 export { StyledInputGroup, StyledLabel, StyledInput, StyledTextarea, StyledErrorMessage };

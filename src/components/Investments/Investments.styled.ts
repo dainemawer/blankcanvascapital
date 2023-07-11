@@ -262,7 +262,10 @@ const Wrap = styled.div`
 	flex-direction: column;
 
 	& p:first-child {
-		margin-right: 4rem;
+
+		${breakpoints.md} {
+			margin-right: 4rem;
+		}
 	}
 
 	${breakpoints.sm} {
@@ -338,22 +341,30 @@ const UnorderedList = styled.ul<StyledContentProps>`
 `;
 
 const UnorderedListBlock = styled.ul`
-	direction: rtl;
 	font-family: ${fonts.secondary};
-	padding-right: 0;
-	max-width: 776px;
+	padding-left: 0;
 
 	& li {
 		color: ${colors.gold};
 		display: inline-block;
 		font-size: 0.875rem;
 		line-height: 1.7;
-		text-align: right;
+		text-align: left;
+
+		${breakpoints.md} {
+			text-align: right;
+		}
 	}
 
 	& li::after {
 		content: "•";
 		margin: 0 0.6rem;
+	}
+
+	${breakpoints.md} {
+		direction: rtl;
+		max-width: 776px;
+		padding-right: 0;
 	}
 `;
 

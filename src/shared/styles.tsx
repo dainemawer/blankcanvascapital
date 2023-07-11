@@ -24,6 +24,7 @@ export const globalStyles = (
 			}
 
 			a.button {
+				align-self: flex-start;
 				background-color: ${colors.white};
 				border: 1px solid ${colors.gold};
 				border-radius: 5px;

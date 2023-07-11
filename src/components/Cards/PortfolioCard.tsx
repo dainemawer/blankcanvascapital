@@ -34,7 +34,7 @@ const StyledArticle = styled.article`
 	z-index: 10;
 
 	&.is-real-estate {
-		height: 240px;
+		height: 350px;
 
 		${breakpoints.md} {
 			height: 310px;

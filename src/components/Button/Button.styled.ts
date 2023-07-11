@@ -8,6 +8,7 @@ const StyledButton = styled.button`
 	border: 2px solid ${colors.gold};
 	border-radius: 5px;
 	color: ${colors.gold};
+	cursor: pointer;
 	display: inline-block;
 	font-family: ${fonts.primary};
 	font-size: 1rem;
