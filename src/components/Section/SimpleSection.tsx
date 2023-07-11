@@ -42,7 +42,7 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 	title,
 }) => {
 	return (
-		<StyledSection align={align} id={id}>
+		<StyledSection align={align} className="simple" id={id}>
 			<Container size='1290px'>
 				{align === 'left' ? (
 					<StyledSectionGrid align={align}>

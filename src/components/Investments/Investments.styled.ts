@@ -259,6 +259,7 @@ const SubGridItem = styled.article`
 
 const Wrap = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 
 	& p:first-child {
@@ -301,7 +302,7 @@ const Paragraph = styled.p<StyledParagraphProps>`
 		}
 	}
 
-	${breakpoints.sm} {
+	${breakpoints.lg} {
 		font-size: ${props => props.size || '1.125rem'};
 		text-align: ${props => props.align || 'left'};
 	}

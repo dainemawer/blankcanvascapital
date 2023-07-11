@@ -24,6 +24,10 @@ const StyledImage = styled.figure<StyledHeroProps>`
 		max-width: 100%;
 		object-fit: cover;
 
+		${breakpoints.sm} {
+			height: ${props => props.natural ? '375px' : '334px'};
+		}
+
 		${breakpoints.md} {
 			height: ${props => props.natural ? 'auto' : '480px'};
 		}

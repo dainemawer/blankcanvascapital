@@ -110,7 +110,7 @@ const StyledInputGroup = styled.div`
 		${StyledErrorMessage} {
 			bottom: -2rem;
 			left: 0;
-			position: absolute;
+			position: absolute;	
 		}
 	}
 

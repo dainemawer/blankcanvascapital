@@ -214,7 +214,7 @@ const StyledCoverImage = styled.figure`
 		object-fit: cover;
 		width: 1140px;
 
-		${breakpoints.md} {
+		${breakpoints.sm} {
 			height: 400px;
 		}
 	}

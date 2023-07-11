@@ -4,16 +4,6 @@ import { breakpoints } from '@theme/breakpoints';
 import styled from '@emotion/styled';
 import { AlignProps, StyledSectionProps, SubTitleProps } from './Section.types';
 
-const StyledSection = styled.section<StyledSectionProps>`
-	background-color: ${props => props.backgroundColor ? props.backgroundColor : colors.white};
-	margin: 4rem 0;
-	padding:  ${props => props.backgroundColor ? '4rem' : '0'} 0;
-
-	${breakpoints.md} {
-		margin: 8rem 0;
-	}
-`;
-
 const StyledMiniSidebar = styled.div<AlignProps>`
 	height: auto;
 	padding-bottom: 1rem;
@@ -66,7 +56,7 @@ const StyledWrap = styled.div<AlignProps>`
 	display: grid;
 	grid-gap: 1.5rem;
 	grid-template-columns: 1fr;
-	${props => props.align === 'center' && `padding: 0 1.25rem;`};
+	${props => props.align === 'center' && `padding: 0 1.5rem;`};
 
 	${breakpoints.md} {
 		grid-gap: 5rem;
@@ -87,6 +77,11 @@ const StyledFigure = styled.figure`
 		height: calc(501px / 1.5);
 		object-fit: cover;
 		width: 500px;
+
+		${breakpoints.sm} {
+			height: 250px;
+			width: 250px;
+		}
 
 		${breakpoints.md} {
 			height: 501px;
@@ -116,11 +111,12 @@ const StyledTitle = styled.h2<AlignProps>`
 	font-family: ${fonts.primary};
 	font-weight: 800;
 	line-height: 1;
-	margin: 0 0 2.5rem 0;
+	margin: 0 0 1.25rem 0;
 	${props => props.align === 'center' && `position: relative`};
 
 	${breakpoints.md} {
 		font-size: 4.5rem;
+		margin: 0 0 2.5rem 0;
 	}
 `;
 
@@ -144,7 +140,7 @@ const StyledSubTitle = styled.h3<SubTitleProps>`
 
 const StyledExcerpt = styled.p<SubTitleProps>`
 	color: #777777;
-	font-size: 1rem;
+	font-size: 0.875rem;
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
 	max-width: 650px;
@@ -320,6 +316,49 @@ const StyledPortfolioOverflowCard = styled.article`
 	${breakpoints.lg} {
 		min-width: 415px;
 		min-height: 520px;
+	}
+`;
+
+const StyledSection = styled.section<StyledSectionProps>`
+	background-color: ${props => props.backgroundColor ? props.backgroundColor : colors.white};
+	margin: 4rem 0;
+	padding:  ${props => props.backgroundColor ? '4rem' : '0'} 0;
+
+	${breakpoints.md} {
+		margin: 8rem 0;
+	}
+
+	&.simple ${StyledWrap} {
+
+		${breakpoints.sm} {
+			align-items: flex-start;
+			grid-template-columns: 0.5fr 1fr;
+		}
+
+		${breakpoints.md} {
+			align-items: center;
+			grid-template-columns: 450px 1fr;
+		}
+	}
+
+	&.simple[id="our-approach"] ${StyledWrap} {
+
+		${breakpoints.md} {
+			grid-template-columns: 1fr 450px;
+		}
+	}
+
+	&.simple[id="our-approach"] ${StyledWrap} ${StyledCardContent} {
+
+		${breakpoints.sm} {
+			grid-column-start: 2;
+			grid-row-start: 1;
+		}
+
+		${breakpoints.md} {
+			grid-column-start: 1;
+			grid-row-start: 1;
+		}
 	}
 `;
 
