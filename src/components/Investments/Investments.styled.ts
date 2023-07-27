@@ -55,7 +55,7 @@ const Title = styled.h3`
 
 	${breakpoints.md} {
 		font-size: 4rem;
-		margin: 0 0 2rem 0;
+		margin: 2rem 0 2rem 0;
 	}
 `;
 
@@ -85,7 +85,7 @@ const IconElement = styled.span<StyledIconProps>`
 `;
 
 const Section = styled.section<StyledSectionProps>`
-	color: ${props => props.bgColor === '#424242' ? colors.white : 'inherit'};
+	color: ${props => props.bgColor === '#292929' ? colors.white : 'inherit'};
 	background-color: ${props => props.bgColor || colors.white};
 	padding: ${props => props.bgColor ? '4rem' : '2.5rem'} 0;
 	position: relative;
@@ -98,12 +98,12 @@ const Section = styled.section<StyledSectionProps>`
 		}
 	}
 
-	& p:not(.eyebrow):not(.intro):not(.figure), & h3, & ul {
+	& p:not(.eyebrow):not(.intro):not(.conclusion):not(.figure), & h3, & ul {
 		color: ${props => props.bgColor === '#424242' ? colors.white : 'inherit'};
 	}
 
 	${breakpoints.md} {
-		padding: ${props => props.bgColor ? '10rem' : '4.5rem'} 0;
+		padding: ${props => props.bgColor ? '10rem' : '6.5rem'} 0;
 	}
 
 `;
@@ -276,7 +276,7 @@ const Wrap = styled.div`
 	}
 `;
 
-const Paragraph = styled.p<StyledParagraphProps>`
+const StyledParagraph = styled.p<StyledParagraphProps>`
 	color: ${props => props.color || colors.black};
 	font-family: ${props => props.font || fonts.secondary};
 	font-size: 1rem;
@@ -314,7 +314,7 @@ const Paragraph = styled.p<StyledParagraphProps>`
 
 const UnorderedList = styled.ul<StyledContentProps>`
 	font-family: ${fonts.secondary};
-	font-size: 1.rem;
+	font-size: 1.125rem;
 	font-weight: 400;
 	line-height: 2;
 	margin: 0;
@@ -343,27 +343,17 @@ const UnorderedList = styled.ul<StyledContentProps>`
 
 const UnorderedListBlock = styled.ul`
 	font-family: ${fonts.secondary};
-	padding-left: 0;
+	padding-left: 1rem;
 
 	& li {
 		color: ${colors.gold};
-		display: inline-block;
 		font-size: 0.875rem;
-		line-height: 1.7;
+		font-weight: 700;
+		line-height: 2.5;
 		text-align: left;
-
-		${breakpoints.md} {
-			text-align: right;
-		}
-	}
-
-	& li::after {
-		content: "•";
-		margin: 0 0.6rem;
 	}
 
 	${breakpoints.md} {
-		direction: rtl;
 		max-width: 776px;
 		padding-right: 0;
 	}
@@ -380,7 +370,7 @@ export {
 	Section,
 	SubGrid,
 	SubGridItem,
-	Paragraph,
+	StyledParagraph,
 	UnorderedList,
 	UnorderedListBlock,
 	Wrap,

@@ -63,9 +63,9 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 		return (
 			<StyledSection align="center" backgroundColor="rgba(230,230,230, 0.3)" id={id}>
 				<Container size='1290px'>
-					<StyledHeader>
+					<StyledHeader align="center">
 						<StyledTitle align="center">
-							<StyledEyebrow align="center">
+							<StyledEyebrow align="center" underline>
 								<StyledIndex align="center">{index}</StyledIndex>
 								{eyebrow}
 							</StyledEyebrow>

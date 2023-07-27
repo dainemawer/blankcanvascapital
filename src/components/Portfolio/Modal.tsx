@@ -24,91 +24,159 @@ import { Modal } from '@mantine/core';
 import type { PortfolioModalProps } from './Portfolio.types';
 
 const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }): JSX.Element => {
+	const isRealEstate: Boolean = modalContent.category === 'Real Estate';
+
 	return (
 		<Modal.Root
 			className="portfolio-modal"
 			onClose={close}
 			opened={opened}
-			size="1140px"
+			size="980px"
 		>
 			<Modal.Overlay />
 			<Modal.Content>
 				<Modal.Body>
-					<StyledModalContent>
+					<StyledModalContent className={isRealEstate && 'real-estate'}>
 						<div>
-							<StyledCoverImage>
-								<Image
-									alt={modalContent.title}
-									decoding="async"
-									height={300}
-									loading="lazy"
-									src={modalContent.hero}
-									width={1140}
-								/>
-								<StyledCloseButton onClick={() => close()}>
-									<svg
-										fill="none"
-										height="18"
-										viewBox="0 0 24 24"
-										width="18"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											d="M8 8V2M8 8H2M8 8L1 1M8 16V22M8 16H2M8 16L1 23M16
-												8H22M16 8V2M16 8L23 1M16 16H22M16 16V22M16 16L23 23"
-											stroke="white"
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											strokeWidth="1.5"
-										/>
-									</svg>
-								</StyledCloseButton>
-							</StyledCoverImage>
-							<StyledModalContentHeader>
-								{modalContent.title && <h3>{modalContent.title}</h3>}
-							</StyledModalContentHeader>
-						</div>
-						<StyledContent>
-							{modalContent.category !== 'Real Estate' && (
-								<StyledModalFigure>
-									{modalContent.logo && (
+							{isRealEstate && (
+								<>
+									<StyledCloseButton onClick={() => close()}>
+										<svg
+											fill="none"
+											height="18"
+											viewBox="0 0 24 24"
+											width="18"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												d="M8 8V2M8 8H2M8 8L1 1M8 16V22M8 16H2M8 16L1 23M16
+													8H22M16 8V2M16 8L23 1M16 16H22M16 16V22M16 16L23 23"
+												stroke="white"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth="1.5"
+											/>
+										</svg>
+									</StyledCloseButton>
+									<StyledContent>
+										<StyledModalFigure>
+											{modalContent.logo && (
+												<Image
+													alt={modalContent.title}
+													decoding="async"
+													height={137}
+													loading="eager"
+													src={modalContent.logo}
+													width={214}
+												/>
+											)}
+											{modalContent.url && (
+												<p style={{display: 'flex', justifyContent: 'center' }}>
+													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
+												</p>
+											)}
+										</StyledModalFigure>
+										<StyledModalSection>
+											<StyledModalContentHeader>
+												{modalContent.title && <h3>{modalContent.title}</h3>}
+											</StyledModalContentHeader>
+											{modalContent.description && (
+												<StyledModalDescription>
+													{modalContent.description}
+												</StyledModalDescription>
+											)}
+											<StyledModalList>
+												{modalContent.region && <li><strong>Region: </strong>{modalContent.region}</li>}
+												{modalContent.sector && <li><strong>Sector: </strong>{modalContent.sector}</li>}
+												{modalContent.date && <li><strong>Date: </strong>{modalContent.date}</li>}
+												{modalContent.status && (
+													<li style={{ textTransform: 'capitalize' }}>
+														<strong>Status: </strong>{modalContent.status}
+													</li>
+												)}
+											</StyledModalList>
+										</StyledModalSection>
+									</StyledContent>
+								</>
+							)}
+							{!isRealEstate && (
+								<>
+									<StyledCoverImage>
 										<Image
 											alt={modalContent.title}
 											decoding="async"
-											height={137}
-											loading="eager"
-											src={modalContent.logo}
-											width={214}
+											height={300}
+											loading="lazy"
+											src={modalContent.hero}
+											style={{ objectPosition: modalContent.position }}
+											width={1140}
 										/>
-									)}
-								</StyledModalFigure>
+										<StyledCloseButton onClick={() => close()}>
+											<svg
+												fill="none"
+												height="18"
+												viewBox="0 0 24 24"
+												width="18"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M8 8V2M8 8H2M8 8L1 1M8 16V22M8 16H2M8 16L1 23M16
+														8H22M16 8V2M16 8L23 1M16 16H22M16 16V22M16 16L23 23"
+													stroke="white"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth="1.5"
+												/>
+											</svg>
+										</StyledCloseButton>
+									</StyledCoverImage>
+									<StyledContent>
+										<StyledModalFigure className="private-equity">
+											{modalContent.logo && (
+												<Image
+													alt={modalContent.title}
+													decoding="async"
+													height={137}
+													loading="eager"
+													src={modalContent.logo}
+													width={214}
+												/>
+											)}
+											{modalContent.url && (
+												<p style={{display: 'flex', justifyContent: 'center' }}>
+													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
+												</p>
+											)}
+										</StyledModalFigure>
+										<StyledModalSection>
+											<StyledModalContentHeader>
+												{modalContent.title && <h3>{modalContent.title}</h3>}
+											</StyledModalContentHeader>
+											{modalContent.description && (
+												<StyledModalDescription>
+													{modalContent.description}
+												</StyledModalDescription>
+											)}
+											<StyledModalList>
+												{modalContent.region && <li><strong>Region: </strong>{modalContent.region}</li>}
+												{modalContent.sector && <li><strong>Sector: </strong>{modalContent.sector}</li>}
+												{modalContent.date && <li><strong>Date: </strong>{modalContent.date}</li>}
+												{modalContent.status && (
+													<li style={{ textTransform: 'capitalize' }}>
+														<strong>Status: </strong>{modalContent.status}
+													</li>
+												)}
+											</StyledModalList>
+											{modalContent.url && (
+												<p style={{display: 'flex', justifyContent: 'flex-start' }}>
+													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
+												</p>
+											)}
+										</StyledModalSection>
+									</StyledContent>
+								</>
 							)}
-							<StyledModalSection>
-								{modalContent.description && (
-									<StyledModalDescription>
-										{modalContent.description}
-									</StyledModalDescription>
-								)}
-								<StyledModalList>
-									{modalContent.region && <li><strong>Region: </strong>{modalContent.region}</li>}
-									{modalContent.sector && <li><strong>Sector: </strong>{modalContent.sector}</li>}
-									{modalContent.date && <li><strong>Date: </strong>{modalContent.date}</li>}
-									{modalContent.status && (
-										<li style={{ textTransform: 'capitalize' }}>
-											<strong>Status: </strong>{modalContent.status}
-										</li>
-									)}
-								</StyledModalList>
-								{modalContent.url && (
-									<p style={{ marginTop: '2rem' }}>
-										<a href={modalContent.url} rel="noreferrer" target="_blank">
-											<StyledButton>Visit Website</StyledButton>
-										</a>
-									</p>
-
-								)}
-							</StyledModalSection>
-						</StyledContent>
+						</div>
 					</StyledModalContent>
 				</Modal.Body>
 			</Modal.Content>

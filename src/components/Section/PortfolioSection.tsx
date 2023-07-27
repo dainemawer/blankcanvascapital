@@ -14,10 +14,10 @@ const PortfolioSection = ({ portfolio }) => {
 						<Image
 							alt=""
 							decoding="async"
-							height={137}
+							height={205}
 							loading="lazy"
 							src={investment.logo}
-							width={214}
+							width={321}
 						/>
 					</StyledPortfolioOverflowCard>
 				))}

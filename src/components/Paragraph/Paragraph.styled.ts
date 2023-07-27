@@ -4,17 +4,19 @@ import { breakpoints } from '@theme/breakpoints';
 import { fonts } from '@theme/fonts';
 
 type StyledLeadProps = {
+	color?: string;
 	hasLine?: boolean;
+	maxWidth?: string;
 }
 
 const StyledLead = styled.p<StyledLeadProps>`
-	color: ${colors.dove};
+	color: ${props => props.color === 'gold' ? colors.gold : colors.dove};
 	font-family: ${fonts.secondary};
 	font-size: 1.125rem;
 	font-weight: 400;
 	line-height: 1.7;
 	margin-bottom: 1.75rem;
-	max-width: 920px;
+	${props => props.maxWidth ? props.maxWidth : '970px'};
 	${props => props.hasLine && `padding-bottom: 2rem;`}
 	position: relative;
 

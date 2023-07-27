@@ -30,7 +30,7 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 			{align === 'left' && (
 				<Container align={align} grid={grid} maxWidth={maxWidth}>
 					<IconContainer align={align}>
-						<IconElement bgColor="#424242">
+						<IconElement bgColor="#c5a880">
 							<Icon icon={icon} />
 						</IconElement>
 					</IconContainer>
@@ -57,7 +57,7 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 						<Content align="right">{children}</Content>
 					</div>
 					<IconContainer align="right">
-						<IconElement align="right" bgColor="#C5A880">
+						<IconElement align="right" bgColor="#424242">
 							<Icon icon={icon} />
 						</IconElement>
 					</IconContainer>

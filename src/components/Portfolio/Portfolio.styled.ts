@@ -32,7 +32,7 @@ const StyledPortfolioLabel = styled.span`
 	}
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
 	background-color: ${colors.white};
 	border: 1px solid ${colors.gold};
 	border-radius: 5px;
@@ -57,7 +57,7 @@ const StyledButton = styled.button`
 		color: ${colors.white};
 	}
 
-	& + button {
+	& + a {
 		margin-left: 1rem;
 	}
 `;
@@ -163,24 +163,37 @@ const StyledContent = styled.div`
 
 	${breakpoints.md} {
 		flex-direction: row;
-		padding: 0 2rem 3rem 2rem;
+		padding: 2rem 2rem 3rem 2rem;
 	}
 `;
 
 const StyledModalFigure = styled.figure`
-	display: none;
+	padding-right: 2rem;
+	margin: 0;
+
+	&:not(.private-equity) {
+		align-items: center;
+		display: flex;
+	}
 
 	${breakpoints.md} {
-		display: block;
 		flex-shrink: 0;
 		margin: 0;
 	}
 `
 const StyledModalSection = styled.section`
 
+	& a {
+		display: block;
+
+		${breakpoints.md} {
+			display: none;
+		}
+	}
+
 	${breakpoints.md} {
 		border-left: 2px solid ${colors.copper};
-		padding-left: 3rem;
+		padding-left: 2rem;
 	}
 `;
 
@@ -195,15 +208,19 @@ const StyledModalList = styled.ul`
 
 const StyledModalDescription = styled.p`
 	color: ${colors.mineShaft};
-	font-size: 1rem;
+	font-size: 0.875rem;
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
-	margin: 0 0 2rem 0;
+	margin: 0 0 1rem 0;
 `;
 
 const StyledModalContent = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	&.real-estate {
+		padding-top: 1.5rem;
+	}
 `;
 
 const StyledCoverImage = styled.figure`
@@ -212,28 +229,28 @@ const StyledCoverImage = styled.figure`
 	& > img {
 		height: 200px;
 		object-fit: cover;
+		object-position: bottom;
 		width: 1140px;
 
 		${breakpoints.sm} {
-			height: 400px;
+			height: 350px;
 		}
 	}
 `
 
 const StyledModalContentHeader = styled.header`
 	display: block;
-	padding: 0 1.25rem;
-
-	${breakpoints.md} {
-		margin-left: calc(90px - 1.25rem);
-	}
 
 	& h3 {
 		font-family: ${fonts.primary};
 		font-size: 2rem;
 		font-weight: 700;
 		line-height: 1.25;
-		margin: 2rem 0;
+		margin: 1rem 0;
+
+		${breakpoints.sm} {
+			margin: 0 0 1rem 0;
+		}
 	}
 `;
 
@@ -245,12 +262,12 @@ const StyledCloseButton = styled.button`
 	color: ${colors.white};
 	cursor: pointer;
 	display: flex;
-	height: 50px;
+	height: 40px;
 	justify-content: center;
 	position: absolute;
 	right: 1rem;
 	top: 1rem;
-	width: 50px;
+	width: 40px;
 `;
 
 

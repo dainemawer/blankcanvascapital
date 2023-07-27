@@ -19,20 +19,23 @@ import {
 const Sidebar: FC = (): JSX.Element => {
 	return (
 		<StyledSidebar>
-			<Image
-				alt="Google Maps"
-				height={261}
-				loading="lazy"
-				src="/google-map-new.png"
-				style={{ filter: 'grayscale(100%)' }}
-				width={400}
-			/>
+			<a className="no-underline" href="https://goo.gl/maps/Mj5tpH9Wnd2v5SjG8" rel="noreferrer" target="_blank">
+				<Image
+					alt="Google Maps"
+					height={261}
+					loading="lazy"
+					src="/google-map-new.png"
+					style={{ filter: 'grayscale(100%)' }}
+					width={400}
+				/>
+			</a>
 			<StyledAddress>
 				<StyledAddressHeading>Address</StyledAddressHeading>
 				<StyledAddressLocation>
 					1st Floor<br />
 					30 Melrose Boulevard,<br />
-					Melrose Arch, Johannesburg
+					Melrose Arch, Johannesburg<br />
+					South Africa
 				</StyledAddressLocation>
 				<StyledAddressDetail>
 					<strong>GPS:</strong> 34.21.23 S, 28.32.12 E

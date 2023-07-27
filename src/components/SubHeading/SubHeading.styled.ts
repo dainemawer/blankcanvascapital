@@ -6,7 +6,7 @@ import { fonts } from '@theme/fonts';
 const StyledSubHeading = styled.h2`
 	color: ${colors.black};
 	font-family: ${fonts.primary};
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	font-weight: 600;
 	line-height: 1.7;
 	margin: 1.5rem 0;
@@ -14,7 +14,7 @@ const StyledSubHeading = styled.h2`
 	text-transform: uppercase;
 
 	${breakpoints.md} {
-		margin: 2rem 0;
+		margin: 3.5rem 0;
 	}
 
 	&::after {

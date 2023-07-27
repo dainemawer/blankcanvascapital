@@ -8,12 +8,11 @@
 
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { Container } from '@components/Container';
 import { Hero } from '@components/Hero';
 import { Button } from '@components/Button';
 import { Paragraph } from '@components/Paragraph';
-import { Quote } from '@components/Quote';
+import { Heading } from '@components/Heading';
 
 import {
 	StyledGrid,
@@ -31,7 +30,7 @@ export default function AboutUs(): JSX.Element {
 			<NextSeo
 				title="About Us"
 			/>
-			<Hero image="/hero-about-formatted-optimized.jpg" label="Elevator in Department Store"/>
+			<Hero image="/hero-about-optimized.jpg" label="Elevator in Department Store"/>
 			<Container size="1440px">
 				<StyledGrid>
 					<Aside />
@@ -40,7 +39,7 @@ export default function AboutUs(): JSX.Element {
 							eyebrow="Unleashing Potential | Creating Value | Partnering for Exceptional Returns"
 							title="Our Investment Mission"
 						/>
-						<Paragraph lead>
+						<Paragraph color="gold" maxWidth="100%" lead>
 							Welcome to Blank Canvas Capital, a value-adding investment firm dedicated to supporting
 							outstanding entrepreneurs and business owners in growing successful businesses.
 							We provide capital, expertise, deep strategic insights, and a vast network of
@@ -60,20 +59,21 @@ export default function AboutUs(): JSX.Element {
 							leverage their resources and networks to the benefit of our portfolio companies.
 						</Paragraph>
 						<SubHeading heading="What Sets Us Apart" />
+						<Heading as="h4">Value-Driven Partnerships</Heading>
 						<Paragraph>
-							Values-Driven Partnerships We prioritize backing entrepreneurs
-							who share our core values of integrity, ambition, and innovation.
+							We prioritize backing entrepreneurs who share our core values of integrity, ambition, and innovation.
 							We believe that people are the key to long-term success, and we focus on partnering with individuals
-							who embody these qualities. Flexible Investment Approach We offer a flexible investment approach
-							that allows us to consider opportunities of various sizes, industries, and capital structures.
-							We are quick to act, mobilizing significant amounts of capital efficiently,
-							and engaging fully in each investment opportunity.
+							who embody these qualities.
 						</Paragraph>
+						<Heading as="h4">Flexible Investment Approach</Heading>
 						<Paragraph>
-							Value-Adding Support Our partnership extends beyond providing capital.
-							We actively collaborate with the management teams of our portfolio companies, offering guidance,
-							support, and strategic insights. We leverage our expertise and network
-							to add significant value at every stage of the business journey.
+							We offer a flexible investment approach that allows us to consider opportunities of various sizes, industries, and capital structures.
+							We are quick to act, mobilizing significant amounts of capital efficiently, and engaging fully in each investment opportunity.
+						</Paragraph>
+						<Heading as="h4">Value-Adding Support</Heading>
+						<Paragraph>
+							Our partnership extends beyond providing capital. We actively collaborate with the management teams of our portfolio companies, offering guidance,
+							support, and strategic insights. We leverage our expertise and network to add significant value at every stage of the business journey.
 						</Paragraph>
 						<StyledBox align="flex-start">
 							<Button href="/investment-approach">Our Investment Approach</Button>

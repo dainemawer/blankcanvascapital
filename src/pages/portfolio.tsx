@@ -13,7 +13,6 @@ import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
 import { Container } from '@components/Container';
 import { Hero } from '@components/Hero';
-import { CallToAction } from '@components/CallToAction';
 import {
 	StyledGrid,
 	StyledArticle,
@@ -30,6 +29,7 @@ export type PortfolioProps = {
 	hero?: string;
 	id: string;
 	logo?: string;
+	position?: string;
 	region?: string;
 	sector?: string;
 	status?: string;
@@ -118,17 +118,6 @@ export default function Portfolio(): JSX.Element {
 					</StyledArticle>
 				</StyledGrid>
 			</Container>
-			<CallToAction
-				description="Welcome to Blank Canvas Capital, where
-					we fuel innovation and empower entrepreneurs to turn their
-					visions into reality. As a leading venture capitalist
-					firm, we specialize in identifying promising startups with
-					"
-				buttonLink="/investment-approach"
-				buttonText="Our Investment Approach"
-				eyebrow="Learn more about how we do investments"
-				title="Interested in Our Investment Approach?"
-			/>
 			<PortfolioModal close={close} modalContent={modalContent} opened={opened} />
 		</>
 	)

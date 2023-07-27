@@ -15,7 +15,7 @@ import styled from '@emotion/styled';
 const StyledContent = styled.div`
 	bottom: 0;
 	box-sizing: border-box;
-	align-items: flex-start;
+	align-items: center;
 	color: #fff;
 	display: flex;
 	flex-direction: column;
@@ -28,7 +28,6 @@ const StyledContent = styled.div`
 	z-index: 50;
 
 	${breakpoints.sm} {
-		align-items: center;
 		padding: 3rem;
 	}
 
@@ -36,15 +35,10 @@ const StyledContent = styled.div`
 		padding: 2rem;
 	}
 
-	& img {
-		height: 111px;
+	& img:not(.horizontal-logo) {
+		height: 222px;
 		object-fit: contain;
-		width: 102px;
-
-		${breakpoints.sm} {
-			height: 222px;
-			width: 204px;
-		}
+		width: 204px;
 
 		${breakpoints.lg} {
 			height: 333px;
@@ -70,6 +64,7 @@ const StyledContentWrap = styled.div`
 `;
 
 const StyledHeroTitle = styled.h1`
+	display: none;
 	font-size: 1.5rem;
 	font-family: ${fonts.primary};
 	font-weight: 700;
@@ -77,6 +72,7 @@ const StyledHeroTitle = styled.h1`
 	text-align: left;
 
 	${breakpoints.sm} {
+		display: block;
 		font-size: 2rem;
 	}
 
@@ -86,6 +82,7 @@ const StyledHeroTitle = styled.h1`
 `;
 
 const StyledHeroSubtitle = styled.p`
+	display: none;
 	font-size: 1.125rem;
 	font-family: ${fonts.secondary};
 	font-weight: 400;
@@ -93,6 +90,7 @@ const StyledHeroSubtitle = styled.p`
 	text-align: left;
 
 	${breakpoints.sm} {
+		display: block;
 		font-size: 1.25rem;
 	}
 `;
@@ -101,16 +99,27 @@ interface ContentProps {
 	logo: string;
 	subtitle: string;
 	title: string;
+	variation?: string;
 }
 
-export const Content: FC<ContentProps> = ({ logo, subtitle, title }): JSX.Element => {
+export const Content: FC<ContentProps> = ({ logo, subtitle, title, variation }): JSX.Element => {
 	return (
 		<StyledContent>
-			{logo && <Image alt="Blank Canvas CapitalLogo" height={333} src={logo} width={307} />}
-			<StyledContentWrap>
-				{title && <StyledHeroTitle>{title}</StyledHeroTitle>}
-				{subtitle && <StyledHeroSubtitle>{subtitle}</StyledHeroSubtitle>}
-			</StyledContentWrap>
+			{variation === 'horizontal' && (
+				<Image alt="Blank Canvas Capital Logo" className="horizontal-logo" height={666} src="/blank-canvas-capital-horizontal.png" style={{ filter: 'invert(1)' }} width={614} />
+			)}
+			{variation === 'natural' && (
+				<>
+					{logo && <Image alt="Blank Canvas CapitalLogo" height={333} src={logo} width={307} />}
+					<StyledContentWrap>
+						{title && <StyledHeroTitle>{title}</StyledHeroTitle>}
+						{subtitle && <StyledHeroSubtitle>{subtitle}</StyledHeroSubtitle>}
+					</StyledContentWrap>
+				</>
+			)}
+			{variation === 'bw' && (
+				<Image alt="Blank Canvas Capital Logo" className="horizontal-logo" height={666} src="/blank-canvas-capital-horizontal.png" width={614} />
+			)}
 		</StyledContent>
 	)
 }

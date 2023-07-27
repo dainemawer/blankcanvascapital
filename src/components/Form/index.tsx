@@ -26,8 +26,6 @@ export interface IDataProps {
 	subject: string;
 }
 
-
-
 interface FormProps { }
 
 const Form: FC<FormProps> = (): JSX.Element => {

@@ -66,7 +66,7 @@ const StyledSidebar = styled.aside`
 		position: relative;
 	}
 
-	& a::before {
+	& a:not(.no-underline)::before {
 		background: ${colors.gold};
 		bottom: -4px;
 		content: '';

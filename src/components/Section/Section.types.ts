@@ -1,3 +1,5 @@
+import type { ReactElement } from 'react';
+
 export type ComplexSectionProps = {
 	children: JSX.Element;
 	ctaLabel: string,
@@ -14,6 +16,7 @@ export type ComplexSectionProps = {
 
 export type SimpleSectionProps = {
 	align: 'left' | 'right' | 'center';
+	backgroundColor?: string;
 	ctaLabel: string;
 	ctaLink: string;
 	excerpt?: string;
@@ -21,7 +24,7 @@ export type SimpleSectionProps = {
 	id: string;
 	image: string;
 	index: string;
-	subTitle: string;
+	subTitle: string | ReactElement;
 	title: string;
 }
 
@@ -37,4 +40,9 @@ export type SubTitleProps = {
 export type StyledSectionProps = {
 	align?: 'left' | 'right' | 'center' | 'noalign';
 	backgroundColor?: string;
+}
+
+export type EyebrowProps = {
+	align?: 'left' | 'right' | 'center' | 'noalign';
+	underline?: boolean;
 }

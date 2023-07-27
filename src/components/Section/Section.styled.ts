@@ -2,7 +2,7 @@ import { colors } from '@theme/colors';
 import { fonts } from '@theme/fonts';
 import { breakpoints } from '@theme/breakpoints';
 import styled from '@emotion/styled';
-import { AlignProps, StyledSectionProps, SubTitleProps } from './Section.types';
+import { AlignProps, StyledSectionProps, SubTitleProps, EyebrowProps } from './Section.types';
 
 const StyledMiniSidebar = styled.div<AlignProps>`
 	height: auto;
@@ -47,7 +47,7 @@ const StyledHeader = styled.header<AlignProps>`
 	text-align: left;
 
 	${breakpoints.md} {
-		text-align: ${props => props.align === 'left' ? 'left' : 'right'};
+		text-align: ${props => props.align};
 	}
 `;
 
@@ -63,7 +63,7 @@ const StyledWrap = styled.div<AlignProps>`
 		${props => props.align === 'left' && `grid-template-columns: 450px 1fr`};
 		${props => props.align === 'right' && `grid-template-columns: 1fr 450px`};
 		${props => props.align === 'noalign' && `grid-template-columns: 1fr`};
-		${props => props.align === 'center' && `grid-template-columns: 1fr 2fr`};
+		${props => props.align === 'center' && `grid-template-columns: 1fr 5fr`};
 		${props => props.align === 'center' && `margin-left: 9rem;`};
 		${props => props.align === 'center' && `padding: 0`};
 	}
@@ -109,14 +109,16 @@ const StyledTitle = styled.h2<AlignProps>`
 	${props => props.align === 'center' && `display: inline-block`};
 	font-size: 2.5rem;
 	font-family: ${fonts.primary};
-	font-weight: 800;
+	font-weight: 700;
 	line-height: 1;
 	margin: 0 0 1.25rem 0;
 	${props => props.align === 'center' && `position: relative`};
+	width: 100%;
 
 	${breakpoints.md} {
 		font-size: 4.5rem;
 		margin: 0 0 2.5rem 0;
+		width: auto;
 	}
 `;
 
@@ -130,11 +132,11 @@ const StyledSubTitle = styled.h3<SubTitleProps>`
 	max-width: ${props => props.maxWidth ? props.maxWidth : '100%'};
 
 	${breakpoints.md} {
-		font-size: ${props => props.align === 'center' ? '2rem' : '2.5rem'};
+		font-size: ${props => props.align === 'center' ? '1.5rem' : '1.75rem'};
 	}
 
 	${breakpoints.lg} {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 `;
 
@@ -143,7 +145,7 @@ const StyledExcerpt = styled.p<SubTitleProps>`
 	font-size: 0.875rem;
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
-	max-width: 650px;
+	max-width: 680px;
 
 	${breakpoints.md} {
 		font-size: ${props => props.align === 'center' ? '1.125rem' : '1.25rem'};
@@ -176,8 +178,11 @@ const StyledIndex = styled.span<AlignProps>`
 	}
 `;
 
-const StyledEyebrow = styled.span<AlignProps>`
+const StyledEyebrow = styled.span<EyebrowProps>`
 	bottom: 0.5rem;
+	${props => props.underline && `border-bottom: 2px solid ${colors.gold}`};
+	${props => props.underline && `margin-bottom: 1rem`};
+	${props => props.underline && `padding-bottom: 1rem`};
 	color: ${colors.gold};
 	display: block;
 	font-size: 1rem;
@@ -199,7 +204,7 @@ const StyledEyebrow = styled.span<AlignProps>`
 			transform: none;
 			top: -18px;
 			left: 0;
-			text-align: left;
+			text-align: center;
 		`};
 	}
 `;

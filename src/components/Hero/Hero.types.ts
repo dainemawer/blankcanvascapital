@@ -4,4 +4,5 @@ export interface HeroProps {
 	logo?: string;
 	subtitle?: string;
 	title?: string;
+	variation?: 'horizontal' | 'bw' | 'natural';
 }

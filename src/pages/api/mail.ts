@@ -24,7 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 							"Name": "Daine Mawer"
 						}
 					],
-					"Subject": "New Submission on dainemawer.com",
+					"Subject": "New Submission on blankcanvascapital.co.za",
 					"TextPart":
 						"You have a new submission on Blank Canvas Capital. " +
 						"Here are the details:" +
@@ -34,7 +34,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 						"</h3><p>Here are the details:</p><p>" +
 						"Name: " + name + "</p><p>Email: " +
 						from + "</p><p>Message: " + message + "</p>",
-					"CustomID": "AppGettingStartedTest"
 				}
 			]
 		})

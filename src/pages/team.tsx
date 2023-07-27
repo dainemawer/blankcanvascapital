@@ -46,7 +46,7 @@ export default function Team(): JSX.Element {
 							title="Our Team"
 						/>
 						<Paragraph lead>
-							Dynamic, collaborative, and results-driven team with a history of delivering exceptional returns.
+							Dynamic, collaborative, and results-driven team with a history of delivering exceptional returns
 						</Paragraph>
 						<Paragraph>
 							Our team is comprised of a well networked group of individuals who bring a

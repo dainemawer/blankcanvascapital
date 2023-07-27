@@ -25,7 +25,15 @@ export default function Home(): JSX.Element {
 	const team = teamData as SingleTeamProps[];
 	const portfolio = portfolioData as PortfolioProps[];
 
-	const filteredPortfolio = portfolio && portfolio.filter((item) => item.title === 'Sneaker LAB' || item.title === 'The Courier Guy' || item.title === 'The Invigilator');
+	const filteredPortfolio = portfolio && portfolio.filter((item) => item.title === 'The Courier Guy' ||  item.title === 'Vantage Data Centers' || item.title === 'Teneo' || item.title === 'Vumacam');
+
+	const subTitle = (
+		<>
+			<span style={{ display: 'block' }}>Unleashing Potential |</span>
+			<span style={{ display: 'block' }}>Creating Value |</span>
+			<span style={{ display: 'block' }}>Partnering for Exceptional Returns</span>
+		</>
+	)
 
 	return (
 		<>
@@ -40,6 +48,7 @@ export default function Home(): JSX.Element {
 				label="Aeroplane flying over buildings"
 				logo="/bcc-logo.png"
 				title="Every investment starts with an idea."
+				variation="natural"
 			/>
 			<SimpleSection
 				excerpt="Blank Canvas Capital is a value-adding investment firm dedicated
@@ -55,7 +64,7 @@ export default function Home(): JSX.Element {
 				id="about-us"
 				image="/about-us.jpg"
 				index="01"
-				subTitle="Unleashing Potential | Creating Value | Partnering for Exceptional Returns"
+				subTitle={subTitle}
 				title="About Us"
 			/>
 			<ComplexSection
@@ -98,7 +107,8 @@ export default function Home(): JSX.Element {
 				We engage fully in each opportunity, from initial investment to exit, and
 				prioritize long-term partnerships with our investee businesses."
 				align="right"
-				ctaLabel="Our Business"
+				backgroundColor="rgba(230,230,230, 0.3)"
+				ctaLabel="Investment Approach"
 				ctaLink="/investment-approach"
 				eyebrow="Our Investment Approach"
 				id="our-approach"

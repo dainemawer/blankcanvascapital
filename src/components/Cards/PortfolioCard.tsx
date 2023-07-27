@@ -29,12 +29,12 @@ const StyledArticle = styled.article`
 	display: flex;
 	height: 210px;
 	justify-content: center;
-	padding: 2rem;
+	padding: 1rem;
 	position: relative;
 	z-index: 10;
 
 	&.is-real-estate {
-		height: 350px;
+		height: 275px;
 
 		${breakpoints.md} {
 			height: 310px;
@@ -51,14 +51,15 @@ const StyledButton = styled.button`
 	border: none;
 	cursor: pointer;
 	display: block;
+	filter: grayscale(100%);
 	height: 100%;
 	padding: 0;
-	transition: opacity 0.3s ease-in-out;
+	transition: filter 0.3s ease-in-out;
 	width: 100%;
 
 	&:hover,
 	&:focus {
-		opacity: 0.4;
+		filter: grayscale(0);
 	}
 `;
 
@@ -70,7 +71,7 @@ const StyledTitle = styled.h4`
 	color: ${colors.gold};
 	font-family: ${fonts.primary};
 	font-weight: 600;
-	margin-bottom: 0;
+	margin: 0.875rem 0 0 0;
 `;
 
 export const PortfolioCard: FC<PortfolioCard> = ({
@@ -87,12 +88,12 @@ export const PortfolioCard: FC<PortfolioCard> = ({
 						<Image
 							alt={item.title}
 							decoding="async"
-							height={137}
+							height={164}
 							loading="lazy"
 							src={item.logo}
-							width={214}
+							width={256}
 						/>
-						{item.category === 'Real Estate' && (
+						{isRealEstate && (
 							<StyledTitle>{item.title}</StyledTitle>
 						)}
 					</StyledButton>

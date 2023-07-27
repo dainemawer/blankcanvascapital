@@ -31,6 +31,7 @@ import {
 
 const SimpleSection: FC<SimpleSectionProps> = ({
 	align,
+	backgroundColor,
 	ctaLabel,
 	ctaLink,
 	excerpt,
@@ -42,7 +43,7 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 	title,
 }) => {
 	return (
-		<StyledSection align={align} className="simple" id={id}>
+		<StyledSection align={align} backgroundColor={backgroundColor} className="simple" id={id}>
 			<Container size='1290px'>
 				{align === 'left' ? (
 					<StyledSectionGrid align={align}>
@@ -76,7 +77,7 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 							</StyledHeader>
 							<StyledWrap align={align}>
 								<StyledCardContent align={align}>
-									<StyledSubTitle maxWidth="655px">{subTitle}</StyledSubTitle>
+									<StyledSubTitle maxWidth="720px">{subTitle}</StyledSubTitle>
 									<StyledExcerpt>{excerpt}</StyledExcerpt>
 									<StyledCTA>
 										<Button href={ctaLink}>{ctaLabel}</Button>

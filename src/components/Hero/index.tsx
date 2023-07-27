@@ -18,7 +18,8 @@ export const Hero: FC<HeroProps> = ({
 	label,
 	logo,
 	subtitle,
-	title
+	title,
+	variation
 }): JSX.Element => {
 	return (
 		<StyledHero>
@@ -40,7 +41,7 @@ export const Hero: FC<HeroProps> = ({
 					</StyledImage>
 				)}
 				{title && (
-					<Content logo={logo} subtitle={subtitle} title={title} />
+					<Content logo={logo} subtitle={subtitle} title={title} variation={variation} />
 				)}
 			</Container>
 		</StyledHero>
