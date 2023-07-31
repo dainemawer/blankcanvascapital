@@ -35,13 +35,12 @@ const Content = styled.div<StyledContentProps>`
 const Eyebrow = styled.p`
 	color: ${colors.gold};
 	font-family: ${fonts.primary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-weight: 600;
 	margin: 0 0 0.875rem 0;
 	text-transform: uppercase;
 
 	${breakpoints.md} {
-		font-size: 1.125rem;
 		margin: 0;
 	}
 `;
@@ -49,13 +48,12 @@ const Eyebrow = styled.p`
 const Title = styled.h3`
 	font-family: ${fonts.primary};
 	font-weight: 700;
-	font-size: 2.5rem;
+	font-size: var(--font-size-xxl);
 	line-height: 1.2;
 	margin: 0 0 1.25rem 0;
 
 	${breakpoints.md} {
-		font-size: 4rem;
-		margin: 2rem 0 2rem 0;
+		margin: 2rem 0;
 	}
 `;
 
@@ -87,7 +85,7 @@ const IconElement = styled.span<StyledIconProps>`
 const Section = styled.section<StyledSectionProps>`
 	color: ${props => props.bgColor === '#292929' ? colors.white : 'inherit'};
 	background-color: ${props => props.bgColor || colors.white};
-	padding: ${props => props.bgColor ? '4rem' : '2.5rem'} 0;
+	padding: ${props => props.bgColor ? '4rem' : '2rem'} 0;
 	position: relative;
 
 	&:nth-child(2) {
@@ -243,7 +241,7 @@ const SubGridItem = styled.article`
 
 	& h5 {
 		font-family: ${fonts.primary};
-		font-size: 1.25rem;
+		font-size: var(--font-size-md);
 		font-weight: 700;
 		margin: 0;
 	}
@@ -251,7 +249,7 @@ const SubGridItem = styled.article`
 	& p {
 		color: ${colors.tin};
 		font-family: ${fonts.secondary};
-		font-size: 0.875rem;
+		font-size: var(--font-size-sm);
 		font-weight: 400;
 		line-height: 1.7;
 	}
@@ -279,7 +277,7 @@ const Wrap = styled.div`
 const StyledParagraph = styled.p<StyledParagraphProps>`
 	color: ${props => props.color || colors.black};
 	font-family: ${props => props.font || fonts.secondary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-weight: ${props => props.weight || '400'};
 	line-height: 1.7;
 	margin-top: 0;
@@ -287,7 +285,7 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
 	text-align: left;
 
 	&.figure {
-		font-size: 3rem;
+		font-size: var(--font-size-xl);
 	}
 
 	&:not(:last-of-type) {
@@ -314,7 +312,7 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
 
 const UnorderedList = styled.ul<StyledContentProps>`
 	font-family: ${fonts.secondary};
-	font-size: 1.125rem;
+	font-size: var(--font-size-base);
 	font-weight: 400;
 	line-height: 2;
 	margin: 0;

@@ -21,7 +21,7 @@ type PortfolioCard = {
 }
 
 const StyledArticle = styled.article`
-	align-items: center;
+	align-items: flex-start;
 	background-color: ${colors.white};
 	border-bottom: 10px solid ${colors.gold};
 	box-shadow: 0px 4px 68px 7px rgba(0, 0, 0, 0.07);
@@ -34,14 +34,15 @@ const StyledArticle = styled.article`
 	z-index: 10;
 
 	&.is-real-estate {
-		height: 275px;
+		height: 250px;
 
 		${breakpoints.md} {
-			height: 310px;
+			height: 270px;
 		}
 	}
 
 	${breakpoints.md} {
+		align-items: center;
 		height: 270px;
 	}
 `;
@@ -52,10 +53,9 @@ const StyledButton = styled.button`
 	cursor: pointer;
 	display: block;
 	filter: grayscale(100%);
-	height: 100%;
+	flex: 1;
 	padding: 0;
 	transition: filter 0.3s ease-in-out;
-	width: 100%;
 
 	&:hover,
 	&:focus {
@@ -63,11 +63,16 @@ const StyledButton = styled.button`
 	}
 
 	& img {
+		height: 168px;
+		object-fit: cover;
 		pointer-events: none;
+		width: 100%;
 	}
 `;
 
 const StyledFigure = styled.figure`
+	display: flex;
+	flex: 1;
 	margin: 0;
 `
 

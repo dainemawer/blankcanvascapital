@@ -13,9 +13,9 @@ const StyledColophon = styled.div`
 `;
 
 const StyledCopyright = styled.p`
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	line-height: 1.5;
-	margin: 0 0 1.25rem 0;
+	margin: 0 0 0.5rem 0;
 
 	${breakpoints.md} {
 		margin: 0;
@@ -45,7 +45,7 @@ const StyledListItem = styled.li`
 
 	& a {
 		color: ${colors.white};
-		font-size: 0.875rem;
+		font-size: var(--font-size-sm);
 		position: relative;
 	}
 

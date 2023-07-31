@@ -18,7 +18,9 @@ import {
 	StyledModalSection,
 	StyledModalDescription,
 	StyledModalList,
-	StyledButton
+	StyledButton,
+	StyledButtonContainerDesktop,
+	StyledButtonContainerMobile
 } from './Portfolio.styled';
 import { Modal } from '@mantine/core';
 import type { PortfolioModalProps } from './Portfolio.types';
@@ -58,8 +60,8 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 											/>
 										</svg>
 									</StyledCloseButton>
-									<StyledContent>
-										<StyledModalFigure>
+									<StyledContent className={isRealEstate && 'real-estate'}>
+										<StyledModalFigure className={isRealEstate && 'real-estate'}>
 											{modalContent.logo && (
 												<Image
 													alt={modalContent.title}
@@ -71,9 +73,9 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 												/>
 											)}
 											{modalContent.url && (
-												<p style={{display: 'flex', justifyContent: 'center' }}>
+												<StyledButtonContainerDesktop>
 													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
-												</p>
+												</StyledButtonContainerDesktop>
 											)}
 										</StyledModalFigure>
 										<StyledModalSection>
@@ -143,9 +145,9 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 												/>
 											)}
 											{modalContent.url && (
-												<p style={{display: 'flex', justifyContent: 'center' }}>
+												<StyledButtonContainerMobile>
 													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
-												</p>
+												</StyledButtonContainerMobile>
 											)}
 										</StyledModalFigure>
 										<StyledModalSection>

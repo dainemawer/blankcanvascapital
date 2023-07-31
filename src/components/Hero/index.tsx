@@ -27,10 +27,7 @@ export const Hero: FC<HeroProps> = ({
 				{image && (
 					<StyledImage natural={!!title}>
 						<Image
-							sizes="(max-width: 768px) 100vw,
-							(max-width: 1200px) 50vw, 100vw"
 							alt={label}
-							decoding="auto"
 							height={668}
 							loading="eager"
 							quality={80}

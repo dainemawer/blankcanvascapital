@@ -14,7 +14,7 @@ const StyledFooter = styled.div`
 
 const StyledAddress = styled.address`
 	font-family: ${fonts.primary};
-	font-size: 0.75rem;
+	font-size: var(--font-size-sm);
 	font-style: normal;
 	font-weight: 500;
 	line-height: 1.5;

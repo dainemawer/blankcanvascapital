@@ -19,7 +19,7 @@ const StyledAddress = styled.address`
 const StyledAddressHeading = styled.h2`
 	font-family: ${fonts.secondary};
 	font-style: normal;
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	font-weight: 600;
 	line-height: 1.7;
 	margin: 0;
@@ -28,7 +28,7 @@ const StyledAddressHeading = styled.h2`
 
 const StyledAddressLocation = styled.p`
 	font-family: ${fonts.primary};
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	font-style: normal;
 	font-weight: 500;
 	line-height: 2;
@@ -37,7 +37,7 @@ const StyledAddressLocation = styled.p`
 
 const StyledAddressDetail = styled.p`
 	font-family: ${fonts.secondary};
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	font-style: normal;
 	font-weight: 500;
 `;
@@ -62,7 +62,7 @@ const StyledSidebar = styled.aside`
 
 	& a {
 		color: ${colors.black};
-		font-size: 0.875rem;
+		font-size: var(--font-size-sm);
 		position: relative;
 	}
 

@@ -17,7 +17,7 @@ const StyledPortfolioFilters = styled.div`
 const StyledPortfolioLabel = styled.span`
 	display: block;
 	font-family: ${fonts.primary};
-	font-size: 1.125rem;
+	font-size: var(--font-size-base);
 	font-style: normal;
 	font-weight: 600;
 	line-height: 1.7;
@@ -40,7 +40,7 @@ const StyledButton = styled.a`
 	cursor: pointer;
 	display: block;
 	font-family: ${fonts.primary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-weight: 600;
 	padding: 0.75rem 1.125rem;
 	text-transform: uppercase;
@@ -65,7 +65,7 @@ const StyledButton = styled.a`
 const StyledPortfolioGridHeading = styled.h4`
 	font-family: ${fonts.primary};
 	font-weight: 600;
-	font-size: 1.125rem;
+	font-size: var(--font-size-base);
 	left: 0;
 	margin: 0;
 	position: absolute;
@@ -156,19 +156,11 @@ const StyledPortfolioGrid = styled.section`
 	}
 `;
 
-const StyledContent = styled.div`
-	display: flex;
-	flex-direction: column;
-	padding: 0 1.5rem 2rem 1.5rem;
 
-	${breakpoints.md} {
-		flex-direction: row;
-		padding: 2rem 2rem 3rem 2rem;
-	}
-`;
 
 const StyledModalFigure = styled.figure`
-	padding-right: 2rem;
+	display: flex;
+	justify-content: center;
 	margin: 0;
 
 	&:not(.private-equity) {
@@ -176,11 +168,50 @@ const StyledModalFigure = styled.figure`
 		display: flex;
 	}
 
+	&.real-estate {
+		flex-shrink: 0;
+
+		& img {
+			width: 100%;
+
+			${breakpoints.sm} {
+				width: auto;
+			}
+		}
+	}
+
+	${breakpoints.sm} {
+		justify-content: flex-start;
+	}
+
 	${breakpoints.md} {
+		align-items: center;
+		flex-direction: column;
 		flex-shrink: 0;
 		margin: 0;
+		padding-right: 2rem;
 	}
-`
+`;
+
+const StyledContent = styled.div`
+	display: flex;
+	flex-direction: column;
+	padding: 0 1.5rem 2rem 1.5rem;
+
+	&.real-estate {
+		flex-direction: column;
+
+		${breakpoints.sm} {
+			flex-direction: row;
+		}
+	}
+
+	${breakpoints.md} {
+		flex-direction: row;
+		padding: 2rem 2rem 3rem 2rem;
+	}
+`;
+
 const StyledModalSection = styled.section`
 
 	& a {
@@ -191,6 +222,10 @@ const StyledModalSection = styled.section`
 		}
 	}
 
+	${breakpoints.sm} {
+		padding-left: 1.6rem;
+	}
+
 	${breakpoints.md} {
 		border-left: 2px solid ${colors.copper};
 		padding-left: 2rem;
@@ -199,7 +234,7 @@ const StyledModalSection = styled.section`
 
 const StyledModalList = styled.ul`
 	font-family: ${fonts.secondary};
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	line-height: 2;
 	list-style-type: none;
 	margin: 0;
@@ -208,7 +243,7 @@ const StyledModalList = styled.ul`
 
 const StyledModalDescription = styled.p`
 	color: ${colors.mineShaft};
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
 	margin: 0 0 1rem 0;
@@ -243,7 +278,7 @@ const StyledModalContentHeader = styled.header`
 
 	& h3 {
 		font-family: ${fonts.primary};
-		font-size: 2rem;
+		font-size: var(--font-size-lg);
 		font-weight: 700;
 		line-height: 1.25;
 		margin: 1rem 0;
@@ -251,6 +286,22 @@ const StyledModalContentHeader = styled.header`
 		${breakpoints.sm} {
 			margin: 0 0 1rem 0;
 		}
+	}
+`;
+
+const StyledButtonContainerDesktop = styled.p`
+	display: flex;
+
+	${breakpoints.md} {
+		display: none;
+	}
+`;
+
+const StyledButtonContainerMobile = styled.p`
+	display: none;
+
+	${breakpoints.md} {
+		display: flex;
 	}
 `;
 
@@ -286,5 +337,7 @@ export {
 	StyledModalList,
 	StyledModalSection,
 	StyledModalFigure,
-	StyledPortfolioGridWrap
+	StyledPortfolioGridWrap,
+	StyledButtonContainerDesktop,
+	StyledButtonContainerMobile
 };

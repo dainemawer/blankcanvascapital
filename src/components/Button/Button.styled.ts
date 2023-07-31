@@ -11,7 +11,7 @@ const StyledButton = styled.button`
 	cursor: pointer;
 	display: inline-block;
 	font-family: ${fonts.primary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-weight: 600;
 	padding: 0.875rem 1.55rem;
 	text-transform: uppercase;

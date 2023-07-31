@@ -3,7 +3,7 @@ import { breakpoints } from '@theme/breakpoints';
 import { StyledGridProps, StyledBox } from './styles.types';
 
 const StyledArticle = styled.article`
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 
 	${breakpoints.md} {
 		grid-column: 2 / 3;

@@ -23,7 +23,7 @@ export const Colophon: FC = (): JSX.Element => {
 			<Container>
 				<StyledWrapper>
 					<StyledCopyright>
-						&copy; Copyright 2023.
+						&copy; 2023.
 						Blank Canvas Capital. All Rights Reserved
 					</StyledCopyright>
 					<nav>

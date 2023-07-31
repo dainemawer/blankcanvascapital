@@ -11,7 +11,7 @@ const StyledWrap = styled.div`
 const StyledH1 = styled.h1`
 	color: ${colors.grey};
 	font-family: ${fonts.primary};
-	font-size: 96px;
+	font-size: 6rem;
 	line-height: 1;
 	margin: 0;
 	position: relative;
@@ -24,7 +24,7 @@ const StyledSpan = styled.span`
 const StyledParagraph = styled.p`
 	color: ${colors.dove};
 	font-family: ${fonts.secondary};
-	font-size: 1.5rem;
+	font-size: var(--font-size-md);
 	font-weight: 400;
 	line-height: 1;
 	margin-bottom: 1.75rem;
@@ -41,7 +41,7 @@ const StyledEyebrow = styled.span`
 	border-bottom: 3px solid ${colors.gold};
 	color: ${colors.gold};
 	font-family: ${fonts.primary};
-	font-size: 80px;
+	font-size: 5rem;
 	font-weight: 700;
 	left: -112px;
 	padding-bottom: 1.25rem;

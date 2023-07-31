@@ -2,23 +2,23 @@ import styled from '@emotion/styled';
 import { fonts } from '@theme/fonts';
 
 const StyledHeadingOne = styled.h1`
-	font-size: 96px;
+	font-size: 6rem;
 `;
 const StyledHeadingTwo = styled.h2`
-	font-size: 96px;
+	font-size: 6rem;
 `;
 const StyledHeadingThree = styled.h3`
-	font-size: 48px;
+	font-size: 3rem;
 `;
 const StyledHeadingFour = styled.h4`
 	font-family: ${fonts.primary};
-	font-size: 20px;
+	font-size: 1.25rem;
 `;
 const StyledHeadingFive = styled.h5`
-	font-size: 16px;
+	font-size: 1rem;
 `;
 const StyledHeadingSix = styled.h6`
-	font-size: 14px;
+	font-size: 0.875rem;
 `;
 
 export {

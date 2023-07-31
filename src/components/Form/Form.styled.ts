@@ -22,7 +22,7 @@ const StyledLabel = styled.label<StyledLabelProps>`
 		`border-right: 2px solid ${colors.copper};`
 	};
 		display: inline-block;
-		font-size: 1rem;
+		font-size: var(--font-size-base);
 		font-weight: 600;
 		min-width: 70px;
 		${props => props.vertical ?
@@ -31,7 +31,6 @@ const StyledLabel = styled.label<StyledLabelProps>`
 		text-transform: uppercase;
 
 		${breakpoints.md} {
-			font-size: 1rem;
 			min-width: 80px;
 			${props => props.vertical ? `margin: 0` : `margin-right: 1.5rem;`};
 			${props => props.vertical ?
@@ -44,7 +43,7 @@ const StyledInput = styled.input`
 	border: 0;
 	display: inline-block;
 	font-family: ${fonts.secondary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);;
 	font-weight: 500;
 	line-height: 1.7;
 	width: 100%;
@@ -66,7 +65,7 @@ const StyledInput = styled.input`
 const StyledTextarea = styled.textarea`
 	border: 0;
 	font-family: ${fonts.secondary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-weight: 500;
 	line-height: 1.7;
 	margin-top: 1rem;
@@ -108,9 +107,9 @@ const StyledInputGroup = styled.div`
 		position: relative;
 
 		${StyledErrorMessage} {
-			bottom: -2rem;
+			bottom: -1.5rem;
 			left: 0;
-			position: absolute;	
+			position: absolute;
 		}
 	}
 
@@ -119,7 +118,7 @@ const StyledInputGroup = styled.div`
 	}
 
 	&:not(:last-child) {
-		margin-bottom: 3rem;
+		margin-bottom: 2.5rem;
 	}
 `;
 

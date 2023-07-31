@@ -115,7 +115,7 @@ const StyledTitle = styled.h2<AlignProps>`
 	${props => props.align === 'center' && `position: relative`};
 	width: 100%;
 
-	${breakpoints.md} {
+	${breakpoints.sm} {
 		margin: 0 0 2.5rem 0;
 		width: auto;
 	}
@@ -140,6 +140,7 @@ const StyledExcerpt = styled.p<SubTitleProps>`
 `;
 
 const StyledCTA = styled.p`
+	margin: 0;
 
 	& a {
 		display: inline-block;
@@ -208,7 +209,7 @@ const StyledTeamGrid = styled.div`
 	grid-gap: 1.75rem;
 	grid-auto-flow: column;
 	grid-auto-columns: 280px;
-	margin-bottom: 2rem;
+	margin-bottom: 0;
 	-ms-overflow-style: none;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -216,6 +217,10 @@ const StyledTeamGrid = styled.div`
 
 	&::-webkit-scrollbar {
 		display: none;
+	}
+
+	${breakpoints.sm} {
+		margin-bottom: 2rem;
 	}
 
 	${breakpoints.md} {
@@ -289,7 +294,7 @@ const StyledPortfolioOverflowCard = styled.article`
 	margin-right: 1.75rem;
 	max-width: 207px;
 	min-height: 260px;
-	padding: 2rem;
+	padding: 1rem;
 	text-align: center;
 
 	&:last-child {
@@ -299,6 +304,7 @@ const StyledPortfolioOverflowCard = styled.article`
 	${breakpoints.sm} {
 		min-width: 276px;
 		min-height: 346px;
+		padding: 2rem;
 	}
 
 	${breakpoints.lg} {
@@ -309,8 +315,8 @@ const StyledPortfolioOverflowCard = styled.article`
 
 const StyledSection = styled.section<StyledSectionProps>`
 	background-color: ${props => props.backgroundColor ? props.backgroundColor : colors.white};
-	margin: 4rem 0;
-	padding:  ${props => props.backgroundColor ? '4rem' : '0'} 0;
+	margin: 3rem 0;
+	padding:  ${props => props.backgroundColor ? '3rem' : '0'} 0;
 
 	${breakpoints.md} {
 		margin: 8rem 0;
@@ -320,7 +326,7 @@ const StyledSection = styled.section<StyledSectionProps>`
 
 		${breakpoints.sm} {
 			align-items: flex-start;
-			grid-template-columns: 0.5fr 1fr;
+			grid-template-columns: 1fr 2fr;
 		}
 
 		${breakpoints.md} {

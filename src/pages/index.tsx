@@ -29,8 +29,8 @@ export default function Home(): JSX.Element {
 
 	const subTitle = (
 		<>
-			<span style={{ display: 'block' }}>Unleashing Potential |</span>
-			<span style={{ display: 'block' }}>Creating Value |</span>
+			<span style={{ display: 'block' }}>Unleashing Potential,</span>
+			<span style={{ display: 'block' }}>Creating Value,</span>
 			<span style={{ display: 'block' }}>Partnering for Exceptional Returns</span>
 		</>
 	)

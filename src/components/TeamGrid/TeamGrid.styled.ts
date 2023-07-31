@@ -26,29 +26,21 @@ const StyledArticle = styled.article`
 const StyledTeamMember = styled.h3`
 	color: ${colors.black};
 	font-family: ${fonts.primary};
-	font-size: 1.1rem;
+	font-size: var(--font-size-base);
 	font-weight: 600;
 	line-height: 1;
 	margin: 1rem 0 0;
 	text-transform: uppercase;
-
-	${breakpoints.lg} {
-		font-size: 1.25rem;
-	}
 `;
 
 const StyledTitle = styled.h4`
 	color: ${colors.gold};
 	font-family: ${fonts.primary};
-	font-size: 0.875rem;
+	font-size: var(--font-size-sm);
 	font-weight: 600;
 	line-height: 1.7;
 	margin: 0;
 	text-transform: uppercase;
-
-	${breakpoints.lg} {
-		font-size: 1.125rem;
-	}
 `;
 
 const StyledHeader = styled.header`

@@ -12,7 +12,7 @@ type StyledLeadProps = {
 const StyledLead = styled.p<StyledLeadProps>`
 	color: ${props => props.color === 'gold' ? colors.gold : colors.dove};
 	font-family: ${fonts.secondary};
-	font-size: 1.125rem;
+	font-size: var(--font-size-base);
 	font-weight: 400;
 	line-height: 1.7;
 	margin-bottom: 1.75rem;
@@ -21,7 +21,6 @@ const StyledLead = styled.p<StyledLeadProps>`
 	position: relative;
 
 	${breakpoints.md} {
-		font-size: 1.25rem;
 		${props => props.hasLine && `padding-bottom: 4rem;`}
 	}
 
@@ -40,14 +39,13 @@ const StyledLead = styled.p<StyledLeadProps>`
 const StyledParagraph = styled.p`
 	color: ${colors.mineShaft};
 	font-family: ${fonts.secondary};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-weight: 400;
 	line-height: 1.7;
 	margin-bottom: 1.25rem;
 	max-width: 1024px;
 
 	${breakpoints.md} {
-		font-size: 1.25rem;
 		margin-bottom: 1.75rem;
 	}
 

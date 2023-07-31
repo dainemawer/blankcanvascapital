@@ -33,7 +33,7 @@ const StyledListItemDesktop = styled.li`
 	& a {
 		color: ${colors.black};
 		font-family: ${fonts.primary};
-		font-size: 0.875rem;
+		font-size: var(--font-size-sm);
 		font-weight: 500;
 		position: relative;
 	}
@@ -69,7 +69,7 @@ const StyledListItem = styled(motion.li)`
 	& a {
 		color: ${colors.black};
 		font-family: ${fonts.primary};
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 		font-weight: 500;
 		position: relative;
 	}
