@@ -107,7 +107,7 @@ const StyledCardContent = styled.div<AlignProps>`
 const StyledTitle = styled.h2<AlignProps>`
 	color: ${colors.black};
 	${props => props.align === 'center' && `display: inline-block`};
-	font-size: 2.5rem;
+	font-size: var(--font-size-xxl);
 	font-family: ${fonts.primary};
 	font-weight: 700;
 	line-height: 1;
@@ -116,7 +116,6 @@ const StyledTitle = styled.h2<AlignProps>`
 	width: 100%;
 
 	${breakpoints.md} {
-		font-size: 4.5rem;
 		margin: 0 0 2.5rem 0;
 		width: auto;
 	}
@@ -124,36 +123,20 @@ const StyledTitle = styled.h2<AlignProps>`
 
 const StyledSubTitle = styled.h3<SubTitleProps>`
 	color: ${colors.black};
-	font-size: 1.5rem;
+	font-size: var(--font-size-lg);
 	font-family: ${fonts.primary};
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;
 	max-width: ${props => props.maxWidth ? props.maxWidth : '100%'};
-
-	${breakpoints.md} {
-		font-size: ${props => props.align === 'center' ? '1.5rem' : '1.75rem'};
-	}
-
-	${breakpoints.lg} {
-		font-size: 2rem;
-	}
 `;
 
 const StyledExcerpt = styled.p<SubTitleProps>`
 	color: #777777;
-	font-size: 0.875rem;
+	font-size: var(--font-size-base);
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
 	max-width: 680px;
-
-	${breakpoints.md} {
-		font-size: ${props => props.align === 'center' ? '1.125rem' : '1.25rem'};
-	}
-
-	${breakpoints.lg} {
-		font-size: 1.25rem;
-	}
 `;
 
 const StyledCTA = styled.p`
@@ -166,7 +149,7 @@ const StyledCTA = styled.p`
 const StyledIndex = styled.span<AlignProps>`
 	color: var(--gold, #C5A880);
 	display: block;
-	font-size: 1.125rem;
+	font-size: var(--font-size-md);
 	font-family: ${fonts.primary};
 	font-weight: 700;
 	margin-bottom: 0.5rem;
@@ -185,7 +168,7 @@ const StyledEyebrow = styled.span<EyebrowProps>`
 	${props => props.underline && `padding-bottom: 1rem`};
 	color: ${colors.gold};
 	display: block;
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-family: ${fonts.primary};
 	font-weight: 600;
 	line-height: 1.5;
@@ -245,7 +228,7 @@ const StyledTeamMember = styled.div``;
 
 const StyledTeamMemberName = styled.h3`
 	color: ${colors.black};
-	font-size: 1.125rem;
+	font-size: var(--font-size-md);
 	font-family: ${fonts.primary};
 	font-weight: 600;
 	line-height: 1;
@@ -255,7 +238,7 @@ const StyledTeamMemberName = styled.h3`
 
 const StyledTeamMemberTitle = styled.p`
 	color: ${colors.gold};
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-family: ${fonts.primary};
 	font-weight: 600;
 	line-height: 1;

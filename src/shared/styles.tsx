@@ -11,6 +11,14 @@ export const globalStyles = (
 			:root {
 				--font-work-sans: 'Work Sans', sans-serif;
 				--font-merriweather: 'Merriweather', serif;
+
+				--font-size-sm: clamp(0.8rem, 0.08vw + 0.78rem, 0.84rem);
+				--font-size-base: clamp(1rem, 0.23vw + 0.94rem, 1.13rem);
+				--font-size-md: clamp(1.25rem, 0.45vw + 1.14rem, 1.5rem);
+				--font-size-lg: clamp(1.56rem, 0.79vw + 1.36rem, 2rem);
+				--font-size-xl: clamp(1.95rem, 1.29vw + 1.63rem, 2.66rem);
+				--font-size-xxl: clamp(2.44rem, 2.02vw + 1.94rem, 3.55rem);
+				--font-size-xxxl: clamp(3.05rem, 3.06vw + 2.29rem, 4.73rem);
 			}
 
 			* {

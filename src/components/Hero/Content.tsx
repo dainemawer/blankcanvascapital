@@ -65,7 +65,7 @@ const StyledContentWrap = styled.div`
 
 const StyledHeroTitle = styled.h1`
 	display: none;
-	font-size: 1.5rem;
+	font-size: var(--font-size-lg);
 	font-family: ${fonts.primary};
 	font-weight: 700;
 	line-height: 1.2;
@@ -73,17 +73,16 @@ const StyledHeroTitle = styled.h1`
 
 	${breakpoints.sm} {
 		display: block;
-		font-size: 2rem;
 	}
 
 	${breakpoints.lg} {
-		font-size: 3rem;
+		font-size: var(--font-size-xl);
 	}
 `;
 
 const StyledHeroSubtitle = styled.p`
 	display: none;
-	font-size: 1.125rem;
+	font-size: var(--font-size-md);
 	font-family: ${fonts.secondary};
 	font-weight: 400;
 	line-height: 1.5;
@@ -91,7 +90,6 @@ const StyledHeroSubtitle = styled.p`
 
 	${breakpoints.sm} {
 		display: block;
-		font-size: 1.25rem;
 	}
 `;
 

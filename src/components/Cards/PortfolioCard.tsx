@@ -61,6 +61,10 @@ const StyledButton = styled.button`
 	&:focus {
 		filter: grayscale(0);
 	}
+
+	& img {
+		pointer-events: none;
+	}
 `;
 
 const StyledFigure = styled.figure`

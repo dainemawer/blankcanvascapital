@@ -33,7 +33,7 @@ export const Hero: FC<HeroProps> = ({
 							decoding="auto"
 							height={668}
 							loading="eager"
-							quality={90}
+							quality={80}
 							src={image}
 							width={1657}
 							priority
