@@ -44,11 +44,11 @@ export default function Home(): JSX.Element {
 				subtitle="Blank Canvas Capital is an experienced group of talented
 				entrepreneurs pioneering the way
 				forward across the South African financial landscape."
-				image="/hero-home.jpg"
+				image="/bw-home.png"
 				label="Aeroplane flying over buildings"
 				logo="/bcc-logo.png"
 				title="Every investment starts with an idea."
-				variation="natural"
+				variation="bw"
 			/>
 			<SimpleSection
 				excerpt="Blank Canvas Capital is a value-adding investment firm dedicated

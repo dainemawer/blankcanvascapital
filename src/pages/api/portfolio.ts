@@ -38,7 +38,7 @@ export default function handler(
 			},
 			{
 				logo: '/logos/aura.png',
-				hero: '/heros/aura.jpg',
+				hero: '/heros/new-aura.jpg',
 				region: 'Global',
 				sector: 'Security / Securetech',
 				date: 'December 2021',
@@ -80,7 +80,7 @@ export default function handler(
 			},
 			{
 				logo: '/logos/digs.png',
-				hero: '/heros/digs.jpg',
+				hero: '/heros/new-digsconnect.jpg',
 				region: 'South Africa',
 				sector: 'PropTech (Student Accommodation)',
 				date: 'March 2019',

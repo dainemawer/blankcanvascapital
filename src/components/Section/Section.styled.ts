@@ -133,7 +133,7 @@ const StyledSubTitle = styled.h3<SubTitleProps>`
 
 const StyledExcerpt = styled.p<SubTitleProps>`
 	color: #777777;
-	font-size: var(--font-size-base);
+	font-size: var(--font-size-md);
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
 	max-width: 680px;
@@ -208,7 +208,7 @@ const StyledTeamGrid = styled.div`
 	display: grid;
 	grid-gap: 1.75rem;
 	grid-auto-flow: column;
-	grid-auto-columns: 280px;
+	grid-template-columns: repeat(3, 305px);
 	margin-bottom: 0;
 	-ms-overflow-style: none;
 	overflow-x: auto;
@@ -224,7 +224,6 @@ const StyledTeamGrid = styled.div`
 	}
 
 	${breakpoints.md} {
-		grid-template-columns: repeat(3, 1fr);
 		margin-bottom: 4rem;
 	}
 `;
@@ -233,7 +232,7 @@ const StyledTeamMember = styled.div``;
 
 const StyledTeamMemberName = styled.h3`
 	color: ${colors.black};
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-base);
 	font-family: ${fonts.primary};
 	font-weight: 600;
 	line-height: 1;
@@ -256,13 +255,9 @@ const StyledTeamMemberImage = styled.figure`
 
 	& img {
 		border-radius: 0px 20px;
-		height: auto;
+		height: 341px;
 		object-fit: cover;
-		width: 447px;
-
-		${breakpoints.md} {
-			height: 500px;
-		}
+		width: 305px;
 	}
 `;
 

@@ -46,7 +46,7 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 							<StyledWrap align="noalign">
 								{children}
 							</StyledWrap>
-							<StyledCardContent>
+							<StyledCardContent align="left">
 								<StyledExcerpt>{excerpt}</StyledExcerpt>
 								<StyledCTA>
 									<Button href={ctaLink}>{ctaLabel}</Button>
