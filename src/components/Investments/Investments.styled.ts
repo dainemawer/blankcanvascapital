@@ -53,7 +53,7 @@ const Title = styled.h3`
 	margin: 0 0 1.25rem 0;
 
 	${breakpoints.md} {
-		margin: 2rem 0;
+		margin: 3.5rem 0;
 	}
 `;
 
@@ -284,6 +284,11 @@ const StyledParagraph = styled.p<StyledParagraphProps>`
 	max-width: 100%;
 	text-align: left;
 
+	&.intro,
+	&.conclusion {
+		text-align: center;
+	}
+
 	&.figure {
 		font-size: var(--font-size-xl);
 	}
@@ -345,8 +350,7 @@ const UnorderedListBlock = styled.ul`
 
 	& li {
 		color: ${colors.gold};
-		font-size: 0.875rem;
-		font-weight: 700;
+		font-size: 1.125rem;
 		line-height: 2.5;
 		text-align: left;
 	}

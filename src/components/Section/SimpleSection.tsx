@@ -60,7 +60,7 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 									<Image alt="" height={501} src={image} width={450} />
 								</StyledFigure>
 								<StyledCardContent align={align}>
-									<StyledSubTitle maxWidth="655px">{subTitle}</StyledSubTitle>
+									<StyledSubTitle maxWidth="500px">{subTitle}</StyledSubTitle>
 									<StyledExcerpt>{excerpt}</StyledExcerpt>
 									<StyledCTA>
 										<Button href={ctaLink}>{ctaLabel}</Button>

@@ -29,9 +29,25 @@ export default function Home(): JSX.Element {
 
 	const subTitle = (
 		<>
-			<span style={{ display: 'block' }}>Unleashing Potential,</span>
-			<span style={{ display: 'block' }}>Creating Value,</span>
+			<span style={{ display: 'block' }}>Unleashing Potential</span>
+			<span style={{ display: 'block' }}>Creating Value</span>
 			<span style={{ display: 'block' }}>Partnering for Exceptional Returns</span>
+		</>
+	)
+
+	const splitParagraph = (
+		<>
+			<span style={{ display: 'block' }}>
+				With a flexible investment approach across investment size, industry type and capital structure,
+				we seek scalable businesses that can deliver superior returns on capital.
+			</span>
+			<br />
+			<span style={{ display: 'block' }}>
+				Partner selection is key, and we prioritise backing strong entrepreneurs
+				and business owners who share our vision and commitment to success.
+				We engage fully in each opportunity, from initial investment to exit, and
+				prioritize long-term partnerships with our investee businesses.
+			</span>
 		</>
 	)
 
@@ -100,16 +116,11 @@ export default function Home(): JSX.Element {
 				)}
 			</ComplexSection>
 			<SimpleSection
-				excerpt="With a flexible investment approach across investment size, industry type and capital structure,
-				we seek scalable businesses that can deliver superior returns on capital.
-				Partner selection is key, and we prioritise backing strong entrepreneurs
-				and business owners who share our vision and commitment to success.
-				We engage fully in each opportunity, from initial investment to exit, and
-				prioritize long-term partnerships with our investee businesses."
 				align="right"
 				backgroundColor="rgba(230,230,230, 0.3)"
 				ctaLabel="Investment Approach"
 				ctaLink="/investment-approach"
+				excerpt={splitParagraph}
 				eyebrow="Our Investment Approach"
 				id="our-approach"
 				image="/approach.jpg"

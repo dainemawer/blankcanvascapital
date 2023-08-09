@@ -8,10 +8,6 @@ type StyledHeroProps = {
 
 const StyledHero = styled.section`
 	margin-top: 1rem;
-
-	${breakpoints.md} {
-		max-height: 600px;
-	}
 `;
 
 const StyledImage = styled.figure<StyledHeroProps>`
@@ -20,22 +16,12 @@ const StyledImage = styled.figure<StyledHeroProps>`
 
 	& img {
 		border-radius: 20px 0;
-		height: ${props => props.natural ? '470px' : '334px'};
 		max-width: 100%;
 		object-fit: cover;
 		object-position: right;
 
 		${breakpoints.sm} {
-			height: ${props => props.natural ? '375px' : '334px'};
 			object-position: initial;
-		}
-
-		${breakpoints.md} {
-			height: ${props => props.natural ? 'auto' : '480px'};
-		}
-
-		@media (min-width: 1440px) {
-			height: ${props => props.natural ? 'auto' : '600px'};
 		}
 	}
 

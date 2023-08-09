@@ -16,7 +16,7 @@ export default function Document(): JSX.Element {
 			<Head>
 				<link href="https://fonts.googleapis.com" rel="preconnect" />
 				<link crossOrigin="true" href="https://fonts.gstatic.com" rel="preconnect" />
-				<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Work+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+				<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
 			</Head>
 			<body>
 				<Main />

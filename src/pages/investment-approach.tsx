@@ -45,17 +45,20 @@ export default function InvestmentApproach(): JSX.Element {
 					<StyledParagraph align="right" color="#2b2b2b" maxWidth="900px">
 						Blank Canvas Capital is free from the restrictions of a traditional fund therefore our
 						investment approach is flexible in terms of investment size, industry type and capital
-						structure.
+						structure. We look for scalable businesses that can deliver superior returns on capital
+						for our investors.
 					</StyledParagraph>
 					<StyledParagraph align="right" color="#2b2b2b" maxWidth="900px">
-						We look for scalable businesses that can deliver superior returns on capital
-						for our investors. We are quick to act, have a multi-deal track record in mobilising
+						We are quick to act, have a multi-deal track record in mobilising
 						large amounts of capital required in a process and will fully engage in
 						an opportunity&apos;s fulfilment - from initial investment to its ultimate exit.
 					</StyledParagraph>
 					<StyledParagraph align="right" color="#2b2b2b" maxWidth="900px">
 						We are in our deals for the long term. We buy in alongside our partners and we realise
-						value with our partners as a general rule. Our investment strategy focuses on private
+						value with our partners as a general rule.
+					</StyledParagraph>
+					<StyledParagraph align="right" color="#2b2b2b" maxWidth="900px">
+						Our investment strategy focuses on private
 						equity as our main area of focus, but we also pursue real estate investments
 						which are of an opportunistic nature or where our portfolio company is a tenant.
 					</StyledParagraph>
@@ -148,7 +151,7 @@ export default function InvestmentApproach(): JSX.Element {
 					with us to deliver outstanding returns for all stakeholders.
 					Along the way, we strive to build organizations that all parties can be proud to be associated with.
 				</StyledParagraph>
-				<StyledParagraph align="center" color="#424242">
+				<StyledParagraph align="center" className="conclusion" color="#424242">
 					<Button href="/contact">Get In Touch</Button>
 				</StyledParagraph>
 			</SimpleSection>

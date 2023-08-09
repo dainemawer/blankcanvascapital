@@ -133,10 +133,10 @@ const StyledSubTitle = styled.h3<SubTitleProps>`
 
 const StyledExcerpt = styled.p<SubTitleProps>`
 	color: #777777;
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-base);
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
-	max-width: 680px;
+	max-width: 650px;
 `;
 
 const StyledCTA = styled.p`
@@ -188,7 +188,7 @@ const StyledEyebrow = styled.span<EyebrowProps>`
 			transform: none;
 			top: -18px;
 			left: 0;
-			text-align: center;
+			text-align: left;
 		`};
 	}
 `;
@@ -303,8 +303,8 @@ const StyledPortfolioOverflowCard = styled.article`
 	}
 
 	${breakpoints.lg} {
-		min-width: 415px;
-		min-height: 520px;
+		min-width: 330px;
+		min-height: 414px;
 	}
 `;
 

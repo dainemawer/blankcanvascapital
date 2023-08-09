@@ -10,7 +10,7 @@ export const globalStyles = (
 
 			:root {
 				--font-work-sans: 'Work Sans', sans-serif;
-				--font-merriweather: 'Merriweather', serif;
+				--font-merriweather: 'Roboto', sans-serif;
 
 				--font-size-sm: clamp(0.8rem, 0.08vw + 0.78rem, 0.84rem);
 				--font-size-base: clamp(1rem, 0.23vw + 0.94rem, 1.13rem);

@@ -104,15 +104,17 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 							{!isRealEstate && (
 								<>
 									<StyledCoverImage>
-										<Image
-											alt={modalContent.title}
-											decoding="async"
-											height={300}
-											loading="lazy"
-											src={modalContent.hero}
-											style={{ objectPosition: modalContent.position }}
-											width={1140}
-										/>
+										{modalContent.hero && (
+											<Image
+												alt={modalContent.title}
+												decoding="async"
+												height={300}
+												loading="lazy"
+												src={modalContent.hero}
+												style={{ objectPosition: modalContent.position }}
+												width={1140}
+											/>
+										)}
 										<StyledCloseButton onClick={() => close()}>
 											<svg
 												fill="none"

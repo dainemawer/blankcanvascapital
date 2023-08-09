@@ -19,7 +19,7 @@ export type SimpleSectionProps = {
 	backgroundColor?: string;
 	ctaLabel: string;
 	ctaLink: string;
-	excerpt?: string;
+	excerpt?: string | ReactElement;
 	eyebrow: string;
 	id: string;
 	image: string;
