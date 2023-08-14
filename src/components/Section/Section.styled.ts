@@ -207,28 +207,17 @@ const StyledSectionGrid = styled.div<AlignProps>`
 const StyledTeamGrid = styled.div`
 	display: grid;
 	grid-gap: 1.75rem;
-	grid-auto-flow: column;
-	grid-template-columns: repeat(3, 305px);
 	margin-bottom: 0;
-	-ms-overflow-style: none;
-	overflow-x: auto;
-	overflow-y: hidden;
-	scrollbar-width: none;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	${breakpoints.sm} {
-		margin-bottom: 2rem;
-	}
-
-	${breakpoints.md} {
-		margin-bottom: 4rem;
-	}
 `;
 
-const StyledTeamMember = styled.div``;
+const StyledTeamMember = styled.div`
+	align-items: center;
+	display: flex;
+`;
+
+const StyledTeamMemberContent = styled.div`
+	margin-left: 1.5rem;
+`;
 
 const StyledTeamMemberName = styled.h3`
 	color: ${colors.black};
@@ -255,9 +244,9 @@ const StyledTeamMemberImage = styled.figure`
 
 	& img {
 		border-radius: 0px 20px;
-		height: 341px;
+		height: 257px;
 		object-fit: cover;
-		width: 305px;
+		width: 230px;
 	}
 `;
 
@@ -373,5 +362,6 @@ export {
 	StyledTeamMemberImage,
 	StyledPortfolioOverflowGridWrap,
 	StyledPortfolioOverflowGrid,
-	StyledPortfolioOverflowCard
+	StyledPortfolioOverflowCard,
+	StyledTeamMemberContent
 }

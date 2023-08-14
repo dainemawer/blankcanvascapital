@@ -38,7 +38,7 @@ export default function handler(
 			},
 			{
 				logo: '/logos/aura.png',
-				hero: '/heros/new-aura.jpg',
+				hero: '/heros/aura-hero-new-new.jpg',
 				region: 'Global',
 				sector: 'Security / Securetech',
 				date: 'December 2021',
@@ -48,7 +48,7 @@ export default function handler(
 				id: '3',
 				url: 'http://aura.services',
 				title: 'Aura',
-				position: 'bottom',
+				position: '50% 21%',
 			},
 			{
 				logo: '/logos/batl.png',
@@ -80,7 +80,7 @@ export default function handler(
 			},
 			{
 				logo: '/logos/digs.png',
-				hero: '/heros/new-digsconnect.jpg',
+				hero: '/heros/digs-hero-formatted.jpg',
 				region: 'South Africa',
 				sector: 'PropTech (Student Accommodation)',
 				date: 'March 2019',
@@ -90,7 +90,7 @@ export default function handler(
 				id: '6',
 				url: 'http://www.digsconnect.com',
 				title: 'DigsConnect',
-				position: 'bottom',
+				position: 'center',
 			},
 			{
 				logo: '/logos/dynamic-brands.png',
