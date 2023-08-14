@@ -225,7 +225,7 @@ const StyledTeamMemberName = styled.h3`
 	font-family: ${fonts.primary};
 	font-weight: 600;
 	line-height: 1;
-	margin: 1.5rem 0 0 0;
+	margin: 0;
 	text-transform: uppercase;
 `;
 
@@ -240,13 +240,23 @@ const StyledTeamMemberTitle = styled.p`
 `;
 
 const StyledTeamMemberImage = styled.figure`
+	flex: 0 1 200px;
 	margin: 0;
+
+	${breakpoints.md} {
+		flex: 0 1 230px;
+	}
 
 	& img {
 		border-radius: 0px 20px;
-		height: 257px;
+		height: 223px;
 		object-fit: cover;
-		width: 230px;
+		width: 200px;
+
+		${breakpoints.md} {
+			height: 257px;
+			width: 230px;
+		}
 	}
 `;
 
