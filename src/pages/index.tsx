@@ -101,6 +101,7 @@ export default function Home(): JSX.Element {
 			<ComplexSection
 				excerpt="A dynamic and collaborative team with a track record of delivering
 				exceptional returns through extensive investment expertise and a partnership-oriented culture"
+				contentClassName="our-team"
 				ctaLabel="Get To Know Us"
 				ctaLink="/team"
 				eyebrow="The People Behind The Investments"

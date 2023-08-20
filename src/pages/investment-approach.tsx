@@ -122,8 +122,8 @@ export default function InvestmentApproach(): JSX.Element {
 						<li>Optimisation of the capital structure</li>
 						<li>Access to key management hires</li>
 						<li>Preparing the business for sale</li>
-						<li>identifying potential suitors</li>
-						<li>and assisting in the disposal process</li>
+						<li>Identifying potential suitors</li>
+						<li>Assisting in the disposal process</li>
 					</UnorderedListBlock>
 				</div>
 			</InvestmentSection>

@@ -41,6 +41,39 @@ const StyledContent = styled.div<AlignProps>`
 	${breakpoints.md} {
 		${props => props.align === 'right' && `grid-row-start: 1`};
 	}
+
+	&.our-team {
+		align-items: flex-start;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: columns;
+
+		& > header {
+			flex: 0 1 100%;
+		}
+
+		& > header h2 {
+			margin-bottom: 0;
+		}
+
+		& > div:first-of-type {
+			flex: 0 1 100%;
+
+			${breakpoints.sm} {
+				flex: 0 1 70%;
+			}
+		}
+
+		& > div:last-of-type {
+			box-sizing: border-box;
+			flex: 0 1 100%;
+
+			${breakpoints.sm} {
+				flex: 0 1 30%;
+				padding: 1rem;
+			}
+		}
+	}
 `;
 
 const StyledHeader = styled.header<AlignProps>`
@@ -206,18 +239,29 @@ const StyledSectionGrid = styled.div<AlignProps>`
 
 const StyledTeamGrid = styled.div`
 	display: grid;
-	grid-gap: 1.75rem;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(3, 210px);
 	margin-bottom: 0;
+
+	-ms-overflow-style: none;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		${breakpoints.sm} {
+			margin-bottom: 2rem;
+		}
+
+		${breakpoints.md} {
+			grid-template-columns: repeat(3, 255px);
+		}
 `;
 
-const StyledTeamMember = styled.div`
-	align-items: center;
-	display: flex;
-`;
-
-const StyledTeamMemberContent = styled.div`
-	margin-left: 1.5rem;
-`;
+const StyledTeamMember = styled.div``;
 
 const StyledTeamMemberName = styled.h3`
 	color: ${colors.black};
@@ -241,7 +285,7 @@ const StyledTeamMemberTitle = styled.p`
 
 const StyledTeamMemberImage = styled.figure`
 	flex: 0 1 200px;
-	margin: 0;
+	margin: 0 0 1rem 0;
 
 	${breakpoints.md} {
 		flex: 0 1 230px;
@@ -373,5 +417,4 @@ export {
 	StyledPortfolioOverflowGridWrap,
 	StyledPortfolioOverflowGrid,
 	StyledPortfolioOverflowCard,
-	StyledTeamMemberContent
 }

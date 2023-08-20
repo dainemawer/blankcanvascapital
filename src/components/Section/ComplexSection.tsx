@@ -27,7 +27,7 @@ import {
 } from './Section.styled';
 
 const ComplexSection: FC<ComplexSectionProps> = ({
-	children, ctaLabel, ctaLink, excerpt, eyebrow, id, image, index, subTitle, title, variant
+	children, contentClassName, ctaLabel, ctaLink, excerpt, eyebrow, id, image, index, subTitle, title, variant
 }) => {
 
 	if (variant === 'our-team') {
@@ -39,7 +39,7 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 							<StyledIndex align="left">{index}</StyledIndex>
 							<StyledEyebrow align="left">{eyebrow}</StyledEyebrow>
 						</StyledMiniSidebar>
-						<StyledContent>
+						<StyledContent className={contentClassName}>
 							<StyledHeader align="left">
 								<StyledTitle>{title}</StyledTitle>
 							</StyledHeader>

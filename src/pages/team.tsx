@@ -66,7 +66,7 @@ export default function Team(): JSX.Element {
 							<li>Investor relations with debt and equity funders</li>
 							<li>Fund raising activities</li>
 							<li>Serving as directors on portfolio companies’ boards</li>
-							<li>and assisting with strategic opportunities and corporate finance activity</li>
+							<li>Assisting with strategic opportunities and corporate finance activity</li>
 						</UnorderedList>
 						<SubHeading heading="Investment Team" />
 						{team && <TeamGrid team={team} />}

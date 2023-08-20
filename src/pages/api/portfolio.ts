@@ -38,7 +38,7 @@ export default function handler(
 			},
 			{
 				logo: '/logos/aura.png',
-				hero: '/heros/aura-hero-new-new.jpg',
+				hero: '/heros/aura-optimised-new.jpg',
 				region: 'Global',
 				sector: 'Security / Securetech',
 				date: 'December 2021',

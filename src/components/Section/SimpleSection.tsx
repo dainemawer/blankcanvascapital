@@ -32,6 +32,7 @@ import {
 const SimpleSection: FC<SimpleSectionProps> = ({
 	align,
 	backgroundColor,
+	contentClassName,
 	ctaLabel,
 	ctaLink,
 	excerpt,
@@ -59,8 +60,8 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 								<StyledFigure>
 									<Image alt="" height={501} src={image} width={450} />
 								</StyledFigure>
-								<StyledCardContent align={align}>
-									<StyledSubTitle maxWidth="500px">{subTitle}</StyledSubTitle>
+								<StyledCardContent align={align} className={contentClassName}>
+									<StyledSubTitle maxWidth="550px">{subTitle}</StyledSubTitle>
 									<StyledExcerpt>{excerpt}</StyledExcerpt>
 									<StyledCTA>
 										<Button href={ctaLink}>{ctaLabel}</Button>

@@ -5,7 +5,6 @@ import {
 	StyledTeamMemberImage,
 	StyledTeamMemberName,
 	StyledTeamMemberTitle,
-	StyledTeamMemberContent,
 } from './Section.styled';
 
 const TeamSection = ({ team }) => {
@@ -16,10 +15,8 @@ const TeamSection = ({ team }) => {
 					<StyledTeamMemberImage>
 						<Image alt="" height={500} src={member.image} width={447} />
 					</StyledTeamMemberImage>
-					<StyledTeamMemberContent>
-						<StyledTeamMemberName>{member.name}</StyledTeamMemberName>
-						<StyledTeamMemberTitle>{member.title}</StyledTeamMemberTitle>
-					</StyledTeamMemberContent>
+					<StyledTeamMemberName>{member.name}</StyledTeamMemberName>
+					<StyledTeamMemberTitle>{member.title}</StyledTeamMemberTitle>
 				</StyledTeamMember>
 			))}
 		</StyledTeamGrid>
