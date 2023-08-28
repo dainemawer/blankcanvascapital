@@ -9,16 +9,18 @@
 */
 
 import { Html, Head, Main, NextScript } from 'next/document'
-import { GoogleAnalytics } from '@lib/gtag/analytics'
 
 export default function Document(): JSX.Element {
 	return (
 		<Html lang="en">
-			<Head />
-			<body className="w-full h-screen">
+			<Head>
+				<link href="https://fonts.googleapis.com" rel="preconnect" />
+				<link crossOrigin="true" href="https://fonts.gstatic.com" rel="preconnect" />
+				<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
+			</Head>
+			<body>
 				<Main />
 				<NextScript />
-
 				{/* Support for window.gtag on the server */}
 				<script
 					dangerouslySetInnerHTML={{

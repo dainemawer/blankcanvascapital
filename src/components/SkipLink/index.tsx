@@ -6,8 +6,14 @@
  * @returns {JSX.Element}
 */
 
-export default function SkipLink(): JSX.Element {
+import { FC } from 'react'
+import { StyledAnchor } from './SkipLink.styled';
+import { SkipLinkProps } from './SkipLink.types';
+
+const SkipLink: FC<SkipLinkProps> = (): JSX.Element => {
 	return (
-		<a href="#main-content" className="sr-only">Skip to main content</a>
+		<StyledAnchor href="#main-content">Skip to main content</StyledAnchor>
 	)
 }
+
+export default SkipLink;

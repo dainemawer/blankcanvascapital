@@ -7,16 +7,28 @@
  * @returns {JSX.Element}
 */
 
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-import SkipLink from '@components/SkipLink'
+import { FC } from 'react'
+import dynamic from 'next/dynamic';
+import { Header } from '@components/Header'
+import fetcher from '@lib/fetcher';
+import useSWR from 'swr';
 
-export default function Layout({ children }): JSX.Element {
+import { NavigationItemProps } from '@components/Navigation/Navigation.types';
+interface LayoutProps {
+	children: React.ReactElement,
+}
+
+const SkipLink = dynamic(() => import('@components/SkipLink'), { ssr: false });
+const Footer = dynamic(() => import('@components/Footer'), { ssr: false });
+
+export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
+	const { data } = useSWR('/api/menu', fetcher);
+	const menu = data as NavigationItemProps[];
 	return (
 		<>
 			<SkipLink />
-			<Header />
-			<main id="site-content" className="site-content">{children}</main>
+			<Header menu={menu} />
+			<main id="main-content">{children}</main>
 			<Footer />
 		</>
 

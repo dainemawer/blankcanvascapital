@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://example.com
+Host: https://blankcanvascapital.co.za
 
 # Sitemaps
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://blankcanvascapital.co.za/sitemap.xml

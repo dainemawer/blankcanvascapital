@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-	siteUrl: 'https://example.com',
+	siteUrl: 'https://blankcanvascapital.co.za',
 	generateRobotsTxt: true,
 	generateIndexSitemap: false
 }

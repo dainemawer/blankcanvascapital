@@ -1,0 +1,10 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order"],
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+    "selector-not-notation": "simple",
+    "media-feature-range-notation": false,
+    "order/properties-alphabetical-order": true
+  }
+}

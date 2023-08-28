@@ -8,16 +8,25 @@
  * @returns {JSX.Element}
 */
 
+import { Container } from '@components/Container';
+import { ErrorLayout } from '@components/ErrorLayout';
 import { NextSeo } from 'next-seo';
 
 export default function FiveZeroZero(): JSX.Element {
 	return (
 		<>
 			<NextSeo
-				title="500 Error"
-				description="A short description goes here."
+				description="Our server encountered an unexpected error."
+				title="500"
 			/>
-			<h1>500 - Internal Server Error</h1>
+			<Container size="1120px">
+				<ErrorLayout
+					eyebrow="500"
+					lead="Our server encountered an unexpected error."
+					permalink="Go Back"
+					title="Uh oh. Thats not right"
+				/>
+			</Container>
 		</>
 	)
 }

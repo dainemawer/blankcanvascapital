@@ -1,10 +1,17 @@
 import { createContext, useContext } from 'react';
 
-export const SiteContext = createContext({});
-export const store = {
-	site: {
-		title: 'My Site',
-	}
+export type SiteContextProps = {
+	close: () => void;
+	isOpen: boolean;
+	open: () => void;
+	toggle: () => void;
 }
+
+export const SiteContext = createContext<SiteContextProps>({
+	close: () => { },
+	isOpen: false,
+	open: () => {},
+	toggle: () => { },
+});
 
 export const useSiteContext = () => useContext(SiteContext);
