@@ -15,13 +15,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 			"Messages": [
 				{
 					"From": {
-						"Email": "info@blankcanvascapital.co.za",
-						"Name": "Blank Canvas Capital Contact"
+						"Email": from,
+						"Name": name
 					},
 					"To": [
 						{
-							"Email": "hello@dainemawer.com",
-							"Name": "Daine Mawer"
+							"Email": "info@blankcanvascapital.co.za",
+							"Name": "Blank Canvas Capital (Site Form)"
 						}
 					],
 					"Subject": "New Submission on blankcanvascapital.co.za",

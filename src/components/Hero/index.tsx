@@ -30,7 +30,6 @@ export const Hero: FC<HeroProps> = ({
 							alt={label}
 							height={668}
 							loading="eager"
-							quality={80}
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 							src={image}
 							width={1657}

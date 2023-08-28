@@ -12,21 +12,21 @@ export default function handler(
 				id: 1,
 				name: 'Neil Freeman',
 				title: 'Partner',
-				image: '/neil-freeman.jpg',
+				image: '/team/neil.png',
 				linkedin: 'https://www.linkedin.com/company/blank-canvas-capital/',
 			},
 			{
 				id: 2,
 				name: 'JD De Villiers',
 				title: 'Partner',
-				image: '/jd-de-villiers.jpg',
+				image: '/team/jd.png',
 				linkedin: 'https://www.linkedin.com/company/blank-canvas-capital/',
 			},
 			{
 				id: 3,
 				name: 'Darren Roy',
 				title: 'Partner',
-				image: '/darren-roy.jpg',
+				image: '/team/darren.png',
 				linkedin: 'https://www.linkedin.com/in/darren-roy-78771148/',
 			}
 		])
