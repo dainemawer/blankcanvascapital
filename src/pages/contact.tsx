@@ -18,7 +18,7 @@ import {
 
 const Aside = dynamic(() => import('@components/Aside'), { ssr: false });
 const ArticleHeader = dynamic(() => import('@components/ArticleHeader'), { ssr: false });
-// const Form = dynamic(() => import('@components/Form'), { ssr: false });
+const Form = dynamic(() => import('@components/Form'), { ssr: false });
 const Sidebar = dynamic(() => import('@components/Sidebar'), { ssr: false });
 
 const StyledContactGrid = styled.div`
@@ -50,7 +50,7 @@ export default function Contact(): JSX.Element {
 							title="Get in Touch"
 						/>
 						<StyledContactGrid>
-							<p>Contact Form coming soon!</p>
+							<Form />
 							<Sidebar />
 						</StyledContactGrid>
 					</StyledArticle>
