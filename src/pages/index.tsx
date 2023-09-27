@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
 	const team = teamData as SingleTeamProps[];
 	const portfolio = portfolioData as PortfolioProps[];
 
-	const filteredPortfolio = portfolio && portfolio.filter((item) => item.title === 'The Courier Guy' ||  item.title === 'Vantage Data Centers' || item.title === 'Teneo' || item.title === 'Vumacam');
+	const filteredPortfolio = portfolio && portfolio.filter((item) => item.title === 'The Courier Guy' || item.title === 'Vantage Data Centers' || item.title === 'Teneo' || item.title === 'Vumacam');
 
 	const subTitle = (
 		<>
@@ -84,11 +84,11 @@ export default function Home(): JSX.Element {
 				title="About Us"
 			/>
 			<ComplexSection
-				ctaLabel="View Investments"
+				ctaLabel="Portfolio"
 				ctaLink="/portfolio"
-				eyebrow="02 Our Latest Investments"
+				eyebrow="02 Our Investments"
 				id="investment-portfolio"
-				subTitle="Discover more of our investments"
+				subTitle="Discover our full investment portfolio of private equity and property investments"
 				title="Investment Portfolio"
 				variant="investment-portfolio"
 			>

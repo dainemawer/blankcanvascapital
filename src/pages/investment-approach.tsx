@@ -91,7 +91,7 @@ export default function InvestmentApproach(): JSX.Element {
 			>
 				<StyledParagraph align="right" color="#2B2B2B" maxWidth='776px'>
 					Blank Canvas Capital has a flexible approach to investment size, typically investing
-					from R25m into a single opportunity with no upper limit. We specialize in acquiring significant,
+					from R50m into a single opportunity with no upper limit. We specialize in acquiring significant,
 					non-controlling stakes in our portfolio companies.
 				</StyledParagraph>
 			</InvestmentSection>
