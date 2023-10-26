@@ -1,28 +1,32 @@
-import Image from 'next/image';
 import {
-	StyledPortfolioOverflowGridWrap,
-	StyledPortfolioOverflowGrid,
-	StyledPortfolioOverflowCard,
+	StyledSection,
+	StyledEyebrow,
+	StyledTitle,
+	StyledExcerpt,
+	StyledHeader,
+	StyledBox,
+	StyledCTA
 } from './Section.styled';
 
-const PortfolioSection = ({ portfolio }) => {
+import { Button } from '@components/Button';
+import { Container } from '@components/Container';
+
+const PortfolioSection = ({ align, backgroundImage, ctaLabel, ctaLink, excerpt, id, subTitle, title }) => {
 	return (
-		<StyledPortfolioOverflowGridWrap>
-			<StyledPortfolioOverflowGrid>
-				{portfolio?.map((investment) => (
-					<StyledPortfolioOverflowCard key={investment.id}>
-						<Image
-							alt=""
-							decoding="async"
-							height={205}
-							loading="lazy"
-							src={investment.logo}
-							width={321}
-						/>
-					</StyledPortfolioOverflowCard>
-				))}
-			</StyledPortfolioOverflowGrid>
-		</StyledPortfolioOverflowGridWrap>
+		<StyledSection align={align} backgroundImage={backgroundImage} className="portfolio" id={id}>
+			<Container size='1290px'>
+				<StyledEyebrow align={align}>{subTitle}</StyledEyebrow>
+				<StyledHeader align={align}>
+					<StyledTitle color="#fff">{title}</StyledTitle>
+				</StyledHeader>
+				<StyledBox>
+					<StyledExcerpt align={align} color="#fff" maxWidth="620px">{excerpt}</StyledExcerpt>
+					<StyledCTA>
+						<Button href={ctaLink}>{ctaLabel}</Button>
+					</StyledCTA>
+				</StyledBox>
+			</Container>
+		</StyledSection>
 	)
 }
 

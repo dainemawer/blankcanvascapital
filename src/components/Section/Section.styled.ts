@@ -138,7 +138,7 @@ const StyledCardContent = styled.div<AlignProps>`
 `;
 
 const StyledTitle = styled.h2<AlignProps>`
-	color: ${colors.black};
+	color: ${props => props.color ? props.color : colors.black};
 	${props => props.align === 'center' && `display: inline-block`};
 	font-size: var(--font-size-xxl);
 	font-family: ${fonts.primary};
@@ -165,11 +165,12 @@ const StyledSubTitle = styled.h3<SubTitleProps>`
 `;
 
 const StyledExcerpt = styled.p<SubTitleProps>`
-	color: #777777;
+	color: ${props => props.color ? props.color : '#777777'};
 	font-size: var(--font-size-base);
 	font-family: ${fonts.secondary};
 	line-height: 1.5;
-	max-width: 650px;
+	max-width: ${props => props.maxWidth ? props.maxWidth : '650px'};
+	text-align: ${props => props.align === 'center' ? `center` : `inherit`};
 `;
 
 const StyledCTA = styled.p`
@@ -221,7 +222,7 @@ const StyledEyebrow = styled.span<EyebrowProps>`
 			transform: none;
 			top: -18px;
 			left: 0;
-			text-align: left;
+			text-align: center;
 		`};
 	}
 `;
@@ -304,60 +305,27 @@ const StyledTeamMemberImage = styled.figure`
 	}
 `;
 
-const StyledPortfolioOverflowGridWrap = styled.div`
-	box-shadow: 0px 4px 68px 7px rgba(0, 0, 0, 0.07);
-	position: relative;
-	overflow-x: auto;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-`;
-
-const StyledPortfolioOverflowGrid = styled.div`
-	position: relative;
-	white-space: nowrap;
-`;
-
-const StyledPortfolioOverflowCard = styled.article`
+const StyledBox = styled.div`
 	align-items: center;
-	background: ${colors.white};
-	border-bottom: 14px solid ${colors.gold};
-	box-sizing: border-box;
-	box-shadow: 0px 4px 68px 7px rgba(0, 0, 0, 0.07);
-	display: inline-flex;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	margin-right: 1.75rem;
-	max-width: 207px;
-	min-height: 260px;
-	padding: 1rem;
-	text-align: center;
-
-	&:last-child {
-		margin-right: 0;
-	}
-
-	${breakpoints.sm} {
-		min-width: 276px;
-		min-height: 346px;
-		padding: 2rem;
-	}
-
-	${breakpoints.lg} {
-		min-width: 330px;
-		min-height: 414px;
-	}
 `;
 
 const StyledSection = styled.section<StyledSectionProps>`
 	background-color: ${props => props.backgroundColor ? props.backgroundColor : colors.white};
+	${props => props.backgroundImage && `background-image: url(${props.backgroundImage})`};
+	${props => props.backgroundImage && `background-position: center center`};
+	${props => props.backgroundImage && `background-repeat: no-repeat`};
+	${props => props.backgroundImage && `background-size: cover`};
 	margin: 3rem 0;
 	padding:  ${props => props.backgroundColor ? '3rem' : '0'} 0;
+	${props => props.backgroundImage && `padding: 6rem 0`};
 
 	${breakpoints.md} {
 		margin: 8rem 0;
+		padding:  ${props => props.backgroundColor ? '8rem' : '0'} 0;
+		${props => props.backgroundImage && `padding: 12rem 0`};
 	}
 
 	&.simple ${StyledWrap} {
@@ -392,9 +360,35 @@ const StyledSection = styled.section<StyledSectionProps>`
 			grid-row-start: 1;
 		}
 	}
+
+	&.portfolio ${StyledExcerpt} {
+		margin-bottom: 1.5rem;
+
+		${breakpoints.md} {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	&.portfolio ${StyledHeader} {
+		text-align: center;
+		justify-content: center;
+	}
+
+	&.portfolio ${StyledTitle} {
+		margin: 1.5rem 0 1rem 0;
+
+		${breakpoints.md} {
+			margin: 2.5rem 0 2rem 0;
+		}
+	}
+
+	&.portfolio ${StyledEyebrow} {
+		text-align: center;
+	}
 `;
 
 export {
+	StyledBox,
 	StyledMiniSidebar,
 	StyledContent,
 	StyledSection,
@@ -414,7 +408,4 @@ export {
 	StyledTeamMemberName,
 	StyledTeamMemberTitle,
 	StyledTeamMemberImage,
-	StyledPortfolioOverflowGridWrap,
-	StyledPortfolioOverflowGrid,
-	StyledPortfolioOverflowCard,
 }

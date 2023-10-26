@@ -12,7 +12,6 @@ import { Hero } from '@components/Hero';
 import useSWR from 'swr';
 import fetcher from '@lib/fetcher';
 import { SingleTeamProps } from '@components/TeamGrid/TeamGrid.types';
-import { PortfolioProps } from '../pages/portfolio';
 
 const TeamSection = dynamic(() => import('@components/Section/TeamSection'));
 const PortfolioSection = dynamic(() => import('@components/Section/PortfolioSection'));
@@ -21,11 +20,7 @@ const ComplexSection = dynamic(() => import('@components/Section/ComplexSection'
 
 export default function Home(): JSX.Element {
 	const { data: teamData } = useSWR('/api/team', fetcher);
-	const { data: portfolioData } = useSWR('/api/portfolio', fetcher);
 	const team = teamData as SingleTeamProps[];
-	const portfolio = portfolioData as PortfolioProps[];
-
-	const filteredPortfolio = portfolio && portfolio.filter((item) => item.title === 'The Courier Guy' || item.title === 'Vantage Data Centers' || item.title === 'Teneo' || item.title === 'Vumacam');
 
 	const subTitle = (
 		<>
@@ -84,23 +79,9 @@ export default function Home(): JSX.Element {
 				title="About Us"
 			/>
 			<ComplexSection
-				ctaLabel="Portfolio"
-				ctaLink="/portfolio"
-				eyebrow="02 Our Investments"
-				id="investment-portfolio"
-				subTitle="Discover our full investment portfolio of private equity and property investments"
-				title="Investment Portfolio"
-				variant="investment-portfolio"
-			>
-				{filteredPortfolio && filteredPortfolio.length > 0 ? (
-					<PortfolioSection portfolio={filteredPortfolio} />
-				) : (
-					<p>There are no investments to display.</p>
-				)}
-			</ComplexSection>
-			<ComplexSection
 				excerpt="A dynamic and collaborative team with a track record of delivering
 				exceptional returns through extensive investment expertise and a partnership-oriented culture"
+				backgroundColor="rgba(230,230,230, 0.3)"
 				contentClassName="our-team"
 				ctaLabel="Get To Know Us"
 				ctaLink="/team"
@@ -118,7 +99,6 @@ export default function Home(): JSX.Element {
 			</ComplexSection>
 			<SimpleSection
 				align="right"
-				backgroundColor="rgba(230,230,230, 0.3)"
 				ctaLabel="Investment Approach"
 				ctaLink="/investment-approach"
 				excerpt={splitParagraph}
@@ -128,6 +108,16 @@ export default function Home(): JSX.Element {
 				index="04"
 				subTitle="Incredible Investments | Incredible People"
 				title="Our Approach"
+			/>
+			<PortfolioSection
+				align="center"
+				backgroundImage="/portfolio-bg.jpg"
+				ctaLabel="Portfolio"
+				ctaLink="/portfolio"
+				excerpt="Discover our full investment portfolio of private equity and property investments."
+				id="portfolio"
+				subTitle="Our Investments"
+				title="Investment Portfolio"
 			/>
 			<SimpleSection
 				align="left"

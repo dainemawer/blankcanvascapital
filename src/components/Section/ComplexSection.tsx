@@ -27,12 +27,24 @@ import {
 } from './Section.styled';
 
 const ComplexSection: FC<ComplexSectionProps> = ({
-	children, contentClassName, ctaLabel, ctaLink, excerpt, eyebrow, id, image, index, subTitle, title, variant
+	backgroundColor,
+	children,
+	contentClassName,
+	ctaLabel,
+	ctaLink,
+	excerpt,
+	eyebrow,
+	id,
+	image,
+	index,
+	subTitle,
+	title,
+	variant
 }) => {
 
 	if (variant === 'our-team') {
 		return (
-			<StyledSection align="left" id={id}>
+			<StyledSection align="left" backgroundColor={backgroundColor} id={id}>
 				<Container size='1290px'>
 					<StyledSectionGrid align="left">
 						<StyledMiniSidebar align="left">
