@@ -87,7 +87,7 @@ export default function Home(): JSX.Element {
 				ctaLink="/team"
 				eyebrow="The People Behind The Investments"
 				id="our-team"
-				index="03"
+				index="02"
 				title="Our Team"
 				variant="our-team"
 			>
@@ -105,7 +105,7 @@ export default function Home(): JSX.Element {
 				eyebrow="Our Investment Approach"
 				id="our-approach"
 				image="/approach.jpg"
-				index="04"
+				index="03"
 				subTitle="Incredible Investments | Incredible People"
 				title="Our Approach"
 			/>
@@ -116,6 +116,7 @@ export default function Home(): JSX.Element {
 				ctaLink="/portfolio"
 				excerpt="Discover our full investment portfolio of private equity and property investments."
 				id="portfolio"
+				index="04"
 				subTitle="Our Investments"
 				title="Investment Portfolio"
 			/>

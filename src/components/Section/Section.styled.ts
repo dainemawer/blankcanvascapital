@@ -192,7 +192,7 @@ const StyledIndex = styled.span<AlignProps>`
 
 	${breakpoints.md} {
 		margin-bottom: 0;
-		text-align: ${props => props.align === 'left' ? `left` : `right`};
+		text-align: ${props => props.align};
 	}
 `;
 
