@@ -23,7 +23,7 @@ const Grid: FC<PortfolioGridProps> = ({ handleClick, items, label }): JSX.Elemen
 						<motion.div
 							initial={{ opacity: 0 }}
 							key={item.id}
-							transition={{ duration: 0.15, delay: i * 0.15 }}
+							transition={{ duration: 0.1, delay: i * 0.1 }}
 							viewport={{ once: true }}
 							whileInView={{ opacity: 1 }}
 						>

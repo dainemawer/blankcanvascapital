@@ -51,8 +51,8 @@ const Sidebar: FC = (): JSX.Element => {
 				</StyledAddressDetail>
 				<StyledAddressDetail>
 					<strong>LinkedIn: </strong>
-					<a href="https://linkedin.com">
-						@blackcanvascapital
+					<a href="https://www.linkedin.com/company/blank-canvas-capital/" rel="noopener noreferrer" target="_blank">
+						@blankcanvascapital
 					</a>
 				</StyledAddressDetail>
 			</StyledAddress>
