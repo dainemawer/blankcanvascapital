@@ -1,17 +1,10 @@
-/*
- * Home
- *
- * Homepage template for site application.
- *
- * @returns {JSX.Element}
- */
+"use client";
 
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
 import { Paragraph } from "@components/Paragraph";
-import { StyledGrid, StyledArticle } from "../shared/content.styled";
+import { StyledGrid, StyledArticle } from "../../shared/content.styled";
 import { UnorderedList } from "@components/Investments/Investments.styled";
 import useSWR from "swr";
 import fetcher from "@lib/fetcher";
@@ -26,7 +19,7 @@ const SubHeading = dynamic(() => import("@components/SubHeading"), {
 	ssr: false,
 });
 
-export default function Team(): JSX.Element {
+export default function Team() {
 	const { data, error } = useSWR("/api/team", fetcher);
 	const team = data as SingleTeamProps[];
 
@@ -34,7 +27,6 @@ export default function Team(): JSX.Element {
 
 	return (
 		<>
-			<NextSeo title="Our Team" />
 			<Hero
 				image="/hero-team-formatted-optimised.jpg"
 				label="Three Men Walking Up Stairs"

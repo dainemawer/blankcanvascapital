@@ -1,12 +1,5 @@
-/*
- * Home
- *
- * Homepage template for site application.
- *
- * @returns {JSX.Element}
- */
+"use client";
 
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
@@ -14,7 +7,11 @@ import { Button } from "@components/Button";
 import { Paragraph } from "@components/Paragraph";
 import { Heading } from "@components/Heading";
 
-import { StyledGrid, StyledArticle, StyledBox } from "../shared/content.styled";
+import {
+	StyledGrid,
+	StyledArticle,
+	StyledBox,
+} from "../../shared/content.styled";
 
 const ArticleHeader = dynamic(() => import("@components/ArticleHeader"), {
 	ssr: false,
@@ -24,10 +21,9 @@ const SubHeading = dynamic(() => import("@components/SubHeading"), {
 	ssr: false,
 });
 
-export default function AboutUs(): JSX.Element {
+export default function About() {
 	return (
 		<>
-			<NextSeo title="About Us" />
 			<Hero
 				image="/hero-about-optimized.jpg"
 				label="Elevator in Department Store"

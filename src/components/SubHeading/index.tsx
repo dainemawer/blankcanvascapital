@@ -1,10 +1,4 @@
-/*
- * Quote
- *
- * Quote Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import { StyledSubHeading, StyledSubHeadingSpan } from "./SubHeading.styled";

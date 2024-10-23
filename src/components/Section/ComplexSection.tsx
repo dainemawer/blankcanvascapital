@@ -1,10 +1,4 @@
-/*
- * Complex Section
- *
- * Renders complex sections on the home page.
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import type { FC } from "react";
 import type { ComplexSectionProps } from "./Section.types";

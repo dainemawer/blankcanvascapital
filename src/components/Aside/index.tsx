@@ -1,13 +1,6 @@
-/*
- * Aside
- *
- * Aside Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
-
 import { StyledAside, StyledLine } from "./Aside.styled";
 
 const Aside: FC = (): JSX.Element => {

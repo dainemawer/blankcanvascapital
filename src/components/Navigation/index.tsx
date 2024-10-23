@@ -1,10 +1,4 @@
-/*
- * Navigation
- *
- * Navigation Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import Link from "next/link";

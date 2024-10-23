@@ -1,10 +1,4 @@
-/*
- * Address
- *
- * Address Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 

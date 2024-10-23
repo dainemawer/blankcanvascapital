@@ -1,14 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import type { PortfolioProps } from '../../pages/portfolio'
+import { NextResponse } from 'next/server';
+// import type { PortfolioProps } from '@/app/portfolio/types';
 
-export default function handler(
-	req: NextApiRequest,
-	res: NextApiResponse<PortfolioProps[]>
-) {
-	res
-		.status(200)
-		.json([
-			{
+export async function GET() {
+
+	const portfolioItems = [
+		{
 				logo: '/logos/advencap.png',
 				hero: '/heros/new-adven-hero.jpg',
 				region: 'UK',
@@ -455,6 +451,8 @@ export default function handler(
 				category: 'Real Estate',
 				id: '32',
 				title: 'MWEB Head Office',
-			},
-		])
+			}
+	];
+
+	return NextResponse.json(portfolioItems, { status: 200 });
 }

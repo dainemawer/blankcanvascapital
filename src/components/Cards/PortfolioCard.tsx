@@ -1,10 +1,4 @@
-/*
- * Portfolio Card
- *
- * Portfolio Card Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import Image from "next/image";

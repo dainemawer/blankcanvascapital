@@ -1,10 +1,4 @@
-/*
- * SkipLink
- *
- * Site Main Content Skip Link
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import { StyledAnchor } from "./SkipLink.styled";

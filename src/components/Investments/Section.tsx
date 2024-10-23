@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { SimpleSectionProps } from "./Investments.types";
 import { Container, Section } from "./Investments.styled";

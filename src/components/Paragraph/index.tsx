@@ -1,10 +1,4 @@
-/*
- * Paragraph
- *
- * Paragraph Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import { StyledParagraph, StyledLead } from "./Paragraph.styled";

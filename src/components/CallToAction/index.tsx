@@ -1,10 +1,4 @@
-/*
- * Call To Action
- *
- *  Call To Action Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import { Button } from "@components/Button";

@@ -1,19 +1,11 @@
 "use client";
 
-/*
- * Home
- *
- * Homepage template for site application.
- *
- * @returns {JSX.Element}
- */
-
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { NextSeo } from "next-seo";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
-import { StyledGrid, StyledArticle } from "../shared/content.styled";
+import { StyledGrid, StyledArticle } from "../../shared/content.styled";
 
 import { useDisclosure } from "@mantine/hooks";
 import fetcher from "@lib/fetcher";
@@ -48,7 +40,7 @@ const PortfolioModal = dynamic(() => import("@components/Portfolio/Modal"), {
 	ssr: false,
 });
 
-export default function Portfolio(): JSX.Element {
+export default function PortfolioPage() {
 	const { data, error } = useSWR("/api/portfolio", fetcher);
 	const portfolio = data as PortfolioProps[];
 	const [items, setItems] = useState<PortfolioProps[]>([]);

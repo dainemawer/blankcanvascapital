@@ -1,10 +1,4 @@
-/*
- * Simple Section
- *
- * Renders simple sections on the home page.
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import type { FC } from "react";
 import Image from "next/image";

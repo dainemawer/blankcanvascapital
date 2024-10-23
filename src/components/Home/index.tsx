@@ -1,12 +1,5 @@
-/*
- * Home
- *
- * Homepage template for site application.
- *
- * @returns {JSX.Element}
- */
+"use client";
 
-import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import { Hero } from "@components/Hero";
 import useSWR from "swr";
@@ -24,7 +17,7 @@ const ComplexSection = dynamic(
 	() => import("@components/Section/ComplexSection")
 );
 
-export default function Home(): JSX.Element {
+export default function Home() {
 	const { data: teamData } = useSWR("/api/team", fetcher);
 	const team = teamData as SingleTeamProps[];
 
@@ -57,7 +50,6 @@ export default function Home(): JSX.Element {
 
 	return (
 		<>
-			<NextSeo title="Home" />
 			<Hero
 				subtitle="Blank Canvas Capital is an experienced group of talented
 				entrepreneurs pioneering the way

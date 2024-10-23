@@ -1,10 +1,4 @@
-/*
- * Form
- *
- * Contact Form
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC, useState } from "react";
 

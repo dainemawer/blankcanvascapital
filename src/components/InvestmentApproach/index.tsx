@@ -1,13 +1,6 @@
-/*
- * Home
- *
- * Homepage template for site application.
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import dynamic from "next/dynamic";
-import { NextSeo } from "next-seo";
 import { Hero } from "@components/Hero";
 import { Button } from "@components/Button";
 import {
@@ -20,10 +13,9 @@ const InvestmentSection = dynamic(
 );
 const SimpleSection = dynamic(() => import("@components/Investments/Section"));
 
-export default function InvestmentApproach(): JSX.Element {
+export default function InvestmentApproach() {
 	return (
 		<>
-			<NextSeo title="Investment Approach" />
 			<Hero
 				image="/hero-investment-portfolio.jpg"
 				label="Three Men Walking Up Stairs"

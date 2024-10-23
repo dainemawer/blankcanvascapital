@@ -1,10 +1,4 @@
-/*
- * Header
- *
- * Global Site Header
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import { StyledContainer } from "./Container.styled";

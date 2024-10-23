@@ -1,10 +1,4 @@
-/*
- * Header
- *
- * Global Site Header
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { useContext, FC } from "react";
 import Link from "next/link";
