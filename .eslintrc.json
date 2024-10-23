@@ -1,15 +1,12 @@
 {
   "plugins": [
-    "sort-destructure-keys",
-    "typescript-sort-keys"
+    "sort-destructure-keys"
   ],
   "extends": [
     "next/core-web-vitals",
-    "plugin:storybook/recommended",
-    "plugin:typescript-sort-keys/recommended"
+    "plugin:storybook/recommended"
   ],
   "rules": {
-    "sort-destructure-keys/sort-destructure-keys": 2,
     "react/jsx-sort-props": [
       2,
       {

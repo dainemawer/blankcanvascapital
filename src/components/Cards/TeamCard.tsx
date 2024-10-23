@@ -4,11 +4,11 @@
  * Team Card Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
-import { TeamCardProps } from './TeamCard.types';
+import { FC } from "react";
+import Image from "next/image";
+import { TeamCardProps } from "./TeamCard.types";
 
 export const TeamCard: FC<TeamCardProps> = ({
 	className,
@@ -19,7 +19,7 @@ export const TeamCard: FC<TeamCardProps> = ({
 	position,
 }): JSX.Element => {
 	return (
-		<article className={className} id={id} >
+		<article className={className} id={id}>
 			{image && (
 				<figure>
 					<Image
@@ -39,4 +39,4 @@ export const TeamCard: FC<TeamCardProps> = ({
 			</figcaption>
 		</article>
 	);
-}
+};

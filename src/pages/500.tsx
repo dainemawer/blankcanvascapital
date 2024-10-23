@@ -6,11 +6,11 @@
  *
  * @see https://nextjs.org/docs/advanced-features/custom-error-page
  * @returns {JSX.Element}
-*/
+ */
 
-import { Container } from '@components/Container';
-import { ErrorLayout } from '@components/ErrorLayout';
-import { NextSeo } from 'next-seo';
+import { Container } from "@components/Container";
+import { ErrorLayout } from "@components/ErrorLayout";
+import { NextSeo } from "next-seo";
 
 export default function FiveZeroZero(): JSX.Element {
 	return (
@@ -28,5 +28,5 @@ export default function FiveZeroZero(): JSX.Element {
 				/>
 			</Container>
 		</>
-	)
+	);
 }

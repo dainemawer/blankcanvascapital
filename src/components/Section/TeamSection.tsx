@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
 	StyledTeamGrid,
 	StyledTeamMember,
 	StyledTeamMemberImage,
 	StyledTeamMemberName,
 	StyledTeamMemberTitle,
-} from './Section.styled';
+} from "./Section.styled";
 
 const TeamSection = ({ team }) => {
 	return (
@@ -21,6 +21,6 @@ const TeamSection = ({ team }) => {
 			))}
 		</StyledTeamGrid>
 	);
-}
+};
 
 export default TeamSection;

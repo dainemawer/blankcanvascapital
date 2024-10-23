@@ -6,16 +6,31 @@ import {
 	StyledHeader,
 	StyledBox,
 	StyledCTA,
-	StyledIndex
-} from './Section.styled';
+	StyledIndex,
+} from "./Section.styled";
 
-import { Button } from '@components/Button';
-import { Container } from '@components/Container';
+import { Button } from "@components/Button";
+import { Container } from "@components/Container";
 
-const PortfolioSection = ({ align, backgroundImage, ctaLabel, ctaLink, excerpt, id, index, subTitle, title }) => {
+const PortfolioSection = ({
+	align,
+	backgroundImage,
+	ctaLabel,
+	ctaLink,
+	excerpt,
+	id,
+	index,
+	subTitle,
+	title,
+}) => {
 	return (
-		<StyledSection align={align} backgroundImage={backgroundImage} className="portfolio" id={id}>
-			<Container size='1290px'>
+		<StyledSection
+			align={align}
+			backgroundImage={backgroundImage}
+			className="portfolio"
+			id={id}
+		>
+			<Container size="1290px">
 				<StyledEyebrow align={align}>
 					<StyledIndex align="center">{index}</StyledIndex>
 					{subTitle}
@@ -24,14 +39,16 @@ const PortfolioSection = ({ align, backgroundImage, ctaLabel, ctaLink, excerpt, 
 					<StyledTitle color="#fff">{title}</StyledTitle>
 				</StyledHeader>
 				<StyledBox>
-					<StyledExcerpt align={align} color="#fff" maxWidth="620px">{excerpt}</StyledExcerpt>
+					<StyledExcerpt align={align} color="#fff" maxWidth="620px">
+						{excerpt}
+					</StyledExcerpt>
 					<StyledCTA>
 						<Button href={ctaLink}>{ctaLabel}</Button>
 					</StyledCTA>
 				</StyledBox>
 			</Container>
 		</StyledSection>
-	)
-}
+	);
+};
 
 export default PortfolioSection;

@@ -4,14 +4,14 @@
  * Global Site Footer
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
-import Link from 'next/link';
-import { Colophon } from '@components/Colophon'
-import { Container } from '@components/Container'
-import { StyledFooter, StyledFooterCard, StyledAddress } from './Footer.styled';
+import { FC } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Colophon } from "@components/Colophon";
+import { Container } from "@components/Container";
+import { StyledFooter, StyledFooterCard, StyledAddress } from "./Footer.styled";
 
 const Footer: FC = (): JSX.Element => {
 	return (
@@ -35,9 +35,12 @@ const Footer: FC = (): JSX.Element => {
 							/>
 						</Link>
 						<StyledAddress>
-							1st Floor<br />
-							30 Melrose Boulevard<br />
-							Melrose Arch, Johannesburg<br />
+							1st Floor
+							<br />
+							30 Melrose Boulevard
+							<br />
+							Melrose Arch, Johannesburg
+							<br />
 							South Africa
 						</StyledAddress>
 					</StyledFooterCard>
@@ -45,7 +48,7 @@ const Footer: FC = (): JSX.Element => {
 			</StyledFooter>
 			<Colophon />
 		</footer>
-	)
-}
+	);
+};
 
 export default Footer;

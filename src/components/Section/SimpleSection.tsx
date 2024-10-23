@@ -4,13 +4,13 @@
  * Renders simple sections on the home page.
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import type { FC } from 'react';
-import Image from 'next/image';
-import type { SimpleSectionProps } from './Section.types';
-import { Container } from '@components/Container';
-import { Button } from '@components/Button';
+import type { FC } from "react";
+import Image from "next/image";
+import type { SimpleSectionProps } from "./Section.types";
+import { Container } from "@components/Container";
+import { Button } from "@components/Button";
 
 import {
 	StyledSection,
@@ -26,8 +26,8 @@ import {
 	StyledCardContent,
 	StyledSubTitle,
 	StyledExcerpt,
-	StyledCTA
-} from './Section.styled';
+	StyledCTA,
+} from "./Section.styled";
 
 const SimpleSection: FC<SimpleSectionProps> = ({
 	align,
@@ -44,9 +44,14 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 	title,
 }) => {
 	return (
-		<StyledSection align={align} backgroundColor={backgroundColor} className="simple" id={id}>
-			<Container size='1290px'>
-				{align === 'left' ? (
+		<StyledSection
+			align={align}
+			backgroundColor={backgroundColor}
+			className="simple"
+			id={id}
+		>
+			<Container size="1290px">
+				{align === "left" ? (
 					<StyledSectionGrid align={align}>
 						<StyledMiniSidebar align={align}>
 							<StyledIndex align={align}>{index}</StyledIndex>

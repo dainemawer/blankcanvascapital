@@ -4,53 +4,60 @@
  * Homepage template for site application.
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { NextSeo } from 'next-seo';
-import dynamic from 'next/dynamic';
-import { Hero } from '@components/Hero';
-import useSWR from 'swr';
-import fetcher from '@lib/fetcher';
-import { SingleTeamProps } from '@components/TeamGrid/TeamGrid.types';
+import { NextSeo } from "next-seo";
+import dynamic from "next/dynamic";
+import { Hero } from "@components/Hero";
+import useSWR from "swr";
+import fetcher from "@lib/fetcher";
+import { SingleTeamProps } from "@components/TeamGrid/TeamGrid.types";
 
-const TeamSection = dynamic(() => import('@components/Section/TeamSection'));
-const PortfolioSection = dynamic(() => import('@components/Section/PortfolioSection'));
-const SimpleSection = dynamic(() => import('@components/Section/SimpleSection'));
-const ComplexSection = dynamic(() => import('@components/Section/ComplexSection'));
+const TeamSection = dynamic(() => import("@components/Section/TeamSection"));
+const PortfolioSection = dynamic(
+	() => import("@components/Section/PortfolioSection")
+);
+const SimpleSection = dynamic(
+	() => import("@components/Section/SimpleSection")
+);
+const ComplexSection = dynamic(
+	() => import("@components/Section/ComplexSection")
+);
 
 export default function Home(): JSX.Element {
-	const { data: teamData } = useSWR('/api/team', fetcher);
+	const { data: teamData } = useSWR("/api/team", fetcher);
 	const team = teamData as SingleTeamProps[];
 
 	const subTitle = (
 		<>
-			<span style={{ display: 'block' }}>Unleashing Potential</span>
-			<span style={{ display: 'block' }}>Creating Value</span>
-			<span style={{ display: 'block' }}>Partnering for Exceptional Returns</span>
+			<span style={{ display: "block" }}>Unleashing Potential</span>
+			<span style={{ display: "block" }}>Creating Value</span>
+			<span style={{ display: "block" }}>
+				Partnering for Exceptional Returns
+			</span>
 		</>
-	)
+	);
 
 	const splitParagraph = (
 		<>
-			<span style={{ display: 'block' }}>
-				With a flexible investment approach across investment size, industry type and capital structure,
-				we seek scalable businesses that can deliver superior returns on capital.
+			<span style={{ display: "block" }}>
+				With a flexible investment approach across investment size, industry
+				type and capital structure, we seek scalable businesses that can deliver
+				superior returns on capital.
 			</span>
 			<br />
-			<span style={{ display: 'block' }}>
+			<span style={{ display: "block" }}>
 				Partner selection is key, and we prioritise backing strong entrepreneurs
-				and business owners who share our vision and commitment to success.
-				We engage fully in each opportunity, from initial investment to exit, and
+				and business owners who share our vision and commitment to success. We
+				engage fully in each opportunity, from initial investment to exit, and
 				prioritize long-term partnerships with our investee businesses.
 			</span>
 		</>
-	)
+	);
 
 	return (
 		<>
-			<NextSeo
-				title="Home"
-			/>
+			<NextSeo title="Home" />
 			<Hero
 				subtitle="Blank Canvas Capital is an experienced group of talented
 				entrepreneurs pioneering the way
@@ -132,5 +139,5 @@ export default function Home(): JSX.Element {
 				title="Get in Touch"
 			/>
 		</>
-	)
+	);
 }

@@ -4,13 +4,13 @@
  * Hero Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
-import { fonts } from '@theme/fonts';
-import { breakpoints } from '@theme/breakpoints';
-import styled from '@emotion/styled';
+import { FC } from "react";
+import Image from "next/image";
+import { fonts } from "@theme/fonts";
+import { breakpoints } from "@theme/breakpoints";
+import styled from "@emotion/styled";
 
 const StyledContent = styled.div`
 	bottom: 0;
@@ -52,7 +52,6 @@ const StyledContent = styled.div`
 `;
 
 const StyledContentWrap = styled.div`
-
 	${breakpoints.sm} {
 		margin-left: 40px;
 	}
@@ -100,24 +99,49 @@ interface ContentProps {
 	variation?: string;
 }
 
-export const Content: FC<ContentProps> = ({ logo, subtitle, title, variation }): JSX.Element => {
+export const Content: FC<ContentProps> = ({
+	logo,
+	subtitle,
+	title,
+	variation,
+}): JSX.Element => {
 	return (
 		<StyledContent>
-			{variation === 'horizontal' && (
-				<Image alt="Blank Canvas Capital Logo" className="horizontal-logo" height={666} src="/blank-canvas-capital-horizontal.png" style={{ filter: 'invert(1)' }} width={614} />
+			{variation === "horizontal" && (
+				<Image
+					alt="Blank Canvas Capital Logo"
+					className="horizontal-logo"
+					height={666}
+					src="/blank-canvas-capital-horizontal.png"
+					style={{ filter: "invert(1)" }}
+					width={614}
+				/>
 			)}
-			{variation === 'natural' && (
+			{variation === "natural" && (
 				<>
-					{logo && <Image alt="Blank Canvas CapitalLogo" height={333} src={logo} width={307} />}
+					{logo && (
+						<Image
+							alt="Blank Canvas CapitalLogo"
+							height={333}
+							src={logo}
+							width={307}
+						/>
+					)}
 					<StyledContentWrap>
 						{title && <StyledHeroTitle>{title}</StyledHeroTitle>}
 						{subtitle && <StyledHeroSubtitle>{subtitle}</StyledHeroSubtitle>}
 					</StyledContentWrap>
 				</>
 			)}
-			{variation === 'bw' && (
-				<Image alt="Blank Canvas Capital Logo" className="horizontal-logo" height={666} src="/blank-canvas-capital-horizontal.png" width={614} />
+			{variation === "bw" && (
+				<Image
+					alt="Blank Canvas Capital Logo"
+					className="horizontal-logo"
+					height={666}
+					src="/blank-canvas-capital-horizontal.png"
+					width={614}
+				/>
 			)}
 		</StyledContent>
-	)
-}
+	);
+};

@@ -4,25 +4,25 @@
  *  Call To Action Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import { Button } from '@components/Button';
+import { FC } from "react";
+import { Button } from "@components/Button";
 import {
 	StyledSection,
 	StyledSectionContainer,
 	StyledEyebrow,
 	StyledCTATitle,
-	StyledDescription
-} from './CallToAction.styled';
-import { CallToActionProps } from './CallToAction.types';
+	StyledDescription,
+} from "./CallToAction.styled";
+import { CallToActionProps } from "./CallToAction.types";
 
 export const CallToAction: FC<CallToActionProps> = ({
 	buttonLink,
 	buttonText,
 	description,
 	eyebrow,
-	title
+	title,
 }): JSX.Element => {
 	return (
 		<StyledSection>
@@ -34,4 +34,4 @@ export const CallToAction: FC<CallToActionProps> = ({
 			</StyledSectionContainer>
 		</StyledSection>
 	);
-}
+};

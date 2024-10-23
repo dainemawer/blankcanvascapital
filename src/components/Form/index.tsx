@@ -4,20 +4,20 @@
  * Contact Form
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC, useState } from 'react'
+import { FC, useState } from "react";
 
-import { Button } from '@components/Button';
+import { Button } from "@components/Button";
 import { useForm } from "react-hook-form";
-import { doSubmit } from '@lib/submit';
+import { doSubmit } from "@lib/submit";
 import {
 	StyledErrorMessage,
 	StyledInputGroup,
 	StyledInput,
 	StyledLabel,
-	StyledTextarea
-} from './Form.styled';
+	StyledTextarea,
+} from "./Form.styled";
 export interface IDataProps {
 	email: string;
 	honeypot: string;
@@ -26,23 +26,23 @@ export interface IDataProps {
 	subject: string;
 }
 
-interface FormProps { }
+interface FormProps {}
 
 const Form: FC<FormProps> = (): JSX.Element => {
-	const [submitted, setSubmitted] = useState('Submit');
+	const [submitted, setSubmitted] = useState("Submit");
 
 	const {
 		formState: { errors, isSubmitting },
 		handleSubmit,
 		register,
-		reset
+		reset,
 	} = useForm();
 
 	const onSubmit = (data: IDataProps) => doSubmit(data, setSubmitted, reset);
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<StyledInputGroup className={errors.name && 'input-error'}>
+			<StyledInputGroup className={errors.name && "input-error"}>
 				<StyledLabel htmlFor="name">
 					<span>Name</span>
 					<StyledInput
@@ -56,7 +56,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 					{errors.name && <>This field is required</>}
 				</StyledErrorMessage>
 			</StyledInputGroup>
-			<StyledInputGroup className={errors.email && 'input-error'}>
+			<StyledInputGroup className={errors.email && "input-error"}>
 				<StyledLabel htmlFor="email">
 					<span>Email</span>
 					<StyledInput
@@ -66,8 +66,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 						{...register("email", {
 							required: true,
 							validate: (value) =>
-								/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-									.test(value)
+								/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value),
 						})}
 					/>
 				</StyledLabel>
@@ -86,7 +85,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 					/>
 				</StyledLabel>
 			</StyledInputGroup>
-			<StyledInputGroup className={errors.message && 'input-error'}>
+			<StyledInputGroup className={errors.message && "input-error"}>
 				<StyledLabel htmlFor="message" vertical>
 					<span>Message</span>
 					<StyledTextarea
@@ -94,19 +93,18 @@ const Form: FC<FormProps> = (): JSX.Element => {
 						placeholder="What would you like to discuss with us?"
 						rows={10}
 						{...register("message", { required: true })}
-					>
-					</StyledTextarea>
+					></StyledTextarea>
 					<StyledErrorMessage>
 						{errors.message && <>This field is required</>}
 					</StyledErrorMessage>
 				</StyledLabel>
 			</StyledInputGroup>
-			<input type="text" {...register('honeypot')} hidden />
+			<input type="text" {...register("honeypot")} hidden />
 			<Button type="submit">
 				{isSubmitting ? "Submitting..." : submitted}
 			</Button>
 		</form>
-	)
-}
+	);
+};
 
 export default Form;
