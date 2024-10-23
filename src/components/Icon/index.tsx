@@ -4,9 +4,9 @@
  * Icon Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
+import { FC } from "react";
 import {
 	Briefcase,
 	Key,
@@ -16,8 +16,8 @@ import {
 	Study,
 	LightBulb,
 	PaperPlane,
-	Dollar
-} from '../../icons';
+	Dollar,
+} from "../../icons";
 
 interface IconProps {
 	icon?: string;
@@ -25,25 +25,25 @@ interface IconProps {
 
 export const Icon: FC<IconProps> = ({ icon }) => {
 	switch (icon) {
-		case 'briefcase':
+		case "briefcase":
 			return <Briefcase />;
-		case 'key':
+		case "key":
 			return <Key />;
-		case 'database':
+		case "database":
 			return <Database />;
-		case 'lightning':
+		case "lightning":
 			return <Lightning />;
-		case 'bookmark':
+		case "bookmark":
 			return <Bookmark />;
-		case 'study':
+		case "study":
 			return <Study />;
-		case 'light-bulb':
+		case "light-bulb":
 			return <LightBulb />;
-		case 'paper-plane':
+		case "paper-plane":
 			return <PaperPlane />;
-		case 'dollar':
+		case "dollar":
 			return <Dollar />;
 		default:
 			return <Briefcase />;
 	}
-}
+};

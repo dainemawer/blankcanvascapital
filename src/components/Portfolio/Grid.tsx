@@ -4,16 +4,23 @@
  * Quote Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import { StyledPortfolioGrid, StyledPortfolioGridHeading, StyledPortfolioGridWrap } from './Portfolio.styled';
-import { PortfolioCard } from '@components/Cards/PortfolioCard';
-import type { PortfolioGridProps } from './Portfolio.types';
-import { AnimatePresence, motion } from 'framer-motion';
+import { FC } from "react";
+import {
+	StyledPortfolioGrid,
+	StyledPortfolioGridHeading,
+	StyledPortfolioGridWrap,
+} from "./Portfolio.styled";
+import { PortfolioCard } from "@components/Cards/PortfolioCard";
+import type { PortfolioGridProps } from "./Portfolio.types";
+import { AnimatePresence, motion } from "framer-motion";
 
-const Grid: FC<PortfolioGridProps> = ({ handleClick, items, label }): JSX.Element => {
-
+const Grid: FC<PortfolioGridProps> = ({
+	handleClick,
+	items,
+	label,
+}): JSX.Element => {
 	return (
 		<StyledPortfolioGrid>
 			<StyledPortfolioGridHeading>{label}</StyledPortfolioGridHeading>
@@ -38,6 +45,6 @@ const Grid: FC<PortfolioGridProps> = ({ handleClick, items, label }): JSX.Elemen
 			</StyledPortfolioGridWrap>
 		</StyledPortfolioGrid>
 	);
-}
+};
 
 export default Grid;

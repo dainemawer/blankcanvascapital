@@ -4,14 +4,14 @@
  * Hero Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
-import { Content } from './Content';
-import { Container } from '@components/Container';
-import { StyledHero, StyledImage } from './Hero.styled';
-import { HeroProps } from './Hero.types';
+import { FC } from "react";
+import Image from "next/image";
+import { Content } from "./Content";
+import { Container } from "@components/Container";
+import { StyledHero, StyledImage } from "./Hero.styled";
+import { HeroProps } from "./Hero.types";
 
 export const Hero: FC<HeroProps> = ({
 	image,
@@ -19,7 +19,7 @@ export const Hero: FC<HeroProps> = ({
 	logo,
 	subtitle,
 	title,
-	variation
+	variation,
 }): JSX.Element => {
 	return (
 		<StyledHero>
@@ -38,9 +38,14 @@ export const Hero: FC<HeroProps> = ({
 					</StyledImage>
 				)}
 				{title && (
-					<Content logo={logo} subtitle={subtitle} title={title} variation={variation} />
+					<Content
+						logo={logo}
+						subtitle={subtitle}
+						title={title}
+						variation={variation}
+					/>
 				)}
 			</Container>
 		</StyledHero>
-	)
-}
+	);
+};

@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { Icon } from '@components/Icon';
-import type { InvestmentSectionProps } from './Investments.types';
+import { FC } from "react";
+import { Icon } from "@components/Icon";
+import type { InvestmentSectionProps } from "./Investments.types";
 import {
 	Container,
 	Content,
@@ -9,8 +9,8 @@ import {
 	IconContainer,
 	IconElement,
 	Section,
-	Title
-} from './Investments.styled';
+	Title,
+} from "./Investments.styled";
 
 const InvestmentSection: FC<InvestmentSectionProps> = ({
 	align,
@@ -27,7 +27,7 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 }) => {
 	return (
 		<Section align={align} aria-label={title} bgColor={bgColor} id={name}>
-			{align === 'left' && (
+			{align === "left" && (
 				<Container align={align} grid={grid} maxWidth={maxWidth}>
 					<IconContainer align={align}>
 						<IconElement bgColor="#c5a880">
@@ -36,22 +36,23 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 					</IconContainer>
 					<div>
 						<Header textAlign="left">
-							<Eyebrow className="eyebrow">
-								{eyebrow}
-							</Eyebrow>
+							<Eyebrow className="eyebrow">{eyebrow}</Eyebrow>
 							<Title>{title}</Title>
 						</Header>
 						<Content>{children}</Content>
 					</div>
 				</Container>
 			)}
-			{align === 'right' && (
-				<Container align="right" className="with-bg" grid={grid} maxWidth={maxWidth}>
+			{align === "right" && (
+				<Container
+					align="right"
+					className="with-bg"
+					grid={grid}
+					maxWidth={maxWidth}
+				>
 					<div>
 						<Header textAlign="right">
-							<Eyebrow className="eyebrow">
-								{eyebrow}
-							</Eyebrow>
+							<Eyebrow className="eyebrow">{eyebrow}</Eyebrow>
 							<Title>{title}</Title>
 						</Header>
 						<Content align="right">{children}</Content>
@@ -63,7 +64,7 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 					</IconContainer>
 				</Container>
 			)}
-			{align === 'center' && (
+			{align === "center" && (
 				<Container
 					align="center"
 					className="with-bg centered"
@@ -72,9 +73,7 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 				>
 					<div>
 						<Header textAlign="center">
-							<Eyebrow className="eyebrow">
-								{eyebrow}
-							</Eyebrow>
+							<Eyebrow className="eyebrow">{eyebrow}</Eyebrow>
 							<Title>{title}</Title>
 						</Header>
 						<Content align="center">{children}</Content>
@@ -87,7 +86,7 @@ const InvestmentSection: FC<InvestmentSectionProps> = ({
 				</Container>
 			)}
 		</Section>
-	)
-}
+	);
+};
 
 export default InvestmentSection;

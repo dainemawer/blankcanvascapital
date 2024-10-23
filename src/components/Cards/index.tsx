@@ -4,14 +4,12 @@
  * Card Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
+import { FC } from "react";
 
-interface CardProps { }
+interface CardProps {}
 
 export const Card: FC<CardProps> = (): JSX.Element => {
-	return (
-		<article>Button</article>
-	);
-}
+	return <article>Button</article>;
+};

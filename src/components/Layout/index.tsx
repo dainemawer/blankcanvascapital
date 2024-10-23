@@ -5,24 +5,24 @@
  *
  * @param {ReactNode} children
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import dynamic from 'next/dynamic';
-import { Header } from '@components/Header'
-import fetcher from '@lib/fetcher';
-import useSWR from 'swr';
+import { FC } from "react";
+import dynamic from "next/dynamic";
+import { Header } from "@components/Header";
+import fetcher from "@lib/fetcher";
+import useSWR from "swr";
 
-import { NavigationItemProps } from '@components/Navigation/Navigation.types';
+import { NavigationItemProps } from "@components/Navigation/Navigation.types";
 interface LayoutProps {
-	children: React.ReactElement,
+	children: React.ReactElement;
 }
 
-const SkipLink = dynamic(() => import('@components/SkipLink'), { ssr: false });
-const Footer = dynamic(() => import('@components/Footer'), { ssr: false });
+const SkipLink = dynamic(() => import("@components/SkipLink"), { ssr: false });
+const Footer = dynamic(() => import("@components/Footer"), { ssr: false });
 
 export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
-	const { data } = useSWR('/api/menu', fetcher);
+	const { data } = useSWR("/api/menu", fetcher);
 	const menu = data as NavigationItemProps[];
 	return (
 		<>
@@ -31,6 +31,5 @@ export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
 			<main id="main-content">{children}</main>
 			<Footer />
 		</>
-
-	)
-}
+	);
+};

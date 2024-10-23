@@ -4,24 +4,24 @@
  * Error Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import { Button } from '@components/Button';
+import { FC } from "react";
+import { Button } from "@components/Button";
 import {
 	StyledWrap,
 	StyledTextWrap,
 	StyledH1,
 	StyledEyebrow,
-	StyledParagraph
-} from './ErrorLayout.styled'
-import { ErrorProps } from './ErrorLayout.types'
+	StyledParagraph,
+} from "./ErrorLayout.styled";
+import { ErrorProps } from "./ErrorLayout.types";
 
 export const ErrorLayout: FC<ErrorProps> = ({
-	eyebrow = '',
-	lead = '',
-	permalink = '',
-	title = '',
+	eyebrow = "",
+	lead = "",
+	permalink = "",
+	title = "",
 }): JSX.Element => {
 	return (
 		<StyledWrap>
@@ -37,4 +37,4 @@ export const ErrorLayout: FC<ErrorProps> = ({
 			</StyledTextWrap>
 		</StyledWrap>
 	);
-}
+};

@@ -4,14 +4,12 @@
  * Divider Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
+import { FC } from "react";
 
-interface DividerProps { }
+interface DividerProps {}
 
 export const Divider: FC<DividerProps> = (): JSX.Element => {
-	return (
-		<p>Divider</p>
-	);
-}
+	return <p>Divider</p>;
+};

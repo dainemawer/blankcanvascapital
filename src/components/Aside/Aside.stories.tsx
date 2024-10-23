@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import Aside from './index';
+import Aside from "./index";
 
 // More on how to set up stories at:
 // https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Aside> = {
-	title: 'Components/Aside',
+	title: "Components/Aside",
 	component: Aside,
-	tags: ['autodocs'],
+	tags: ["autodocs"],
 };
 
 export default meta;

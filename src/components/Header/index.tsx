@@ -4,28 +4,24 @@
  * Global Site Header
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { useContext, FC } from 'react'
-import Link from 'next/link'
-import { Logo } from '@components/Logo';
-import { Navigation } from '@components/Navigation';
-import { Container } from '@components/Container';
-import { SiteContext } from '@context/SiteContext';
-import { Burger } from '@mantine/core';
-import { SiteContextProps } from '@context/SiteContext';
-import { StyledHeader, StyledHeaderWrap } from './Header.styled';
-import { HeaderProps } from './Header.types';
-import { useScrollPosition } from '@hooks/useScrollPosition';
+import { useContext, FC } from "react";
+import Link from "next/link";
+import { Logo } from "@components/Logo";
+import { Navigation } from "@components/Navigation";
+import { Container } from "@components/Container";
+import { SiteContext } from "@context/SiteContext";
+import { Burger } from "@mantine/core";
+import { SiteContextProps } from "@context/SiteContext";
+import { StyledHeader, StyledHeaderWrap } from "./Header.styled";
+import { HeaderProps } from "./Header.types";
+import { useScrollPosition } from "@hooks/useScrollPosition";
 
 export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
-	const {
-		close,
-		isOpen,
-		open,
-		toggle,
-	} = useContext<SiteContextProps>(SiteContext);
-	const ariaLabel = isOpen ? 'Close navigation' : 'Open navigation';
+	const { close, isOpen, open, toggle } =
+		useContext<SiteContextProps>(SiteContext);
+	const ariaLabel = isOpen ? "Close navigation" : "Open navigation";
 	const scrollPosition = useScrollPosition();
 
 	return (
@@ -59,5 +55,5 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 				</StyledHeaderWrap>
 			</Container>
 		</StyledHeader>
-	)
-}
+	);
+};

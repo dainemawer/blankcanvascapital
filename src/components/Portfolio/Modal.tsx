@@ -4,10 +4,10 @@
  * Quote Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
+import { FC } from "react";
+import Image from "next/image";
 import {
 	StyledModalContent,
 	StyledCoverImage,
@@ -20,13 +20,17 @@ import {
 	StyledModalList,
 	StyledButton,
 	StyledButtonContainerDesktop,
-	StyledButtonContainerMobile
-} from './Portfolio.styled';
-import { Modal } from '@mantine/core';
-import type { PortfolioModalProps } from './Portfolio.types';
+	StyledButtonContainerMobile,
+} from "./Portfolio.styled";
+import { Modal } from "@mantine/core";
+import type { PortfolioModalProps } from "./Portfolio.types";
 
-const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }): JSX.Element => {
-	const isRealEstate: Boolean = modalContent.category === 'Real Estate';
+const PortfolioModal: FC<PortfolioModalProps> = ({
+	close,
+	modalContent,
+	opened,
+}): JSX.Element => {
+	const isRealEstate: Boolean = modalContent.category === "Real Estate";
 
 	return (
 		<Modal.Root
@@ -38,7 +42,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 			<Modal.Overlay />
 			<Modal.Content>
 				<Modal.Body>
-					<StyledModalContent className={isRealEstate && 'real-estate'}>
+					<StyledModalContent className={isRealEstate && "real-estate"}>
 						<div>
 							{isRealEstate && (
 								<>
@@ -60,8 +64,10 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 											/>
 										</svg>
 									</StyledCloseButton>
-									<StyledContent className={isRealEstate && 'real-estate'}>
-										<StyledModalFigure className={isRealEstate && 'real-estate'}>
+									<StyledContent className={isRealEstate && "real-estate"}>
+										<StyledModalFigure
+											className={isRealEstate && "real-estate"}
+										>
 											{modalContent.logo && (
 												<Image
 													alt={modalContent.title}
@@ -74,7 +80,13 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 											)}
 											{modalContent.url && (
 												<StyledButtonContainerDesktop>
-													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
+													<StyledButton
+														href={modalContent.url}
+														rel="noreferrer"
+														target="_blank"
+													>
+														Visit Website
+													</StyledButton>
 												</StyledButtonContainerDesktop>
 											)}
 										</StyledModalFigure>
@@ -88,12 +100,28 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 												</StyledModalDescription>
 											)}
 											<StyledModalList>
-												{modalContent.region && <li><strong>Region: </strong>{modalContent.region}</li>}
-												{modalContent.sector && <li><strong>Sector: </strong>{modalContent.sector}</li>}
-												{modalContent.date && <li><strong>Date: </strong>{modalContent.date}</li>}
+												{modalContent.region && (
+													<li>
+														<strong>Region: </strong>
+														{modalContent.region}
+													</li>
+												)}
+												{modalContent.sector && (
+													<li>
+														<strong>Sector: </strong>
+														{modalContent.sector}
+													</li>
+												)}
+												{modalContent.date && (
+													<li>
+														<strong>Date: </strong>
+														{modalContent.date}
+													</li>
+												)}
 												{modalContent.status && (
-													<li style={{ textTransform: 'capitalize' }}>
-														<strong>Status: </strong>{modalContent.status}
+													<li style={{ textTransform: "capitalize" }}>
+														<strong>Status: </strong>
+														{modalContent.status}
 													</li>
 												)}
 											</StyledModalList>
@@ -148,7 +176,13 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 											)}
 											{modalContent.url && (
 												<StyledButtonContainerMobile>
-													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
+													<StyledButton
+														href={modalContent.url}
+														rel="noreferrer"
+														target="_blank"
+													>
+														Visit Website
+													</StyledButton>
 												</StyledButtonContainerMobile>
 											)}
 										</StyledModalFigure>
@@ -162,18 +196,45 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 												</StyledModalDescription>
 											)}
 											<StyledModalList>
-												{modalContent.region && <li><strong>Region: </strong>{modalContent.region}</li>}
-												{modalContent.sector && <li><strong>Sector: </strong>{modalContent.sector}</li>}
-												{modalContent.date && <li><strong>Date: </strong>{modalContent.date}</li>}
+												{modalContent.region && (
+													<li>
+														<strong>Region: </strong>
+														{modalContent.region}
+													</li>
+												)}
+												{modalContent.sector && (
+													<li>
+														<strong>Sector: </strong>
+														{modalContent.sector}
+													</li>
+												)}
+												{modalContent.date && (
+													<li>
+														<strong>Date: </strong>
+														{modalContent.date}
+													</li>
+												)}
 												{modalContent.status && (
-													<li style={{ textTransform: 'capitalize' }}>
-														<strong>Status: </strong>{modalContent.status}
+													<li style={{ textTransform: "capitalize" }}>
+														<strong>Status: </strong>
+														{modalContent.status}
 													</li>
 												)}
 											</StyledModalList>
 											{modalContent.url && (
-												<p style={{display: 'flex', justifyContent: 'flex-start' }}>
-													<StyledButton href={modalContent.url} rel="noreferrer" target="_blank">Visit Website</StyledButton>
+												<p
+													style={{
+														display: "flex",
+														justifyContent: "flex-start",
+													}}
+												>
+													<StyledButton
+														href={modalContent.url}
+														rel="noreferrer"
+														target="_blank"
+													>
+														Visit Website
+													</StyledButton>
 												</p>
 											)}
 										</StyledModalSection>
@@ -186,6 +247,6 @@ const PortfolioModal: FC<PortfolioModalProps> = ({ close, modalContent, opened }
 			</Modal.Content>
 		</Modal.Root>
 	);
-}
+};
 
 export default PortfolioModal;

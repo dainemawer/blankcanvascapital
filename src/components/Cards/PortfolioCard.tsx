@@ -4,21 +4,21 @@
  * Portfolio Card Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
-import { PortfolioProps } from '../../pages/portfolio';
+import { FC } from "react";
+import Image from "next/image";
+import { PortfolioProps } from "../../pages/portfolio";
 
-import styled from '@emotion/styled';
-import { fonts } from '@theme/fonts'
-import { colors } from '@theme/colors'
-import { breakpoints } from '@theme/breakpoints'
+import styled from "@emotion/styled";
+import { fonts } from "@theme/fonts";
+import { colors } from "@theme/colors";
+import { breakpoints } from "@theme/breakpoints";
 
 type PortfolioCard = {
 	handleClick: (item: PortfolioProps) => void;
 	item: PortfolioProps;
-}
+};
 
 const StyledArticle = styled.article`
 	align-items: flex-start;
@@ -74,7 +74,7 @@ const StyledFigure = styled.figure`
 	display: flex;
 	flex: 1;
 	margin: 0;
-`
+`;
 
 const StyledTitle = styled.h4`
 	color: ${colors.gold};
@@ -87,10 +87,10 @@ export const PortfolioCard: FC<PortfolioCard> = ({
 	handleClick,
 	item,
 }): JSX.Element => {
-	const isRealEstate = item.category === 'Real Estate';
+	const isRealEstate = item.category === "Real Estate";
 
 	return (
-		<StyledArticle className={isRealEstate && 'is-real-estate'} id={item.id} >
+		<StyledArticle className={isRealEstate && "is-real-estate"} id={item.id}>
 			{item.title && (
 				<StyledFigure>
 					<StyledButton onClick={() => handleClick(item)}>
@@ -102,12 +102,10 @@ export const PortfolioCard: FC<PortfolioCard> = ({
 							src={item.logo}
 							width={256}
 						/>
-						{isRealEstate && (
-							<StyledTitle>{item.title}</StyledTitle>
-						)}
+						{isRealEstate && <StyledTitle>{item.title}</StyledTitle>}
 					</StyledButton>
 				</StyledFigure>
 			)}
 		</StyledArticle>
 	);
-}
+};

@@ -4,24 +4,27 @@
  * Quote Component
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import { FC } from 'react'
-import Image from 'next/image';
-import { TeamProps } from './TeamGrid.types';
+import { FC } from "react";
+import Image from "next/image";
+import { TeamProps } from "./TeamGrid.types";
 import {
 	StyledArticle,
 	StyledFigure,
 	StyledTeamMember,
 	StyledTitle,
 	StyledHeader,
-	StyledSection
-} from './TeamGrid.styled';
+	StyledSection,
+} from "./TeamGrid.styled";
 
 const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
 	<StyledSection>
 		{team.map((member) => (
-			<StyledArticle aria-label={`${member.name} | ${member.title}`} key={member.id}>
+			<StyledArticle
+				aria-label={`${member.name} | ${member.title}`}
+				key={member.id}
+			>
 				<StyledFigure>
 					<Image
 						alt={member.name}
@@ -44,7 +47,6 @@ const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
 							target="_blank"
 						>
 							<svg
-
 								fill="none"
 								height="35"
 								viewBox="0 0 35 35"

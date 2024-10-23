@@ -4,12 +4,12 @@
  * Renders complex sections on the home page.
  *
  * @returns {JSX.Element}
-*/
+ */
 
-import type { FC } from 'react';
-import type { ComplexSectionProps } from './Section.types';
-import { Container } from '@components/Container';
-import { Button } from '@components/Button';
+import type { FC } from "react";
+import type { ComplexSectionProps } from "./Section.types";
+import { Container } from "@components/Container";
+import { Button } from "@components/Button";
 import {
 	StyledSection,
 	StyledSectionGrid,
@@ -23,8 +23,8 @@ import {
 	StyledCardContent,
 	StyledSubTitle,
 	StyledExcerpt,
-	StyledCTA
-} from './Section.styled';
+	StyledCTA,
+} from "./Section.styled";
 
 const ComplexSection: FC<ComplexSectionProps> = ({
 	backgroundColor,
@@ -39,13 +39,12 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 	index,
 	subTitle,
 	title,
-	variant
+	variant,
 }) => {
-
-	if (variant === 'our-team') {
+	if (variant === "our-team") {
 		return (
 			<StyledSection align="left" backgroundColor={backgroundColor} id={id}>
-				<Container size='1290px'>
+				<Container size="1290px">
 					<StyledSectionGrid align="left">
 						<StyledMiniSidebar align="left">
 							<StyledIndex align="left">{index}</StyledIndex>
@@ -55,9 +54,7 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 							<StyledHeader align="left">
 								<StyledTitle>{title}</StyledTitle>
 							</StyledHeader>
-							<StyledWrap align="noalign">
-								{children}
-							</StyledWrap>
+							<StyledWrap align="noalign">{children}</StyledWrap>
 							<StyledCardContent align="left">
 								<StyledExcerpt>{excerpt}</StyledExcerpt>
 								<StyledCTA>
@@ -68,13 +65,17 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 					</StyledSectionGrid>
 				</Container>
 			</StyledSection>
-		)
+		);
 	}
 
-	if (variant === 'investment-portfolio') {
+	if (variant === "investment-portfolio") {
 		return (
-			<StyledSection align="center" backgroundColor="rgba(230,230,230, 0.3)" id={id}>
-				<Container size='1290px'>
+			<StyledSection
+				align="center"
+				backgroundColor="rgba(230,230,230, 0.3)"
+				id={id}
+			>
+				<Container size="1290px">
 					<StyledHeader align="center">
 						<StyledTitle align="center">
 							<StyledEyebrow align="center" underline>
@@ -98,10 +99,10 @@ const ComplexSection: FC<ComplexSectionProps> = ({
 					</StyledWrap>
 				</StyledContent>
 			</StyledSection>
-		)
+		);
 	}
 
 	return null;
-}
+};
 
 export default ComplexSection;

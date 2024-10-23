@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import TeamGrid from './index';
+import TeamGrid from "./index";
 
 // More on how to set up stories at:
 // https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof TeamGrid> = {
-	title: 'Components/Section',
+	title: "Components/Section",
 	component: TeamGrid,
-	tags: ['autodocs'],
+	tags: ["autodocs"],
 };
 
 export default meta;
