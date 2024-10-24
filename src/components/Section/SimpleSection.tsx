@@ -6,23 +6,6 @@ import type { SimpleSectionProps } from "./Section.types";
 import { Container } from "@components/Container";
 import { Button } from "@components/Button";
 
-import {
-	StyledSection,
-	StyledSectionGrid,
-	StyledMiniSidebar,
-	StyledIndex,
-	StyledEyebrow,
-	StyledContent,
-	StyledHeader,
-	StyledTitle,
-	StyledWrap,
-	StyledFigure,
-	StyledCardContent,
-	StyledSubTitle,
-	StyledExcerpt,
-	StyledCTA,
-} from "./Section.styled";
-
 const SimpleSection: FC<SimpleSectionProps> = ({
 	align,
 	backgroundColor,
@@ -38,64 +21,33 @@ const SimpleSection: FC<SimpleSectionProps> = ({
 	title,
 }) => {
 	return (
-		<StyledSection
-			align={align}
-			backgroundColor={backgroundColor}
-			className="simple"
-			id={id}
-		>
+		<section className={`simple py-12 md:py-32 ${backgroundColor}`} id={id}>
 			<Container size="1290px">
-				{align === "left" ? (
-					<StyledSectionGrid align={align}>
-						<StyledMiniSidebar align={align}>
-							<StyledIndex align={align}>{index}</StyledIndex>
-							<StyledEyebrow align={align}>{eyebrow}</StyledEyebrow>
-						</StyledMiniSidebar>
-						<StyledContent>
-							<StyledHeader align={align}>
-								<StyledTitle>{title}</StyledTitle>
-							</StyledHeader>
-							<StyledWrap align={align}>
-								<StyledFigure>
-									<Image alt="" height={501} src={image} width={450} />
-								</StyledFigure>
-								<StyledCardContent align={align} className={contentClassName}>
-									<StyledSubTitle maxWidth="550px">{subTitle}</StyledSubTitle>
-									<StyledExcerpt>{excerpt}</StyledExcerpt>
-									<StyledCTA>
-										<Button href={ctaLink}>{ctaLabel}</Button>
-									</StyledCTA>
-								</StyledCardContent>
-							</StyledWrap>
-						</StyledContent>
-					</StyledSectionGrid>
-				) : (
-					<StyledSectionGrid align={align}>
-						<StyledContent align={align}>
-							<StyledHeader align={align}>
-								<StyledTitle>{title}</StyledTitle>
-							</StyledHeader>
-							<StyledWrap align={align}>
-								<StyledCardContent align={align}>
-									<StyledSubTitle maxWidth="720px">{subTitle}</StyledSubTitle>
-									<StyledExcerpt>{excerpt}</StyledExcerpt>
-									<StyledCTA>
-										<Button href={ctaLink}>{ctaLabel}</Button>
-									</StyledCTA>
-								</StyledCardContent>
-								<StyledFigure>
-									<Image alt="" height={600} src={image} width={400} />
-								</StyledFigure>
-							</StyledWrap>
-						</StyledContent>
-						<StyledMiniSidebar align={align}>
-							<StyledIndex align={align}>{index}</StyledIndex>
-							<StyledEyebrow align={align}>{eyebrow}</StyledEyebrow>
-						</StyledMiniSidebar>
-					</StyledSectionGrid>
-				)}
+				<div className={`grid md:grid-cols-2 gap-5`}>
+					<div className={`relative ${align === "left" ? "order-2" : ""}`}>
+						<span className="block text-gold text-lg font-bold mb-4">
+							{index}
+						</span>
+						<span className="block text-gold font-bold text-lg uppercase border-b-2 border-gold pb-4">
+							{eyebrow}
+						</span>
+					</div>
+					<div className={`${contentClassName}`}>
+						<header className={`text-${align}`}>
+							<h2 className="text-4xl font-bold text-black mb-4">{title}</h2>
+						</header>
+						<div className="grid grid-cols-1 gap-5">
+							<Image alt="" height={501} src={image} width={450} />
+							<div className="text-left">
+								<h3 className="text-2xl font-bold mb-4">{subTitle}</h3>
+								<p className="text-gray-700 text-base mb-6">{excerpt}</p>
+								<Button href={ctaLink}>{ctaLabel}</Button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</Container>
-		</StyledSection>
+		</section>
 	);
 };
 

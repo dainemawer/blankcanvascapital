@@ -1,10 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import styled from "@emotion/styled";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
-import { StyledGrid, StyledArticle } from "../../shared/content.styled";
 
 const Aside = dynamic(() => import("@components/Aside"), { ssr: false });
 const ArticleHeader = dynamic(() => import("@components/ArticleHeader"), {
@@ -13,34 +11,31 @@ const ArticleHeader = dynamic(() => import("@components/ArticleHeader"), {
 const Form = dynamic(() => import("@components/Form"), { ssr: false });
 const Sidebar = dynamic(() => import("@components/Sidebar"), { ssr: false });
 
-const StyledContactGrid = styled.div`
-	display: grid;
-	grid-template-columns: 1fr;
-
-	@media (min-width: 1120px) {
-		grid-template-columns: 2fr minmax(400px, 1fr);
-		grid-column-gap: 2.5rem;
-	}
-`;
-
 export default function Contact() {
 	return (
 		<>
-			<Hero image="/contact-us-hero.jpg" label="Elevator in Department Store" />
+			<Hero
+				image="/contact-us-hero.jpg"
+				label="Elevator in Department Store"
+				logo={""}
+				subtitle={""}
+				title={""}
+				variation={""}
+			/>
 			<Container size="1440px">
-				<StyledGrid maxWidth="1240px">
+				<div className="grid gap-10 max-w-[1240px] mx-auto">
 					<Aside />
-					<StyledArticle>
+					<article>
 						<ArticleHeader
 							eyebrow="Let's Talk About Investments"
 							title="Get in Touch"
 						/>
-						<StyledContactGrid>
+						<div className="grid grid-cols-1 gap-10 md:grid-cols-[2fr_minmax(400px,1fr)]">
 							<Form />
 							<Sidebar />
-						</StyledContactGrid>
-					</StyledArticle>
-				</StyledGrid>
+						</div>
+					</article>
+				</div>
 			</Container>
 		</>
 	);

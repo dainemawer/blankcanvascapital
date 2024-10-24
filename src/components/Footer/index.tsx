@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Colophon } from "@components/Colophon";
 import { Container } from "@components/Container";
-import { StyledFooter, StyledFooterCard, StyledAddress } from "./Footer.styled";
 
 const Footer: FC = (): JSX.Element => {
 	return (
@@ -15,9 +14,9 @@ const Footer: FC = (): JSX.Element => {
 			id="site-footer"
 			role="contentinfo"
 		>
-			<StyledFooter>
+			<div className="bg-aluminum py-10 md:py-15">
 				<Container>
-					<StyledFooterCard>
+					<div className="flex items-start justify-start">
 						<Link href="/">
 							<Image
 								alt="Blank Canvas Capital Logo Square"
@@ -28,7 +27,7 @@ const Footer: FC = (): JSX.Element => {
 								width={52}
 							/>
 						</Link>
-						<StyledAddress>
+						<address className="ml-7 font-primary text-sm font-medium uppercase not-italic leading-6">
 							1st Floor
 							<br />
 							30 Melrose Boulevard
@@ -36,10 +35,10 @@ const Footer: FC = (): JSX.Element => {
 							Melrose Arch, Johannesburg
 							<br />
 							South Africa
-						</StyledAddress>
-					</StyledFooterCard>
+						</address>
+					</div>
 				</Container>
-			</StyledFooter>
+			</div>
 			<Colophon />
 		</footer>
 	);

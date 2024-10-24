@@ -1,31 +1,23 @@
 "use client";
 
 import { FC } from "react";
-import {
-	StyledHeadingOne,
-	StyledHeadingTwo,
-	StyledHeadingThree,
-	StyledHeadingFour,
-	StyledHeadingFive,
-	StyledHeadingSix,
-} from "./Heading.styled";
 import { HeadingProps } from "./Heading.types";
 
 export const Heading: FC<HeadingProps> = ({ as, children }): JSX.Element => {
 	switch (as) {
 		case "h1":
-			return <StyledHeadingOne>{children}</StyledHeadingOne>;
+			return <h1 className="text-6xl">{children}</h1>;
 		case "h2":
-			return <StyledHeadingTwo>{children}</StyledHeadingTwo>;
+			return <h2 className="text-6xl">{children}</h2>;
 		case "h3":
-			return <StyledHeadingThree>{children}</StyledHeadingThree>;
+			return <h3 className="text-3xl">{children}</h3>;
 		case "h4":
-			return <StyledHeadingFour>{children}</StyledHeadingFour>;
+			return <h4 className="text-xl font-primary">{children}</h4>;
 		case "h5":
-			return <StyledHeadingFive>{children}</StyledHeadingFive>;
+			return <h5 className="text-base">{children}</h5>;
 		case "h6":
-			return <StyledHeadingSix>{children}</StyledHeadingSix>;
+			return <h6 className="text-sm">{children}</h6>;
 		default:
-			return null;
+			return <></>;
 	}
 };

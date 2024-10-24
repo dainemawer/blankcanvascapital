@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
+import { Work_Sans, Roboto } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "../styles/globals.css";
 import "nprogress/nprogress.css";
@@ -9,6 +9,12 @@ import { Layout } from "../components/Layout";
 const worksans = Work_Sans({
 	subsets: ["latin"],
 	weight: ["500", "600", "700"],
+	display: "swap",
+});
+
+const roboto = Roboto({
+	subsets: ["latin"],
+	weight: ["400", "500", "700"],
 	display: "swap",
 });
 
@@ -44,7 +50,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html className={worksans.className} lang="en">
+		<html className={`${worksans.className} ${roboto.className}`} lang="en">
 			<body>
 				<Layout>{children}</Layout>
 			</body>

@@ -1,27 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import {
-	StyledTeamGrid,
-	StyledTeamMember,
-	StyledTeamMemberImage,
-	StyledTeamMemberName,
-	StyledTeamMemberTitle,
-} from "./Section.styled";
 
 const TeamSection = ({ team }) => {
 	return (
-		<StyledTeamGrid>
+		<div className="grid grid-cols-3 gap-4 overflow-x-auto">
 			{team?.map((member) => (
-				<StyledTeamMember key={member.name}>
-					<StyledTeamMemberImage>
+				<div className="flex-shrink-0" key={member.name}>
+					<div className="flex flex-col items-center">
 						<Image alt="" height={500} src={member.image} width={447} />
-					</StyledTeamMemberImage>
-					<StyledTeamMemberName>{member.name}</StyledTeamMemberName>
-					<StyledTeamMemberTitle>{member.title}</StyledTeamMemberTitle>
-				</StyledTeamMember>
+						<h3 className="text-lg font-bold uppercase mt-4">{member.name}</h3>
+						<p className="text-gold text-base font-bold uppercase mt-2">
+							{member.title}
+						</p>
+					</div>
+				</div>
 			))}
-		</StyledTeamGrid>
+		</div>
 	);
 };
 

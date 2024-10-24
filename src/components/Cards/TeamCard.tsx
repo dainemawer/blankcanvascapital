@@ -17,7 +17,7 @@ export const TeamCard: FC<TeamCardProps> = ({
 			{image && (
 				<figure>
 					<Image
-						alt={name}
+						alt={name || "Team member"}
 						decoding="async"
 						height={500}
 						loading="lazy"

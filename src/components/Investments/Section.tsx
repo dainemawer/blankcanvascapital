@@ -1,15 +1,11 @@
-"use client";
+const Section = ({ bgColor, children }) => (
+	<section
+		className={`relative ${bgColor === "#292929" ? "text-white" : ""} bg-${
+			bgColor || "white"
+		} py-8 md:py-16`}
+	>
+		{children}
+	</section>
+);
 
-import { FC } from "react";
-import { SimpleSectionProps } from "./Investments.types";
-import { Container, Section } from "./Investments.styled";
-
-const SimpleSection: FC<SimpleSectionProps> = ({ align, children, name }) => {
-	return (
-		<Section id={name}>
-			<Container align={align}>{children}</Container>
-		</Section>
-	);
-};
-
-export default SimpleSection;
+export default Section;

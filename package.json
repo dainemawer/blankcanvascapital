@@ -1,12 +1,11 @@
 {
-  "name": "blackcanvascapital",
+  "name": "blankcanvascapital",
   "version": "1.0.0",
-  "description": "A marketing site for Black Canvas Capital",
+  "description": "A marketing site for Blank Canvas Capital",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc",
@@ -15,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dainemawer/africanperfection.git"
+    "url": "git+https://github.com/dainemawer/blankcanvascapital.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dainemawer/africanperfection/issues"
+    "url": "https://github.com/dainemawer/blankcanvascapital/issues"
   },
-  "homepage": "https://github.com/dainemawer/africanperfection#readme",
+  "homepage": "https://github.com/dainemawer/blankcanvascapital#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
     "@commitlint/cli": "^17.2.0",
@@ -42,12 +41,11 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
-    "eslint": "8.0.0",
+    "eslint": "8.57.0",
     "eslint-config-next": "14.2.16",
     "eslint-plugin-storybook": "^0.10.1",
     "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
-    "next-sitemap": "^3.1.32",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "postcss-styled-syntax": "^0.4.0",
     "storybook": "^8.3.6",
@@ -76,13 +74,11 @@
     "file-loader": "^6.2.0",
     "framer-motion": "^10.12.16",
     "next": "^14.2.16",
-    "next-seo": "^5.14.1",
-    "node-mailjet": "^6.0.2",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
-    "resend": "^1.0.0",
+    "resend": "^4.0.0",
     "swr": "^2.1.5"
   }
 }

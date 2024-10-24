@@ -1,7 +1,6 @@
 "use client";
 
 import { FC } from "react";
-import { StyledParagraph, StyledLead } from "./Paragraph.styled";
 import { ParagraphProps } from "./Paragraph.types";
 
 export const Paragraph: FC<ParagraphProps> = ({
@@ -12,11 +11,25 @@ export const Paragraph: FC<ParagraphProps> = ({
 }): JSX.Element => {
 	if (lead) {
 		return (
-			<StyledLead color={color} maxWidth={maxWidth}>
+			<p
+				className={`${
+					color === "gold" ? "text-gold" : "text-dove"
+				} font-secondary text-base font-normal leading-7 mb-7 relative ${
+					maxWidth ? `max-w-${maxWidth}` : "max-w-[970px]"
+				} ${lead ? "pb-8 md:pb-16" : ""} ${
+					lead
+						? "after:content-[''] after:block after:absolute after:h-[6px] after:w-[104px] after:left-0 after:bottom-0 after:bg-gold"
+						: ""
+				}`}
+			>
 				{children}
-			</StyledLead>
+			</p>
 		);
 	}
 
-	return <StyledParagraph>{children}</StyledParagraph>;
+	return (
+		<p className="text-mineShaft font-secondary text-base font-normal leading-7 mb-5 max-w-[1024px] md:mb-7">
+			{children}
+		</p>
+	);
 };

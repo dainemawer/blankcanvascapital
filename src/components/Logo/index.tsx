@@ -1,4 +1,10 @@
-"use client";
+/*
+ * Logo
+ *
+ * Logo Component
+ *
+ * @returns {JSX.Element}
+ */
 
 import { FC } from "react";
 

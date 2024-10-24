@@ -1,14 +1,8 @@
 "use client";
 
 import { FC } from "react";
-import {
-	StyledPortfolioGrid,
-	StyledPortfolioGridHeading,
-	StyledPortfolioGridWrap,
-} from "./Portfolio.styled";
 import { PortfolioCard } from "@components/Cards/PortfolioCard";
 import type { PortfolioGridProps } from "./Portfolio.types";
-import { AnimatePresence, motion } from "framer-motion";
 
 const Grid: FC<PortfolioGridProps> = ({
 	handleClick,
@@ -16,28 +10,22 @@ const Grid: FC<PortfolioGridProps> = ({
 	label,
 }): JSX.Element => {
 	return (
-		<StyledPortfolioGrid>
-			<StyledPortfolioGridHeading>{label}</StyledPortfolioGridHeading>
-			<StyledPortfolioGridWrap>
-				<AnimatePresence mode="sync">
-					{items.map((item, i) => (
-						<motion.div
-							initial={{ opacity: 0 }}
+		<section className="relative mt-20 pb-8 lg:mt-20 lg:pb-16">
+			<h4 className="absolute left-0 top-[-44px] uppercase font-bold text-base lg:left-[-6.5rem] lg:bg-white lg:px-4 lg:py-2 lg:rotate-[-90deg] lg:top-6">
+				{label}
+			</h4>
+			<div className="grid grid-cols-1 gap-6 xs:grid-cols-2 lg:grid-cols-3 lg:gap-9">
+				{items.map((item) => (
+					<div key={item.id}>
+						<PortfolioCard
+							handleClick={handleClick}
+							item={item}
 							key={item.id}
-							transition={{ duration: 0.1, delay: i * 0.1 }}
-							viewport={{ once: true }}
-							whileInView={{ opacity: 1 }}
-						>
-							<PortfolioCard
-								handleClick={handleClick}
-								item={item}
-								key={item.id}
-							/>
-						</motion.div>
-					))}
-				</AnimatePresence>
-			</StyledPortfolioGridWrap>
-		</StyledPortfolioGrid>
+						/>
+					</div>
+				))}
+			</div>
+		</section>
 	);
 };
 

@@ -2,92 +2,55 @@
 
 import { FC } from "react";
 import { Icon } from "@components/Icon";
-import type { InvestmentSectionProps } from "./Investments.types";
-import {
-	Container,
-	Content,
-	Eyebrow,
-	Header,
-	IconContainer,
-	IconElement,
-	Section,
-	Title,
-} from "./Investments.styled";
 
-const InvestmentSection: FC<InvestmentSectionProps> = ({
+const InvestmentSection = ({
 	align,
 	bgColor,
 	children,
-	cols,
 	eyebrow,
-	grid,
 	icon,
-	iconBg,
 	maxWidth,
 	name,
 	title,
 }) => {
 	return (
-		<Section align={align} aria-label={title} bgColor={bgColor} id={name}>
-			{align === "left" && (
-				<Container align={align} grid={grid} maxWidth={maxWidth}>
-					<IconContainer align={align}>
-						<IconElement bgColor="#c5a880">
-							<Icon icon={icon} />
-						</IconElement>
-					</IconContainer>
-					<div>
-						<Header textAlign="left">
-							<Eyebrow className="eyebrow">{eyebrow}</Eyebrow>
-							<Title>{title}</Title>
-						</Header>
-						<Content>{children}</Content>
-					</div>
-				</Container>
-			)}
-			{align === "right" && (
-				<Container
-					align="right"
-					className="with-bg"
-					grid={grid}
-					maxWidth={maxWidth}
-				>
-					<div>
-						<Header textAlign="right">
-							<Eyebrow className="eyebrow">{eyebrow}</Eyebrow>
-							<Title>{title}</Title>
-						</Header>
-						<Content align="right">{children}</Content>
-					</div>
-					<IconContainer align="right">
-						<IconElement align="right" bgColor="#424242">
-							<Icon icon={icon} />
-						</IconElement>
-					</IconContainer>
-				</Container>
-			)}
-			{align === "center" && (
-				<Container
-					align="center"
-					className="with-bg centered"
-					grid={grid}
-					maxWidth={maxWidth}
-				>
-					<div>
-						<Header textAlign="center">
-							<Eyebrow className="eyebrow">{eyebrow}</Eyebrow>
-							<Title>{title}</Title>
-						</Header>
-						<Content align="center">{children}</Content>
-					</div>
-					<IconContainer align="center">
-						<IconElement align="center" bgColor="#C5A880">
-							<Icon icon={icon} />
-						</IconElement>
-					</IconContainer>
-				</Container>
-			)}
-		</Section>
+		<section
+			className={`relative ${bgColor === "#292929" ? "text-white" : ""} bg-${
+				bgColor || "white"
+			} py-8 md:py-16`}
+			id={name}
+		>
+			<div
+				className={`mx-auto max-w-${maxWidth || "7xl"} px-6 ${
+					align === "right" ? "grid md:grid-cols-2" : "grid md:grid-cols-2"
+				}`}
+			>
+				{align === "left" && (
+					<>
+						<div className="relative mb-7.5 md:mb-0 md:border-r-2 border-gold">
+							<span className="block absolute h-4 w-4 rounded-full bg-gold top-0 right-[-9px]" />
+							<span className="flex items-center justify-center rounded-full w-14 h-14 bg-gold">
+								<Icon icon={icon} />
+							</span>
+						</div>
+						<div>
+							<header className="text-left md:text-left">
+								<p className="text-gold font-primary font-semibold text-sm uppercase mb-3.5 md:mb-0">
+									{eyebrow}
+								</p>
+								<h3 className="font-primary font-bold text-4xl leading-tight mb-5 md:mb-14">
+									{title}
+								</h3>
+							</header>
+							<div className="flex justify-start md:justify-start">
+								{children}
+							</div>
+						</div>
+					</>
+				)}
+				{/* Add more alignment cases if needed */}
+			</div>
+		</section>
 	);
 };
 

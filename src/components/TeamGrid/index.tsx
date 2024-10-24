@@ -3,41 +3,44 @@
 import { FC } from "react";
 import Image from "next/image";
 import { TeamProps } from "./TeamGrid.types";
-import {
-	StyledArticle,
-	StyledFigure,
-	StyledTeamMember,
-	StyledTitle,
-	StyledHeader,
-	StyledSection,
-} from "./TeamGrid.styled";
 
 const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
-	<StyledSection>
+	<section className="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-3 lg:gap-16 lg:mt-18">
 		{team.map((member) => (
-			<StyledArticle
+			<article
 				aria-label={`${member.name} | ${member.title}`}
+				className="box-border"
 				key={member.id}
 			>
-				<StyledFigure>
+				<figure className="m-0">
 					<Image
 						alt={member.name}
+						className="rounded-[30px] w-full object-cover md:w-[300px] md:h-[300px]"
 						height={300}
 						loading="lazy"
 						src={member.image}
 						width={300}
 					/>
-				</StyledFigure>
-				<StyledHeader>
+				</figure>
+				<header className="flex items-center justify-between mt-4">
 					<div>
-						{member.name && <StyledTeamMember>{member.name}</StyledTeamMember>}
-						{member.title && <StyledTitle>{member.title}</StyledTitle>}
+						{member.name && (
+							<h3 className="text-black font-primary text-base font-semibold leading-none uppercase mt-4">
+								{member.name}
+							</h3>
+						)}
+						{member.title && (
+							<h4 className="text-gold font-primary text-sm font-semibold uppercase mt-1">
+								{member.title}
+							</h4>
+						)}
 					</div>
 					{member.linkedin && (
 						<a
 							aria-label={`Follow ${member.name} on Linked In (opens in a new tab)`}
+							className="block"
 							href={member.linkedin}
-							rel="noopenner noreferrer"
+							rel="noopener noreferrer"
 							target="_blank"
 						>
 							<svg
@@ -68,10 +71,10 @@ const TeamGrid: FC<TeamProps> = ({ team }): JSX.Element => (
 							</svg>
 						</a>
 					)}
-				</StyledHeader>
-			</StyledArticle>
+				</header>
+			</article>
 		))}
-	</StyledSection>
+	</section>
 );
 
 export default TeamGrid;

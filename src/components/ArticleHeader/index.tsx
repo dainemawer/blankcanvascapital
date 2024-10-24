@@ -1,11 +1,6 @@
 "use client";
 
 import { FC } from "react";
-import {
-	StyledHeader,
-	StyledEyebrow,
-	StyledHeading,
-} from "./ArticleHeader.styled";
 import { ArticleHeaderProps } from "./ArticleHeader.types";
 
 const ArticleHeader: FC<ArticleHeaderProps> = ({
@@ -13,10 +8,14 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({
 	title,
 }): JSX.Element => {
 	return (
-		<StyledHeader>
-			<StyledEyebrow>{eyebrow}</StyledEyebrow>
-			<StyledHeading>{title}</StyledHeading>
-		</StyledHeader>
+		<header className="mt-10 md:mt-16">
+			<p className="text-gold font-primary text-base font-semibold leading-6 uppercase">
+				{eyebrow}
+			</p>
+			<h1 className="text-grey font-primary text-xxl font-bold leading-tight mt-0 mb-5 md:mb-8">
+				{title}
+			</h1>
+		</header>
 	);
 };
 

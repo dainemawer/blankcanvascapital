@@ -8,7 +8,6 @@ import { Container } from "@components/Container";
 import { SiteContext } from "@context/SiteContext";
 import { Burger } from "@mantine/core";
 import { SiteContextProps } from "@context/SiteContext";
-import { StyledHeader, StyledHeaderWrap } from "./Header.styled";
 import { HeaderProps } from "./Header.types";
 import { useScrollPosition } from "@hooks/useScrollPosition";
 
@@ -17,19 +16,22 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 		useContext<SiteContextProps>(SiteContext);
 	const ariaLabel = isOpen ? "Close navigation" : "Open navigation";
 	const scrollPosition = useScrollPosition();
+	const isSticky = scrollPosition > 0;
 
 	return (
-		<StyledHeader
+		<header
+			className={`site-header sticky top-0 bg-white bg-opacity-90 transition-all duration-500 ease-in-out z-100 ${
+				isSticky ? "backdrop-blur-sm shadow-md py-2" : "py-4"
+			}`}
 			aria-label="Site Header"
-			className="site-header"
 			id="site-header"
 			role="banner"
-			sticky={scrollPosition > 0}
 		>
 			<Container size="1440px">
-				<StyledHeaderWrap>
+				<div className="flex items-center justify-start md:justify-between">
 					<Burger
 						aria-label={ariaLabel}
+						className="mr-2 md:hidden"
 						onClick={toggle}
 						opened={isOpen}
 						size={18}
@@ -46,8 +48,8 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 						label="Site Navigation"
 						menu={menu}
 					/>
-				</StyledHeaderWrap>
+				</div>
 			</Container>
-		</StyledHeader>
+		</header>
 	);
 };

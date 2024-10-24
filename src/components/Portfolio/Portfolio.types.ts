@@ -1,4 +1,4 @@
-import { PortfolioProps } from '../../pages/portfolio';
+import { PortfolioProps } from '../../app/portfolio/page';
 
 export type PortfolioModalProps = {
 	close: () => void,

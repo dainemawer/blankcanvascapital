@@ -4,8 +4,15 @@ import { FC } from "react";
 import Image from "next/image";
 import { Content } from "./Content";
 import { Container } from "@components/Container";
-import { StyledHero, StyledImage } from "./Hero.styled";
-import { HeroProps } from "./Hero.types";
+
+interface HeroProps {
+	image: string;
+	label: string;
+	logo: string;
+	subtitle: string;
+	title: string;
+	variation: string;
+}
 
 export const Hero: FC<HeroProps> = ({
 	image,
@@ -16,12 +23,13 @@ export const Hero: FC<HeroProps> = ({
 	variation,
 }): JSX.Element => {
 	return (
-		<StyledHero>
+		<section className="mt-4">
 			<Container size="1440px" relative>
 				{image && (
-					<StyledImage natural={!!title}>
+					<figure className={`relative ${title ? "object-cover" : ""}`}>
 						<Image
-							alt={label}
+							alt={label || "default alt text"}
+							className="w-full h-auto rounded-[20px_0] sm:object-center lg:object-cover"
 							height={668}
 							loading="eager"
 							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 80vw"
@@ -29,17 +37,21 @@ export const Hero: FC<HeroProps> = ({
 							width={1657}
 							priority
 						/>
-					</StyledImage>
+						{/* Decorative border for large screens */}
+						{image && (
+							<div className="hidden lg:block absolute top-0 right-[-10px] h-[140px] w-[2px] bg-copper"></div>
+						)}
+					</figure>
 				)}
 				{title && (
 					<Content
-						logo={logo}
-						subtitle={subtitle}
+						logo={logo || ""}
+						subtitle={subtitle || ""}
 						title={title}
 						variation={variation}
 					/>
 				)}
 			</Container>
-		</StyledHero>
+		</section>
 	);
 };

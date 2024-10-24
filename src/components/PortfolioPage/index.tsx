@@ -2,11 +2,8 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { NextSeo } from "next-seo";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
-import { StyledGrid, StyledArticle } from "../../shared/content.styled";
-
 import { useDisclosure } from "@mantine/hooks";
 import fetcher from "@lib/fetcher";
 import useSWR from "swr";
@@ -85,12 +82,18 @@ export default function PortfolioPage() {
 
 	return (
 		<>
-			<NextSeo title="Investment Portfolio" />
-			<Hero image="/hero-portfolio.jpg" label="Three Men Walking Up Stairs" />
+			<Hero
+				image="/hero-portfolio.jpg"
+				label="Three Men Walking Up Stairs"
+				logo={""}
+				subtitle={""}
+				title={""}
+				variation={""}
+			/>
 			<Container size="1440px">
-				<StyledGrid maxWidth="1206px">
+				<div className="grid md:grid-cols-[minmax(50px,150px)_minmax(min-content,1024px)] xl:grid-cols-[minmax(min-content,150px)_minmax(min-content,1024px)]">
 					<Aside />
-					<StyledArticle>
+					<article className="mb-8 md:col-span-1 md:mb-20">
 						<ArticleHeader
 							eyebrow="Our Investments | Our Passion"
 							title="Investment Portfolio"
@@ -107,7 +110,6 @@ export default function PortfolioPage() {
 								label="Current"
 							/>
 						)}
-
 						{items && (
 							<Grid
 								handleClick={handleClick}
@@ -115,8 +117,8 @@ export default function PortfolioPage() {
 								label="Realised"
 							/>
 						)}
-					</StyledArticle>
-				</StyledGrid>
+					</article>
+				</div>
 			</Container>
 			<PortfolioModal
 				close={close}
