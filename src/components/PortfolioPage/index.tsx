@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
-import { useDisclosure } from "@mantine/hooks";
 import fetcher from "@lib/fetcher";
 import useSWR from "swr";
 
@@ -33,9 +32,6 @@ const Filters = dynamic(() => import("@components/Portfolio/Filters"), {
 const Grid = dynamic(() => import("@components/Portfolio/Grid"), {
 	ssr: false,
 });
-const PortfolioModal = dynamic(() => import("@components/Portfolio/Modal"), {
-	ssr: false,
-});
 
 export default function PortfolioPage() {
 	const { data, error } = useSWR("/api/portfolio", fetcher);
@@ -43,19 +39,6 @@ export default function PortfolioPage() {
 	const [items, setItems] = useState<PortfolioProps[]>([]);
 	const [active, setActive] = useState("Private Equity");
 	const [mounted, setMounted] = useState(false);
-
-	const [opened, { close, open }] = useDisclosure(false);
-	const [modalContent, setModalContent] = useState<PortfolioProps>({
-		id: "0",
-		title: "",
-		hero: "",
-		logo: "",
-		description: "",
-		region: "",
-		sector: "",
-		date: "",
-		status: "",
-	});
 
 	useEffect(() => {
 		setMounted(true);
@@ -75,7 +58,6 @@ export default function PortfolioPage() {
 
 	const handleClick = (item: PortfolioProps) => {
 		open();
-		setModalContent(item);
 	};
 
 	if (error) return <div>Failed to load...</div>;
@@ -120,11 +102,6 @@ export default function PortfolioPage() {
 					</article>
 				</div>
 			</Container>
-			<PortfolioModal
-				close={close}
-				modalContent={modalContent}
-				opened={opened}
-			/>
 		</>
 	);
 }

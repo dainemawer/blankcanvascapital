@@ -6,26 +6,26 @@ import { Container } from "@components/Container";
 
 export const Colophon: FC = (): JSX.Element => {
 	return (
-		<div className="bg-grey border-b-4 border-gold text-white font-primary py-5">
+		<div className="py-5 text-white border-b-4 bg-grey border-gold font-primary">
 			<Container>
-				<div className="flex flex-col md:flex-row justify-between items-start">
-					<p className="text-sm leading-6 mb-2 md:mb-0">
+				<div className="flex flex-col items-start justify-between md:flex-row">
+					<p className="mb-2 text-sm leading-6 md:mb-0">
 						&copy; 2023. Blank Canvas Capital. All Rights Reserved
 					</p>
 					<nav>
-						<ul className="flex list-none m-0 p-0">
+						<ul className="flex p-0 m-0 list-none">
 							<li className="leading-6">
 								<Link
-									className="text-sm relative text-white"
+									className="relative text-sm text-white"
 									href="/disclaimer"
 								>
 									Disclaimer
 									<span className="block absolute left-0 bottom-[-4px] h-[2px] w-0 bg-gold transition-all duration-300 ease-in-out"></span>
 								</Link>
 							</li>
-							<li className="leading-6 ml-4">
+							<li className="ml-4 leading-6">
 								<Link
-									className="text-sm relative text-white"
+									className="relative text-sm text-white"
 									href="/terms-conditions"
 								>
 									Terms and Conditions

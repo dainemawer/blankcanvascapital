@@ -69,24 +69,6 @@ img {
 	border-radius: 0 20px;
 }
 
-.mantine-Modal-body {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	height: calc(100% - 70px);
-}
-
-.portfolio-modal .mantine-Modal-inner {
-	padding-left: 5vw;
-	padding-right: 5vw;
-	max-width: 100%;
-}
-
-.portfolio-modal .mantine-Modal-body {
-	height: unset;
-	padding: 0;
-}
-
 #nprogress .bar {
 	background: theme('colors.gold');
 }

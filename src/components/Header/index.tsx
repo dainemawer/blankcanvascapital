@@ -6,7 +6,6 @@ import { Logo } from "@components/Logo";
 import { Navigation } from "@components/Navigation";
 import { Container } from "@components/Container";
 import { SiteContext } from "@context/SiteContext";
-import { Burger } from "@mantine/core";
 import { SiteContextProps } from "@context/SiteContext";
 import { HeaderProps } from "./Header.types";
 import { useScrollPosition } from "@hooks/useScrollPosition";
@@ -29,13 +28,6 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 		>
 			<Container size="1440px">
 				<div className="flex items-center justify-start md:justify-between">
-					<Burger
-						aria-label={ariaLabel}
-						className="mr-2 md:hidden"
-						onClick={toggle}
-						opened={isOpen}
-						size={18}
-					/>
 					<Link href="/">
 						<Logo />
 					</Link>

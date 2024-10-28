@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { Header } from "@components/Header";
 import fetcher from "@lib/fetcher";
 import useSWR from "swr";
-import { SiteProvider } from "@context/SiteProvider";
 
 import { NavigationItemProps } from "@components/Navigation/Navigation.types";
 interface LayoutProps {
@@ -20,11 +19,11 @@ export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
 	const menu = data as NavigationItemProps[];
 
 	return (
-		<SiteProvider>
+		<>
 			<SkipLink />
 			<Header menu={menu} />
 			<main id="main-content">{children}</main>
 			<Footer />
-		</SiteProvider>
+		</>
 	);
 };

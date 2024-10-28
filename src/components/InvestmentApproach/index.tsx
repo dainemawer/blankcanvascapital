@@ -2,7 +2,7 @@
 
 import { Hero } from "@components/Hero";
 import { Button } from "@components/Button";
-import { Icon } from "@components/Icon";
+import { Bookmark, BriefcaseBusiness, Database, Key, Zap } from "lucide-react";
 
 export default function InvestmentApproach() {
 	return (
@@ -59,8 +59,8 @@ export default function InvestmentApproach() {
 						</p>
 					</div>
 					<div className="md:border-l-2 mb-8 md:mb-0 md:ml-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-left-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
-							<Icon icon="briefcase" />
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
+							<BriefcaseBusiness className="w-6 h-6" />
 						</span>
 					</div>
 				</div>
@@ -69,8 +69,8 @@ export default function InvestmentApproach() {
 			<section className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40 bg-grey">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center bg-gold z-30 left-0 top-[-1.55rem] md:absolute">
-							<Icon icon="bookmark" />
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-grey bg-gold z-30 left-0 top-[-1.55rem] md:absolute">
+							<Bookmark className="w-6 h-6" />
 						</span>
 					</div>
 					<div className="flex flex-col items-start">
@@ -108,8 +108,8 @@ export default function InvestmentApproach() {
 						</p>
 					</div>
 					<div className="md:border-l-2 mb-8 md:mb-0 md:ml-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-left-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
-							<Icon icon="database" />
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
+							<Database className="w-6 h-6" />
 						</span>
 					</div>
 				</div>
@@ -118,8 +118,8 @@ export default function InvestmentApproach() {
 			<section className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40 bg-grey">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center bg-gold z-30 left-0 top-[-1.55rem] md:absolute">
-							<Icon icon="lightning" />
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-grey bg-gold z-30 left-0 top-[-1.55rem] md:absolute">
+							<Zap className="w-6 h-6" />
 						</span>
 					</div>
 					<div className="flex flex-col items-start">
@@ -173,8 +173,8 @@ export default function InvestmentApproach() {
 						</p>
 					</div>
 					<div className="md:border-l-2 mb-8 md:mb-0 md:ml-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-left-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
-							<Icon icon="key" />
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
+							<Key className="w-6 h-6" />
 						</span>
 					</div>
 				</div>
