@@ -43,8 +43,9 @@ export default function InvestmentApproach() {
 						<p className="max-w-3xl leading-8 md:text-right text-eyebrow mb-7">
 							We are quick to act, have a multi-deal track record in mobilising
 							large amounts of capital required in a process and will fully
-							engage in an opportunity's fulfilment - from initial investment to
-							its ultimate exit.
+							engage in an opportunity engage in an opportunity&apos;s
+							fulfilment - from initial investment to s fulfilment - from
+							initial investment to its ultimate exit.
 						</p>
 						<p className="max-w-3xl leading-8 md:text-right text-eyebrow mb-7">
 							We are in our deals for the long term. We buy in alongside our
