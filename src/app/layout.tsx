@@ -21,18 +21,20 @@ const roboto = Roboto({
 export const metadata: Metadata = {
 	title: {
 		template: "%s | Blank Canvas Capital",
-		default: "Blank Canvas Capital",
+		default: "Home | Blank Canvas Capital",
 	},
 	generator: "Next JS",
 	creator: "Daine Mawer",
 	metadataBase: new URL("https://blankcanvascapital.co.za"),
-	description: "The Home of Blank Canvas Capital",
+	description:
+		"Blank Canvas Capital is a value-driven investment firm focused on helping businesses grow with flexible funding and strategic partnerships for exceptional returns",
 	openGraph: {
 		type: "website",
 		locale: "en_ZA",
 		url: "https://blankcanvascapital.co.za",
 		title: "Blank Canvas Capital",
-		description: "The Home of Blank Canvas Capital",
+		description:
+			"Blank Canvas Capital is a value-driven investment firm focused on helping businesses grow with flexible funding and strategic partnerships for exceptional returns",
 		images: [
 			{
 				url: "/opengraph.png",

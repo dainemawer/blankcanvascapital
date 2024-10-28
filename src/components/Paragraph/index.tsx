@@ -14,12 +14,8 @@ export const Paragraph: FC<ParagraphProps> = ({
 			<p
 				className={`${
 					color === "gold" ? "text-gold" : "text-dove"
-				} font-secondary text-base font-normal leading-7 mb-7 relative ${
+				} font-secondary text-eyebrow font-normal leading-8 mb-7 relative ${
 					maxWidth ? `max-w-${maxWidth}` : "max-w-[970px]"
-				} ${lead ? "pb-8 md:pb-16" : ""} ${
-					lead
-						? "after:content-[''] after:block after:absolute after:h-[6px] after:w-[104px] after:left-0 after:bottom-0 after:bg-gold"
-						: ""
 				}`}
 			>
 				{children}
@@ -28,7 +24,7 @@ export const Paragraph: FC<ParagraphProps> = ({
 	}
 
 	return (
-		<p className="text-mineShaft font-secondary text-base font-normal leading-7 mb-5 max-w-[1024px] md:mb-7">
+		<p className="text-mineShaft font-secondary text-eyebrow font-normal leading-8 mb-5 max-w-[1024px] md:mb-7">
 			{children}
 		</p>
 	);

@@ -36,7 +36,7 @@ export default function Team() {
 			<Container size="1440px">
 				<div className="grid md:grid-cols-[minmax(50px,150px)_minmax(min-content,1024px)] xl:grid-cols-[minmax(min-content,150px)_minmax(min-content,1024px)]">
 					<Aside />
-					<article className="mb-8 md:col-span-1 md:mb-20">
+					<article className="mt-16 mb-8 md:col-span-1 md:mb-20">
 						<ArticleHeader
 							eyebrow="The People Behind The Investments"
 							title="Our Team"
@@ -56,7 +56,7 @@ export default function Team() {
 							on high-value investment opportunities.
 						</Paragraph>
 						<SubHeading heading="What We Do" />
-						<ul className="list-disc list-inside space-y-2">
+						<ul className="pl-4 space-y-2 list-none list-inside text-eyebrow">
 							<li>Origination of new investment opportunities</li>
 							<li>
 								Conducting financial, taxation, and commercial due diligence

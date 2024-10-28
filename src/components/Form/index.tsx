@@ -30,15 +30,12 @@ const Form: FC<FormProps> = (): JSX.Element => {
 	return (
 		<form className="w-full" onSubmit={handleSubmit(onSubmit)}>
 			<div
-				className={`flex items-center border-2 border-copper rounded-lg px-5 py-3 ${
+				className={`flex items-center border-2 border-copper rounded-lg px-5 py-[14px] md:py-5 ${
 					errors.name ? "input-error relative" : ""
 				}`}
 			>
-				<label
-					className="flex flex-col md:flex-row items-start md:items-center w-full"
-					htmlFor="name"
-				>
-					<span className="text-base font-semibold uppercase border-b-2 md:border-r-2 border-copper pb-4 md:pb-0 md:pr-4 mb-4 md:mb-0">
+				<label className="flex flex-row items-center w-full" htmlFor="name">
+					<span className="pb-0 pr-4 mb-0 mr-4 text-base font-semibold uppercase border-r-2 border-copper">
 						Name
 					</span>
 					<input
@@ -46,7 +43,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 						placeholder="Enter your name"
 						type="text"
 						{...register("name", { required: true })}
-						className="w-full font-secondary text-base font-medium focus:outline-none"
+						className="w-full font-secondary text-eyebrow font-regular focus:outline-none"
 					/>
 				</label>
 				{errors.name && (
@@ -57,15 +54,15 @@ const Form: FC<FormProps> = (): JSX.Element => {
 			</div>
 
 			<div
-				className={`flex items-center border-2 border-copper rounded-lg px-5 py-3 mt-10 ${
+				className={`flex items-center border-2 border-copper rounded-lg px-5 py-[14px] md:py-5 mt-10 ${
 					errors.email ? "input-error relative" : ""
 				}`}
 			>
 				<label
-					className="flex flex-col md:flex-row items-start md:items-center w-full"
+					className="flex flex-row items-center w-full md:flex-row"
 					htmlFor="email"
 				>
-					<span className="text-base font-semibold uppercase border-b-2 md:border-r-2 border-copper pb-4 md:pb-0 md:pr-4 mb-4 md:mb-0">
+					<span className="pb-0 pr-4 mb-0 mr-4 text-base font-semibold uppercase border-r-2 border-copper">
 						Email
 					</span>
 					<input
@@ -77,7 +74,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 							validate: (value) =>
 								/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value),
 						})}
-						className="w-full font-secondary text-base font-medium focus:outline-none"
+						className="w-full font-secondary text-eyebrow font-regular focus:outline-none"
 					/>
 				</label>
 				{errors.email && (
@@ -87,12 +84,12 @@ const Form: FC<FormProps> = (): JSX.Element => {
 				)}
 			</div>
 
-			<div className="flex items-center border-2 border-copper rounded-lg px-5 py-3 mt-10">
+			<div className="flex items-center px-5 py-[14px] md:py-5 mt-10 border-2 rounded-lg border-copper">
 				<label
-					className="flex flex-col md:flex-row items-start md:items-center w-full"
+					className="flex flex-row items-center w-full md:flex-row"
 					htmlFor="subject"
 				>
-					<span className="text-base font-semibold uppercase border-b-2 md:border-r-2 border-copper pb-4 md:pb-0 md:pr-4 mb-4 md:mb-0">
+					<span className="pb-0 pr-4 mb-0 mr-4 text-base font-semibold uppercase border-r-2 border-copper">
 						Subject
 					</span>
 					<input
@@ -100,18 +97,18 @@ const Form: FC<FormProps> = (): JSX.Element => {
 						placeholder="Enter a subject"
 						type="text"
 						{...register("subject", { required: true })}
-						className="w-full font-secondary text-base font-medium focus:outline-none"
+						className="w-full font-secondary text-eyebrow font-regular focus:outline-none"
 					/>
 				</label>
 			</div>
 
 			<div
-				className={`flex flex-col border-2 border-copper rounded-lg px-5 py-3 mt-10 ${
+				className={`flex flex-col border-2 border-copper rounded-lg px-5 py-[14px] md:py-5 mt-10 ${
 					errors.message ? "input-error relative" : ""
 				}`}
 			>
 				<label className="flex flex-col w-full" htmlFor="message">
-					<span className="text-base font-semibold uppercase border-b-2 border-copper pb-4 mb-4">
+					<span className="pb-4 mb-4 text-base font-semibold uppercase border-b-2 border-copper">
 						Message
 					</span>
 					<textarea
@@ -119,7 +116,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 						placeholder="What would you like to discuss with us?"
 						rows={10}
 						{...register("message", { required: true })}
-						className="w-full font-secondary text-base font-medium focus:outline-none resize-none"
+						className="w-full resize-none font-secondary text-eyebrow font-regular focus:outline-none"
 					></textarea>
 					{errors.message && (
 						<small className="text-red-500 text-sm absolute bottom-[-1.5rem] left-0">

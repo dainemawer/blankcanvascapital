@@ -8,11 +8,11 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({
 	title,
 }): JSX.Element => {
 	return (
-		<header className="mt-10 md:mt-16">
-			<p className="text-gold font-primary text-base font-semibold leading-6 uppercase">
+		<header>
+			<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">
 				{eyebrow}
 			</p>
-			<h1 className="text-grey font-primary text-xxl font-bold leading-tight mt-0 mb-5 md:mb-8">
+			<h1 className="mt-0 mb-5 font-bold leading-tight text-grey text-heading font-primary text-xxl md:mb-8">
 				{title}
 			</h1>
 		</header>

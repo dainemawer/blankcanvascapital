@@ -20,8 +20,8 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 
 	return (
 		<header
-			className={`site-header sticky top-0 bg-white bg-opacity-90 transition-all duration-500 ease-in-out z-100 ${
-				isSticky ? "backdrop-blur-sm shadow-md py-2" : "py-4"
+			className={`site-header sticky top-0 bg-white bg-opacity-90 transition-all duration-500 ease-in-out z-50 ${
+				isSticky ? "backdrop-blur-sm shadow-md py-4" : "py-6"
 			}`}
 			aria-label="Site Header"
 			id="site-header"

@@ -13,7 +13,7 @@ const InvestmentSection = ({
 	name,
 	title,
 }) => {
-	return (
+	/* return (
 		<section
 			className={`relative ${bgColor === "#292929" ? "text-white" : ""} bg-${
 				bgColor || "white"
@@ -48,10 +48,9 @@ const InvestmentSection = ({
 						</div>
 					</>
 				)}
-				{/* Add more alignment cases if needed */}
 			</div>
 		</section>
-	);
+	); */
 };
 
 export default InvestmentSection;

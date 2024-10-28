@@ -27,8 +27,10 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 							{isRealEstate ? (
 								<>
 									<button
-										className="absolute top-4 right-4 w-10 h-10 bg-gold text-white rounded-full flex items-center justify-center"
+										aria-label="Close Modal"
+										className="absolute flex items-center justify-center w-10 h-10 text-white rounded-full top-4 right-4 bg-gold"
 										onClick={() => close()}
+										type="button"
 									>
 										<svg
 											fill="none"
@@ -51,10 +53,11 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 											isRealEstate ? "pt-6" : ""
 										}`}
 									>
-										<figure className="flex-shrink-0 flex flex-col justify-center items-center md:pr-8 md:items-start">
+										<figure className="flex flex-col items-center justify-center flex-shrink-0 md:pr-8 md:items-start">
 											{modalContent.logo && (
 												<Image
 													alt={modalContent.title || "Default Alt Text"}
+													className="w-full"
 													decoding="async"
 													height={137}
 													loading="eager"
@@ -63,9 +66,9 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 												/>
 											)}
 											{modalContent.url && (
-												<p className="hidden md:flex">
+												<p className="hidden w-full md:flex">
 													<a
-														className="bg-white border border-gold text-gold py-2 px-4 uppercase font-semibold transition hover:bg-gold hover:text-white"
+														className="px-4 py-2 font-semibold uppercase transition bg-white border rounded text-eyebrow border-gold text-gold hover:bg-gold hover:text-white"
 														href={modalContent.url}
 														rel="noreferrer"
 														target="_blank"
@@ -75,7 +78,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 												</p>
 											)}
 										</figure>
-										<section className="flex-grow border-t border-copper pt-6 md:pt-0 md:border-l md:pl-8 md:border-t-0">
+										<section className="flex-grow pt-6 border-t border-copper md:pt-0 md:border-l md:pl-8 md:border-t-0">
 											<header className="mb-4">
 												{modalContent.title && (
 													<h3 className="text-lg font-bold">
@@ -84,11 +87,11 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 												)}
 											</header>
 											{modalContent.description && (
-												<p className="text-mineShaft text-sm leading-snug mb-4">
+												<p className="mb-4 text-sm leading-snug text-mineShaft">
 													{modalContent.description}
 												</p>
 											)}
-											<ul className="list-none text-secondary text-sm space-y-2">
+											<ul className="space-y-2 text-sm list-none text-secondary">
 												{modalContent.region && (
 													<li>
 														<strong>Region: </strong>
@@ -123,7 +126,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 										{modalContent.hero && (
 											<Image
 												alt={modalContent.title || "Default Alt Text"}
-												className="w-full object-cover object-bottom"
+												className="object-cover object-bottom w-full"
 												decoding="async"
 												height={300}
 												loading="lazy"
@@ -133,8 +136,10 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 											/>
 										)}
 										<button
-											className="absolute top-4 right-4 w-10 h-10 bg-gold text-white rounded-full flex items-center justify-center"
+											aria-label="Close Modal"
+											className="absolute flex items-center justify-center w-10 h-10 text-white rounded-full top-4 right-4 bg-gold"
 											onClick={() => close()}
+											type="button"
 										>
 											<svg
 												fill="none"
@@ -153,11 +158,12 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 											</svg>
 										</button>
 									</figure>
-									<div className="p-6">
-										<figure className="flex-shrink-0 flex flex-col justify-center items-center md:pr-8 md:items-start">
+									<div className="flex flex-col justify-center p-6 lg:flex-row">
+										<figure className="flex flex-col items-center justify-center flex-shrink-0 md:pr-8 md:items-start">
 											{modalContent.logo && (
 												<Image
 													alt={modalContent.title || "Default Alt Text"}
+													className="w-full"
 													decoding="async"
 													height={137}
 													loading="eager"
@@ -166,9 +172,9 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 												/>
 											)}
 											{modalContent.url && (
-												<p className="hidden md:flex">
+												<p className="items-center justify-center hidden w-full md:flex">
 													<a
-														className="bg-white border border-gold text-gold py-2 px-4 uppercase font-semibold transition hover:bg-gold hover:text-white"
+														className="px-4 py-2 font-semibold uppercase transition bg-white border rounded text-eyebrow border-gold text-gold hover:bg-gold hover:text-white"
 														href={modalContent.url}
 														rel="noreferrer"
 														target="_blank"
@@ -178,20 +184,20 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 												</p>
 											)}
 										</figure>
-										<section className="flex-grow border-t border-copper pt-6 md:pt-0 md:border-l md:pl-8 md:border-t-0">
+										<section className="flex-grow pt-6 border-t border-copper md:pt-0 md:border-l md:pl-8 md:border-t-0">
 											<header className="mb-4">
 												{modalContent.title && (
-													<h3 className="text-lg font-bold">
+													<h3 className="font-bold text-sectionHeading font-primary">
 														{modalContent.title}
 													</h3>
 												)}
 											</header>
 											{modalContent.description && (
-												<p className="text-mineShaft text-sm leading-snug mb-4">
+												<p className="mb-4 text-sm leading-snug text-mineShaft">
 													{modalContent.description}
 												</p>
 											)}
-											<ul className="list-none text-secondary text-sm space-y-2">
+											<ul className="space-y-2 text-sm list-none text-secondary">
 												{modalContent.region && (
 													<li>
 														<strong>Region: </strong>

@@ -23,14 +23,14 @@ export default function Contact() {
 				variation={""}
 			/>
 			<Container size="1440px">
-				<div className="grid gap-10 max-w-[1240px] mx-auto">
+				<div className="grid gap-10 md:grid-cols-contactMedium lg:grid-cols-contactLarge">
 					<Aside />
-					<article>
+					<article className="mt-16 mb-8 lg:col-start-2 lg:col-end-3 md:mb-20">
 						<ArticleHeader
 							eyebrow="Let's Talk About Investments"
 							title="Get in Touch"
 						/>
-						<div className="grid grid-cols-1 gap-10 md:grid-cols-[2fr_minmax(400px,1fr)]">
+						<div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_minmax(400px,1fr)]">
 							<Form />
 							<Sidebar />
 						</div>

@@ -17,7 +17,9 @@ export type PortfolioProps = {
 };
 
 export const metadata: Metadata = {
-	title: "My Page Title",
+	title: "Portfolio",
+	description:
+		"Explore Blank Canvas Capital’s diverse investment portfolio, showcasing successful partnerships and growth across various industries. Discover our value-driven investments",
 };
 
 export default function Page() {

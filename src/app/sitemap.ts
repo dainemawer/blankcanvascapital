@@ -3,22 +3,40 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://acme.com',
+      url: 'https://blankcanvascapital.co.za/',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: 'https://acme.com/about',
+      url: 'https://blankcanvascapital.co.za/about-us',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'yearly',
+      priority: 1,
     },
     {
-      url: 'https://acme.com/blog',
+      url: 'https://blankcanvascapital.co.za/investment-approach',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      changeFrequency: 'yearly',
+      priority: 1,
+    },
+		{
+      url: 'https://blankcanvascapital.co.za/team',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1,
+    },
+		{
+      url: 'https://blankcanvascapital.co.za/portfolio',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1,
+    },
+		{
+      url: 'https://blankcanvascapital.co.za/contact',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1,
     },
   ]
 }
