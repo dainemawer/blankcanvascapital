@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans, Roboto } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import "../styles/globals.css";
-import "nprogress/nprogress.css";
+import "@/styles/globals.css";
 
 import { Layout } from "../components/Layout";
 

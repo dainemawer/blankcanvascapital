@@ -69,15 +69,6 @@ img {
 	border-radius: 0 20px;
 }
 
-#nprogress .bar {
-	background: theme('colors.gold');
-}
-
-#nprogress .spinner-icon {
-	border-top-color: theme('colors.gold');
-	border-left-color: theme('colors.gold');
-}
-
 a.button {
 	@apply bg-white border border-gold text-gold font-primary font-semibold uppercase rounded px-4 py-3 transition-colors;
 }
@@ -85,4 +76,10 @@ a.button {
 a.button:hover,
 a.button:focus {
 	@apply bg-gold text-white;
+}
+
+@layer base {
+	:root {
+		--radius: 0.5rem;
+	}
 }

@@ -1,4 +1,17 @@
-import { PortfolioProps } from '../../app/portfolio/page';
+export type PortfolioProps = {
+  category?: string;
+  date?: string;
+  description?: string;
+  hero?: string;
+  id: string;
+  logo?: string;
+  position?: string;
+  region?: string;
+  sector?: string;
+  status?: string;
+  title?: string;
+  url?: string;
+};
 
 export type PortfolioModalProps = {
 	close: () => void,

@@ -7,10 +7,9 @@ import { Navigation } from "@components/Navigation";
 import { Container } from "@components/Container";
 import { SiteContext } from "@context/SiteContext";
 import { SiteContextProps } from "@context/SiteContext";
-import { HeaderProps } from "./Header.types";
 import { useScrollPosition } from "@hooks/useScrollPosition";
 
-export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
+export const Header: FC = (): JSX.Element => {
 	const { close, isOpen, open, toggle } =
 		useContext<SiteContextProps>(SiteContext);
 	const ariaLabel = isOpen ? "Close navigation" : "Open navigation";
@@ -38,7 +37,6 @@ export const Header: FC<HeaderProps> = ({ menu }): JSX.Element => {
 						id="site-navigation"
 						isOpen={isOpen}
 						label="Site Navigation"
-						menu={menu}
 					/>
 				</div>
 			</Container>

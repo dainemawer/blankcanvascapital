@@ -1,31 +1,29 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "@components/*": [
-        "components/*"
+        "./src/components/*"
       ],
       "@context/*": [
-        "context/*"
+        "./src/context/*"
       ],
       "@hocs/*": [
-        "hocs/*"
+        "./src/hocs/*"
       ],
       "@hooks/*": [
-        "hooks/*"
+        "./src/hooks/*"
       ],
       "@lib/*": [
-        "lib/*"
+        "./src/lib/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "./src/styles/*"
       ],
       "@util/*": [
-        "util/*"
+        "./src/util/*"
       ],
-      "@theme/*": [
-        "theme/*"
-      ]
     },
     "target": "es5",
     "lib": [
@@ -35,7 +33,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -57,7 +55,6 @@
     "**/*.ts",
     "**/*.tsx",
     "src/**/*",
-    "emotion.d.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [

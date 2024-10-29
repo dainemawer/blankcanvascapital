@@ -5,7 +5,12 @@
  * @returns {JSX.Element}
  */
 
-export const sendToAnalytics = (id, name, label, value) => {
+export const sendToAnalytics = (
+	id: string,
+	name: string,
+	label: string,
+	value: number
+) => {
 	window.gtag("event", name, {
 		event_category:
 			label === "web-vital" ? "Web Vitals" : "Next.js custom metric",

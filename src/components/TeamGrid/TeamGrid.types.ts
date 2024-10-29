@@ -5,7 +5,3 @@ export interface SingleTeamProps {
 	name: string;
 	title: string;
 }
-
-export interface TeamProps {
-	team: SingleTeamProps[];
-}

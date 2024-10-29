@@ -23,7 +23,7 @@ const Form: FC<FormProps> = (): JSX.Element => {
 		handleSubmit,
 		register,
 		reset,
-	} = useForm();
+	} = useForm<IDataProps>();
 
 	const onSubmit = (data: IDataProps) => doSubmit(data, setSubmitted, reset);
 

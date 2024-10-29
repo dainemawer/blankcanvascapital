@@ -11,5 +11,4 @@ export interface NavigationProps {
 	id: string,
 	isOpen: boolean;
 	label: string;
-	menu: NavigationItemProps[];
 }
