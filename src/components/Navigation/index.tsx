@@ -5,40 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavigationProps, NavigationItemProps } from "./Navigation.types";
 
-const menu = [
-	{
-		href: "/",
-		id: "home",
-		label: "Home",
-	},
-	{
-		href: "/about-us",
-		id: "about-us",
-		label: "About Us",
-	},
-	{
-		href: "/investment-approach",
-		id: "investment-approach",
-		label: "Investment Approach",
-	},
-	{
-		href: "/team",
-		id: "team",
-		label: "Team",
-	},
-	{
-		href: "/portfolio",
-		id: "portfolio",
-		label: "Portfolio",
-	},
-	{
-		href: "/contact",
-		id: "contact-us",
-		label: "Contact Us",
-	},
-];
-
-export const Navigation: FC<NavigationProps> = ({ id, label }): JSX.Element => {
+export const Navigation: FC<NavigationProps> = ({
+	id,
+	label,
+	menu,
+}): JSX.Element => {
 	const pathname = usePathname();
 
 	return (
@@ -48,7 +19,7 @@ export const Navigation: FC<NavigationProps> = ({ id, label }): JSX.Element => {
 			id={id}
 			role="navigation"
 		>
-			<ul className="flex p-0 m-0 list-none">
+			<ul className="hidden p-0 m-0 list-none md:flex">
 				{menu &&
 					menu.map((item: NavigationItemProps) => (
 						<li className="mr-6 leading-6 last:mr-0" key={item.id}>

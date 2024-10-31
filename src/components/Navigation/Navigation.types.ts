@@ -5,10 +5,7 @@ export interface NavigationItemProps {
 }
 
 export interface NavigationProps {
-	handleClose: () => void;
-	handleOpen: () => void;
-	handleToggle: () => void;
+	menu: NavigationItemProps[];
 	id: string,
-	isOpen: boolean;
 	label: string;
 }

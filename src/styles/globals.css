@@ -83,3 +83,7 @@ a.button:focus {
 		--radius: 0.5rem;
 	}
 }
+
+div[role="dialog"] button:not([aria-label]):has(svg) {
+	display: none;
+}

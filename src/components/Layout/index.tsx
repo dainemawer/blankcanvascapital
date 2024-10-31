@@ -7,8 +7,8 @@ interface LayoutProps {
 	children: React.ReactNode;
 }
 
-const SkipLink = dynamic(() => import("@components/SkipLink"), { ssr: false });
-const Footer = dynamic(() => import("@components/Footer"), { ssr: false });
+const SkipLink = dynamic(() => import("@components/SkipLink"), { ssr: true });
+const Footer = dynamic(() => import("@components/Footer"), { ssr: true });
 
 export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
 	return (

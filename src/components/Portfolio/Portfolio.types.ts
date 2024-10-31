@@ -14,9 +14,7 @@ export type PortfolioProps = {
 };
 
 export type PortfolioModalProps = {
-	close: () => void,
 	modalContent: PortfolioProps,
-	opened: boolean
 }
 
 export type PortfolioFilterProps = {
@@ -26,7 +24,7 @@ export type PortfolioFilterProps = {
 }
 
 export type PortfolioGridProps = {
-	handleClick: (item: PortfolioProps) => void,
+	onCardClick: (item: PortfolioProps) => void,
 	items: PortfolioProps[],
 	label: string
 }
