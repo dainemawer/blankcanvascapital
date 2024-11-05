@@ -1,6 +1,7 @@
 "use client";
 
 import { FC } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { PortfolioCard } from "@components/Cards/PortfolioCard";
 import type { PortfolioGridProps } from "./Portfolio.types";
 
@@ -14,16 +15,24 @@ const Grid: FC<PortfolioGridProps> = ({
 			<h4 className="absolute text-eyebrow left-0 top-[-44px] uppercase font-bold text-base lg:left-[-6.5rem] lg:bg-white lg:px-4 lg:py-2 lg:rotate-[-90deg] lg:top-6">
 				{label}
 			</h4>
-			<div className="grid grid-cols-1 gap-6 xs:grid-cols-2 lg:grid-cols-3 lg:gap-9">
-				{items.map((item) => (
-					<div key={item.id}>
-						<PortfolioCard
-							handleClick={onCardClick}
-							item={item}
+			<div className="grid grid-cols-1 gap-6 xs:grid-cols-2 lg:grid-cols-portfolio lg:gap-9">
+				<AnimatePresence mode="sync">
+					{items.map((item, index) => (
+						<motion.div
+							initial={{ opacity: 0 }}
 							key={item.id}
-						/>
-					</div>
-				))}
+							transition={{ duration: 0.1, delay: index * 0.1 }}
+							viewport={{ once: true }}
+							whileInView={{ opacity: 1 }}
+						>
+							<PortfolioCard
+								handleClick={onCardClick}
+								item={item}
+								key={item.id}
+							/>
+						</motion.div>
+					))}
+				</AnimatePresence>
 			</div>
 		</section>
 	);

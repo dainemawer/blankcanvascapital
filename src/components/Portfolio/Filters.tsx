@@ -14,7 +14,7 @@ const Filters: FC<PortfolioFilterProps> = ({
 				Filter:
 			</span>
 			<a
-				className={`block text-eyebrow border border-gold font-semibold uppercase py-3 px-4 rounded transition hover:bg-gold hover:text-white cursor-pointer ${
+				className={`block text-eyebrow border border-gold font-semibold uppercase py-3 px-[18px] leading-none font-primary rounded transition hover:bg-gold hover:text-white cursor-pointer ${
 					active === "Private Equity"
 						? "bg-gold text-white"
 						: "bg-white text-gold"
@@ -24,7 +24,7 @@ const Filters: FC<PortfolioFilterProps> = ({
 				Private Equity
 			</a>
 			<a
-				className={`block ml-4 text-eyebrow  border border-gold text-gold font-semibold uppercase py-3 px-4 rounded transition hover:bg-gold hover:text-white cursor-pointer ${
+				className={`block ml-4 text-eyebrow  border border-gold text-gold font-semibold font-primary uppercase py-3 px-[18px] leading-none rounded transition hover:bg-gold hover:text-white cursor-pointer ${
 					active === "Real Estate" ? "bg-gold text-white" : "bg-white text-gold"
 				}`}
 				onClick={filterRealEstate}

@@ -25,7 +25,8 @@ module.exports = {
   			contactMedium: 'minmax(50px, 150px) minmax(min-content, 1240px)',
   			contactLarge: 'minmax(min-content, 150px) minmax(min-content, 1240px)',
   			team: 'repeat(3, minmax(0, 230px))',
-  			'team-overflow': 'repeat(3, 210px)'
+  			'team-overflow': 'repeat(3, 210px)',
+				'portfolio': 'repeat(3, 270px)',
   		},
   		fontSize: {
   			eyebrow: 'var(--font-size-base)',
@@ -67,6 +68,5 @@ module.exports = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
 }
 

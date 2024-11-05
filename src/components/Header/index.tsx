@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, FC } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import { Logo } from "@components/Logo";
 import { Navigation } from "@components/Navigation";
@@ -8,6 +8,7 @@ import { Container } from "@components/Container";
 import { useScrollPosition } from "@hooks/useScrollPosition";
 import { NavigationItemProps } from "../Navigation/Navigation.types";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 import { AlignJustify } from "lucide-react";
 
@@ -52,6 +53,31 @@ const menu = [
 	},
 ];
 
+const boxVariant = {
+	hidden: {
+		x: "-100vw", //move out of the site
+	},
+	visible: {
+		x: 0, // bring it back to nrmal
+		transition: {
+			delay: 0.25,
+			when: "beforeChildren", //use this instead of delay
+			staggerChildren: 0.2, //apply stagger on the parent tag
+		},
+	},
+};
+
+const listVariant = {
+	hidden: {
+		x: -10, //move out of the site
+		opacity: 0,
+	},
+	visible: {
+		x: 0, // bring it back to nrmal
+		opacity: 1,
+	},
+};
+
 export const Header: FC = (): JSX.Element => {
 	const scrollPosition = useScrollPosition();
 	const isSticky = scrollPosition > 0;
@@ -80,12 +106,23 @@ export const Header: FC = (): JSX.Element => {
 							</SheetDescription>
 							<div className="grid h-full gap-4 py-4">
 								<div className="flex flex-col items-center justify-center align-center">
-									<Logo />
 									<nav>
 										{menu && (
-											<ul className="flex flex-col items-center p-0 m-0 list-none">
+											<motion.ul
+												animate="visible"
+												className="flex flex-col items-center p-0 m-0 list-none"
+												initial="hidden"
+												variants={boxVariant}
+											>
+												<motion.li>
+													<Logo />
+												</motion.li>
 												{menu.map((item: NavigationItemProps) => (
-													<li className="leading-loose" key={item.id}>
+													<motion.li
+														className="leading-loose"
+														key={item.id}
+														variants={listVariant}
+													>
 														<Link
 															className={`relative group text-black font-primary font-medium text-subheading hover:text-opacity-100`}
 															href={item.href}
@@ -97,9 +134,9 @@ export const Header: FC = (): JSX.Element => {
 																}`}
 															></span>
 														</Link>
-													</li>
+													</motion.li>
 												))}
-											</ul>
+											</motion.ul>
 										)}
 									</nav>
 								</div>
