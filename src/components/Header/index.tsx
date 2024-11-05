@@ -85,7 +85,7 @@ export const Header: FC = (): JSX.Element => {
 
 	return (
 		<header
-			className={`site-header sticky top-0 bg-white bg-opacity-90 transition-all duration-500 ease-in-out z-50 ${
+			className={`site-header sticky top-0 bg-white bg-opacity-90 transition-all duration-500 ease-in-out z-[99] ${
 				isSticky ? "backdrop-blur-sm shadow-md py-4" : "py-6"
 			}`}
 			aria-label="Site Header"
