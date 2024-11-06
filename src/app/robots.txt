@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://blankcanvascapital.co.za
+
+# Sitemaps
+Sitemap: https://blankcanvascapital.co.za/sitemap.xml

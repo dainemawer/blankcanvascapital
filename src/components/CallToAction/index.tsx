@@ -1,21 +1,16 @@
-/*
- * Call To Action
- *
- *  Call To Action Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import { Button } from "@components/Button";
-import {
-	StyledSection,
-	StyledSectionContainer,
-	StyledEyebrow,
-	StyledCTATitle,
-	StyledDescription,
-} from "./CallToAction.styled";
-import { CallToActionProps } from "./CallToAction.types";
+import { Paragraph } from "@components/Paragraph";
+
+interface CallToActionProps {
+	buttonLink?: string;
+	buttonText?: string;
+	description?: string;
+	eyebrow?: string;
+	title?: string;
+}
 
 export const CallToAction: FC<CallToActionProps> = ({
 	buttonLink,
@@ -25,13 +20,27 @@ export const CallToAction: FC<CallToActionProps> = ({
 	title,
 }): JSX.Element => {
 	return (
-		<StyledSection>
-			<StyledSectionContainer>
-				{eyebrow && <StyledEyebrow>{eyebrow}</StyledEyebrow>}
-				{title && <StyledCTATitle>{title}</StyledCTATitle>}
-				{description && <StyledDescription>{description}</StyledDescription>}
+		<section className="py-32 bg-grey">
+			<div className="flex flex-col items-center justify-center max-w-[1024px] mx-auto px-5">
+				{eyebrow && (
+					<p className="font-semibold text-center uppercase text-gold font-primary text-md">
+						{eyebrow}
+					</p>
+				)}
+				{title && (
+					<h3 className="my-4 text-xl font-bold text-center text-white font-primary">
+						{title}
+					</h3>
+				)}
+				{description && (
+					<p className="mb-12 font-normal text-center text-silverChalice font-secondary text-md">
+						{description}
+					</p>
+				)}
 				{buttonLink && <Button href={buttonLink}>{buttonText}</Button>}
-			</StyledSectionContainer>
-		</StyledSection>
+			</div>
+		</section>
 	);
 };
+
+export default CallToAction;

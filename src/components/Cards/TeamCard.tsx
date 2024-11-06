@@ -1,10 +1,4 @@
-/*
- * Team Card
- *
- * Team Card Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
 import Image from "next/image";
@@ -23,7 +17,7 @@ export const TeamCard: FC<TeamCardProps> = ({
 			{image && (
 				<figure>
 					<Image
-						alt={name}
+						alt={name || "Team member"}
 						decoding="async"
 						height={500}
 						loading="lazy"

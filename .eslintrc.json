@@ -1,10 +1,6 @@
 {
-  "plugins": [
-    "sort-destructure-keys"
-  ],
   "extends": [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended"
+    "next/core-web-vitals"
   ],
   "rules": {
     "react/jsx-sort-props": [

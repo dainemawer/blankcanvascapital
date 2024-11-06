@@ -1,17 +1,6 @@
-/*
- * Quote
- *
- * Quote Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
-import {
-	StyledHeader,
-	StyledEyebrow,
-	StyledHeading,
-} from "./ArticleHeader.styled";
 import { ArticleHeaderProps } from "./ArticleHeader.types";
 
 const ArticleHeader: FC<ArticleHeaderProps> = ({
@@ -19,10 +8,14 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({
 	title,
 }): JSX.Element => {
 	return (
-		<StyledHeader>
-			<StyledEyebrow>{eyebrow}</StyledEyebrow>
-			<StyledHeading>{title}</StyledHeading>
-		</StyledHeader>
+		<header>
+			<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">
+				{eyebrow}
+			</p>
+			<h1 className="mt-0 mb-5 font-bold leading-tight text-grey text-heading font-primary text-xxl md:mb-8">
+				{title}
+			</h1>
+		</header>
 	);
 };
 

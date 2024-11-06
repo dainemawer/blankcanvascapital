@@ -1,13 +1,6 @@
-/*
- * Header
- *
- * Global Site Header
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
-import { StyledContainer } from "./Container.styled";
 import { ContainerProps } from "./Container.types";
 
 export const Container: FC<ContainerProps> = ({
@@ -16,8 +9,11 @@ export const Container: FC<ContainerProps> = ({
 	size = "1280px",
 }): JSX.Element => {
 	return (
-		<StyledContainer relative={relative} size={size}>
+		<div
+			className={`mx-auto px-5 sm:px-6 md:px-5 ${relative ? "relative" : ""}`}
+			style={{ maxWidth: size }}
+		>
 			{children}
-		</StyledContainer>
+		</div>
 	);
 };

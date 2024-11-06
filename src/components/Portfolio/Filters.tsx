@@ -1,17 +1,6 @@
-/*
- * Quote
- *
- * Quote Component
- *
- * @returns {JSX.Element}
- */
+"use client";
 
 import { FC } from "react";
-import {
-	StyledPortfolioFilters,
-	StyledPortfolioLabel,
-	StyledButton,
-} from "./Portfolio.styled";
 import type { PortfolioFilterProps } from "./Portfolio.types";
 
 const Filters: FC<PortfolioFilterProps> = ({
@@ -20,21 +9,29 @@ const Filters: FC<PortfolioFilterProps> = ({
 	filterRealEstate,
 }): JSX.Element => {
 	return (
-		<StyledPortfolioFilters>
-			<StyledPortfolioLabel>Filter:</StyledPortfolioLabel>
-			<StyledButton
-				className={active === "Private Equity" ? "active" : ""}
+		<div className="flex flex-wrap items-center mt-12 lg:mt-12">
+			<span className="block w-full mb-2 mr-4 font-semibold uppercase text-eyebrow lg:w-auto lg:inline-block lg:mb-0">
+				Filter:
+			</span>
+			<a
+				className={`block text-eyebrow border border-gold font-semibold uppercase py-3 px-[18px] leading-none font-primary rounded transition hover:bg-gold hover:text-white cursor-pointer ${
+					active === "Private Equity"
+						? "bg-gold text-white"
+						: "bg-white text-gold"
+				}`}
 				onClick={filterPrivateEquity}
 			>
 				Private Equity
-			</StyledButton>
-			<StyledButton
-				className={active === "Real Estate" ? "active" : ""}
+			</a>
+			<a
+				className={`block ml-4 text-eyebrow  border border-gold text-gold font-semibold font-primary uppercase py-3 px-[18px] leading-none rounded transition hover:bg-gold hover:text-white cursor-pointer ${
+					active === "Real Estate" ? "bg-gold text-white" : "bg-white text-gold"
+				}`}
 				onClick={filterRealEstate}
 			>
 				Real Estate
-			</StyledButton>
-		</StyledPortfolioFilters>
+			</a>
+		</div>
 	);
 };
 
