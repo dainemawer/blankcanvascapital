@@ -17,7 +17,7 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
 
 	return (
 		<article
-			className={`flex justify-center items-start bg-white border-b-8 border-gold shadow-lg box-border relative p-4 z-10 ${
+			className={`flex items-center justify-center bg-white border-b-8 border-gold shadow-lg box-border relative p-4 z-10 ${
 				isRealEstate ? "h-[250px] md:h-[270px]" : "h-[210px] md:h-[270px]"
 			}`}
 			id={item.id}
@@ -27,6 +27,7 @@ export const PortfolioCard: FC<PortfolioCardProps> = ({
 					<button
 						className="flex-1 block p-0 transition-all duration-300 ease-in-out bg-transparent border-none cursor-pointer grayscale hover:grayscale-0 focus:grayscale-0"
 						onClick={() => handleClick(item)}
+						type="button"
 					>
 						<Image
 							alt={item.title}

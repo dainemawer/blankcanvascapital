@@ -8,7 +8,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({
 	title,
 }): JSX.Element => {
 	return (
-		<header>
+		<header className="flex flex-col gap-3">
 			<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">
 				{eyebrow}
 			</p>

@@ -27,6 +27,8 @@ const Portfolio: FC = (): JSX.Element => {
 	const dialog = useDialog();
 	const [selectedCard, setSelectedCard] = useState<PortfolioProps | null>(null);
 
+	const isRealEstate = selectedCard?.category === "Real Estate";
+
 	useEffect(() => {
 		portfolio &&
 			setItems(portfolio.filter((item) => item.category === "Private Equity"));
@@ -68,7 +70,7 @@ const Portfolio: FC = (): JSX.Element => {
 			/>
 			<Dialog {...dialog.props}>
 				{selectedCard && (
-					<DialogContent className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-4xl p-0 border-0">
+					<DialogContent className="w-full max-w-[90%] max-h-[80%] overflow-y-scroll md:max-h-none md:max-w-[80%] lg:max-w-4xl p-0 border-0">
 						<div className="sr-only">
 							<DialogTitle>{selectedCard.title}</DialogTitle>
 							<DialogDescription>{selectedCard.description}</DialogDescription>
@@ -76,7 +78,7 @@ const Portfolio: FC = (): JSX.Element => {
 						<DialogClose asChild>
 							<button
 								aria-label="Close Dialog"
-								className="absolute flex items-center justify-center w-10 h-10 rounded-full bg-gold top-4 right-4"
+								className="absolute z-50 flex items-center justify-center w-10 h-10 rounded-full bg-gold top-4 right-4"
 								type="button"
 							>
 								<svg
@@ -95,22 +97,29 @@ const Portfolio: FC = (): JSX.Element => {
 								</svg>
 							</button>
 						</DialogClose>
-						<figure>
-							<Image
-								alt={selectedCard.title || "Dialog Hero Image"}
-								className="object-cover object-bottom w-full h-52 sm:h-96"
-								decoding="async"
-								height="350"
-								loading="lazy"
-								src={selectedCard.hero || "/default-image.jpg"}
-								width="980"
-							/>
-						</figure>
-						<div className="flex flex-col items-center gap-4 px-8 pb-8 lg:p-8 sm:items-start lg:gap-16 lg:flex-row">
-							<div className="relative flex flex-col items-center justify-center lg:shrink-0 lg:after:content-[''] lg:after:block lg:after:h-full lg:after:w-[2px] lg:after:bg-gold lg:after:absolute lg:after:top-0 lg:after:-right-8">
+						{!isRealEstate && (
+							<figure>
 								<Image
+									alt={selectedCard.title || "Dialog Hero Image"}
+									className="object-cover object-bottom w-full h-52 sm:h-96"
+									decoding="async"
+									height="350"
+									loading="lazy"
+									src={selectedCard.hero || "/default-image.jpg"}
+									width="980"
+								/>
+							</figure>
+						)}
+
+						<div className="flex flex-col items-center gap-4 px-6 pt-6 pb-8 md:pt-0 md:px-8 lg:p-8 sm:items-start lg:gap-16 lg:flex-row">
+							<div className="relative w-full md:w-auto flex flex-col items-center justify-center lg:shrink-0 lg:after:content-[''] lg:after:block lg:after:h-full lg:after:w-[2px] lg:after:bg-gold lg:after:absolute lg:after:top-0 lg:after:-right-8">
+								<Image
+									className={`object-cover w-full lg:mb-4 ${
+										isRealEstate
+											? "w-full aspect-square h-[296px] md:w-[214px] md:h-[214px]"
+											: "h-36 min-w-[214px]"
+									}`}
 									alt={selectedCard.title || "Dialog Logo"}
-									className="object-cover w-full lg:mb-4 h-36 min-w-[214px]"
 									decoding="async"
 									height={137}
 									loading="lazy"

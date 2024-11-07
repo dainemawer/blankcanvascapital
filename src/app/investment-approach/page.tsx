@@ -141,7 +141,7 @@ export default function Page() {
 							operations but play a key role in the strategy of the business,
 							including:
 						</p>
-						<ul className="pl-4 leading-10 text-gold text-eyebrow">
+						<ul className="pl-4 leading-10 list-disc text-gold text-eyebrow">
 							<li>Director representation on the board</li>
 							<li>Fundraising (debt and equity)</li>
 							<li>
