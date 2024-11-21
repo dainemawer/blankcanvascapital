@@ -21,7 +21,7 @@ const Grid: FC<PortfolioGridProps> = ({
 						<motion.div
 							initial={{ opacity: 0 }}
 							key={item.id}
-							transition={{ duration: 0.1, delay: index * 0.1 }}
+							transition={{ duration: 0.05, delay: index * 0.1 }}
 							viewport={{ once: true }}
 							whileInView={{ opacity: 1 }}
 						>

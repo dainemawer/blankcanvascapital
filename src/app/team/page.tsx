@@ -53,7 +53,7 @@ export default function Page() {
 							on high-value investment opportunities.
 						</Paragraph>
 						<SubHeading heading="What We Do" />
-						<ul className="pl-4 space-y-2 list-none list-inside text-eyebrow">
+						<ul className="pl-4 space-y-2 list-disc list-inside text-eyebrow">
 							<li>Origination of new investment opportunities</li>
 							<li>
 								Conducting financial, taxation, and commercial due diligence

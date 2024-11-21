@@ -12,7 +12,7 @@ export const Heading: FC<HeadingProps> = ({ as, children }): JSX.Element => {
 		case "h3":
 			return <h3 className="text-3xl">{children}</h3>;
 		case "h4":
-			return <h4 className="text-xl font-medium font-primary">{children}</h4>;
+			return <h4 className="text-xl font-semibold font-primary">{children}</h4>;
 		case "h5":
 			return <h5 className="text-base">{children}</h5>;
 		case "h6":

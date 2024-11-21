@@ -260,9 +260,9 @@ export default function Page() {
 								investments?
 							</h3>
 							<p className="flex items-start">
-								<a className="button" href="">
+								<Link className="button" href="/contact">
 									Contact Us
-								</a>
+								</Link>
 							</p>
 						</div>
 					</div>

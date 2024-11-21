@@ -28,6 +28,9 @@ const Portfolio: FC = (): JSX.Element => {
 	const [selectedCard, setSelectedCard] = useState<PortfolioProps | null>(null);
 
 	const isRealEstate = selectedCard?.category === "Real Estate";
+	const isRealisedRealEstate =
+		selectedCard?.status === "realised" &&
+		selectedCard?.title === "Ngoya Data Centers";
 
 	useEffect(() => {
 		portfolio &&
@@ -75,6 +78,7 @@ const Portfolio: FC = (): JSX.Element => {
 							<DialogTitle>{selectedCard.title}</DialogTitle>
 							<DialogDescription>{selectedCard.description}</DialogDescription>
 						</div>
+
 						<DialogClose asChild>
 							<button
 								aria-label="Close Dialog"
@@ -97,11 +101,12 @@ const Portfolio: FC = (): JSX.Element => {
 								</svg>
 							</button>
 						</DialogClose>
-						{!isRealEstate && (
+
+						{!isRealEstate && !isRealisedRealEstate && (
 							<figure>
 								<Image
 									alt={selectedCard.title || "Dialog Hero Image"}
-									className="object-cover object-bottom w-full h-52 sm:h-96"
+									className={`object-cover object-bottom w-full h-52 sm:h-96`}
 									decoding="async"
 									height="350"
 									loading="lazy"
@@ -126,16 +131,18 @@ const Portfolio: FC = (): JSX.Element => {
 									src={selectedCard.logo || "/default-image.jpg"}
 									width={214}
 								/>
-								<p className="hidden text-center lg:block">
-									<a
-										className="button"
-										href={selectedCard.url}
-										rel="noopener noreferrer"
-										target="_blank"
-									>
-										Visit Website
-									</a>
-								</p>
+								{!isRealEstate && selectedCard && selectedCard?.url && (
+									<p className="hidden text-center lg:block">
+										<a
+											className="button"
+											href={selectedCard.url}
+											rel="noopener noreferrer"
+											target="_blank"
+										>
+											Visit Website
+										</a>
+									</p>
+								)}
 							</div>
 							<div>
 								<h3 className="mb-4 font-bold text-sectionHeading font-primary">
