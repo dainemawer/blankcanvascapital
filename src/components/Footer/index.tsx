@@ -27,15 +27,6 @@ const Footer: FC = (): JSX.Element => {
 								width={52}
 							/>
 						</Link>
-						<address className="ml-7 font-primary text-sm font-medium uppercase not-italic leading-6">
-							1st Floor
-							<br />
-							30 Melrose Boulevard
-							<br />
-							Melrose Arch, Johannesburg
-							<br />
-							South Africa
-						</address>
 					</div>
 				</Container>
 			</div>

@@ -160,7 +160,7 @@ const Portfolio: FC = (): JSX.Element => {
 											<strong>Sector:</strong> {selectedCard.sector}
 										</li>
 									)}
-									{selectedCard.date && (
+									{selectedCard.date && selectedCard.status !== "realised" && (
 										<li className="leading-loose">
 											<strong>Date:</strong> {selectedCard.date}
 										</li>
