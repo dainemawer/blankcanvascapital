@@ -5,7 +5,7 @@
  * client so that the other parts of the application continue working
  *
  * @see https://reactjs.org/docs/error-boundaries.html
- * @returns {JSX.Element}
+ * @returns {React.JSX.Element}
  */
 
 import { Component, ErrorInfo, ReactNode } from "react";

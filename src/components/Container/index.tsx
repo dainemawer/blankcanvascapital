@@ -7,7 +7,7 @@ export const Container: FC<ContainerProps> = ({
 	children,
 	relative = false,
 	size = "1280px",
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<div
 			className={`mx-auto px-5 sm:px-6 md:px-5 ${relative ? "relative" : ""}`}

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Container } from "@components/Container";
 import { Hero } from "@components/Hero";
+import Aside from "@components/Aside";
 
-const Aside = dynamic(() => import("@components/Aside"), { ssr: false });
 const ArticleHeader = dynamic(() => import("@components/ArticleHeader"), {
 	ssr: true,
 });

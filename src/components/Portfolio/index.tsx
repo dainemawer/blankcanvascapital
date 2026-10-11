@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import fetcher from "@lib/fetcher";
@@ -18,11 +18,11 @@ const Grid = dynamic(() => import("@components/Portfolio/Grid"), {
 	ssr: false,
 });
 
-const Portfolio: FC = (): JSX.Element => {
+const Portfolio: FC = (): React.JSX.Element => {
 	const { data, error } = useSWR("/api/portfolio", fetcher);
 	const portfolio = data as PortfolioProps[];
-	const [items, setItems] = useState<PortfolioProps[]>([]);
 	const [active, setActive] = useState("Private Equity");
+	const items = (portfolio ?? []).filter((item) => item.category === active);
 
 	const dialog = useDialog();
 	const [selectedCard, setSelectedCard] = useState<PortfolioProps | null>(null);
@@ -32,23 +32,16 @@ const Portfolio: FC = (): JSX.Element => {
 		selectedCard?.status === "realised" &&
 		selectedCard?.title === "Ngoya Data Centers";
 
-	useEffect(() => {
-		portfolio &&
-			setItems(portfolio.filter((item) => item.category === "Private Equity"));
-	}, [portfolio]);
-
 	const handleCardClick = (item: PortfolioProps) => {
 		setSelectedCard(item); // Set the clicked card’s content
 		dialog.trigger(); // Open the dialog
 	};
 
 	const filterPrivateEquity = () => {
-		setItems(portfolio.filter((item) => item.category === "Private Equity"));
 		setActive("Private Equity");
 	};
 
 	const filterRealEstate = () => {
-		setItems(portfolio.filter((item) => item.category === "Real Estate"));
 		setActive("Real Estate");
 	};
 

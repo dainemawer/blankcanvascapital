@@ -18,7 +18,7 @@ export const CallToAction: FC<CallToActionProps> = ({
 	description,
 	eyebrow,
 	title,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<section className="py-32 bg-grey">
 			<div className="flex flex-col items-center justify-center max-w-[1024px] mx-auto px-5">

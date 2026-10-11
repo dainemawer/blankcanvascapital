@@ -9,7 +9,7 @@ export const Navigation: FC<NavigationProps> = ({
 	id,
 	label,
 	menu,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	const pathname = usePathname();
 
 	return (

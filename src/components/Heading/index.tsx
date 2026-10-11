@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { HeadingProps } from "./Heading.types";
 
-export const Heading: FC<HeadingProps> = ({ as, children }): JSX.Element => {
+export const Heading: FC<HeadingProps> = ({ as, children }): React.JSX.Element => {
 	switch (as) {
 		case "h1":
 			return <h1 className="text-6xl">{children}</h1>;

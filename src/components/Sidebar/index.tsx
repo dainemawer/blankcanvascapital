@@ -3,7 +3,7 @@
 import { FC } from "react";
 import Image from "next/image";
 
-const Sidebar: FC = (): JSX.Element => {
+const Sidebar: FC = (): React.JSX.Element => {
 	return (
 		<aside className="flex flex-col mt-0 lg:border-l-2 lg:border-copper lg:pl-10">
 			<a

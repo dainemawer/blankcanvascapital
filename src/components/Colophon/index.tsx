@@ -4,7 +4,7 @@ import { FC } from "react";
 import Link from "next/link";
 import { Container } from "@components/Container";
 
-export const Colophon: FC = (): JSX.Element => {
+export const Colophon: FC = (): React.JSX.Element => {
 	return (
 		<div className="py-5 text-white border-b-4 bg-grey border-gold font-primary">
 			<Container>

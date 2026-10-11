@@ -12,7 +12,7 @@ type PortfolioCardProps = {
 export const PortfolioCard: FC<PortfolioCardProps> = ({
 	handleClick,
 	item,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	const isRealEstate = item.category === "Real Estate";
 
 	return (

@@ -2,7 +2,7 @@
  * Google Analytics
  *
  * Initialiszes Google Analytics
- * @returns {JSX.Element}
+ * @returns {React.JSX.Element}
  */
 
 export const sendToAnalytics = (

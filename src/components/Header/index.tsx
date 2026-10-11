@@ -78,7 +78,7 @@ const listVariant = {
 	},
 };
 
-export const Header: FC = (): JSX.Element => {
+export const Header: FC = (): React.JSX.Element => {
 	const scrollPosition = useScrollPosition();
 	const isSticky = scrollPosition > 0;
 	const pathname = usePathname();

@@ -15,7 +15,7 @@ export const Content: FC<ContentProps> = ({
 	subtitle,
 	title,
 	variation,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<div className="absolute inset-0 z-50 flex flex-col items-center justify-center text-white p-8 sm:p-12 lg:p-8">
 			{variation === "horizontal" && (
