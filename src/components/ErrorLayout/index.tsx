@@ -9,7 +9,7 @@ export const ErrorLayout: FC<ErrorProps> = ({
 	lead = "",
 	permalink = "",
 	title = "",
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<div className="flex justify-center min-h-[calc(100vh-343.8px)]">
 			<div className="flex flex-col justify-center pl-40">

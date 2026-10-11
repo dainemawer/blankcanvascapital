@@ -8,7 +8,7 @@ export const Paragraph: FC<ParagraphProps> = ({
 	color,
 	lead,
 	maxWidth,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	if (lead) {
 		return (
 			<p

@@ -7,7 +7,7 @@ const Filters: FC<PortfolioFilterProps> = ({
 	active,
 	filterPrivateEquity,
 	filterRealEstate,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<div className="flex flex-wrap items-center mt-12 lg:mt-12">
 			<span className="block w-full mb-2 mr-4 font-semibold uppercase text-eyebrow lg:w-auto lg:inline-block lg:mb-0">

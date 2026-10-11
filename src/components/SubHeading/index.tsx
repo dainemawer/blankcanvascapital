@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { SubHeadingProps } from "./SubHeading.types";
 
-const SubHeading: FC<SubHeadingProps> = ({ heading }): JSX.Element => {
+const SubHeading: FC<SubHeadingProps> = ({ heading }): React.JSX.Element => {
 	return (
 		<div>
 			<h2 className="relative text-black font-primary text-subheading font-semibold leading-relaxed uppercase my-6 sm:my-14">

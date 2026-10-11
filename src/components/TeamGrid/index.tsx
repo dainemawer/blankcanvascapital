@@ -6,7 +6,7 @@ import useSWR from "swr";
 import fetcher from "@lib/fetcher";
 import { SingleTeamProps } from "@components/TeamGrid/TeamGrid.types";
 
-const TeamGrid: FC = (): JSX.Element => {
+const TeamGrid: FC = (): React.JSX.Element => {
 	const { data, error } = useSWR("/api/team", fetcher);
 	const team = data as SingleTeamProps[];
 

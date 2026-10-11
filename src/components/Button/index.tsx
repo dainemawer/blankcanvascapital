@@ -10,7 +10,7 @@ export const Button: FC<ButtonProps> = ({
 	href = "",
 	id = "",
 	type = "button",
-}): JSX.Element => {
+}): React.JSX.Element => {
 	if (!href) {
 		return (
 			<button

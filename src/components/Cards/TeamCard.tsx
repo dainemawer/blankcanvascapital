@@ -11,7 +11,7 @@ export const TeamCard: FC<TeamCardProps> = ({
 	linkedin,
 	name,
 	position,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<article className={className} id={id}>
 			{image && (

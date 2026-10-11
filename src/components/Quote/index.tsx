@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { QuoteProps } from "./Quote.types";
 
-export const Quote: FC<QuoteProps> = ({ cite, quote }): JSX.Element => {
+export const Quote: FC<QuoteProps> = ({ cite, quote }): React.JSX.Element => {
 	return (
 		<blockquote
 			cite={cite}

@@ -6,7 +6,7 @@ import type { PortfolioModalProps } from "./Portfolio.types";
 
 const PortfolioModal: FC<PortfolioModalProps> = ({
 	modalContent,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	const isRealEstate: Boolean = modalContent.category === "Real Estate";
 
 	return (

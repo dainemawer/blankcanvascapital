@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Colophon } from "@components/Colophon";
 import { Container } from "@components/Container";
 
-const Footer: FC = (): JSX.Element => {
+const Footer: FC = (): React.JSX.Element => {
 	return (
 		<footer
 			aria-label="Site Footer"

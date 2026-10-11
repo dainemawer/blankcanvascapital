@@ -6,7 +6,7 @@ import { ArticleHeaderProps } from "./ArticleHeader.types";
 const ArticleHeader: FC<ArticleHeaderProps> = ({
 	eyebrow,
 	title,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<header className="flex flex-col gap-3">
 			<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">

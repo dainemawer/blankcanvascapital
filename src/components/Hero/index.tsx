@@ -21,7 +21,7 @@ export const Hero: FC<HeroProps> = ({
 	subtitle,
 	title,
 	variation,
-}): JSX.Element => {
+}): React.JSX.Element => {
 	return (
 		<section className="mt-4">
 			<Container size="1440px" relative>

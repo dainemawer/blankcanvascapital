@@ -30,7 +30,7 @@ const animationVariants = {
 	},
 };
 
-export const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
+export const Layout: FC<LayoutProps> = ({ children }): React.JSX.Element => {
 	const pathname = usePathname();
 	return (
 		<AnimatePresence mode="wait">

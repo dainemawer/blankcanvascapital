@@ -3,12 +3,12 @@
  *
  * Logo Component
  *
- * @returns {JSX.Element}
+ * @returns {React.JSX.Element}
  */
 
 import { FC } from "react";
 
-export const Logo: FC = (): JSX.Element => {
+export const Logo: FC = (): React.JSX.Element => {
 	return (
 		<svg
 			fill="none"

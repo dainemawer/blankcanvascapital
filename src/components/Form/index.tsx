@@ -15,7 +15,7 @@ export interface IDataProps {
 
 interface FormProps {}
 
-const Form: FC<FormProps> = (): JSX.Element => {
+const Form: FC<FormProps> = (): React.JSX.Element => {
 	const [submitted, setSubmitted] = useState("Submit");
 
 	const {
