@@ -34,14 +34,6 @@ export const metadata: Metadata = {
 		title: "Blank Canvas Capital",
 		description:
 			"Blank Canvas Capital is a value-driven investment firm focused on helping businesses grow with flexible funding and strategic partnerships for exceptional returns",
-		images: [
-			{
-				url: "/opengraph.png",
-				width: 800,
-				height: 600,
-				alt: "Blank Canvas Capital",
-			},
-		],
 	},
 };
 

@@ -1,8 +1,8 @@
 {
   "name": "blankcanvascapital",
   "version": "1.0.0",
+  "private": true,
   "description": "A marketing site for Blank Canvas Capital",
-  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,9 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/dainemawer/blankcanvascapital.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Daine Mawer",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dainemawer/blankcanvascapital/issues"
   },

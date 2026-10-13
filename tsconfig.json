@@ -8,12 +8,6 @@
       "@components/*": [
         "./src/components/*"
       ],
-      "@context/*": [
-        "./src/context/*"
-      ],
-      "@hocs/*": [
-        "./src/hocs/*"
-      ],
       "@hooks/*": [
         "./src/hooks/*"
       ],
@@ -22,9 +16,6 @@
       ],
       "@styles/*": [
         "./src/styles/*"
-      ],
-      "@util/*": [
-        "./src/util/*"
       ]
     },
     "target": "ES2017",
