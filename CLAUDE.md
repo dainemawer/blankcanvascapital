@@ -75,11 +75,10 @@ Portfolio and Team data are fetched client-side from these routes with SWR, so t
 ## Known issues and gotchas (check before "fixing" or relying on them)
 
 1. **Contact form**: `src/lib/submit.ts` posts to `/api/send` and shows Success/Error from the real response. `/api/send` validates fields, checks the honeypot server-side, applies a best-effort in-memory rate limit (per serverless instance, so not a hard guarantee), and returns `{ message: 'success' }` or an error status. The recipient is hardcoded to `info@blankcanvascapital.co.za`. A real send can only be tested with a live `RESEND_API_KEY`.
-2. `tailwind.config.js` content globs include `./app`, `./components`, `./pages` (non-existent at the root); `./src/**/*` is what actually matches. Harmless, but don't "fix" by narrowing without checking.
-3. OG image comes from the `src/app/opengraph-image.png` file convention. Don't re-add an explicit `openGraph.images` entry in `layout.tsx` unless it points at a real file.
-4. `package.json` still has placeholder metadata (`main`, `author`, `license`).
-5. `public/` contains several unused or duplicate images (`hero-about*.jpg`, etc.). Don't delete assets without grepping for references first.
-6. `productionBrowserSourceMaps: true` is deliberate in `next.config.js`.
+2. OG image comes from the `src/app/opengraph-image.png` file convention. Don't re-add an explicit `openGraph.images` entry in `layout.tsx` unless it points at a real file.
+3. Unused images were pruned from `public/`, but `public/icons/favicon-*.png` (legacy sizes) and `browserconfig.xml` (which references icon sizes that don't exist) were left alone. Before deleting any asset, grep for its full path; many files share basenames across `heros/`, `logos/` and `real-estate/`.
+4. `Portfolio`/`PortfolioCard` reference fallback images that don't exist (`/default-image.jpg`, `/path/to/default/logo.png`); only hit if an item is missing its logo/hero.
+5. `productionBrowserSourceMaps: true` is deliberate in `next.config.js`.
 
 ## How I should work here
 
