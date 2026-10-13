@@ -1,40 +1,34 @@
 import { IDataProps } from '@components/Form';
 
-export const doSubmit = (
+export const doSubmit = async (
 	data: IDataProps, setSubmitted: (label: string) => void, reset: () => void
-): Promise<string> => {
-	return new Promise<string>(resolve => {
-		setTimeout(() => {
-			resolve('Resolved!');
+): Promise<void> => {
+	const body = {
+		from: data.email,
+		name: data.name,
+		message: data.message,
+		subject: data.subject,
+		honeypot: data.honeypot,
+	};
 
-			if (data.honeypot.length > 0) {
-				return false;
+	let ok = false;
+	try {
+		const res = await fetch('/api/send', {
+			method: 'POST',
+			body: JSON.stringify(body),
+			headers: {
+				'Content-Type': 'application/json'
 			}
+		});
+		const response = await res.json();
+		ok = res.ok && response.message === 'success';
+	} catch (error) {
+		console.error('Error', error);
+	}
 
-			const body = {
-				from: data.email,
-				name: data.name,
-				message: data.message,
-				subject: data.subject,
-			};
-
-			fetch('/api/send', {
-				method: 'POST',
-				body: JSON.stringify(body),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			})
-				.then(res => res.json())
-				.then(response => {
-					response.message === 'success' ?
-						setSubmitted('Success') : setSubmitted('Error');
-					setTimeout(() => {
-						reset();
-						setSubmitted('Submit');
-					}, 2500)
-				})
-				.catch(error => console.log('Error', error));
-		}, 2000);
-	});
-}
+	setSubmitted(ok ? 'Success' : 'Error');
+	setTimeout(() => {
+		if (ok) reset();
+		setSubmitted('Submit');
+	}, 2500);
+};
