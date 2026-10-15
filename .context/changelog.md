@@ -3,6 +3,7 @@
 Newest first. Link each entry to its request file and PR where applicable.
 
 ## 2026-10-15
+- PR #11 opened with all client round 1 work done so far (see entries below). Waiting on required review/merge.
 - Portfolio modal: max width 1024px (`lg:max-w-5xl`) and side-by-side layout from `md` instead of `lg`, to reduce banner cropping and scrolling. Overflow at 1280x800 dropped from 177-298px to 0-173px. Round 1, uncommitted.
 - The Lab / Good Basics modal now shows both logos stacked with their own website links (`brands` field in the portfolio data). Part of round 1, still uncommitted.
 
