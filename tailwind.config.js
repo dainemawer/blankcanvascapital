@@ -34,9 +34,6 @@ module.exports = {
   		maxWidth: {
   			'grid-after': 'calc(1206px + 3rem)'
   		},
-  		backgroundImage: {
-  			'portfolio-section': 'url("/portfolio-bg.jpg")'
-  		},
   		colors: {
   			black: '#000000',
   			grey: '#424242',

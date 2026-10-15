@@ -66,7 +66,7 @@ const Portfolio: FC = (): React.JSX.Element => {
 			/>
 			<Dialog {...dialog.props}>
 				{selectedCard && (
-					<DialogContent className="w-full max-w-[90%] max-h-[80%] overflow-y-scroll md:max-h-none md:max-w-[80%] lg:max-w-4xl p-0 border-0">
+					<DialogContent className="w-full max-w-[90%] max-h-[80%] overflow-y-auto no-scrollbar md:max-h-[85%] md:max-w-[80%] lg:max-w-5xl p-0 border-0">
 						<div className="sr-only">
 							<DialogTitle>{selectedCard.title}</DialogTitle>
 							<DialogDescription>{selectedCard.description}</DialogDescription>
@@ -109,39 +109,67 @@ const Portfolio: FC = (): React.JSX.Element => {
 							</figure>
 						)}
 
-						<div className="flex flex-col items-center gap-4 px-6 pt-6 pb-8 md:pt-0 md:px-8 lg:p-8 sm:items-start lg:gap-16 lg:flex-row">
-							<div className="relative w-full md:w-auto flex flex-col items-center justify-center lg:shrink-0 lg:after:content-[''] lg:after:block lg:after:h-full lg:after:w-[2px] lg:after:bg-gold lg:after:absolute lg:after:top-0 lg:after:-right-8">
-								<Image
-									className={`object-cover w-full lg:mb-4 ${
-										isRealEstate
-											? "w-full aspect-square h-[296px] md:w-[214px] md:h-[214px]"
-											: "h-36 min-w-[214px]"
-									}`}
-									alt={selectedCard.title || "Dialog Logo"}
-									decoding="async"
-									height={137}
-									loading="lazy"
-									src={selectedCard.logo || "/default-image.jpg"}
-									width={214}
-								/>
-								{!isRealEstate && selectedCard && selectedCard?.url && (
-									<p className="hidden text-center lg:block">
-										<a
-											className="button"
-											href={selectedCard.url}
-											rel="noopener noreferrer"
-											target="_blank"
-										>
-											Visit Website
-										</a>
-									</p>
+						<div className="flex flex-col items-center gap-4 px-6 pt-6 pb-8 md:p-8 sm:items-start md:gap-16 md:flex-row">
+							<div className="relative w-full md:w-auto flex flex-col items-center justify-center md:shrink-0 md:after:content-[''] md:after:block md:after:h-full md:after:w-[2px] md:after:bg-gold md:after:absolute md:after:top-0 md:after:-right-8">
+								{selectedCard.brands?.length ? (
+									<ul className="flex flex-row justify-center gap-6 md:flex-col md:gap-4">
+										{selectedCard.brands.map((brand) => (
+											<li className="flex flex-col items-center" key={brand.title}>
+												<Image
+													alt={brand.title}
+													className="object-contain w-[130px] h-[83px] md:w-[160px] md:h-[102px]"
+													decoding="async"
+													height={102}
+													loading="lazy"
+													src={brand.logo}
+													width={160}
+												/>
+												<a
+													className="text-center underline text-address text-gold hover:no-underline"
+													href={brand.url}
+													rel="noopener noreferrer"
+													target="_blank"
+												>
+													Visit Website
+												</a>
+											</li>
+										))}
+									</ul>
+								) : (
+									<>
+										<Image
+											className={`object-cover w-full md:mb-4 ${
+												isRealEstate
+													? "w-full aspect-square h-[296px] md:w-[214px] md:h-[214px]"
+													: "h-36 min-w-[214px]"
+											}`}
+											alt={selectedCard.title || "Dialog Logo"}
+											decoding="async"
+											height={137}
+											loading="lazy"
+											src={selectedCard.logo || "/default-image.jpg"}
+											width={214}
+										/>
+										{!isRealEstate && selectedCard && selectedCard?.url && (
+											<p className="hidden text-center md:block">
+												<a
+													className="button"
+													href={selectedCard.url}
+													rel="noopener noreferrer"
+													target="_blank"
+												>
+													Visit Website
+												</a>
+											</p>
+										)}
+									</>
 								)}
 							</div>
 							<div>
 								<h3 className="mb-4 font-bold text-sectionHeading font-primary">
 									{selectedCard.title}
 								</h3>
-								<p className="mb-4 text-address">{selectedCard.description}</p>
+								<p className="mb-4 whitespace-pre-line text-address">{selectedCard.description}</p>
 								<ul className="text-address">
 									{selectedCard.region && (
 										<li className="leading-loose">
@@ -164,16 +192,18 @@ const Portfolio: FC = (): React.JSX.Element => {
 										</li>
 									)}
 								</ul>
-								<p className="flex items-start mt-4 text-center lg:hidden">
-									<a
-										className="button"
-										href={selectedCard.url}
-										rel="noopener noreferrer"
-										target="_blank"
-									>
-										Visit Website
-									</a>
-								</p>
+								{!selectedCard.brands?.length && (
+									<p className="flex items-start mt-4 text-center md:hidden">
+										<a
+											className="button"
+											href={selectedCard.url}
+											rel="noopener noreferrer"
+											target="_blank"
+										>
+											Visit Website
+										</a>
+									</p>
+								)}
 							</div>
 						</div>
 					</DialogContent>

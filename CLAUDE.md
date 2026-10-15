@@ -2,6 +2,12 @@
 
 Marketing site for Blank Canvas Capital, a South African investment firm (https://blankcanvascapital.co.za). Small, content-driven site: no database, no CMS, no auth. Owner/author: Daine Mawer.
 
+## Start here: `.context/`
+
+Before picking up any task, read `.context/README.md`, then the newest files in `.context/client-requests/` and the top of `.context/changelog.md`. They hold client requests (dated, verbatim), open questions, user decisions and what has already shipped. Check whether the task relates to an existing request and honour recorded decisions rather than re-asking.
+
+Keep it current as you work: update item statuses in the request file, record the user's answers with the date, and add a `changelog.md` entry when a PR is opened or merged. A new client email gets a new dated file in `client-requests/`.
+
 ## Stack
 
 - Next.js 16 (App Router), React 19, TypeScript (strict), Node 22 (`.nvmrc`; engines `>=20.9`)
@@ -38,6 +44,7 @@ src/
   components/ui/       shadcn primitives (dialog, sheet)
   hooks/ lib/          useDialog, useScrollPosition; fetcher, submit, gtag, utils
   styles/globals.css   CSS variables (fluid font sizes, --radius) + utilities
+.context/              Client requests, decisions, changelog (read first)
 public/                Images: logos/, heros/, team/, icons/, real-estate/
 ```
 
