@@ -30,43 +30,43 @@ export default function Page() {
 			</p>
 
 			<section className="px-6 py-8 md:py-16 lg:px-0 lg:py-40">
-				<div className="flex flex-col-reverse md:flex-col md:grid md:grid-cols-[1fr_110px] max-w-7xl mx-auto">
-					<div className="flex flex-col md:items-end">
+				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
+					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 left-0 top-[-1.55rem] md:absolute">
+							<BriefcaseBusiness className="w-6 h-6" />
+						</span>
+					</div>
+					<div className="flex flex-col items-start">
 						<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">
 							What We Look For In Investments
 						</p>
 						<h3 className="my-5 font-bold leading-tight text-grey text-heading font-primary text-xxl md:my-14">
 							Investment Criteria
 						</h3>
-						<p className="max-w-3xl leading-8 md:text-right text-eyebrow mb-7">
+						<p className="max-w-3xl leading-8 text-eyebrow mb-7">
 							Blank Canvas Capital is free from the restrictions of a
 							traditional fund therefore our investment approach is flexible in
 							terms of investment size, industry type and capital structure. We
 							look for scalable businesses that can deliver superior returns on
 							capital for our investors.
 						</p>
-						<p className="max-w-3xl leading-8 md:text-right text-eyebrow mb-7">
+						<p className="max-w-3xl leading-8 text-eyebrow mb-7">
 							We are quick to act, have a multi-deal track record in mobilising
 							large amounts of capital required in a process and will fully
 							engage in an opportunity engage in an opportunity&apos;s
 							fulfilment - from initial investment to s fulfilment - from
 							initial investment to its ultimate exit.
 						</p>
-						<p className="max-w-3xl leading-8 md:text-right text-eyebrow mb-7">
+						<p className="max-w-3xl leading-8 text-eyebrow mb-7">
 							We are in our deals for the long term. We buy in alongside our
 							partners and we realise value with our partners as a general rule.
 						</p>
-						<p className="max-w-3xl leading-8 md:text-right text-eyebrow">
+						<p className="max-w-3xl leading-8 text-eyebrow">
 							Our investment strategy focuses on private equity as our main area
 							of focus, but we also pursue real estate investments which are of
 							an opportunistic nature or where our portfolio company is a
 							tenant.
 						</p>
-					</div>
-					<div className="md:border-l-2 mb-8 md:mb-0 md:ml-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-left-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
-							<BriefcaseBusiness className="w-6 h-6" />
-						</span>
 					</div>
 				</div>
 			</section>
@@ -97,25 +97,25 @@ export default function Page() {
 			</section>
 
 			<section className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40">
-				<div className="flex flex-col-reverse md:flex-col md:grid md:grid-cols-[1fr_110px] max-w-7xl mx-auto">
-					<div className="flex flex-col md:items-end">
+				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
+					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 left-0 top-[-1.55rem] md:absolute">
+							<Database className="w-6 h-6" />
+						</span>
+					</div>
+					<div className="flex flex-col items-start">
 						<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">
 							What We Look For In Investments
 						</p>
 						<h3 className="my-5 font-bold leading-tight text-grey text-heading font-primary text-xxl md:my-14">
 							Investment Size
 						</h3>
-						<p className="max-w-3xl leading-8 md:text-right text-eyebrow">
+						<p className="max-w-3xl leading-8 text-eyebrow">
 							Blank Canvas Capital has a flexible approach to investment size,
 							typically investing from R50m into a single opportunity with no
 							upper limit. We specialize in acquiring significant,
 							non-controlling stakes in our portfolio companies.
 						</p>
-					</div>
-					<div className="md:border-l-2 mb-8 md:mb-0 md:ml-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-left-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
-							<Database className="w-6 h-6" />
-						</span>
 					</div>
 				</div>
 			</section>
@@ -161,26 +161,26 @@ export default function Page() {
 			</section>
 
 			<section className="px-6 py-8 sm:py-16 lg:px-0 md:py-40 bg-tin">
-				<div className="flex flex-col-reverse md:flex-col md:grid md:grid-cols-[1fr_110px] max-w-7xl mx-auto">
-					<div className="flex flex-col md:items-end">
+				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
+					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
+						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 left-0 top-[-1.55rem] md:absolute">
+							<Key className="w-6 h-6" />
+						</span>
+					</div>
+					<div className="flex flex-col items-start">
 						<p className="text-base font-semibold leading-6 uppercase text-gold text-eyebrow font-primary">
 							What We Look For In Investments
 						</p>
 						<h3 className="my-5 font-bold leading-tight text-grey text-heading font-primary text-xxl md:my-14">
 							Exit Strategy
 						</h3>
-						<p className="max-w-3xl leading-8 md:text-right text-eyebrow">
+						<p className="max-w-3xl leading-8 text-eyebrow">
 							Ideally, we realise value when our partner feels the time is right
 							to do so. We have no time pressure for exits and focus on the
 							long-term success of our portfolio companies. We work closely with
 							our partners to develop growth and exit strategies that align with
 							their goals, and then assist with the execution of these plans.
 						</p>
-					</div>
-					<div className="md:border-l-2 mb-8 md:mb-0 md:ml-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-left-[9px] after:absolute">
-						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 right-0 top-[-1.55rem] md:absolute">
-							<Key className="w-6 h-6" />
-						</span>
 					</div>
 				</div>
 			</section>

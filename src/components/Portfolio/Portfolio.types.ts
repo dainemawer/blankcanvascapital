@@ -1,4 +1,11 @@
+export type PortfolioBrand = {
+  logo: string;
+  title: string;
+  url: string;
+};
+
 export type PortfolioProps = {
+  brands?: PortfolioBrand[];
   category?: string;
   date?: string;
   description?: string;

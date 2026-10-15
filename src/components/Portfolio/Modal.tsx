@@ -73,7 +73,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 									)}
 								</header>
 								{modalContent.description && (
-									<p className="mb-4 text-sm leading-snug text-mineShaft">
+									<p className="mb-4 text-sm leading-snug whitespace-pre-line text-mineShaft">
 										{modalContent.description}
 									</p>
 								)}
@@ -179,7 +179,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
 									)}
 								</header>
 								{modalContent.description && (
-									<p className="mb-4 text-sm leading-snug text-mineShaft">
+									<p className="mb-4 text-sm leading-snug whitespace-pre-line text-mineShaft">
 										{modalContent.description}
 									</p>
 								)}
