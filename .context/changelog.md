@@ -2,6 +2,10 @@
 
 Newest first. Link each entry to its request file and PR where applicable.
 
+## 2026-10-16
+- Client reply: scroll transitions reduced to a gentle fade (no full-screen redesign). Wrong The Lab logo was sent; replacement pending from the client.
+- Added `FadeIn` (`src/components/FadeIn`, framer-motion `whileInView`, once, reduced-motion aware) and used it for the home and Investment Approach sections. Branch `feat/section-fade`, stacked on PR #11.
+
 ## 2026-10-15
 - PR #11 opened with all client round 1 work done so far (see entries below). Waiting on required review/merge.
 - Portfolio modal: max width 1024px (`lg:max-w-5xl`) and side-by-side layout from `md` instead of `lg`, to reduce banner cropping and scrolling. Overflow at 1280x800 dropped from 177-298px to 0-173px. Round 1, uncommitted.
