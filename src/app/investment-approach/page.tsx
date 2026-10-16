@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@components/Hero";
+import { FadeIn } from "@components/FadeIn";
 import { Button } from "@components/Button";
 import { Bookmark, BriefcaseBusiness, Database, Key, Zap } from "lucide-react";
 
@@ -29,7 +30,7 @@ export default function Page() {
 				businesses achieve their full potential.
 			</p>
 
-			<section className="px-6 py-8 md:py-16 lg:px-0 lg:py-40">
+			<FadeIn className="px-6 py-8 md:py-16 lg:px-0 lg:py-40">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
 						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 left-0 top-[-1.55rem] md:absolute">
@@ -69,9 +70,9 @@ export default function Page() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40 bg-grey">
+			<FadeIn className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40 bg-grey">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
 						<span className="rounded-full w-14 h-14 flex items-center justify-center text-grey bg-gold z-30 left-0 top-[-1.55rem] md:absolute">
@@ -94,9 +95,9 @@ export default function Page() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40">
+			<FadeIn className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
 						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 left-0 top-[-1.55rem] md:absolute">
@@ -118,9 +119,9 @@ export default function Page() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40 bg-grey">
+			<FadeIn className="px-6 py-8 sm:py-16 lg:px-0 lg:py-40 bg-grey">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
 						<span className="rounded-full w-14 h-14 flex items-center justify-center text-grey bg-gold z-30 left-0 top-[-1.55rem] md:absolute">
@@ -158,9 +159,9 @@ export default function Page() {
 						</ul>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="px-6 py-8 sm:py-16 lg:px-0 md:py-40 bg-tin">
+			<FadeIn className="px-6 py-8 sm:py-16 lg:px-0 md:py-40 bg-tin">
 				<div className="flex flex-col md:grid md:grid-cols-[110px_1fr] max-w-7xl mx-auto">
 					<div className="md:border-r-2 mb-8 md:mb-0 md:mr-6 relative border-gold md:flex md:justify-center after:hidden after:content-[''] after:rounded-full after:bg-gold md:after:block after:top-0 after:w-4 after:h-4 after:-right-[9px] after:absolute">
 						<span className="rounded-full w-14 h-14 flex items-center justify-center text-gold bg-grey z-30 left-0 top-[-1.55rem] md:absolute">
@@ -183,7 +184,7 @@ export default function Page() {
 						</p>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
 			<p className="max-w-6xl px-6 mx-auto mt-8 mb-8 leading-8 text-center md:mt-24 text-gold text-eyebrow">
 				At Blank Canvas Capital, we are driven by a shared passion for creating
