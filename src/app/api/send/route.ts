@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { EmailTemplate } from '../../../components/email-template';
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_LENGTHS = { name: 200, from: 320, subject: 300, message: 5000 };
@@ -16,6 +15,26 @@ const isRateLimited = (key: string): boolean => {
 	hits.set(key, recent);
 	return recent.length > RATE_LIMIT.max;
 };
+
+const escapeHtml = (value: string): string =>
+	value
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&#39;');
+
+const renderEmailHtml = (name: string, from: string, subject: string, message: string): string => `<div>
+<h1>Hello Darren.</h1>
+<h2>You have new contact form enquiry from Blank Canvas Capital.</h2>
+<p>See the details below:</p>
+<ul>
+<li>Name: ${escapeHtml(name)}</li>
+<li>Email: ${escapeHtml(from)}</li>
+<li>Subject: ${escapeHtml(subject)}</li>
+<li>Message: ${escapeHtml(message).replace(/\n/g, '<br>')}</li>
+</ul>
+</div>`;
 
 const isValidString = (value: unknown, max: number): value is string =>
 	typeof value === 'string' && value.trim().length > 0 && value.length <= max;
@@ -61,7 +80,8 @@ export async function POST(req: Request) {
 			replyTo: from,
 			subject: 'New Submission from Blank Canvas Capital',
 			text: `From: ${name} <${from}>\n\nSubject: ${subject}\n\nMessage: ${message}`,
-			react: EmailTemplate({ from, message, subject, name }) as React.ReactElement,
+			// Plain HTML: Resend's `react` option needs @react-email/render, which isn't installed
+			html: renderEmailHtml(name, from, subject, message),
 		});
 
 		if (error) {
