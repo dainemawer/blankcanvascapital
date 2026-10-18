@@ -1,4 +1,5 @@
 import { Hero } from "@components/Hero";
+import { FadeIn } from "@components/FadeIn";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +17,7 @@ export default function Page() {
 				variation="bw"
 			/>
 
-			<section className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
+			<FadeIn className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
 				<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 					<span className="block font-bold text-gold font-primary text-subheading">
 						01
@@ -64,9 +65,9 @@ export default function Page() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="px-5 py-12 my-12 md:py-32 md:my-32 bg-tin/30">
+			<FadeIn className="px-5 py-12 my-12 md:py-32 md:my-32 bg-tin/30">
 				<div className="container grid max-w-4xl grid-cols-1 gap-10 mx-auto lg:max-w-7xl md:grid-cols-section">
 					<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 						<span className="block font-bold text-gold font-primary text-subheading">
@@ -149,9 +150,9 @@ export default function Page() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
+			<FadeIn className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
 				<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 					<span className="block font-bold text-gold font-primary text-subheading">
 						03
@@ -201,9 +202,9 @@ export default function Page() {
 						</figure>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="px-5 py-12 my-12 md:py-32 md:my-32 bg-tin/60">
+			<FadeIn className="px-5 py-12 my-12 md:py-32 md:my-32 bg-tin/60">
 				<div className="container grid max-w-4xl grid-cols-1 gap-10 mx-auto lg:max-w-7xl md:grid-cols-section">
 					<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 						<span className="block font-bold text-gold font-primary text-subheading">
@@ -241,9 +242,9 @@ export default function Page() {
 						</figure>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 
-			<section className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
+			<FadeIn className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
 				<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 					<span className="block font-bold text-gold font-primary text-subheading">
 						05
@@ -282,7 +283,7 @@ export default function Page() {
 						</div>
 					</div>
 				</div>
-			</section>
+			</FadeIn>
 		</>
 	);
 }
