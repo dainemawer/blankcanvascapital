@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, SyntheticEvent } from "react";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -26,6 +26,8 @@ const Portfolio: FC = (): React.JSX.Element => {
 
 	const dialog = useDialog();
 	const [selectedCard, setSelectedCard] = useState<PortfolioProps | null>(null);
+	// Frame follows the picture's own ratio, clamped so odd exports stay sane.
+	const [heroRatio, setHeroRatio] = useState(2);
 
 	const isRealEstate = selectedCard?.category === "Real Estate";
 	const isRealisedRealEstate =
@@ -34,7 +36,15 @@ const Portfolio: FC = (): React.JSX.Element => {
 
 	const handleCardClick = (item: PortfolioProps) => {
 		setSelectedCard(item); // Set the clicked card’s content
+		setHeroRatio(2);
 		dialog.trigger(); // Open the dialog
+	};
+
+	const handleHeroLoad = (event: SyntheticEvent<HTMLImageElement>) => {
+		const { naturalHeight, naturalWidth } = event.currentTarget;
+		if (naturalHeight) {
+			setHeroRatio(Math.min(Math.max(naturalWidth / naturalHeight, 1.6), 2.4));
+		}
 	};
 
 	const filterPrivateEquity = () => {
@@ -66,7 +76,7 @@ const Portfolio: FC = (): React.JSX.Element => {
 			/>
 			<Dialog {...dialog.props}>
 				{selectedCard && (
-					<DialogContent className="w-full max-w-[90%] max-h-[80%] overflow-y-auto no-scrollbar md:max-h-[85%] md:max-w-[80%] lg:max-w-5xl p-0 border-0">
+					<DialogContent className="w-full max-w-[90%] max-h-[80%] overflow-y-auto no-scrollbar md:max-h-[85%] md:max-w-[80%] lg:max-w-4xl p-0 border-0">
 						<div className="sr-only">
 							<DialogTitle>{selectedCard.title}</DialogTitle>
 							<DialogDescription>{selectedCard.description}</DialogDescription>
@@ -96,28 +106,33 @@ const Portfolio: FC = (): React.JSX.Element => {
 						</DialogClose>
 
 						{!isRealEstate && !isRealisedRealEstate && (
-							<figure>
+							<figure
+								className="relative w-full"
+								style={{ aspectRatio: heroRatio }}
+							>
 								<Image
 									alt={selectedCard.title || "Dialog Hero Image"}
-									className={`object-cover object-bottom w-full h-52 sm:h-96`}
+									className="object-cover"
 									decoding="async"
-									height="350"
-									loading="lazy"
+									onLoad={handleHeroLoad}
+									sizes="(min-width: 1024px) 896px, 90vw"
 									src={selectedCard.hero || "/default-image.jpg"}
-									width="980"
+									style={{ objectPosition: selectedCard.position || "center" }}
+									fill
+									priority
 								/>
 							</figure>
 						)}
 
-						<div className="flex flex-col items-center gap-4 px-6 pt-6 pb-8 md:p-8 sm:items-start md:gap-16 md:flex-row">
-							<div className="relative w-full md:w-auto flex flex-col items-center justify-center md:shrink-0 md:after:content-[''] md:after:block md:after:h-full md:after:w-[2px] md:after:bg-gold md:after:absolute md:after:top-0 md:after:-right-8">
+						<div className="flex flex-col items-center gap-4 px-6 pt-5 pb-6 md:px-8 md:py-6 sm:items-start md:gap-12 md:flex-row">
+							<div className="relative w-full md:w-auto flex flex-col items-center justify-center md:shrink-0 md:after:content-[''] md:after:block md:after:h-full md:after:w-[2px] md:after:bg-gold md:after:absolute md:after:top-0 md:after:-right-6">
 								{selectedCard.brands?.length ? (
-									<ul className="flex flex-row justify-center gap-6 md:flex-col md:gap-4">
+									<ul className="flex flex-row justify-center gap-6 md:flex-col md:gap-8">
 										{selectedCard.brands.map((brand) => (
 											<li className="flex flex-col items-center" key={brand.title}>
 												<Image
 													alt={brand.title}
-													className="object-contain w-[130px] h-[83px] md:w-[160px] md:h-[102px]"
+													className="object-cover w-[130px] h-[32px] md:w-[160px] md:h-[44px]"
 													decoding="async"
 													height={102}
 													loading="lazy"
@@ -125,7 +140,7 @@ const Portfolio: FC = (): React.JSX.Element => {
 													width={160}
 												/>
 												<a
-													className="text-center underline text-address text-gold hover:no-underline"
+													className="mt-3 button"
 													href={brand.url}
 													rel="noopener noreferrer"
 													target="_blank"
@@ -138,10 +153,10 @@ const Portfolio: FC = (): React.JSX.Element => {
 								) : (
 									<>
 										<Image
-											className={`object-cover w-full md:mb-4 ${
+											className={`object-cover ${
 												isRealEstate
-													? "w-full aspect-square h-[296px] md:w-[214px] md:h-[214px]"
-													: "h-36 min-w-[214px]"
+													? "w-full md:mb-4 aspect-square h-[296px] md:w-[214px] md:h-[214px]"
+													: "w-[214px] h-24 md:mb-1"
 											}`}
 											alt={selectedCard.title || "Dialog Logo"}
 											decoding="async"
@@ -166,34 +181,34 @@ const Portfolio: FC = (): React.JSX.Element => {
 								)}
 							</div>
 							<div>
-								<h3 className="mb-4 font-bold text-sectionHeading font-primary">
+								<h3 className="mb-2 font-bold text-sectionHeading font-primary">
 									{selectedCard.title}
 								</h3>
-								<p className="mb-4 whitespace-pre-line text-address">{selectedCard.description}</p>
-								<ul className="text-address">
+								<p className="mb-3 whitespace-pre-line text-address">{selectedCard.description}</p>
+								<ul className="flex flex-wrap text-address gap-x-6 gap-y-1">
 									{selectedCard.region && (
-										<li className="leading-loose">
+										<li>
 											<strong>Region:</strong> {selectedCard.region}
 										</li>
 									)}
 									{selectedCard.sector && (
-										<li className="leading-loose">
+										<li>
 											<strong>Sector:</strong> {selectedCard.sector}
 										</li>
 									)}
 									{selectedCard.date && selectedCard.status !== "realised" && (
-										<li className="leading-loose">
+										<li>
 											<strong>Date:</strong> {selectedCard.date}
 										</li>
 									)}
 									{selectedCard.status && (
-										<li className="leading-loose capitalize">
+										<li className="capitalize">
 											<strong>Status:</strong> {selectedCard.status}
 										</li>
 									)}
 								</ul>
 								{!selectedCard.brands?.length && (
-									<p className="flex items-start mt-4 text-center md:hidden">
+									<p className="flex items-start mt-3 text-center md:hidden">
 										<a
 											className="button"
 											href={selectedCard.url}

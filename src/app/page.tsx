@@ -10,11 +10,12 @@ export default function Page() {
 				subtitle="Blank Canvas Capital is an experienced group of talented
 				entrepreneurs pioneering the way
 				forward across the South African financial landscape."
-				image="/bw-home.png"
-				label="Aeroplane flying over buildings"
+				image="/hero-home.jpg"
+				label="Glass office building at dusk"
 				logo="/bcc-logo.png"
 				title="Every investment starts with an idea."
-				variation="bw"
+				variation="horizontal"
+				fullWidth
 			/>
 
 			<FadeIn className="container grid max-w-4xl grid-cols-1 gap-4 px-5 mx-auto my-12 md:my-32 md:gap-8 lg:max-w-7xl md:grid-cols-section">
@@ -67,8 +68,8 @@ export default function Page() {
 				</div>
 			</FadeIn>
 
-			<FadeIn className="px-5 py-12 my-12 md:py-32 md:my-32 bg-tin/30">
-				<div className="container grid max-w-4xl grid-cols-1 gap-10 mx-auto lg:max-w-7xl md:grid-cols-section">
+			<FadeIn className="py-12 my-12 md:py-32 md:my-32 bg-tin/30">
+				<div className="container grid max-w-4xl grid-cols-1 gap-10 px-5 mx-auto md:gap-8 lg:max-w-7xl md:grid-cols-section">
 					<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 						<span className="block font-bold text-gold font-primary text-subheading">
 							02
@@ -204,8 +205,15 @@ export default function Page() {
 				</div>
 			</FadeIn>
 
-			<FadeIn className="px-5 py-12 my-12 md:py-32 md:my-32 bg-tin/60">
-				<div className="container grid max-w-4xl grid-cols-1 gap-10 mx-auto lg:max-w-7xl md:grid-cols-section">
+			<FadeIn className="relative flex items-center py-16 my-12 overflow-hidden min-h-[460px] md:py-32 md:my-32 md:min-h-[680px] bg-tin/60">
+				<Image
+					alt=""
+					className="object-cover"
+					src="/portfolio-bg.jpg"
+					fill
+				/>
+				<div aria-hidden="true" className="absolute inset-0 bg-black/60" />
+				<div className="container relative grid w-full max-w-4xl grid-cols-1 gap-10 px-5 mx-auto md:gap-8 lg:max-w-7xl md:grid-cols-section">
 					<div className="relative before:content-[''] pb-4 md:pb-0 before:block before:absolute before:right-0 before:bg-gold before:w-full before:h-[1px] before:bottom-0 md:before:w-[2px] md:before:h-full">
 						<span className="block font-bold text-gold font-primary text-subheading">
 							04
@@ -214,32 +222,21 @@ export default function Page() {
 							Our Investments
 						</span>
 					</div>
-					<div className="flex flex-col md:flex-row md:items-center md:gap-12">
-						<div className="md:basis-8/12">
-							<header className="mb-6 md:mb-10">
-								<h2 className="font-bold leading-none text-heading font-primary">
-									Investment Portfolio
-								</h2>
-							</header>
-							<p className="max-w-xl mb-6 text-eyebrow text-silver">
-								Discover our full investment portfolio of private equity and
-								property investments.
-							</p>
-							<p className="flex items-start">
-								<Link className="button" href="/portfolio">
-									Portfolio
-								</Link>
-							</p>
-						</div>
-						<figure className="mt-8 md:mt-0 md:basis-4/12">
-							<Image
-								alt="Blank Canvas Capital investment portfolio"
-								className="rounded-tr-3xl rounded-bl-3xl h-[257px] w-full max-w-[230px] md:max-w-none object-cover"
-								height="500"
-								src="/portfolio-bg.jpg"
-								width="447"
-							/>
-						</figure>
+					<div>
+						<header className="mb-6 md:mb-10">
+							<h2 className="font-bold leading-none text-white text-heading font-primary">
+								Investment Portfolio
+							</h2>
+						</header>
+						<p className="max-w-xl mb-6 text-eyebrow text-white/90">
+							Discover our full investment portfolio of private equity and
+							property investments.
+						</p>
+						<p className="flex items-start">
+							<Link className="button" href="/portfolio">
+								Portfolio
+							</Link>
+						</p>
 					</div>
 				</div>
 			</FadeIn>
