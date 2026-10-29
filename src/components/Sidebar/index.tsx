@@ -7,7 +7,7 @@ const Sidebar: FC = (): React.JSX.Element => {
 		<aside className="flex flex-col mt-0 lg:border-l-2 lg:border-copper lg:pl-10">
 			<address className="mb-5">
 				<h2 className="m-0 text-sm not-italic font-semibold leading-6 uppercase font-secondary">
-					Johannesburg Address
+					Johannesburg
 				</h2>
 				<p className="not-italic leading-6 font-primary text-address font-regular">
 					1st Floor
@@ -21,7 +21,7 @@ const Sidebar: FC = (): React.JSX.Element => {
 			</address>
 			<address className="pt-6 mb-5 border-t-2 border-copper">
 				<h2 className="m-0 text-sm not-italic font-semibold leading-6 uppercase font-secondary">
-					Cape Town Address
+					Cape Town
 				</h2>
 				<p className="not-italic leading-6 font-primary text-address font-regular">
 					Foundry One

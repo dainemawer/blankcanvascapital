@@ -2,6 +2,12 @@
 
 Newest first. Link each entry to its request file and PR where applicable.
 
+## 2026-10-29
+- PR #16 opened: client round 2 ([request](client-requests/2026-10-22-round-2.md)), branch `feat/client-round-2`. Home hero is full width at 700px (Unsplash option 3, bottom crop) and slides in; 04 uses the picture as background with light text and is taller; gold lines aligned; `FadeIn` is scroll-linked and slides up (fade only under reduced motion). Portfolio modal is 896px wide, its hero frame follows each picture's ratio (clamped 1.6 to 2.4) and applies per-company `position` (it was previously ignored), with tighter spacing under the hero and around logos and Visit Website buttons. Eight heavy heros re-encoded to about 100 KB and `thrive.png` became `thrive.jpg`. The Lab region is Global with Visit Website buttons for both brands; contact headings are JOHANNESBURG / CAPE TOWN. Next.js upgraded to 16.4.3 in a separate `chore:` commit. Open: Darren's answer on outliers wider than 2.4:1 (Teneo, Dynamic Brands).
+
+## 2026-10-28
+- Client round 2 ([request](client-requests/2026-10-22-round-2.md)), branch `feat/client-round-2`, new home hero (Unsplash option 3, bottom crop, white logo), 04 section with the picture as background and light text, gold section lines aligned, `FadeIn` linked to scroll position (dims sections at the viewport edges, both directions), The Lab region Global and Visit Website buttons for both brands, contact headings JOHANNESBURG / CAPE TOWN. Portfolio modal width, picture positions and loading speed are waiting on Darren's reply.
+
 ## 2026-10-16
 - Client reply: scroll transitions reduced to a gentle fade (no full-screen redesign). Wrong The Lab logo was sent; replacement pending from the client.
 - Added `FadeIn` (`src/components/FadeIn`, framer-motion `whileInView`, once, reduced-motion aware) and used it for the home and Investment Approach sections. Branch `feat/section-fade`, stacked on PR #11.

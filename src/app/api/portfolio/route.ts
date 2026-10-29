@@ -165,7 +165,7 @@ export async function GET() {
 				],
 				logo: '/logos/the-lab.png',
 				hero: '/heros/the-lab.jpg',
-				region: 'South Africa',
+				region: 'Global',
 				sector: 'Clean Care / Consumer Goods',
 				date: 'August 2019',
 				status: 'current',
@@ -205,7 +205,7 @@ export async function GET() {
 			},
 			{
 				logo: '/logos/thrive.png',
-				hero: '/heros/thrive.png',
+				hero: '/heros/thrive.jpg',
 				region: 'South Africa',
 				sector: 'Education',
 				date: 'February 2019',
